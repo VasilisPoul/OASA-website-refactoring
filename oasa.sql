@@ -34,7 +34,7 @@ USE `mydb` ;
 CREATE TABLE IF NOT EXISTS `mydb`.`category` (
   `idcategory` INT NOT NULL,
   `name` VARCHAR(45) NOT NULL,
-  `prize` VARCHAR(45) NOT NULL,
+  `price` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idcategory`),
   UNIQUE INDEX `name_UNIQUE` (`name` ASC),
   UNIQUE INDEX `idcategory_UNIQUE` (`idcategory` ASC))
@@ -46,10 +46,12 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`client` (
   `idclient` INT NOT NULL,
-  `name` VARCHAR(45) NOT NULL,
-  `surname` VARCHAR(45) NOT NULL,
   `username` VARCHAR(45) NOT NULL,
-  `password` VARCHAR(45) NOT NULL,
+  `first_name` VARCHAR(45) NOT NULL,
+  `last_name` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `dob` DATE NOT NULL,
+  `phone` INT(10) NOT NULL,
   `category_idcategory` INT NOT NULL,
   PRIMARY KEY (`idclient`, `category_idcategory`),
   UNIQUE INDEX `idclient_UNIQUE` (`idclient` ASC),
