@@ -17,17 +17,17 @@ $username_err = $first_name_err = $last_name_err = $password_err = "";
 $email_err = $dob_err = $phone_err = $occupation_id_err = "";
 
 $servername = "localhost";
-$server_username = "root";
-$server_password = "root";
+$server_username = "user";
+$server_password = "password";
 $dbname = "oasa";
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
  
   //create connection
-  // $conn = new mysqli($servername, $server_username, $server_password, $dbname);
-  // if($conn->connect_error){
-  //   die("Connection failed: " . $conn->connect_error);
-  // }
+  $conn = new mysqli($servername, $server_username, $server_password, $dbname);
+  if($conn->connect_error){
+    die("Connection failed: " . $conn->connect_error);
+  }
 
   if(empty($_POST["username"])){
     $username_err = "Username is required";
@@ -37,12 +37,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   }
 
   //check if username exists
-  // $sql = "SELECT * FROM user WHERE user.username = $username";
-  // $result = $conn->query($sql);
+  $sql = "SELECT * FROM user WHERE username = \"$username\"";
+  $result = $conn->query($sql);
 
-  // if($result->num_rows > 0){
-  //   $username_err = "Username already exists";
-  // }
+  if($result->num_rows > 0){
+    $username_err = "Username already exists";
+  }
 
   //create new user in the database
   if(empty($_POST["first_name"])){
@@ -98,23 +98,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
   $occupation_id = "ggggg";
 
-  if(!empty($username) && !empty($first_name) && !empty($last_name) && !empty($email) && 
-     !empty($dob) && !empty($phone) && !empty($password) && !empty($occupation_id))
+  if(empty($username_err) && empty($first_name_err) && empty($last_name_err) && empty($email_err) && 
+     empty($dob_err) && empty($phone_err) && empty($password_err) && empty($occupation_id_err))
   {
-    echo "All good!";
-    // $sql = "INSERT INTO user (username, first_name, last_name, email, dob, phone, password, occupation_id)
-    // VALUES ($username, $first_name, $last_name, $email, $dob, $phone, $password, $occupation_id)";
+    // echo "All good!";
+    $sql = "INSERT INTO user (username, first_name, last_name, email, dob, phone, password)
+    VALUES (\"$username\", \"$first_name\", \"$last_name\", \"$email\", \"$dob\", \"$phone\", \"$password\")";
 
-    // if($conn->query($sql) === TRUE){
-    //   echo "Signup successful";
-    // } 
-    // else{
-    //   //echo "Error: " . $sql . "<br>" . $conn->error;
-    //   echo "Signup failed";
-    // }
+    if($conn->query($sql) === TRUE){
+      echo "Signup successful";
+    } 
+    else{
+      echo "Error: " . $sql . "<br>" . $conn->error;
+      //echo "Signup failed";
+    }
   }
 
-//$conn->close();
+$conn->close();
 
 }
 ?>
