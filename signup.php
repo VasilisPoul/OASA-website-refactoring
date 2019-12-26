@@ -37,7 +37,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   }
 
   //check if username exists
-  // $sql = "SELECT id FROM user WHERE user.username = $username";
+  // $sql = "SELECT * FROM user WHERE user.username = $username";
   // $result = $conn->query($sql);
 
   // if($result->num_rows > 0){
