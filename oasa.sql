@@ -42,10 +42,10 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`client`
+-- Table `mydb`.`user`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`client` (
-  `idclient` INT NOT NULL,
+CREATE TABLE IF NOT EXISTS `mydb`.`user` (
+  `iduser` INT NOT NULL,
   `username` VARCHAR(45) NOT NULL,
   `first_name` VARCHAR(45) NOT NULL,
   `last_name` VARCHAR(45) NOT NULL,
@@ -53,11 +53,11 @@ CREATE TABLE IF NOT EXISTS `mydb`.`client` (
   `dob` DATE NOT NULL,
   `phone` INT(10) NOT NULL,
   `category_idcategory` INT NOT NULL,
-  PRIMARY KEY (`idclient`, `category_idcategory`),
-  UNIQUE INDEX `idclient_UNIQUE` (`idclient` ASC),
+  PRIMARY KEY (`iduser`, `category_idcategory`),
+  UNIQUE INDEX `iduser_UNIQUE` (`iduser` ASC),
   UNIQUE INDEX `username_UNIQUE` (`username` ASC),
-  INDEX `fk_client_category_idx` (`category_idcategory` ASC),
-  CONSTRAINT `fk_client_category`
+  INDEX `fk_user_category_idx` (`category_idcategory` ASC),
+  CONSTRAINT `fk_user_category`
     FOREIGN KEY (`category_idcategory`)
     REFERENCES `mydb`.`category` (`idcategory`)
     ON DELETE NO ACTION
