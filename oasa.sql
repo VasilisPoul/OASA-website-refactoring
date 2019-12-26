@@ -8,30 +8,15 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
--- Schema mydb
--- -----------------------------------------------------
-
--- -----------------------------------------------------
--- Schema mydb
--- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
--- -----------------------------------------------------
--- Schema new_schema1
--- -----------------------------------------------------
--- -----------------------------------------------------
 -- Schema oasa
 -- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `oasa` DEFAULT CHARACTER SET utf8 ;
+USE `oasa` ;
 
 -- -----------------------------------------------------
--- Schema oasa
+-- Table `oasa`.`category`
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `oasa` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci ;
-USE `mydb` ;
-
--- -----------------------------------------------------
--- Table `mydb`.`category`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`category` (
+CREATE TABLE IF NOT EXISTS `oasa`.`category` (
   `idcategory` INT NOT NULL,
   `name` VARCHAR(45) NOT NULL,
   `price` VARCHAR(45) NOT NULL,
@@ -42,33 +27,33 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`user`
+-- Table `oasa`.`user`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`user` (
-  `iduser` INT NOT NULL,
+CREATE TABLE IF NOT EXISTS `oasa`.`user` (
+  `iduser` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `username` VARCHAR(45) NOT NULL,
   `first_name` VARCHAR(45) NOT NULL,
   `last_name` VARCHAR(45) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
   `dob` DATE NOT NULL,
   `phone` INT(10) NOT NULL,
+  `password` VARCHAR(250) NOT NULL,
   `category_idcategory` INT NOT NULL,
-  PRIMARY KEY (`iduser`, `category_idcategory`),
   UNIQUE INDEX `iduser_UNIQUE` (`iduser` ASC),
   UNIQUE INDEX `username_UNIQUE` (`username` ASC),
   INDEX `fk_user_category_idx` (`category_idcategory` ASC),
   CONSTRAINT `fk_user_category`
     FOREIGN KEY (`category_idcategory`)
-    REFERENCES `mydb`.`category` (`idcategory`)
+    REFERENCES `oasa`.`category` (`idcategory`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`line`
+-- Table `oasa`.`line`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`line` (
+CREATE TABLE IF NOT EXISTS `oasa`.`line` (
   `idline` INT NOT NULL,
   `name` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idline`),
@@ -78,9 +63,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`station`
+-- Table `oasa`.`station`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`station` (
+CREATE TABLE IF NOT EXISTS `oasa`.`station` (
   `idstation` INT NOT NULL,
   `name` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idstation`),
@@ -90,9 +75,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`ticket`
+-- Table `oasa`.`ticket`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`ticket` (
+CREATE TABLE IF NOT EXISTS `oasa`.`ticket` (
   `idticket` INT NOT NULL,
   `amount` VARCHAR(45) NULL,
   `category_idcategory` INT NOT NULL,
@@ -100,16 +85,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`ticket` (
   INDEX `fk_ticket_category1_idx` (`category_idcategory` ASC),
   CONSTRAINT `fk_ticket_category1`
     FOREIGN KEY (`category_idcategory`)
-    REFERENCES `mydb`.`category` (`idcategory`)
+    REFERENCES `oasa`.`category` (`idcategory`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`line_has_station`
+-- Table `oasa`.`line_has_station`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`line_has_station` (
+CREATE TABLE IF NOT EXISTS `oasa`.`line_has_station` (
   `line_idline` INT NOT NULL,
   `station_idstation` INT NOT NULL,
   PRIMARY KEY (`line_idline`, `station_idstation`),
@@ -117,12 +102,12 @@ CREATE TABLE IF NOT EXISTS `mydb`.`line_has_station` (
   INDEX `fk_line_has_station_line1_idx` (`line_idline` ASC),
   CONSTRAINT `fk_line_has_station_line1`
     FOREIGN KEY (`line_idline`)
-    REFERENCES `mydb`.`line` (`idline`)
+    REFERENCES `oasa`.`line` (`idline`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_line_has_station_station1`
     FOREIGN KEY (`station_idstation`)
-    REFERENCES `mydb`.`station` (`idstation`)
+    REFERENCES `oasa`.`station` (`idstation`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
