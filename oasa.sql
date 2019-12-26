@@ -183,18 +183,20 @@ COLLATE = utf8mb4_0900_ai_ci;
 
 
 -- -----------------------------------------------------
--- Table `oasa`.`userinfo`
+-- Table `oasa`.`user`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `oasa`.`userinfo` (
-  `iduserInfo` INT(11) NOT NULL,
-  `userName` VARCHAR(45) NOT NULL,
-  `firstName` VARCHAR(45) NOT NULL,
-  `lastName` VARCHAR(45) NOT NULL,
-  `age` INT(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `oasa`.`user` (
+  `user_id` INT(11) NOT NULL,
+  `username` VARCHAR(45) NOT NULL,
+  `first_name` VARCHAR(45) NOT NULL,
+  `last_name` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `dob` DATE NOT NULL,
+  `phone` INT(10) NOT NULL,
   `password` VARCHAR(45) NOT NULL,
   `tickets_idtickets` INT(11) NOT NULL,
-  PRIMARY KEY (`iduserInfo`, `tickets_idtickets`),
-  UNIQUE INDEX `userName_UNIQUE` (`userName` ASC),
+  PRIMARY KEY (`user_id`, `tickets_idtickets`),
+  UNIQUE INDEX `username_UNIQUE` (`username` ASC),
   INDEX `fk_userinfo_tickets1_idx` (`tickets_idtickets` ASC),
   CONSTRAINT `fk_userinfo_tickets1`
     FOREIGN KEY (`tickets_idtickets`)
