@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `oasa`.`user` (
   `last_name` VARCHAR(45) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
   `dob` DATE NOT NULL,
-  `phone` INT(13) NOT NULL,
+  `phone` VARCHAR(13) NOT NULL,
   `password` VARCHAR(256) NOT NULL,
   `iduser_category` INT NULL DEFAULT NULL,
   PRIMARY KEY (`iduser`),
@@ -66,8 +66,7 @@ DROP TABLE IF EXISTS `oasa`.`ticket_category` ;
 CREATE TABLE IF NOT EXISTS `oasa`.`ticket_category` (
   `idticket_category` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
-  `price` DECIMAL NOT NULL,
-  `iduser` INT NOT NULL,
+  `price` DECIMAL(4,2) NOT NULL,
   `iduser_category` INT NOT NULL,
   PRIMARY KEY (`idticket_category`),
   UNIQUE INDEX `idticket_category_UNIQUE` (`idticket_category` ASC) VISIBLE,
@@ -189,8 +188,8 @@ DROP TABLE IF EXISTS `oasa`.`station` ;
 CREATE TABLE IF NOT EXISTS `oasa`.`station` (
   `idstation` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
-  `latitude` DECIMAL NOT NULL,
-  `longitude` DECIMAL NOT NULL,
+  `latitude` DECIMAL(9,6) NOT NULL,
+  `longitude` DECIMAL(9,6) NOT NULL,
   PRIMARY KEY (`idstation`),
   UNIQUE INDEX `idstation_UNIQUE` (`idstation` ASC) VISIBLE)
 ENGINE = InnoDB;
