@@ -11,6 +11,10 @@
 <?php
 
 session_start();
+ 
+if(isset($_SESSION['loggedin'])){
+  echo $_SESSION['first_name'] . " " . $_SESSION['last_name'];
+}
 
 $username = "";
 
