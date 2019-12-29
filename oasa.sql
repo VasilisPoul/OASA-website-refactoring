@@ -27,8 +27,8 @@ CREATE TABLE IF NOT EXISTS `oasa`.`user_category` (
   `iduser_category` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`iduser_category`),
-  UNIQUE INDEX `name_UNIQUE` (`name` ASC) VISIBLE,
-  UNIQUE INDEX `idcategory_UNIQUE` (`iduser_category` ASC) VISIBLE)
+  UNIQUE INDEX `name_UNIQUE` (`name` ASC) ,
+  UNIQUE INDEX `idcategory_UNIQUE` (`iduser_category` ASC) )
 ENGINE = InnoDB;
 
 
@@ -48,8 +48,8 @@ CREATE TABLE IF NOT EXISTS `oasa`.`user` (
   `password` VARCHAR(256) NOT NULL,
   `iduser_category` INT NULL DEFAULT NULL,
   PRIMARY KEY (`iduser`),
-  UNIQUE INDEX `iduser_UNIQUE` (`iduser` ASC) VISIBLE,
-  INDEX `fk_user_user_category1_idx` (`iduser_category` ASC) VISIBLE,
+  UNIQUE INDEX `iduser_UNIQUE` (`iduser` ASC) ,
+  INDEX `fk_user_user_category1_idx` (`iduser_category` ASC) ,
   CONSTRAINT `fk_user_user_category1`
     FOREIGN KEY (`iduser_category`)
     REFERENCES `oasa`.`user_category` (`iduser_category`)
@@ -69,8 +69,8 @@ CREATE TABLE IF NOT EXISTS `oasa`.`ticket_category` (
   `price` DECIMAL(4,2) NOT NULL,
   `iduser_category` INT NOT NULL,
   PRIMARY KEY (`idticket_category`),
-  UNIQUE INDEX `idticket_category_UNIQUE` (`idticket_category` ASC) VISIBLE,
-  INDEX `fk_ticket_category_user_category1_idx` (`iduser_category` ASC) VISIBLE,
+  UNIQUE INDEX `idticket_category_UNIQUE` (`idticket_category` ASC) ,
+  INDEX `fk_ticket_category_user_category1_idx` (`iduser_category` ASC) ,
   CONSTRAINT `fk_ticket_category_user_category1`
     FOREIGN KEY (`iduser_category`)
     REFERENCES `oasa`.`user_category` (`iduser_category`)
@@ -91,9 +91,9 @@ CREATE TABLE IF NOT EXISTS `oasa`.`ticket` (
   `iduser` INT NOT NULL,
   `idticket_category` INT NOT NULL,
   PRIMARY KEY (`idticket`),
-  UNIQUE INDEX `idticket_UNIQUE` (`idticket` ASC) VISIBLE,
-  INDEX `fk_ticket_ticket_category1_idx` (`idticket_category` ASC) VISIBLE,
-  INDEX `fk_ticket_user1` (`iduser` ASC) VISIBLE,
+  UNIQUE INDEX `idticket_UNIQUE` (`idticket` ASC) ,
+  INDEX `fk_ticket_ticket_category1_idx` (`idticket_category` ASC) ,
+  INDEX `fk_ticket_user1` (`iduser` ASC) ,
   CONSTRAINT `fk_ticket_user1`
     FOREIGN KEY (`iduser`)
     REFERENCES `oasa`.`user` (`iduser`)
@@ -116,7 +116,7 @@ CREATE TABLE IF NOT EXISTS `oasa`.`transport` (
   `idtransport` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idtransport`),
-  UNIQUE INDEX `idtransport_UNIQUE` (`idtransport` ASC) VISIBLE)
+  UNIQUE INDEX `idtransport_UNIQUE` (`idtransport` ASC) )
 ENGINE = InnoDB;
 
 
@@ -129,7 +129,7 @@ CREATE TABLE IF NOT EXISTS `oasa`.`line_status` (
   `idline_status` INT NOT NULL AUTO_INCREMENT,
   `status` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idline_status`),
-  UNIQUE INDEX `idline_status_UNIQUE` (`idline_status` ASC) VISIBLE)
+  UNIQUE INDEX `idline_status_UNIQUE` (`idline_status` ASC) )
 ENGINE = InnoDB;
 
 
@@ -142,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `oasa`.`colour` (
   `idcolour` INT NOT NULL AUTO_INCREMENT,
   `colour` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idcolour`),
-  UNIQUE INDEX `idcolour_UNIQUE` (`idcolour` ASC) VISIBLE)
+  UNIQUE INDEX `idcolour_UNIQUE` (`idcolour` ASC) )
 ENGINE = InnoDB;
 
 
@@ -158,10 +158,10 @@ CREATE TABLE IF NOT EXISTS `oasa`.`line` (
   `idline_status` INT NOT NULL,
   `idcolour` INT NOT NULL,
   PRIMARY KEY (`idline`),
-  UNIQUE INDEX `idline_UNIQUE` (`idline` ASC) VISIBLE,
-  INDEX `fk_line_transport1_idx` (`idtransport` ASC) VISIBLE,
-  INDEX `fk_line_line_status1_idx` (`idline_status` ASC) VISIBLE,
-  INDEX `fk_line_colour1_idx` (`idcolour` ASC) VISIBLE,
+  UNIQUE INDEX `idline_UNIQUE` (`idline` ASC) ,
+  INDEX `fk_line_transport1_idx` (`idtransport` ASC) ,
+  INDEX `fk_line_line_status1_idx` (`idline_status` ASC) ,
+  INDEX `fk_line_colour1_idx` (`idcolour` ASC) ,
   CONSTRAINT `fk_line_transport1`
     FOREIGN KEY (`idtransport`)
     REFERENCES `oasa`.`transport` (`idtransport`)
@@ -191,7 +191,7 @@ CREATE TABLE IF NOT EXISTS `oasa`.`station` (
   `latitude` DECIMAL(9,6) NOT NULL,
   `longitude` DECIMAL(9,6) NOT NULL,
   PRIMARY KEY (`idstation`),
-  UNIQUE INDEX `idstation_UNIQUE` (`idstation` ASC) VISIBLE)
+  UNIQUE INDEX `idstation_UNIQUE` (`idstation` ASC) )
 ENGINE = InnoDB;
 
 
@@ -204,8 +204,8 @@ CREATE TABLE IF NOT EXISTS `oasa`.`line_has_station` (
   `idline` INT NOT NULL,
   `idstation` INT NOT NULL,
   PRIMARY KEY (`idline`, `idstation`),
-  INDEX `fk_line_has_station_station1_idx` (`idstation` ASC) VISIBLE,
-  INDEX `fk_line_has_station_line1_idx` (`idline` ASC) VISIBLE,
+  INDEX `fk_line_has_station_station1_idx` (`idstation` ASC) ,
+  INDEX `fk_line_has_station_line1_idx` (`idline` ASC) ,
   CONSTRAINT `fk_line_has_station_line1`
     FOREIGN KEY (`idline`)
     REFERENCES `oasa`.`line` (`idline`)
