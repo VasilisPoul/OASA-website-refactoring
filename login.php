@@ -1,23 +1,17 @@
-
-<!DOCTYPE HTML>  
-<html>
-<head>
-<style>
-.error {color: #FF0000;}
-</style>
-</head>
-<body>  
-
 <?php
 
+//
+// PHP script by: Giorgos Koursiounis (sdi1600077)
+//
+
 session_start();
- 
+
+//if already logged in then redirect
 if(isset($_SESSION['loggedin'])){
   echo $_SESSION['first_name'] . " " . $_SESSION['last_name'];
 }
 
 $username = "";
-
 $username_err = $password_err = "";
 
 $servername = "localhost";
@@ -33,24 +27,27 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     die("Connection failed: " . $conn->connect_error);
   }
 
+  //check if username is given
   if(empty($_POST["username"])){
-    $username_err = "Username is required";
+    $username_err = "Εισάγετε όνομα χρήστη";
   } 
   else{
     $username = $_POST["username"];
   }
 
-  //check if username exists
+  //check if given username exists
   $sql = "SELECT * FROM user WHERE user.username = \"$username\"";
   $result = $conn->query($sql);
 
   if($result->num_rows > 0){
 
+    //check if password is given
     if(empty($_POST["password"])){
-      $password_err = "Password is required";
+      $password_err = "Εισάγετε κωδικό πρόσβασης";
     }
     else{
       while($row = $result->fetch_assoc()){
+        //validate password
         if(password_verify($_POST["password"], $row["password"])){
 
           $_SESSION['loggedin'] = $row["iduser"];
@@ -61,14 +58,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
           echo "welcome!";
         }
         else{
-          $password_err = "wrong password";
+          $password_err = "Λάθος κωδικός πρόσβασης";
         }
       }
     } 
   }
   else{
     if(empty($username_err)){
-      $username_err = "Username does not exist";
+      $username_err = "Το όνομα χρήστη δεν βρέθηκε";
     }
   }
 
@@ -76,21 +73,3 @@ $conn->close();
 
 }
 ?>
-
- 
-<form method="POST" action="<?=$_SERVER['PHP_SELF']?>">
-
-  username: <input type="text" name="username" value="<?php echo $username;?>">
-  <span class="error">* <?php echo $username_err;?></span>
-  <br><br>
-
-  password: <input type="password" name="password" value="<?php echo $password;?>">
-  <span class="error">* <?php echo $password_err;?></span>
-  <br><br>
-
-  <input type="submit" name="submit" value="Submit">  
-</form>
-
-
-</body>
-</html>

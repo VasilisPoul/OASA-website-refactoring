@@ -1,23 +1,18 @@
-
-<!DOCTYPE HTML>  
-<html>
-<head>
-<style>
-.error {color: #FF0000;}
-</style>
-</head>
-<body>  
-
 <?php
+
+//
+// PHP script by: Giorgos Koursiounis (sdi1600077)
+//
 
 session_start();
  
+//if already logged in then redirect
 if(isset($_SESSION['loggedin'])){
   echo $_SESSION['first_name'] . " " . $_SESSION['last_name'];
 }
 
 $username = $first_name = $last_name = $password = "";
-$email = $dob = $phone = $user_category = "";
+$email = $dob = $phone = $user_category = $message = "";
 
 $username_err = $first_name_err = $last_name_err = $password_err = "";
 $email_err = $dob_err = $phone_err = $user_category_err = "";
@@ -35,75 +30,83 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     die("Connection failed: " . $conn->connect_error);
   }
 
+  //check if username is given
   if(empty($_POST["username"])){
-    $username_err = "Username is required";
+    $username_err = "Εισάγετε όνομα χρήστη";
   } 
   else{
     $username = $_POST["username"];
   }
 
-  //check if username exists
+  //check if given username exists
   $sql = "SELECT * FROM user WHERE username = \"$username\"";
   $result = $conn->query($sql);
 
   if($result->num_rows > 0){
-    $username_err = "Username already exists";
+    $username_err = "Το όνομα χρήστη υπάρχει ήδη";
   }
 
-  //create new user in the database
+  //check if first name is given
   if(empty($_POST["first_name"])){
-    $first_name_err = "First name is is required";
+    $first_name_err = "Εισάγετε όνομα";
   } 
   else{
     $first_name = $_POST["first_name"];
   }
 
+  //check if last name is given
   if(empty($_POST["last_name"])){
-    $last_name_err = "Last name is required";
+    $last_name_err = "Εισάγετε επώνυμο";
   } 
   else{
     $last_name = $_POST["last_name"];
   }
 
+  //check if email is given
   if(empty($_POST["email"])){
-    $email_err = "Email is required";
+    $email_err = "Εισάγετε email ";
   } 
   else{
     $email = $_POST["email"];
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      $email_err = "Invalid email format";
+      $email_err = "Ελέγξτε το email σας";
     }
   }
 
+  //check if phone is given
   if(empty($_POST["phone"])){
-    $phone_err = "Phone is required";
+    $phone_err = "Εισάγετε αριθμό τηλεφώνου";
   } 
   else{
     $phone = preg_replace('/[^0-9]/', '', $_POST["phone"]);
     if(strlen($phone) !== 10){
-      $phone_err = "Invalid phone format";
+      $phone_err = "Ο αριθμός τηλεφώνου πρέπει να έχει 10 ψηφία";
     }
   }
 
+  //check if date of birth is given
   if(empty($_POST["dob"])){
-    $dob_err = "Date of birth is required";
+    $dob_err = "Εισάγετε ημερομηνία γέννησης";
   } 
   else{
     $dob = $_POST["dob"];
     if(DateTime::createFromFormat('d-m-Y', $dob)){
-      $dob_err = "Invalid date format";
+      $dob_err = "Λανθασμένη ημερομηνία γέννησης";
     }
   } 
 
+  //check if password is given
   if(empty($_POST["password"])){
-    $password = "Password is required";
+    $password = "Εισάγετε κωδικό πρόσβασης";
   } 
   else{
+    //CAUTION: passwords are hased and then stored in the database
     $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
   }
 
+  //check if user category (student etc.) is given
   if(empty($_POST["user_category"])){
-    $user_category_err = "select user category";
+    $user_category_err = "Επιλέξτε κατηγορία χρήστη";
   } 
   else{
 
@@ -113,91 +116,28 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $result = $conn->query($sql);
 
     if($result->num_rows <=0){
-      $user_category_err = "category does not exist";
+      $user_category_err = "Η κατηγορία χρήστη δεν υπάρχει";
     }
   }
 
+  //check if there is an error..
   if(empty($username_err) && empty($first_name_err) && empty($last_name_err) && empty($email_err) && 
      empty($dob_err) && empty($phone_err) && empty($password_err) && empty($user_category_err))
   {
-    // echo "All good!";
+    //..if not then create a new user in the database
     $sql = "INSERT INTO user (username, first_name, last_name, email, dob, phone, password, iduser_category)
     VALUES (\"$username\", \"$first_name\", \"$last_name\", \"$email\", \"$dob\", \"$phone\", \"$password\", \"$user_category\")";
 
     if($conn->query($sql) === TRUE){
-      echo "Signup successful";
+      $message = "Η εγγραφή ολοκληρώθηκε με επιτυχία!";
     } 
     else{
-      echo "Error: " . $sql . "<br>" . $conn->error;
-      //echo "Signup failed";
+      //echo "Error: " . $sql . "<br>" . $conn->error;
+      $message = "Η εγγραφή χρήστη απέτυχε";
     }
   }
 
-$conn->close();
+  $conn->close();
 
 }
 ?>
-
-
-<!-- <form method="POST" action="<?=$_SERVER['PHP_SELF']?>">   -->
- 
-<h2>PHP Form Validation Example</h2>
-<p><span class="error">* required field</span></p>
-<form method="POST" action="<?=$_SERVER['PHP_SELF']?>">
-
-  username: <input type="text" name="username" value="<?php echo $username;?>">
-  <span class="error">* <?php echo $username_err;?></span>
-  <br><br>
-
-  first name: <input type="text" name="first_name" value="<?php echo $first_name;?>">
-  <span class="error">* <?php echo $first_name_err;?></span>
-  <br><br>
-
-  last name: <input type="text" name="last_name" value="<?php echo $last_name;?>">
-  <span class="error">* <?php echo $last_name_err;?></span>
-  <br><br>
-
-  E-mail: <input type="text" name="email" value="<?php echo $email;?>">
-  <span class="error">* <?php echo $email_err;?></span>
-  <br><br>
-
-  dob: <input type="date" name="dob" value="<?php echo $dob;?>">
-  <span class="error">* <?php echo $dob_err;?></span>
-  <br><br>
-
-  phone: <input type="text" name="phone" value="<?php echo $phone;?>">
-  <span class="error">* <?php echo $phone_err;?></span>
-  <br><br>
-
-  password: <input type="password" name="password" value="<?php echo $password;?>">
-  <span class="error">* <?php echo $password_err;?></span>
-  <br><br>
-
-  category: <input type="text" name="user_category" value="<?php echo $user_category;?>">
-  <span class="error">* <?php echo $user_category_err;?></span>
-  <br><br>
-
-  <input type="submit" name="submit" value="Submit">  
-</form>
-
-<?php
-echo "<h2>Your Input:</h2>";
-echo $username;
-echo "<br>";
-echo $first_name;
-echo "<br>";
-echo $last_name;
-echo "<br>";
-echo $password;
-echo "<br>";
-echo $email;
-echo "<br>";
-echo $dob;
-echo "<br>";
-echo $phone;
-echo "<br>";
-echo $user_category;
-?>
-
-</body>
-</html>
