@@ -1,6 +1,6 @@
 <!-- 
 
-HTML/CSS by: Maria Karamina 
+HTML/CSS by: Maria Karamina (sdi1600059)
 
 -->
 
