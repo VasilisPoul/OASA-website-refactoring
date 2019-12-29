@@ -65,74 +65,75 @@
     </section>
 
     <section class="ftco-section contact-section">
-      <div class="container">
-        <div class="row d-flex mb-5 contact-info">
-        	
-          <div class="col-md-8 block-9 mb-md-5">
-            <form method="POST" action="<?=$_SERVER['PHP_SELF']?>">
-                <div class="form-group input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="icon-user-circle"></i> </span>
-                     </div>
-                    <input name="username" class="form-control" placeholder="Username" type="text">
-                    <span class="error">* <?php echo $username_err;?></span>
-                </div> <!-- form-group// -->
-                <div class="form-group input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="icon-user"></i> </span>
-                     </div>
-                    <input name="first_name" class="form-control" placeholder="First Name" type="text" >
-                    <span class="error">* <?php echo $first_name_err;?></span>
-                </div> <!-- form-group// -->
-                <div class="form-group input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="icon-user"></i> </span>
-                     </div>
-                    <input name="last_name" class="form-control" placeholder="Last Name" type="text" >
-                    <span class="error">* <?php echo $last_name_err;?></span>
-                </div> <!-- form-group// -->
-                <div class="form-group input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="icon-envelope-o"></i> </span>
-                     </div>
-                    <input name="email" class="form-control" placeholder="Email address" type="email">
-                    <span class="error">* <?php echo $email_err;?></span>
-                </div> <!-- form-group// -->
-               
-                <div class="form-group input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="icon-calendar"></i> </span>
-                     </div>
-                    <input name="dob" class="form-control" placeholder="Date of Birth" type="date" >
-                    <span class="error">* <?php echo $dob_err;?></span>
-                </div> <!-- form-group// -->
+      <div align="center">
+        <div class="container">
+          <div class="row d-flex mb-5 contact-info">
             
-                <div class="form-group input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="icon-phone"></i> </span>
-                    </div>
-                    
-                    <input name="phone" class="form-control" placeholder="Phone number" type="text" >
-                    <span class="error">* <?php echo $phone_err;?></span>
-                </div> <!-- form-group// -->
-            
-                <div class="form-group input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="icon-lock"></i> </span>
-                    </div>
-                    <input name="password" class="form-control" placeholder="Create password" type="password" >
-                    <span class="error">* <?php echo $password_err;?></span>
-                </div> <!-- form-group// -->
-                                                    
-                <div class="form-group">
-                    <input type="submit" value="Submit" class="btn btn-primary py-3 px-5">
-                  </div>   
-                                                                         
-            </form>
-            <p class="text-center">Έχετε ήδη λογαριασμό; <a href="login.html" >Σύνδεση</a></p>
+            <div class="col-md-8 block-9 mb-md-5 container">
+              <form method="POST" action="<?=$_SERVER['PHP_SELF']?>">
+                  <div class="form-group input-group">
+                      <div class="input-group-prepend">
+                          <span class="input-group-text"> <i class="icon-user-circle"></i> </span>
+                      </div>
+                      <input name="username" class="form-control" placeholder="Username" type="text">
+                      <span class="error">* <?php echo $username_err;?></span>
+                  </div> <!-- form-group// -->
+                  <div class="form-group input-group">
+                      <div class="input-group-prepend">
+                          <span class="input-group-text"> <i class="icon-user"></i> </span>
+                      </div>
+                      <input name="first_name" class="form-control" placeholder="First Name" type="text" >
+                      <span class="error">* <?php echo $first_name_err;?></span>
+                  </div> <!-- form-group// -->
+                  <div class="form-group input-group">
+                      <div class="input-group-prepend">
+                          <span class="input-group-text"> <i class="icon-user"></i> </span>
+                      </div>
+                      <input name="last_name" class="form-control" placeholder="Last Name" type="text" >
+                      <span class="error">* <?php echo $last_name_err;?></span>
+                  </div> <!-- form-group// -->
+                  <div class="form-group input-group">
+                      <div class="input-group-prepend">
+                          <span class="input-group-text"> <i class="icon-envelope-o"></i> </span>
+                      </div>
+                      <input name="email" class="form-control" placeholder="Email address" type="email">
+                      <span class="error">* <?php echo $email_err;?></span>
+                  </div> <!-- form-group// -->
+                
+                  <div class="form-group input-group">
+                      <div class="input-group-prepend">
+                          <span class="input-group-text"> <i class="icon-calendar"></i> </span>
+                      </div>
+                      <input name="dob" class="form-control" placeholder="Date of Birth" type="date" >
+                      <span class="error">* <?php echo $dob_err;?></span>
+                  </div> <!-- form-group// -->
+              
+                  <div class="form-group input-group">
+                      <div class="input-group-prepend">
+                          <span class="input-group-text"> <i class="icon-phone"></i> </span>
+                      </div>
+                      
+                      <input name="phone" class="form-control" placeholder="Phone number" type="text" >
+                      <span class="error">* <?php echo $phone_err;?></span>
+                  </div> <!-- form-group// -->
+              
+                  <div class="form-group input-group">
+                      <div class="input-group-prepend">
+                          <span class="input-group-text"> <i class="icon-lock"></i> </span>
+                      </div>
+                      <input name="password" class="form-control" placeholder="Create password" type="password" >
+                      <span class="error">* <?php echo $password_err;?></span>
+                  </div> <!-- form-group// -->
+                                                      
+                  <div class="form-group">
+                      <input type="submit" value="Submit" class="btn btn-primary py-3 px-5">
+                    </div>   
+                                                                          
+              </form>
+              <p class="text-center">Έχετε ήδη λογαριασμό; <a href="login.html" >Σύνδεση</a></p>
+            </div>
           </div>
-        </div>
-       
+        </div> 
       </div>
     </section>
 	
