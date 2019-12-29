@@ -60,9 +60,9 @@ INSERT INTO line_has_station (idline, idstation) VALUES (3, 3);
 INSERT INTO line_has_station (idline, idstation) VALUES (3, 7);
 INSERT INTO line_has_station (idline, idstation) VALUES (7, 8);
 
-INSERT INTO user (username, first_name, last_name, email, dob, phone, password) VALUES ("mark_mavr", "Μάρκος", "Μαυροτσούκαλος", "markmavr@gmail.com", "1994-03-22", "6923456787", "$2y$10$ObeQXpsckUYWLqu3avWc5.BVth75ij3lw7LYPIDRcIDZk9SDRx9du");
-INSERT INTO user (username, first_name, last_name, email, dob, phone, password) VALUES ("zoubi1", "Ζουμπουλία", "Αμπατζίδου", "zoubi@gmail.com", "1950-07-21", "6922356587", "$2y$10$oN8kRqPaDi//iSmr7A4ziuZyGWSPQgJHKNLMB7lIIAh3k1R221H72");
-INSERT INTO user (username, first_name, last_name, email, dob, phone, password) VALUES ("dimosthenis84", "Δημοσθένης", "Πολίτης", "politisd@gmail.com", "1984-04-02", "2102734567", "$2y$10$onkGfiXuTGheXB8WB7CYfentQ09nbszQZKz503xdtqFjrVW/FVg/G");
+INSERT INTO user (username, first_name, last_name, email, dob, phone, password, iduser_category) VALUES ("mark_mavr", "Μάρκος", "Μαυροτσούκαλος", "markmavr@gmail.com", "1994-03-22", "6923456787", "$2y$10$ObeQXpsckUYWLqu3avWc5.BVth75ij3lw7LYPIDRcIDZk9SDRx9du", 2);
+INSERT INTO user (username, first_name, last_name, email, dob, phone, password, iduser_category) VALUES ("zoubi1", "Ζουμπουλία", "Αμπατζίδου", "zoubi@gmail.com", "1950-07-21", "6922356587", "$2y$10$oN8kRqPaDi//iSmr7A4ziuZyGWSPQgJHKNLMB7lIIAh3k1R221H72", 1);
+INSERT INTO user (username, first_name, last_name, email, dob, phone, password, iduser_category) VALUES ("dimosthenis84", "Δημοσθένης", "Πολίτης", "politisd@gmail.com", "1984-04-02", "2102734567", "$2y$10$onkGfiXuTGheXB8WB7CYfentQ09nbszQZKz503xdtqFjrVW/FVg/G", 3);
 
 INSERT INTO ticket_category (name, price, iduser_category) VALUES ("Ενιαίο εισιτήριο για όλα τα μέσα 90 λεπτών (εκτός γραμμών Αεροδρομίου & γραμμής Χ80)", "1.40", 1);
 INSERT INTO ticket_category (name, price, iduser_category) VALUES ("Ημερήσιο εισιτήριο για όλα τα μέσα (εκτός γραμμων Αεροδρομίου)", "4.50", 1);

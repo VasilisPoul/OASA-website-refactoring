@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `oasa`.`user` (
   `dob` DATE NOT NULL,
   `phone` VARCHAR(13) NOT NULL,
   `password` VARCHAR(256) NOT NULL,
-  `iduser_category` INT NULL DEFAULT NULL,
+  `iduser_category` INT NOT NULL,
   PRIMARY KEY (`iduser`),
   UNIQUE INDEX `iduser_UNIQUE` (`iduser` ASC) ,
   INDEX `fk_user_user_category1_idx` (`iduser_category` ASC) ,
