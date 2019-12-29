@@ -1,3 +1,11 @@
+<!-- 
+
+HTML/CSS by: Maria Karamina 
+
+PHP script by: Giorgos Koursiounis
+
+-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
