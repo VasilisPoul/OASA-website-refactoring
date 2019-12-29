@@ -11,6 +11,10 @@
 
 session_start();
 
+if(isset($_SESSION['loggedin'])){
+  echo $_SESSION['first_name'] . " " . $_SESSION['last_name'];
+}
+
 $servername = "localhost";
 $server_username = "user";
 $server_password = "password";
@@ -43,8 +47,11 @@ if(isset($_SESSION['buy_cart'])){
   foreach($cart as $idticket => $quantity){
 
     if(isset($_SESSION['loggedin'])){
+
+      $iduser = $_SESSION['loggedin'];
+
       $sql = "INSERT INTO user (quantity, date, iduser, idticket_category)
-      VALUES (\"$quantity\", \"$date\", \"$_SESSION['loggedin']\", \"$idticket\")";
+      VALUES (\"$quantity\", \"$date\", \"$iduser\", \"$idticket\")";
     }
     else{
       $sql = "INSERT INTO user (quantity, date, idticket_category)
@@ -74,12 +81,11 @@ if(isset($_SESSION['buy_cart'])){
 
   $content .= "</ul>Συνολικό ποσό πληρωμής: <strong>$total_amount</strong>\n Με εκτίμηση,\n Οργανισμός Αστικών Συγκοινωνιών Αθηνών (ΟΑΣΑ)\n www.oasa.gr";
 
-  if(isset($_SESSION['loggedin'])){
-    mail("$_SESSION['email']", "OASA tickets", $content, $mailheader) or die("Error sending email");
+  if(isset($_SESSION['email'])){
+    $email = $_SESSION['email'];
   }
-  else{
-    mail($email, "OASA tickets", $content, $mailheader) or die("Error sending email");
-  }
+
+  mail($email, "OASA tickets", $content, $mailheader) or die("Error sending email");
 
   $message = "All good";
 }
