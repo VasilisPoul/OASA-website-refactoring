@@ -1,16 +1,3 @@
-
-
-<!DOCTYPE HTML>  
-<html>
-<head>
-<style>
-.error {color: #FF0000;}
-</style>
-</head>
-<body>  
-
-
-
 <?php
 
 $servername = "localhost";
@@ -24,84 +11,68 @@ $planned_work = "";
 $good_service = "";
 $out_of_order = "";
 
+//attempt connection to the database
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 if($conn->connect_error){
   die("Connection failed: " . $conn->connect_error);
 }
 
-//find delays
+
+//find lines with delay
 $sql = "SELECT l.name, c.colour FROM line_status ls, line l, colour c WHERE ls.idline_status = l.idline_status AND ls.status = \"Καθυστερήσεις\" AND l.idcolour = c.idcolour";
 $result = $conn->query($sql);
 
 if($result->num_rows > 0){
   while($row = $result->fetch_assoc()){
-      // foreach ($row as $field => $value){ 
-      //   echo "<td>" . $value . "</td>"; 
-    $delays .= "<button type=\"button\" class=\"btn disabled\" style=\"color:White;background-color:" . $row["colour"] . ";\">" . $row["name"] . "</button></br>";
+    $delays .= "<button type=\"button\" class=\"btn disabled\" style=\"margin: 2px;color:White;background-color:" . $row["colour"] . ";\">" . $row["name"] . "</button>";
   }
 }
 
-
-//find strikes
+//find lines with strike
 $sql = "SELECT l.name, c.colour FROM line_status ls, line l, colour c WHERE ls.idline_status = l.idline_status AND ls.status = \"Απεργίες\" AND l.idcolour = c.idcolour";
 $result = $conn->query($sql);
 
 if($result->num_rows > 0){
   while($row = $result->fetch_assoc()){
-      // foreach ($row as $field => $value){ 
-      //   echo "<td>" . $value . "</td>"; 
-    $strikes .= "<button type=\"button\" class=\"btn disabled\" style=\"color:White;background-color:" . $row["colour"] . ";\">" . $row["name"] . "</button></br>";
+
+    $strikes .= "<button type=\"button\" class=\"btn disabled\" style=\"margin: 2px;color:White;background-color:" . $row["colour"] . ";\">" . $row["name"] . "</button>";
   }
 }
 
 
-//find planned work
+//find lines with planned work
 $sql = "SELECT l.name, c.colour FROM line_status ls, line l, colour c WHERE ls.idline_status = l.idline_status AND ls.status = \"Έργα σε εξέλιξη\" AND l.idcolour = c.idcolour";
 $result = $conn->query($sql);
 
 if($result->num_rows > 0){
   while($row = $result->fetch_assoc()){
-      // foreach ($row as $field => $value){ 
-      //   echo "<td>" . $value . "</td>"; 
-    $planned_work .= "<button type=\"button\" class=\"btn disabled\" style=\"color:White;background-color:" . $row["colour"] . ";\">" . $row["name"] . "</button></br>";
+    $planned_work .= "<button type=\"button\" class=\"btn disabled\" style=\"margin: 2px;color:White;background-color:" . $row["colour"] . ";\">" . $row["name"] . "</button>";
   }
 }
 
 
-//find good service
+//find lines with good service
 $sql = "SELECT l.name, c.colour FROM line_status ls, line l, colour c WHERE ls.idline_status = l.idline_status AND ls.status = \"Ομαλή λειτουργία\" AND l.idcolour = c.idcolour";
 $result = $conn->query($sql);
 
 if($result->num_rows > 0){
   while($row = $result->fetch_assoc()){
-      // foreach ($row as $field => $value){ 
-      //   echo "<td>" . $value . "</td>"; 
-    $good_service .= "<button type=\"button\" class=\"btn disabled\" style=\"color:White;background-color:" . $row["colour"] . ";\">" . $row["name"] . "</button></br>";
+    $good_service .= "<button type=\"button\" class=\"btn disabled\" style=\"margin: 2px;color:White;background-color:" . $row["colour"] . ";\">" . $row["name"] . "</button>";
   }
 }
 
-
-
-//find planned work
+//find lines which are out of order
 $sql = "SELECT l.name, c.colour FROM line_status ls, line l, colour c WHERE ls.idline_status = l.idline_status AND ls.status = \"Εκτός λειτουργίας\" AND l.idcolour = c.idcolour";
 $result = $conn->query($sql);
 
 if($result->num_rows > 0){
   while($row = $result->fetch_assoc()){
-      // foreach ($row as $field => $value){ 
-      //   echo "<td>" . $value . "</td>"; 
-    $out_of_order .= "<button type=\"button\" class=\"btn disabled\" style=\"color:White;background-color:" . $row["colour"] . ";\">" . $row["name"] . "</button></br>";
+    $out_of_order .= "<button type=\"button\" class=\"btn disabled\" style=\"margin: 2px;color:White;background-color:" . $row["colour"] . ";\">" . $row["name"] . "</button>";
   }
 }
 
-
-
-
+//close connection to the database
 $conn->close();
+
 ?> 
-
-<span><?php echo $good_service;?></span>
-
-</body>
-</html>
