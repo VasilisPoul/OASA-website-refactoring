@@ -1,5 +1,9 @@
 <?php
 
+//
+// PHP script by: Giorgos Koursiounis (sdi1600077)
+//
+
 $servername = "localhost";
 $username = "user";
 $password = "password";
