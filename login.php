@@ -57,6 +57,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
           $_SESSION['username'] = $username;
           $_SESSION['first_name'] = $row["first_name"];
           $_SESSION['last_name'] = $row["last_name"];
+          $_SESSION['email'] = $row["email"];
           echo "welcome!";
         }
         else{

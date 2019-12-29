@@ -88,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `oasa`.`ticket` (
   `idticket` INT NOT NULL AUTO_INCREMENT,
   `quantity` INT NOT NULL,
   `date` DATE NOT NULL,
-  `iduser` INT NOT NULL,
+  `iduser` INT NULL DEFAULT NULL,
   `idticket_category` INT NOT NULL,
   PRIMARY KEY (`idticket`),
   UNIQUE INDEX `idticket_UNIQUE` (`idticket` ASC) ,
