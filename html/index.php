@@ -10,6 +10,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
     <title>OASA</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="images/favicon.ico" type="image/ico">
     
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet"> 
@@ -93,8 +94,8 @@ HTML/CSS by: Maria Karamina (sdi1600059)
 	  </nav>
     <!-- END nav -->
     
-    <div class="hero-wrap ftco-degree-bg" style="background-image: url('images/bus3.jpg');" data-stellar-background-ratio="0.5">
-      	<div class="overlay"></div> <!-- Remove this to remove dimming -->
+    <div class="hero-wrap ftco-degree-bg" style="background-image: url('images/bus4.jpg');" data-stellar-background-ratio="0.5">
+     	<div class="overlay"></div> <!-- Remove this to remove dimming -->
   		<div class="container">
 	    	<div class="row no-gutters slider-text justify-content-start align-items-center justify-content-center">
 	          	<div class="col-md-4 d-flex align-items-center">
