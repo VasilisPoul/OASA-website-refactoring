@@ -65,7 +65,7 @@ DROP TABLE IF EXISTS `oasa`.`ticket_category` ;
 
 CREATE TABLE IF NOT EXISTS `oasa`.`ticket_category` (
   `idticket_category` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NOT NULL,
+  `name` VARCHAR(100) NOT NULL,
   `price` DECIMAL(4,2) NOT NULL,
   `iduser_category` INT NOT NULL,
   PRIMARY KEY (`idticket_category`),
