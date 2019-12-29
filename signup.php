@@ -17,10 +17,10 @@ if(isset($_SESSION['loggedin'])){
 }
 
 $username = $first_name = $last_name = $password = "";
-$email = $dob = $phone = $occupation_id = "";
+$email = $dob = $phone = $user_category = "";
 
 $username_err = $first_name_err = $last_name_err = $password_err = "";
-$email_err = $dob_err = $phone_err = $occupation_id_err = "";
+$email_err = $dob_err = $phone_err = $user_category_err = "";
 
 $servername = "localhost";
 $server_username = "user";
@@ -102,14 +102,27 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
   }
 
-  $occupation_id = "ggggg";
+  if(empty($_POST["user_category"])){
+    $user_category_err = "select user category";
+  } 
+  else{
+
+    $user_category = $_POST["user_category"];
+
+    $sql = "SELECT * FROM user_category WHERE iduser_category = \"$user_category\"";
+    $result = $conn->query($sql);
+
+    if($result->num_rows <=0){
+      $user_category_err = "category does not exist";
+    }
+  }
 
   if(empty($username_err) && empty($first_name_err) && empty($last_name_err) && empty($email_err) && 
-     empty($dob_err) && empty($phone_err) && empty($password_err) && empty($occupation_id_err))
+     empty($dob_err) && empty($phone_err) && empty($password_err) && empty($user_category_err))
   {
     // echo "All good!";
-    $sql = "INSERT INTO user (username, first_name, last_name, email, dob, phone, password)
-    VALUES (\"$username\", \"$first_name\", \"$last_name\", \"$email\", \"$dob\", \"$phone\", \"$password\")";
+    $sql = "INSERT INTO user (username, first_name, last_name, email, dob, phone, password, iduser_category)
+    VALUES (\"$username\", \"$first_name\", \"$last_name\", \"$email\", \"$dob\", \"$phone\", \"$password\", \"$user_category\")";
 
     if($conn->query($sql) === TRUE){
       echo "Signup successful";
@@ -160,6 +173,10 @@ $conn->close();
   <span class="error">* <?php echo $password_err;?></span>
   <br><br>
 
+  category: <input type="text" name="user_category" value="<?php echo $user_category;?>">
+  <span class="error">* <?php echo $user_category_err;?></span>
+  <br><br>
+
   <input type="submit" name="submit" value="Submit">  
 </form>
 
@@ -179,7 +196,7 @@ echo $dob;
 echo "<br>";
 echo $phone;
 echo "<br>";
-echo $occupation_id;
+echo $user_category;
 ?>
 
 </body>
