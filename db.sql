@@ -1,6 +1,6 @@
 use oasa;
 
-INSERT INTO user_category (name) VALUES ("ΕΝΙΑΙΟ ΕΙΣΙΤΗΡΙΟ");
+INSERT INTO user_category (name) VALUES ("KANONIKO ΕΙΣΙΤΗΡΙΟ");
 INSERT INTO user_category (name) VALUES ("ΜΕΙΩΜΕΝΟ ΕΙΣΙΤΗΡΙΟ");
 INSERT INTO user_category (name) VALUES ("ΔΩΡΕΑΝ ΕΙΣΙΤΗΡΙΟ");
 
@@ -80,7 +80,7 @@ INSERT INTO ticket_category (name, price, iduser_category) VALUES ("Μειωμέ
 INSERT INTO ticket_category (name, price, iduser_category) VALUES ("Μειωμένο εισιτήριο ΜΕΤΡΟ γραμμών Αεροδρομίου", "5.00", 2);
 INSERT INTO ticket_category (name, price, iduser_category) VALUES ("Μειωμένο εισιτήριο Αεροδρομίου από & προς τους σταθμούς Παλλήνη - Κάντζα - Κορωπί ΜΕΤΡΟ", "3.00", 2);
 
-
+INSERT INTO ticket_category (name, price, iduser_category) VALUES ("Δωρεάν εισιτήριο για όλα τα μέσα 90 λεπτών (εκτός γραμμών Αεροδρομίου & γραμμής Χ80)", "0.0", 1);
 
 
 -- markos1
