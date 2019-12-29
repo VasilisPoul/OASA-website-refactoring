@@ -129,48 +129,41 @@
      <section class="ftco-section ftco-no-pt bg-light">
     	<div class="container">
     		<h1 class="text-right">Κατάσταση Γραμμών</h1>
-    		 <!-- Tab links -->
-    		<div class="tab">
-    			<button class="tablinks" onclick="openLineStatus(event, 'Tram')">Τραμ</button>
-    			<button class="tablinks" onclick="openLineStatus(event, 'Busses')">Λεωφορεία</button>
-    		  	<button class="tablinks" onclick="openLineStatus(event, 'Metro')" id="sytem-status-default-tab">Μετρό</button>
-    		</div>
 
-    		<!-- Tab content -->
-    		<div id="Metro" class="tabcontent">
+    		<div class="light-box">
     			<div class="row justify-content-center">
-    				<div class="col-md-6 text-center" style="border-right: 2px dotted grey;">
-    					Good service
-    				</div>
     				<div class="col-md-6 text-center">
-    					Bad service
+    					<div class="row btm-border">
+    						<div class="col-md-12">
+    							<h5>Εκτός Λειτουργίας</h5>
+    							Out of order
+    						</div>
+    					</div>
+    					<div class="row btm-border">
+    						<div class="col-md-12">
+    							<h5>Σε Απεργία</h5>
+    							Strikes
+    						</div>
+    					</div>
+    					<div class="row btm-border">
+    						<div class="col-md-12">
+    							<h5>Καθυστερήσεις</h5>
+    							Delays
+    						</div>
+    					</div>
+    					<div class="row">
+    						<div class="col-md-12">
+    							<h5>Προγραμματισμένες Εργασίες</h5>
+    							Planned Work
+    						</div>
+    					</div>
+    				</div>
+    				<div class="col-md-6 text-center good-service">
+    					<h5>Ομαλή Λειτουργία</h5>
+    					Good service
     				</div>
     			</div>
     		</div>
-
-    		<div id="Busses" class="tabcontent">
-    		  	<div class="row justify-content-center">
-    				<div class="col-md-6 text-center" style="border-right: 2px dotted grey;">
-    					Good service
-    				</div>
-    				<div class="col-md-6 text-center">
-    					Bad service
-    				</div>
-    			</div>
-    		</div>
-
-    		<div id="Tram" class="tabcontent">
-    		  	<div class="row justify-content-center">
-    				<div class="col-md-6 text-center" style="border-right: 2px dotted grey;">
-    					Good service
-    				</div>
-    				<div class="col-md-6 text-center">
-    					Bad service
-    				</div>
-    			</div>
-    		</div> 
-  		</div>
-    </section>
 
 
     <section class="ftco-section ftco-no-pt bg-light">

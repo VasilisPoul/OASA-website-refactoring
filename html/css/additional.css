@@ -6,6 +6,23 @@
 	font-family: 'Comfortaa', cursive;
 }
 
+.light-box {
+	background-color: #f1f1f1;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin: 5px;
+	overflow: hidden;
+}
+
+.btm-border {
+	border-bottom: 2px dotted #ccc;
+}
+
+.good-service {
+	border-left: 2px dotted #ccc;
+	background-color: #ddeaf0;
+}
+
  /* Style the tab */
 .tab {
   overflow: hidden;
