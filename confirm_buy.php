@@ -18,10 +18,11 @@ $dbname = "oasa";
 
 $date = date("Y-m-d");
 $message = $email = "";
+$total_amount = 0.0;
 
 
 if(isset($_SESSION['loggedin'])){
-  $content = "Αγαπητέ/ή ". $_SESSION['first_name']. " " . $_SESSION['last_name'] . ",\n   Πραγματοποιήθηκε την $date online αγορά των παρακάτω εισιτηρίων:\n";
+  $content = "Αγαπητέ/ή ". $_SESSION['first_name']. " " . $_SESSION['last_name'] . ",\n   Πραγματοποιήθηκε την $date online αγορά των παρακάτω εισιτηρίων:\n<ul>";
 }
 else{
   $content = "Αγαπητέ/ή χρήστη,\n   Πραγματοποιήθηκε την $date online αγορά των παρακάτω εισιτηρίων:\n";
@@ -57,7 +58,8 @@ if(isset($_SESSION['buy_cart'])){
 
       if($result->num_rows > 0){
         while($row = $result->fetch_assoc()){
-          $content .= "Κωδικός εισιτηρίου:" . $row["$idticket"] . " Τύπος: " . $row["$name"] . " Τιμή: " . $row["$price"] . " \n";
+          $content .= "<li>Κωδικός εισιτηρίου:" . $row["$idticket"] . " Τύπος: " . $row["$name"] . " Τιμή: " . $row["$price"] . " </li>\n";
+          $total_amount += $row["$price"];
         }
       }
       else{
@@ -70,7 +72,7 @@ if(isset($_SESSION['buy_cart'])){
     } 
   }
 
-  $content .= "Με εκτίμηση,\n Οργανισμός Αστικών Συγκοινωνιών Αθηνών (ΟΑΣΑ)\n www.oasa.gr";
+  $content .= "</ul>Συνολικό ποσό πληρωμής: <strong>$total_amount</strong>\n Με εκτίμηση,\n Οργανισμός Αστικών Συγκοινωνιών Αθηνών (ΟΑΣΑ)\n www.oasa.gr";
 
   if(isset($_SESSION['loggedin'])){
     mail("$_SESSION['email']", "OASA tickets", $content, $mailheader) or die("Error sending email");
