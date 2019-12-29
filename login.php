@@ -53,7 +53,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       while($row = $result->fetch_assoc()){
         if(password_verify($_POST["password"], $row["password"])){
 
-          $_SESSION['loggedin'] = true;
+          $_SESSION['loggedin'] = $row["iduser"];
           $_SESSION['username'] = $username;
           $_SESSION['first_name'] = $row["first_name"];
           $_SESSION['last_name'] = $row["last_name"];
