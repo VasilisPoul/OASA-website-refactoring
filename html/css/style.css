@@ -8186,7 +8186,7 @@ h1, h2, h3, h4, h5,
   @media (max-width: 991.98px) {
     .ftco-navbar-light .navbar-nav {
       padding-bottom: 10px; } }
-  .ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
+  .ftco-navbar-light .navbar-nav > .nav-item > .nav-link .navbar-nav > .nav-item > .dropdown > .nav-link {
     font-size: 15px;
     padding-top: .9rem;
     padding-bottom: .9rem;
@@ -8195,7 +8195,7 @@ h1, h2, h3, h4, h5,
     color: #fff;
     font-weight: 400;
     opacity: 1 !important; }
-    .ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover {
+    .ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover .navbar-nav > .nav-item > .dropdown > .nav-link:hover {
       color: #01d28e; }
     @media (max-width: 991.98px) {
       .ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
