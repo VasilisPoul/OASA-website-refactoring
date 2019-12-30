@@ -104,7 +104,7 @@
                       <input name="username" class="form-control" placeholder="Όνομα Χρήστη" type="text" value="<?php echo $username;?>"> 
                       
                   </div> <!-- form-group// -->
-                  <span class="error">* <?php echo $username_err;?></span>
+                  <span class="error"> <?php echo $username_err;?></span>
  
                   <div class="form-group input-group">
                       <div class="input-group-prepend">
@@ -113,7 +113,7 @@
                       <input name="password" class="form-control" placeholder="Password" type="password">  
                       
                   </div> <!-- form-group// -->       
-                  <span class="error">* <?php echo $password_err;?></span>                   
+                  <span class="error"> <?php echo $password_err;?></span>                   
                   <div class="form-group">
                       <input type="submit" value="Υποβολή" class="btn btn-primary py-3 px-5">
                     </div>   
