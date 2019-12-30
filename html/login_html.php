@@ -29,6 +29,8 @@
     <link rel="stylesheet" href="css/additional.css">
   </head>
   <body>
+	  
+    <span> <?php include 'login.php';?> </span>
     
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
       <div class="container">
@@ -90,9 +92,7 @@
     <section class="ftco-section contact-section" style="padding-top: 12rem;">
       <div align="center">
         <div class="container">
-          <div class="row d-flex mb-5 contact-info">
-
-            <span> <?php include 'login.php';?> </span>
+          <div class="row d-flex mb-5 contact-info">        
             
             <div class="col-sm-4 block-1 mb-md-3 container">
               <form method="POST" action="<?=$_SERVER['PHP_SELF']?>">
