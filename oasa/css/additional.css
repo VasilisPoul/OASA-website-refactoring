@@ -1,0 +1,36 @@
+.dropdown-toggle:hover {
+	cursor: pointer;
+}
+
+.front-page-text {
+	font-family: 'Comfortaa', cursive;
+}
+
+.light-box {
+	background-color: #f1f1f1;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin: 5px;
+	overflow: hidden;
+}
+
+.btm-border {
+	border-bottom: 2px dotted #ccc;
+}
+
+.good-service {
+	border-left: 2px dotted #ccc;
+	background-color: #ddeaf0;
+}
+
+.page-header {
+	padding-top: 2%;
+}
+
+.crumbs-top {
+	margin-top: 12%;
+}
+
+.navbar-color {
+	background-color: #fff !important;
+}
