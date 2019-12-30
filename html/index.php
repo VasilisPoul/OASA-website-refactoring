@@ -37,7 +37,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
   </head>
   <body>
 
-	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	  <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
 	      <a href="index.html"><img src="images/oasa_logo_transparent.png" alt="logo" width="25%"></a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -94,8 +94,8 @@ HTML/CSS by: Maria Karamina (sdi1600059)
 	  </nav>
     <!-- END nav -->
     
-    <div class="hero-wrap ftco-degree-bg" style="background-image: url('images/bus4.jpg');" data-stellar-background-ratio="0.5">
-     	<div class="overlay"></div> <!-- Remove this to remove dimming -->
+    <div class="hero-wrap ftco-degree-bg" style="background-image: url('images/bus.jpg');" data-stellar-background-ratio="0.5">
+<!--     	<div class="overlay"></div> <!-- Remove this to remove dimming -->
   		<div class="container">
 	    	<div class="row no-gutters slider-text justify-content-start align-items-center justify-content-center">
 	          	<div class="col-md-4 d-flex align-items-center">
@@ -144,31 +144,31 @@ HTML/CSS by: Maria Karamina (sdi1600059)
     				<div class="col-md-6 text-center">
     					<div class="row btm-border">
     						<div class="col-md-12">
-    							<h5>Εκτός Λειτουργίας</h5>
+    							<label>Εκτός Λειτουργίας</label>
                   <span><?php echo $out_of_order;?></span>
     						</div>
     					</div>
     					<div class="row btm-border">
     						<div class="col-md-12">
-    							<h5>Σε Απεργία</h5>   		
+    							<label>Σε Απεργία</label>   		
                   <span><?php echo $strikes;?></span>
     						</div>
     					</div>
     					<div class="row btm-border">
     						<div class="col-md-12">
-    							<h5>Καθυστερήσεις</h5>
+    							<label>Καθυστερήσεις</label>
                   <span><?php echo $delays;?></span>
     						</div>
     					</div>
     					<div class="row">
     						<div class="col-md-12">
-    							<h5>Προγραμματισμένες Εργασίες</h5>
+    							<label>Προγραμματισμένες Εργασίες</label>
                   <span><?php echo $planned_work;?></span>
     						</div>
     					</div>
     				</div>
     				<div class="col-md-6 text-center good-service">
-    					<h5>Ομαλή Λειτουργία</h5>
+    					<label>Ομαλή Λειτουργία</label>
               <span><?php echo $good_service;?></span>
     				</div>
     			</div>
