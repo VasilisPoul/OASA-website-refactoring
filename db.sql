@@ -41,14 +41,14 @@ INSERT INTO line (name, idtransport, idline_status, idcolour) VALUES ("6", 5, 3,
 INSERT INTO line (name, idtransport, idline_status, idcolour) VALUES ("9", 5, 3, 6);
 
 
-INSERT INTO station (name, latitude, longitude) VALUES ("ΣΥΝΤΑΓΜΑ", '37.975443', '23.735484');
-INSERT INTO station (name, latitude, longitude) VALUES ("ΕΥΑΓΓΕΛΙΣΜΟΣ", '37.975937', '23.746923');
-INSERT INTO station (name, latitude, longitude) VALUES ("ΑΕΡΟΔΡΟΜΙΟ", '37.936067', '23.947252');
-INSERT INTO station (name, latitude, longitude) VALUES ("ΟΜΟΝΟΙΑ", '37.984037', '23.728041');
-INSERT INTO station (name, latitude, longitude) VALUES ("ΠΕΙΡΑΙΑΣ", '37.948168', '23.643326');
-INSERT INTO station (name, latitude, longitude) VALUES ("ΜΑΡΟΥΣΙ", '38.056155', '23.804947');
-INSERT INTO station (name, latitude, longitude) VALUES ("ΜΟΝΑΣΤΗΡΑΚΙ", '37.976431', '23.725905');
-INSERT INTO station (name, latitude, longitude) VALUES ("ΝΟΣΟΚΟΜΕΙΟ ΕΥΑΓΓΕΛΙΣΜΟΣ", '37.976445', '23.748182');
+INSERT INTO station (name, latitude, longitude, disability_access) VALUES ("ΣΥΝΤΑΓΜΑ", '37.975443', '23.735484', 1);
+INSERT INTO station (name, latitude, longitude, disability_access) VALUES ("ΕΥΑΓΓΕΛΙΣΜΟΣ", '37.975937', '23.746923', 1);
+INSERT INTO station (name, latitude, longitude, disability_access) VALUES ("ΑΕΡΟΔΡΟΜΙΟ", '37.936067', '23.947252', 1);
+INSERT INTO station (name, latitude, longitude, disability_access) VALUES ("ΟΜΟΝΟΙΑ", '37.984037', '23.728041', 1);
+INSERT INTO station (name, latitude, longitude, disability_access) VALUES ("ΠΕΙΡΑΙΑΣ", '37.948168', '23.643326', 1);
+INSERT INTO station (name, latitude, longitude, disability_access) VALUES ("ΜΑΡΟΥΣΙ", '38.056155', '23.804947', 1);
+INSERT INTO station (name, latitude, longitude, disability_access) VALUES ("ΜΟΝΑΣΤΗΡΑΚΙ", '37.976431', '23.725905', 1);
+INSERT INTO station (name, latitude, longitude, disability_access) VALUES ("ΝΟΣΟΚΟΜΕΙΟ ΕΥΑΓΓΕΛΙΣΜΟΣ", '37.976445', '23.748182', 1);
 
 INSERT INTO line_has_station (idline, idstation) VALUES (1, 4);
 INSERT INTO line_has_station (idline, idstation) VALUES (1, 5);
