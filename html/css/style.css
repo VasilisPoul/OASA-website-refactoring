@@ -433,6 +433,11 @@ kbd {
     font-size: 100%;
     font-weight: 700; }
 
+.groove {border-style: groove;
+          border-width: thin;
+          padding: 10px;
+         }
+
 pre {
   display: block;
   font-size: 87.5%;
