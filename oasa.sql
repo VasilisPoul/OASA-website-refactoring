@@ -190,6 +190,7 @@ CREATE TABLE IF NOT EXISTS `oasa`.`station` (
   `name` VARCHAR(45) NOT NULL,
   `latitude` DECIMAL(9,6) NOT NULL,
   `longitude` DECIMAL(9,6) NOT NULL,
+  `disability_access` BIT(1) NULL,
   PRIMARY KEY (`idstation`),
   UNIQUE INDEX `idstation_UNIQUE` (`idstation` ASC) )
 ENGINE = InnoDB;
