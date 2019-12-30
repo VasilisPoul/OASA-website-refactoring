@@ -144,31 +144,31 @@ HTML/CSS by: Maria Karamina (sdi1600059)
     				<div class="col-md-6 text-center">
     					<div class="row btm-border">
     						<div class="col-md-12">
-    							<label>Εκτός Λειτουργίας</label>
+    							<label>Εκτός Λειτουργίας</label><br>
                   <span><?php echo $out_of_order;?></span>
     						</div>
     					</div>
     					<div class="row btm-border">
     						<div class="col-md-12">
-    							<label>Σε Απεργία</label>   		
+    							<label>Σε Απεργία</label><br>   		
                   <span><?php echo $strikes;?></span>
     						</div>
     					</div>
     					<div class="row btm-border">
     						<div class="col-md-12">
-    							<label>Καθυστερήσεις</label>
+    							<label>Καθυστερήσεις</label><br>
                   <span><?php echo $delays;?></span>
     						</div>
     					</div>
     					<div class="row">
     						<div class="col-md-12">
-    							<label>Προγραμματισμένες Εργασίες</label>
+    							<label>Προγραμματισμένες Εργασίες</label><br>
                   <span><?php echo $planned_work;?></span>
     						</div>
     					</div>
     				</div>
     				<div class="col-md-6 text-center good-service">
-    					<label>Ομαλή Λειτουργία</label>
+    					<label>Ομαλή Λειτουργία</label><br>
               <span><?php echo $good_service;?></span>
     				</div>
     			</div>
