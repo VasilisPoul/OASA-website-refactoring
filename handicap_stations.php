@@ -28,7 +28,7 @@ if($conn->connect_error){
 $sql = "SELECT * FROM station s WHERE  disability_access = 1";
 $result = $conn->query($sql);
 
-if($result->num_rows > 0){
+if(!empty($result) && $result->num_rows > 0){
   while($row = $result->fetch_assoc()){
     $stations .= "<tr><td>" . $row["id"] . "</td><td>" . $row["name"] . "</td></tr>";
   }
