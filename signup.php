@@ -42,7 +42,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   $sql = "SELECT * FROM user WHERE username = \"$username\"";
   $result = $conn->query($sql);
 
-  if($result->num_rows > 0){
+  if(!empty($result) && $result->num_rows > 0){
     $username_err = "Το όνομα χρήστη υπάρχει ήδη";
   }
 
@@ -115,7 +115,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $sql = "SELECT * FROM user_category WHERE iduser_category = \"$user_category\"";
     $result = $conn->query($sql);
 
-    if($result->num_rows <=0){
+    if(empty($result) || $result->num_rows <=0){
       $user_category_err = "Η κατηγορία χρήστη δεν υπάρχει";
     }
   }
