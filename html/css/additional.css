@@ -22,3 +22,11 @@
 	border-left: 2px dotted #ccc;
 	background-color: #ddeaf0;
 }
+
+.page-header {
+	margin-top: 12%;
+}
+
+.navbar-color {
+	background-color: #fff !important;
+}

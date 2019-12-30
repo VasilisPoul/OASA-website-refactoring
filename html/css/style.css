@@ -8262,7 +8262,7 @@ h1, h2, h3, h4, h5,
       color: #1089ff; } }
   .ftco-navbar-light .navbar-toggler {
     border: none;
-    color: rgba(255, 255, 255, 0.5) !important;
+    color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
     padding-right: 0;
     text-transform: uppercase;

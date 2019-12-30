@@ -37,7 +37,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
   </head>
   <body>
 
-	  <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
 	      <a href="index.php"><img src="images/oasa_logo_transparent.png" alt="logo" width="25%"></a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,7 +46,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="index.html" class="nav-link">Αρχική</a></li>
+	          <li class="nav-item active"><a href="index.php" class="nav-link">Αρχική</a></li>
 	          <li class="nav-item">
 	          	<div class="dropdown">
 	          		<a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Το Δίκτυο</a>
@@ -95,7 +95,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
     <!-- END nav -->
     
     <div class="hero-wrap ftco-degree-bg" style="background-image: url('images/bus.jpg');" data-stellar-background-ratio="0.5">
-<!--     	<div class="overlay"></div> <!-- Remove this to remove dimming -->
+     	<div class="overlay"></div> <!-- Remove this to remove dimming -->
   		<div class="container">
 	    	<div class="row no-gutters slider-text justify-content-start align-items-center justify-content-center">
 	          	<div class="col-md-4 d-flex align-items-center">
@@ -173,7 +173,8 @@ HTML/CSS by: Maria Karamina (sdi1600059)
     				</div>
     			</div>
     		</div>
-
+      </div>
+    </section>
 
     <footer class="ftco-footer ftco-bg-dark ftco-section">
       <div class="container">
