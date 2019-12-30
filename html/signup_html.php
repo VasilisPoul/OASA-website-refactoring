@@ -78,62 +78,65 @@
                           <span class="input-group-text"> <i class="icon-user-circle"></i> </span>
                       </div>
                       <input name="username" class="form-control" placeholder="Όνομα Χρήστη" type="text">
-                      <span class="error"> <?php echo $username_err;?></span>
+                      
                       
                   </div> <!-- form-group// -->
+                  <span class="error"> <?php echo $username_err;?></span>
                   <div class="form-group input-group">
                       <div class="input-group-prepend">
                           <span class="input-group-text"> <i class="icon-user"></i> </span>
                       </div>
                       <input name="first_name" class="form-control" placeholder="Όνομα" type="text" >
-                      <span class="error"> <?php echo $first_name_err;?></span>
                       
                   </div> <!-- form-group// -->
+                  <span class="error"> <?php echo $first_name_err;?></span>
+                  
                   <div class="form-group input-group">
                       <div class="input-group-prepend">
                           <span class="input-group-text"> <i class="icon-user"></i> </span>
                       </div>
                       <input name="last_name" class="form-control" placeholder="Επίθετο" type="text" >
-                      <span class="error"> <?php echo $last_name_err;?></span>
                       
                   </div> <!-- form-group// -->
+                  <span class="error"> <?php echo $last_name_err;?></span>
+                      
                   <div class="form-group input-group">
                       <div class="input-group-prepend">
                           <span class="input-group-text"> <i class="icon-envelope-o"></i> </span>
                       </div>
                       <input name="email" class="form-control" placeholder="Email" type="email">
-                      <span class="error"> <?php echo $email_err;?></span>
                       
                   </div> <!-- form-group// -->
-                
+                  <span class="error"> <?php echo $email_err;?></span>
+                      
                   <div class="form-group input-group">
                       <div class="input-group-prepend">
                           <span class="input-group-text"> <i class="icon-calendar"></i> </span>
                       </div>
                       <input name="dob" class="form-control" placeholder="Ημερομηνία Γέννησης" type="date" >
-                      <span class="error"> <?php echo $dob_err;?></span>
+                     
                       
                   </div> <!-- form-group// -->
-              
+                  <span class="error"> <?php echo $dob_err;?></span>
                   <div class="form-group input-group">
                       <div class="input-group-prepend">
                           <span class="input-group-text"> <i class="icon-phone"></i> </span>
                       </div>
                       
                       <input name="phone" class="form-control" placeholder="Αριθμός Τηλεφώνου" type="text" >
-                      <span class="error"> <?php echo $phone_err;?></span>
+                     
                       
                   </div> <!-- form-group// -->
-              
+                  <span class="error"> <?php echo $phone_err;?></span>
                   <div class="form-group input-group">
                       <div class="input-group-prepend">
                           <span class="input-group-text"> <i class="icon-lock"></i> </span>
                       </div>
                       <input name="password" class="form-control" placeholder="Ρassword" type="password" >
-                      <span class="error"> <?php echo $password_err;?></span>
+                      
                       
                   </div> <!-- form-group// -->
-
+                  <span class="error"> <?php echo $password_err;?></span>
                   <div class = "groove">
                     <p>Ανήκω στην κατηγορία:</p>
                     
