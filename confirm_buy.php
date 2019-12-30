@@ -63,7 +63,7 @@ if(isset($_SESSION['buy_cart'])){
       $sql = "SELECT t.idticket, tc.name, tc.price FROM ticket t, ticket_category tc WHERE t.idticket = \"$idticket\" AND tc.idticket_category = t.idticket_category";
       $result = $conn->query($sql);
 
-      if($result->num_rows > 0){
+      if(!empty($result) && $result->num_rows > 0){
         while($row = $result->fetch_assoc()){
           $content .= "<li>Κωδικός εισιτηρίου:" . $row["$idticket"] . " Τύπος: " . $row["$name"] . " Τιμή: " . $row["$price"] . " </li>\n";
           $total_amount += $row["$price"];
