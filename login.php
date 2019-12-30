@@ -39,7 +39,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   $sql = "SELECT * FROM user WHERE user.username = \"$username\"";
   $result = $conn->query($sql);
 
-  if($result->num_rows > 0){
+  if(!empty($result) && $result->num_rows > 0){
 
     //check if password is given
     if(empty($_POST["password"])){
