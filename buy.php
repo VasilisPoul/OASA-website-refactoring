@@ -40,7 +40,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   $sql = "SELECT uc.iduser_category, uc.name FROM ticket_category tc, user_category uc WHERE tc.idticket_category = \"$idticket\" AND tc.iduser_category = uc.iduser_category";
   $result = $conn->query($sql);
 
-  if($result->num_rows > 0){
+  if(!empty($result) && $result->num_rows > 0){
 
     while($row = $result->fetch_assoc()){
       echo $row["name"];
@@ -49,7 +49,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $sql1 = "SELECT * FROM user WHERE iduser = \"" . $_SESSION['loggedin'] . "\"";
         $result1 = $conn->query($sql1);
 
-        if($result1->num_rows > 0){
+        if(!empty($result1) && $result1->num_rows > 0){
           while($row1 = $result1->fetch_assoc()){
             if($row1["iduser_category"] == $row["iduser_category"]){
 
