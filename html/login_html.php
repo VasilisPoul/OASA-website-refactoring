@@ -94,25 +94,26 @@
 
             <span> <?php include 'login.php';?> </span>
             
-            <div class="col-md-8 block-9 mb-md-5 container">
+            <div class="col-sm-4 block-1 mb-md-3 container">
               <form method="POST" action="<?=$_SERVER['PHP_SELF']?>">
+                  
                   <div class="form-group input-group">
                       <div class="input-group-prepend">
                           <span class="input-group-text"> <i class="icon-user-circle"></i> </span>
                       </div>
                       <input name="username" class="form-control" placeholder="Όνομα Χρήστη" type="text" value="<?php echo $username;?>"> 
-                      <span class="error">* <?php echo $username_err;?></span>
-                    
+                      
                   </div> <!-- form-group// -->
-                                  
+                  <span class="error">* <?php echo $username_err;?></span>
+ 
                   <div class="form-group input-group">
                       <div class="input-group-prepend">
                           <span class="input-group-text"> <i class="icon-lock"></i> </span>
                       </div>
                       <input name="password" class="form-control" placeholder="Password" type="password">  
-                      <span class="error">* <?php echo $password_err;?></span> 
+                      
                   </div> <!-- form-group// -->       
-                                         
+                  <span class="error">* <?php echo $password_err;?></span>                   
                   <div class="form-group">
                       <input type="submit" value="Υποβολή" class="btn btn-primary py-3 px-5">
                     </div>   
