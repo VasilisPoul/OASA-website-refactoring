@@ -35,7 +35,7 @@ if($conn->connect_error){
 $sql = "SELECT u.phone, u.dob, ic.name FROM user u, iduser_category ic WHERE u.iduser = " . $_SESSION['loggedin'] . " AND u.iduser_category = ic.iduser_category";
 $result = $conn->query($sql);
 
-if($result->num_rows > 0){
+if(!empty($result) && $result->num_rows > 0){
   while($row = $result->fetch_assoc()){
     $dob = $row["$dob"];
     $phone = $row["$phone"];
