@@ -109,7 +109,7 @@
                       <div class="input-group-prepend">
                           <span class="input-group-text"> <i class="icon-lock"></i> </span>
                       </div>
-                      <input name="password" class="form-control" placeholder="Password" type="password" value="<?php echo $password;?>">  
+                      <input name="password" class="form-control" placeholder="Password" type="password">  
                       <span class="error">* <?php echo $password_err;?></span> 
                   </div> <!-- form-group// -->       
                                          
