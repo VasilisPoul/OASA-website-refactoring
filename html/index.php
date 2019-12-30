@@ -176,6 +176,32 @@ HTML/CSS by: Maria Karamina (sdi1600059)
       </div>
     </section>
 
+    <section class="ftco-section ftco-no-pt bg-light">
+      <div class="container">
+        <h1>Εισιτήρια ATH.ENA card και ATH.ENA ticket</h1>
+        <div class="row">
+          <div class="col-md-8">
+            <p>
+              Γυρίστε την Αθήνα με όλα τα μέσα του ΟΑΣΑ με το ηλεκτρονικό εισιτήριο ATH.ENA ticket.
+              Φορτώστε πολλές διαδρομές στην προσωποποιημένη ή ανώνυμη κάρτα σας ATH.ENA card ή το πολλαπλό εισιτήριο και προστατέψτε το περιβάλλον.
+              <br />
+              <a href="tickets/buy_online.html">Αγοράστε ή επαναφορτίστε την κάρτα ή το εισιτήριό σας</a>
+              <br />
+              <a href="tickets/info.html">Μάθετε περισσότερα</a>
+            </p>
+          </div>
+          <div class="col-md-2">
+            <img src="images/athena_card.png" alt="athena card">
+          </div>
+          <div class="col-md-2">
+            <img src="images/athena_ticket.png" alt="athena ticket">
+          </div>
+            
+            
+        </div>
+      </div>
+    </section>
+
     <footer class="ftco-footer ftco-bg-dark ftco-section">
       <div class="container">
         <div class="row mb-5">
