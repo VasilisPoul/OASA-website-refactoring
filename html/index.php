@@ -133,7 +133,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
   		</div>
 	</div>
 
-     <section class="ftco-section ftco-no-pt bg-light">
+     <section class="ftco-section ftco-no-pt bg-light front-page-text">
     	<div class="container">
     		<h1 class="text-right">Κατάσταση Γραμμών</h1>
 
@@ -176,7 +176,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
       </div>
     </section>
 
-    <section class="ftco-section ftco-no-pt bg-light">
+    <section class="ftco-section ftco-no-pt bg-light front-page-text">
       <div class="container">
         <h1>Εισιτήρια ATH.ENA card και ATH.ENA ticket</h1>
         <div class="row">
