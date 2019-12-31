@@ -158,7 +158,7 @@
                 </div>
                 <br>
                 
-                <div class="text-center"> </div> <a href="editProfile.php" >Επεξεργασία Προφίλ</a>
+                <div class="text-center"> </div> <a href="edit_profile.php" >Επεξεργασία Προφίλ</a>
                 </div>
               </div>
              
