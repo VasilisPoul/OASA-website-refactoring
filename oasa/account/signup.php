@@ -1,10 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  <?php
-    if(!isset($_SESSION)) {
-         session_start();
-    }
-  ?>
   <head>
     <title>ΟΑΣΑ - Εγγραφή</title>
     <meta charset="utf-8">
