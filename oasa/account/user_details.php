@@ -1,17 +1,13 @@
-
-<!DOCTYPE HTML>  
-<html>
-<head>
-<style>
-.error {color: #FF0000;}
-</style>
-</head>
-<body>  
-
 <?php
+
+//
+// PHP script by: Giorgos Koursiounis (sdi1600077)
+//
+
 session_start();
  
 if(!isset($_SESSION['loggedin'])){
+  header("Location: ../index.php");
   exit;
 }
 
@@ -32,6 +28,8 @@ if($conn->connect_error){
   die("Connection failed: " . $conn->connect_error);
 }
 
+
+//obtain user details
 $sql = "SELECT u.phone, u.dob, ic.name FROM user u, iduser_category ic WHERE u.iduser = " . $_SESSION['loggedin'] . " AND u.iduser_category = ic.iduser_category";
 $result = $conn->query($sql);
 
@@ -42,6 +40,7 @@ if(!empty($result) && $result->num_rows > 0){
     $user_category = $row["$name"];
   }
 }
+
 $conn->close();
 
 ?>
