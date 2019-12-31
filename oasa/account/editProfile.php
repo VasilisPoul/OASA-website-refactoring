@@ -34,7 +34,7 @@
     
 	  <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
       <div class="container">
-        <a href="index.php"><img src="../images/oasa_logo_transparent.png" alt="logo" width="25%"></a>
+        <a href="../index.php"><img src="../images/oasa_logo_transparent.png" alt="logo" width="25%"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="oi oi-menu"></span> Menu
         </button>
@@ -66,7 +66,7 @@
                 <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Επιβάτες</a>
           <div class="dropdown-menu">
                   <a class="dropdown-item" href="../passengers/lost_and_found.html">Απολεσθέντα</a>
-                  <a class="dropdown-item" href="../passengers/amea.html">ΆμεΑ</a> <!--TODO: correct translation :p -->
+                  <a class="dropdown-item" href="../passengers/amea.php">ΆμεΑ</a> <!--TODO: correct translation :p -->
                   <a class="dropdown-item" href="../passengers/complaints.html">Υποβολή Παραπόνων</a>
                   <a class="dropdown-item" href="../passengers/help.html">Βοήθεια</a>
                 </div>
@@ -82,6 +82,24 @@
                   <a class="dropdown-item" href="../company/news.html">Νέα</a>
                 </div>
               </div>
+          </li>
+          <li class="nav-item">
+            <?php
+              if(isset($_SESSION['loggedin'])){ ?>
+                <div class="dropdown">
+                  <a class="dropdown-toggle nav-link user-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['username'];?></a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item disabled" href="#" disabled><?php echo $_SESSION['first_name'] . " " . $_SESSION['last_name'];?></a>
+                    <a class="dropdown-item" href="../account/profile.php">Προβολή Προφίλ</a>
+                    <a class="dropdown-item" href="#">Αποσύνδεση</a>
+                  </div>
+                </div>
+                <?php
+                  }
+                  else {
+                    echo '<a href="../account/login.php" class="nav-link user-button">Σύνδεση</a>';
+                  }
+            ?>
           </li>
           </ul>
         </div>

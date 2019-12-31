@@ -90,14 +90,16 @@
                 <div class="dropdown">
                   <a class="dropdown-toggle nav-link user-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['username'];?></a>
                   <div class="dropdown-menu">
+                    <a class="dropdown-item disabled" href="#" disabled><?php echo $_SESSION['first_name'] . " " . $_SESSION['last_name'];?></a>
+                    <a class="dropdown-item" href="../account/profile.php">Προβολή Προφίλ</a>
                     <a class="dropdown-item" href="#">Αποσύνδεση</a>
                   </div>
                 </div>
-            <?php
-              }
-              else {
-                echo '<a href="../account/login.php" class="nav-link user-button">Σύνδεση</a>';
-              }
+                <?php
+                  }
+                  else {
+                    echo '<a href="../account/login.php" class="nav-link user-button">Σύνδεση</a>';
+                  }
             ?>
           </li>
           </ul>
