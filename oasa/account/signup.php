@@ -209,6 +209,8 @@
                                                                           
               </form>
               <div class="text-center">Έχετε ήδη λογαριασμό; </div> <a href="login.php" >Σύνδεση</a>
+		      
+		<br><br> <?php echo $message;?> <br>
             </div>
             </div>
           </div>

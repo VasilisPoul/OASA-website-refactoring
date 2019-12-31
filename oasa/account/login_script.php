@@ -8,7 +8,8 @@ session_start();
 
 //if already logged in then redirect
 if(isset($_SESSION['loggedin'])){
-  echo $_SESSION['first_name'] . " " . $_SESSION['last_name'];
+  header("Location: ../index.php");
+  exit;
 }
 
 $username = "";
@@ -55,7 +56,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
           $_SESSION['first_name'] = $row["first_name"];
           $_SESSION['last_name'] = $row["last_name"];
           $_SESSION['email'] = $row["email"];
-          echo "welcome!";
+          
+          header("Location: ../index.php");
+          exit;
         }
         else{
           $password_err = "Λάθος κωδικός πρόσβασης";
