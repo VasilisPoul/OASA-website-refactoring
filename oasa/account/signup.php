@@ -117,6 +117,7 @@
             
             <h1>Εγγραφή Χρήστη</h1>
           </div>
+		<br><br> <?php echo $message;?> <br>
         </div>
       </div>
     </section>
@@ -210,7 +211,6 @@
               </form>
               <div class="text-center">Έχετε ήδη λογαριασμό; </div> <a href="login.php" >Σύνδεση</a>
 		      
-		<br><br> <?php echo $message;?> <br>
             </div>
             </div>
           </div>
