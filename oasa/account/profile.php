@@ -30,7 +30,7 @@
   </head>
   <body>
 
-    <span> <?php include 'signup_script.php';?> </span>
+    <?php include 'user_details.php';?>
     
 	  <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
       <div class="container">
@@ -112,15 +112,15 @@
               <div class="col-sm-6">
               <div class="groove">
                 <p1>Username:</p1>
-                <p>username</p>
+                <?php echo $username;?>
                 <br>  
                 <p1>Όνομα:</p1>
-                <p>name</p>
+                <?php echo $first_name;?>
                 <br>
                 <p1>Επίθετο:</p1>
-                <p>surname</p>
+                <?php echo $last_name;?>
                 <p1>Email:</p1>
-                <p>email</p>
+                <?php echo $email;?>
                 <br>
               </div>
               </div>
@@ -129,13 +129,13 @@
               <div class="groove">
               
                 <p1>Ημερομηνία Γέννησης:</p1>
-                <p>dob</p>
+                <?php echo $dob;?>
                 <br>
                 <p1>Τηλέφωνο:</p1>
-                <p>phone</p>
+                <?php echo $phone;?>
                 <br>
                 <p1>Κατηγορία:</p1>
-                <p>category</p>
+                <?php echo $user_category;?>
                 </div>
                 <br>
                 
