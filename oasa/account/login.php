@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>OASA</title>
+    <title>ΟΑΣΑ - Σύνδεση</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="../images/favicon.ico" type="image/ico">
@@ -112,7 +112,7 @@
             <div class="col-sm-4 block-1 mb-md-3 container">
               <form method="POST" action="<?=$_SERVER['PHP_SELF']?>">
                   
-                  <div class="form-group-error input-group">
+                  <div class="input-group">
                       <div class="input-group-prepend">
                           <span class="input-group-text"> <i class="icon-user-circle"></i> </span>
                       </div>
