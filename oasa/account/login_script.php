@@ -8,7 +8,8 @@ session_start();
 
 //if already logged in then redirect
 if(isset($_SESSION['loggedin'])){
-  echo $_SESSION['first_name'] . " " . $_SESSION['last_name'];
+  header("Location: ../index.php");
+  exit;
 }
 
 $username = "";
