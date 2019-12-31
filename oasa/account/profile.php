@@ -129,17 +129,17 @@
             <div class="row container">
               <div class="col-sm-6">
               <div class="groove">
-                <p1>Username:</p1>
-                <?php echo $username;?>
+                <p1>Username:</p1><br>   
+                <strong><?php echo $username;?></strong>
                 <br>  
-                <p1>Όνομα:</p1>
-                <?php echo $first_name;?>
+                <p1>Όνομα:</p1><br>  
+                <strong><?php echo $first_name;?></strong>
                 <br>
-                <p1>Επίθετο:</p1>
-                <?php echo $last_name;?>
+                <p1>Επίθετο:</p1><br>  
+                <strong><?php echo $last_name;?></strong>
 		<br>
-                <p1>Email:</p1>
-                <?php echo $email;?>
+                <p1>Email:</p1><br>  
+                <strong><?php echo $email;?></strong>
                 <br>
               </div>
               </div>
@@ -147,14 +147,14 @@
               <div class="col-sm-6">
               <div class="groove">
               
-                <p1>Ημερομηνία Γέννησης:</p1>
-                <?php echo $dob;?>
+                <p1>Ημερομηνία Γέννησης:</p1><br>  
+                <strong><?php echo $dob;?></strong>
                 <br>
-                <p1>Τηλέφωνο:</p1>
-                <?php echo $phone;?>
+                <p1>Τηλέφωνο:</p1><br>  
+                <strong><?php echo $phone;?></strong>
                 <br>
-                <p1>Κατηγορία:</p1>
-                <?php echo $user_category;?>
+                <p1>Κατηγορία:</p1><br>  
+                <strong><?php echo $user_category;?></strong>
                 </div>
                 <br>
                 
