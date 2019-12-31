@@ -8,7 +8,8 @@ session_start();
  
 //if already logged in then redirect
 if(isset($_SESSION['loggedin'])){
-  echo $_SESSION['first_name'] . " " . $_SESSION['last_name'];
+  header("Location: ../index.php");
+  exit;
 }
 
 $username = $first_name = $last_name = $password = "";
@@ -130,6 +131,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     if($conn->query($sql) === TRUE){
       $message = "Η εγγραφή ολοκληρώθηκε με επιτυχία!";
+     
+      header("Location: ../index.php");
+      exit;
     } 
     else{
       //echo "Error: " . $sql . "<br>" . $conn->error;
