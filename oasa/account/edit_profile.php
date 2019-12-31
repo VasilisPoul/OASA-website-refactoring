@@ -208,7 +208,6 @@
                   </div>
               
                 <div align="center">
-                  <div class="text-center"> </div> <a href="editPassword.php" >Αλλαγή Password</a>
                   <br>
                   <div class="form-group">
                       <input type="submit" value="Αποθήκευση" class="btn btn-primary py-3 px-5">
