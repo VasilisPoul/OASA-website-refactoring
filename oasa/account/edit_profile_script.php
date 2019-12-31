@@ -124,6 +124,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $sql = "UPDATE user SET username = \"$username\", first_name = \"$first_name\", last_name = \"$last_name\", email = \"$email\", dob = \"$dob\", phone = \"$phone\", password = \"$password\", iduser_category = \"$user_category\" WHERE iduser = " . $_SESSION['loggedin'];
 
     if($conn->query($sql) === TRUE){
+    
+      $_SESSION['username'] = $username;
+      $_SESSION['first_name'] = $first_name;
+      $_SESSION['last_name'] = $last_name;
+      $_SESSION['email'] = $email;
+  
       $message = "Η εγγραφή ολοκληρώθηκε με επιτυχία!";
     } 
     else{
