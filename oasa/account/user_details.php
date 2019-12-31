@@ -35,9 +35,9 @@ $result = $conn->query($sql);
 
 if(!empty($result) && $result->num_rows > 0){
   while($row = $result->fetch_assoc()){
-    $dob = $row["$dob"];
-    $phone = $row["$phone"];
-    $user_category = $row["$name"];
+    $dob = $row["dob"];
+    $phone = $row["phone"];
+    $user_category = $row["name"];
   }
 }
 
