@@ -132,8 +132,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if($conn->query($sql) === TRUE){
       $message = "Η εγγραφή ολοκληρώθηκε με επιτυχία!";
      
-      header("Location: ../index.php");
-      exit;
+      header("Location: login.php");
     } 
     else{
       //echo "Error: " . $sql . "<br>" . $conn->error;
