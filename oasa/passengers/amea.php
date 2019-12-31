@@ -1,10 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  <?php
-    if(!isset($_SESSION)) {
-         session_start();
-    }
-  ?>
   <head>
     <title>ΟΑΣΑ - ΆμεΑ</title>
     <meta charset="utf-8">
@@ -34,6 +29,7 @@
     <link rel="stylesheet" href="../css/additional.css">
   </head>
   <body>
+	  <?php include 'handicap_stations.php';?> </span>
     
 	  <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
       <div class="container">
