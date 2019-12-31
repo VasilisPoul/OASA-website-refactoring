@@ -4,6 +4,8 @@
 // PHP script by: Giorgos Koursiounis (sdi1600077)
 //
 
+session_start();
+
 $servername = "localhost";
 $username = "user";
 $password = "password";
