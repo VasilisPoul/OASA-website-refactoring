@@ -58,7 +58,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
           $_SESSION['email'] = $row["email"];
           
           header("Location: ../index.php");
-          exit;
         }
         else{
           $password_err = "Λάθος κωδικός πρόσβασης";
