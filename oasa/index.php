@@ -36,6 +36,8 @@ HTML/CSS by: Maria Karamina (sdi1600059)
     <link rel="stylesheet" href="css/additional.css">
   </head>
   <body>
+      
+	  <?php include 'service_status.php';?>
 
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
@@ -152,8 +154,6 @@ HTML/CSS by: Maria Karamina (sdi1600059)
      <section class="ftco-section ftco-no-pt bg-light front-page-text">
     	<div class="container">
     		<h1 class="text-right">Κατάσταση Γραμμών</h1>
-
-			<span> <?php include 'service_status.php';?> </span>
 
     		<div class="light-box">
     			<div class="row justify-content-center">
