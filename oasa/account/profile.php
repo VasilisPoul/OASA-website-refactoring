@@ -119,6 +119,7 @@
                 <br>
                 <p1>Επίθετο:</p1>
                 <?php echo $last_name;?>
+		<br>
                 <p1>Email:</p1>
                 <?php echo $email;?>
                 <br>
