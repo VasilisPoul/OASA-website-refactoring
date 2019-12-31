@@ -85,7 +85,7 @@
           </li>
           <li class="nav-item">
             <?php
-              if(isset($_SESSION['loggedin']) && ($_SESSION['loggedin'])){ ?>
+              if(isset($_SESSION['loggedin'])){ ?>
                 <div class="dropdown">
                   <a class="dropdown-toggle nav-link user-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['username'];?></a>
                   <div class="dropdown-menu">
