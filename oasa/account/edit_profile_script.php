@@ -9,9 +9,7 @@ if(isset($_SESSION['loggedin'])){
   echo $_SESSION['first_name'] . " " . $_SESSION['last_name'];
 }
 
-$username = $first_name = $last_name = $password = "";
-$email = $dob = $phone = $user_category = $message = "";
-
+$message = "";
 $username_err = $first_name_err = $last_name_err = $password_err = "";
 $email_err = $dob_err = $phone_err = $user_category_err = "";
 
