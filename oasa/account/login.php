@@ -31,7 +31,7 @@
   </head>
   <body>
 	  
-    <span> <?php include 'login_script.php';?> </span>
+    <?php include 'login_script.php';?>
     
     <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
       <div class="container">
