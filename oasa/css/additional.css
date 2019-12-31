@@ -34,3 +34,11 @@
 .navbar-color {
 	background-color: #fff !important;
 }
+
+.error-message {
+	color: red;
+}
+
+.form-group-error {
+	margin-top: 1rem;
+}
