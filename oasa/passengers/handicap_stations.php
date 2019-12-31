@@ -30,7 +30,7 @@ $result = $conn->query($sql);
 
 if(!empty($result) && $result->num_rows > 0){
   while($row = $result->fetch_assoc()){
-    $stations .= "<tr><td>" . $row["id"] . "</td><td>" . $row["name"] . "</td></tr>";
+    $stations .= "<tr><td>" . $row["idstation"] . "</td><td>" . $row["name"] . "</td></tr>";
   }
 }
 
