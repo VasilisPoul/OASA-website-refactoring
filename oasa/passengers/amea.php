@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+  <?php
+    if(!isset($_SESSION)) {
+         session_start();
+    }
+  ?>
   <head>
     <title>ΟΑΣΑ - ΆμεΑ</title>
     <meta charset="utf-8">
@@ -32,7 +37,7 @@
     
 	  <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
       <div class="container">
-        <a href="index.php"><img src="../images/oasa_logo_transparent.png" alt="logo" width="25%"></a>
+        <a href="../index.php"><img src="../images/oasa_logo_transparent.png" alt="logo" width="25%"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="oi oi-menu"></span> Menu
         </button>
@@ -80,6 +85,22 @@
                   <a class="dropdown-item" href="../company/news.html">Νέα</a>
                 </div>
               </div>
+          </li>
+          <li class="nav-item">
+            <?php
+              if(isset($_SESSION['loggedin']) && ($_SESSION['loggedin'])){ ?>
+                <div class="dropdown">
+                  <a class="dropdown-toggle nav-link user-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['username'];?></a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Αποσύνδεση</a>
+                  </div>
+                </div>
+            <?php
+              }
+              else {
+                echo '<a href="../account/login.php" class="nav-link user-button">Σύνδεση</a>';
+              }
+            ?>
           </li>
           </ul>
         </div>

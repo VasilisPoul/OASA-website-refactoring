@@ -42,3 +42,10 @@
 .form-group-error {
 	margin-top: 1rem;
 }
+
+.user-button {
+	margin-left: 50%;
+	font-weight: bold;
+	font-size: 17px;
+	color: #004a87 !important;
+}

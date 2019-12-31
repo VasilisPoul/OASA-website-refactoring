@@ -6,6 +6,11 @@ HTML/CSS by: Maria Karamina (sdi1600059)
 
 <!DOCTYPE html>
 <html lang="en">
+  <?php
+    if(!isset($_SESSION)) {
+         session_start();
+    }
+  ?>
   <head>
     <title>ΟΑΣΑ</title>
     <meta charset="utf-8">
@@ -71,7 +76,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
 	          		<a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Επιβάτες</a>
 					<div class="dropdown-menu">
 		          		<a class="dropdown-item" href="passengers/lost_and_found.html">Απολεσθέντα</a>
-		          		<a class="dropdown-item" href="passengers/amea.html">ΆμεΑ</a> <!--TODO: correct translation :p -->
+		          		<a class="dropdown-item" href="passengers/amea.php">ΆμεΑ</a> <!--TODO: correct translation :p -->
 		          		<a class="dropdown-item" href="passengers/complaints.html">Υποβολή Παραπόνων</a>
 		          		<a class="dropdown-item" href="passengers/help.html">Βοήθεια</a>
 	          		</div>
@@ -87,6 +92,22 @@ HTML/CSS by: Maria Karamina (sdi1600059)
 		          		<a class="dropdown-item" href="company/news.html">Νέα</a>
 	          		</div>
 	      	    </div>
+		      </li>
+		      <li class="nav-item">
+		      	<?php
+		      		if(isset($_SESSION['loggedin']) && ($_SESSION['loggedin'])){ ?>
+		      		  <div class="dropdown">
+		      		  	<a class="dropdown-toggle nav-link user-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['username'];?></a>
+		      		  	<div class="dropdown-menu">
+		          			<a class="dropdown-item" href="#">Αποσύνδεση</a>
+	          			</div>
+	          		</div>
+		      	<?php
+		      		}
+		      		else {
+		      			echo '<a href="account/login.php" class="nav-link user-button">Σύνδεση</a>';
+		      		}
+		      	?>
 		      </li>
 	        </ul>
 	      </div>
@@ -137,7 +158,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
     	<div class="container">
     		<h1 class="text-right">Κατάσταση Γραμμών</h1>
 
-		<span> <?php include 'service_status.php';?> </span>
+			<span> <?php include 'service_status.php';?> </span>
 
     		<div class="light-box">
     			<div class="row justify-content-center">
@@ -145,31 +166,31 @@ HTML/CSS by: Maria Karamina (sdi1600059)
     					<div class="row btm-border">
     						<div class="col-md-12">
     							<label>Εκτός Λειτουργίας</label><br>
-                  <span><?php echo $out_of_order;?></span>
+                  				<span><?php echo $out_of_order;?></span>
     						</div>
     					</div>
     					<div class="row btm-border">
     						<div class="col-md-12">
     							<label>Σε Απεργία</label><br>   		
-                  <span><?php echo $strikes;?></span>
+                  				<span><?php echo $strikes;?></span>
     						</div>
     					</div>
     					<div class="row btm-border">
     						<div class="col-md-12">
     							<label>Καθυστερήσεις</label><br>
-                  <span><?php echo $delays;?></span>
+                  				<span><?php echo $delays;?></span>
     						</div>
     					</div>
     					<div class="row">
     						<div class="col-md-12">
     							<label>Προγραμματισμένες Εργασίες</label><br>
-                  <span><?php echo $planned_work;?></span>
+                  				<span><?php echo $planned_work;?></span>
     						</div>
     					</div>
     				</div>
     				<div class="col-md-6 text-center good-service">
     					<label>Ομαλή Λειτουργία</label><br>
-              <span><?php echo $good_service;?></span>
+              			<span><?php echo $good_service;?></span>
     				</div>
     			</div>
     		</div>

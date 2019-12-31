@@ -8287,7 +8287,7 @@ h1, h2, h3, h4, h5,
         padding-right: 0 !important;
         padding-bottom: 0 !important; } }
     .ftco-navbar-light.scrolled .nav-item.active > a, .ftco-navbar-light.scrolled .nav-item.active > .dropdown > a {
-      color: #1089ff !important; }
+      color: #1089ff; }
     .ftco-navbar-light.scrolled .nav-item.cta > a {
       color: #fff !important;
       background: #1089ff;
@@ -8324,7 +8324,7 @@ h1, h2, h3, h4, h5,
     .ftco-navbar-light.scrolled .nav-link {
       padding-top: 0.9rem !important;
       padding-bottom: 0.9rem !important;
-      color: #000000 !important; }
+      color: #000000; }
       .ftco-navbar-light.scrolled .nav-link.active {
         color: #1089ff !important; }
     .ftco-navbar-light.scrolled.awake {
