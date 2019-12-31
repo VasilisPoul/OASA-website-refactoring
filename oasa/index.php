@@ -98,7 +98,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
 		      		  	<div class="dropdown-menu">
 		      		  		<a class="dropdown-item disabled" href="#" disabled><?php echo $_SESSION['first_name'] . " " . $_SESSION['last_name'];?></a>
 		      		  		<a class="dropdown-item" href="account/profile.php">Προβολή Προφίλ</a>
-		          			<a class="dropdown-item" href="#">Αποσύνδεση</a>
+		          			<a class="dropdown-item" href="logout_script.php">Αποσύνδεση</a>
 	          			</div>
 	          		</div>
 		      	<?php
