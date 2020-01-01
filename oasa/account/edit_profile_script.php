@@ -4,9 +4,10 @@
 // PHP script by: Giorgos Koursiounis (sdi1600077)
 //
  
-//if already logged in then redirect
-if(isset($_SESSION['loggedin'])){
-  echo $_SESSION['first_name'] . " " . $_SESSION['last_name'];
+//if not logged in then redirect
+if(!isset($_SESSION['loggedin'])){
+  header("Location: ../index.php");
+  exit;
 }
 
 $message = "";
@@ -134,6 +135,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       $_SESSION['last_name'] = $last_name;
       $_SESSION['email'] = $email;
   
+      header("Location: profile.php");
+
       $message = "Η εγγραφή ολοκληρώθηκε με επιτυχία!";
     } 
     else{
