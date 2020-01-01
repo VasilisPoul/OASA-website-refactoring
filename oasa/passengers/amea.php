@@ -275,33 +275,13 @@
                 <div class="icon mr-3">
                   <span class="icon-map-o"></span>
                 </div>
-                <p>Προεξοχές Πεζοδρομίων ΟΑΣΑ</p>
+                <h3>Στάσεις και σταθμοί προσβάσιμοι σε άτομα με ειδικές ανάγκες </h3>
               </div>
             </div>
             <div class="col-md-12">
               <div class="border w-100 p-4 rounded mb-2 d-flex">
                 <div class="overflow-auto">
-                  <table class="table">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">ΚΩΔΙΚΟΣ</th>
-                        <th scope="col">ΟΝΟΜΑ ΣΤΑΣΗΣ</th>
-                        <th scope="col">ΓΡΑΜΜΕΣ</th>
-                       
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>010058</td>
-                        <td>ΑΣΤΥΝΟΜΙΑ</td>
-                        <td>...</td>
-                      
-                      </tr>
-                      
-                    </tbody>
-                  </table>
+                  <?php echo $stations; ?>
                 </div>
               </div>
             </div>
