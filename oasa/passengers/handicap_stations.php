@@ -16,7 +16,7 @@ $server_username = "user";
 $server_password = "password";
 $dbname = "oasa";
 
-$stations = "<table><tr><th>#</th><th>Όνομα σταθμού/στάσης</th></tr>";
+$stations = "<table class="table"><thead><tr><th scope="col">#</th><th scope="col">Όνομα σταθμού/στάσης</th></tr></thead><tbody>";
  
 //create connection
 $conn = new mysqli($servername, $server_username, $server_password, $dbname);
@@ -34,7 +34,7 @@ if(!empty($result) && $result->num_rows > 0){
   }
 }
 
-$stations .= "</table>";
+$stations .= "</tbody></table>";
 
 $conn->close();
 
