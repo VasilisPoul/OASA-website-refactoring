@@ -39,7 +39,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   $result = $conn->query($sql);
 
   if(!empty($result) && $result->num_rows > 0){
-    $username_err = "Το όνομα χρήστη υπάρχει ήδη";
+    while($row = $result->fetch_assoc()){
+      if($row["iduser"] != $_SESSION['loggedin']){
+        $username_err = "Το όνομα χρήστη υπάρχει ήδη";
+      }
+    }
   }
 
   //check if first name is given

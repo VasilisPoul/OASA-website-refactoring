@@ -31,7 +31,7 @@
   <body>
 
     <?php include 'user_details.php';?>
-    <?php include 'edit_profile_user.php';?>
+    <?php include 'edit_profile_script.php';?>
     
 	  <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
       <div class="container">
@@ -188,14 +188,14 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="icon-lock"></i> </span>
                     </div>
-                    <input name="password" class="form-control" placeholder="Νέο Ρassword" type="password" id ="password">
+                    <input name="password" class="form-control" placeholder="Ρassword" type="password" id ="password">
                 </div> <!-- form-group-error// -->
 
                 <div class="form-group-error input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="icon-lock"></i> </span>
                     </div>
-                    <input name="password" class="form-control" placeholder="Επιβεβαίωση Νέου Ρassword" type="password" id="confirm_password">
+                    <input name="password" class="form-control" placeholder="Επιβεβαίωση Ρassword" type="password" id="confirm_password">
                 </div> <!-- form-group-error// -->
                   <br />
                   <div class = "groove">
