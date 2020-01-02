@@ -106,7 +106,9 @@
     </nav>
     <!-- END nav -->
     <div class="container crumbs-top">
-      <p class="breadcrumbs"><span class="mr-2"><a href="index.php">Αρχική <i class="ion-ios-arrow-forward"></i></a></span> <span>ΆμεΑ <i class="ion-ios-arrow-forward"></i></span>
+      <p class="breadcrumbs">
+        <span class="mr-2"><a href="../index.php">Αρχική <i class="ion-ios-arrow-forward"></i></a></span> 
+        <span class="mr-2">ΆμεΑ <i class="ion-ios-arrow-forward"></i></span>
       </p>
     </div>
 

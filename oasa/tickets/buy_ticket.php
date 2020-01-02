@@ -106,7 +106,13 @@
     </nav>
     <!-- END nav -->
     
-   <div class="container crumbs-top">
+    <div class="container crumbs-top">
+      <p class="breadcrumbs">
+        <span class="mr-2"><a href="../index.php">Αρχική <i class="ion-ios-arrow-forward"></i></a></span> 
+        <span class="mr-2">Εισιτήρια <i class="ion-ios-arrow-forward"></i></span> 
+        <span class="mr-2"><a href="buy_online.php">Ηλεκτρονική Αγορά Εισιτηρίων <i class="ion-ios-arrow-forward"></i></a></span> 
+        <span class="mr-2">Αγορά Εισιτηρίου <i class="ion-ios-arrow-forward"></i></span>
+      </p>
     </div>
 
     <section class="bg-light front-page-text page-header">
@@ -114,7 +120,7 @@
         <div class="row no-gutters align-items-end justify-content-center text-center">
           <div class="col-md-9 ftco-animate pb-5">
             
-            <h1>Aγορά Κομίστρου</h1>
+            <h1>Aγορά Εισιτηρίου</h1>
           </div>
         </div>
       </div>
@@ -122,7 +128,7 @@
 
     <section class="ftco-section ftco-no-pt bg-light">
       <div class="container">
-        <h2>Αγορά Εισιτηρίου</h2>
+        <label>Αγορά Εισιτηρίου</label>
       </div>
     </section>
 

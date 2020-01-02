@@ -110,8 +110,7 @@
       <p class="breadcrumbs">
         <span class="mr-2"><a href="../index.php">Αρχική <i class="ion-ios-arrow-forward"></i></a></span> 
         <span class="mr-2">Εισιτήρια <i class="ion-ios-arrow-forward"></i></span> 
-        <span class="mr-2"><a href="buy_online.php">Ηλεκτρονική Αγορά Εισιτηρίων <i class="ion-ios-arrow-forward"></i></a></span> 
-        <span class="mr-2">Επαναφόρτιση Εισιτηρίου <i class="ion-ios-arrow-forward"></i></span>
+        <span class="mr-2">Ηλεκτρονική Αγορά Εισιτηρίων <i class="ion-ios-arrow-forward"></i></span>
       </p>
     </div>
 
@@ -120,15 +119,18 @@
         <div class="row no-gutters align-items-end justify-content-center text-center">
           <div class="col-md-9 ftco-animate pb-5">
             
-            <h1>Επαναφόρτιση Εισιτηρίου</h1>
+            <h1>Aγορά Κομίστρου</h1>
           </div>
         </div>
       </div>
     </section>
 
     <section class="ftco-section ftco-no-pt bg-light">
-      <div class="container">
-        <label>Επαναφόρτιση Εισιτηρίου</label>
+      <div class="container justify-content-center text-center">
+        <a href="buy_ticket.php" class="btn btn-grey btn-big">Αγορά Εισιτηρίου</a>
+        <a href="buy_card.php" class="btn btn-grey btn-big">Έκδοση Κάρτας</a>
+        <a href="recharge_ticket.php" class="btn btn-grey btn-big">Επαναφόρτιση Εισιτηρίου</a>
+        <a href="recharge_card.php" class="btn btn-grey btn-big">Επαναφόρτιση Κάρτας</a>
       </div>
     </section>
 

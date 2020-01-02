@@ -111,7 +111,7 @@
         <span class="mr-2"><a href="../index.php">Αρχική <i class="ion-ios-arrow-forward"></i></a></span> 
         <span class="mr-2">Εισιτήρια <i class="ion-ios-arrow-forward"></i></span> 
         <span class="mr-2"><a href="buy_online.php">Ηλεκτρονική Αγορά Εισιτηρίων <i class="ion-ios-arrow-forward"></i></a></span> 
-        <span class="mr-2">Επαναφόρτιση Εισιτηρίου <i class="ion-ios-arrow-forward"></i></span>
+        <span class="mr-2">Επαναφόρτιση Κάρτας <i class="ion-ios-arrow-forward"></i></span>
       </p>
     </div>
 
@@ -120,7 +120,7 @@
         <div class="row no-gutters align-items-end justify-content-center text-center">
           <div class="col-md-9 ftco-animate pb-5">
             
-            <h1>Επαναφόρτιση Εισιτηρίου</h1>
+            <h1>Επαναφόρτιση Κάρτας</h1>
           </div>
         </div>
       </div>
@@ -128,7 +128,7 @@
 
     <section class="ftco-section ftco-no-pt bg-light">
       <div class="container">
-        <label>Επαναφόρτιση Εισιτηρίου</label>
+        <label>Επαναφόρτιση Κάρτας</label>
       </div>
     </section>
 
