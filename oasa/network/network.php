@@ -30,8 +30,9 @@
   </head>
   <body>
 
-    
-	  <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <?php include 'transport_oasa.php';?> 
+	  
+    <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
       <div class="container">
         <a href="../index.php"><img src="../images/oasa_logo_transparent.png" alt="logo" width="25%"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -113,7 +114,28 @@
       <div class="container">
         <div class="row no-gutters align-items-end justify-content-center text-center">
           <div class="col-md-9 ftco-animate pb-5">
-            
+            <br><h1>Μέσα μεταφοράς που υπάγονται στον ΟΑΣΑ</h1>
+          </div>
+        </div>
+          <div class="col-md-12">
+            <div class="border w-100 p-4 rounded mb-2 d-flex">
+              <div class="overflow-auto">
+                <?php echo $transport; ?>
+              </div>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    
+
+
+
+    <section class="bg-light front-page-text page-header">
+      <div class="container">
+        <div class="row no-gutters align-items-end justify-content-center text-center">
+          <div class="col-md-9 ftco-animate pb-5">
+            <br>
             <h1>Το Δίκτυο</h1>
           </div>
         </div>
@@ -131,7 +153,7 @@
 				  
 				<div class="row d-flex mb-5 contact-info">
 				  	
-					<p>Η σημερινή Περιοχή Εξυπηρέτησης των Αστικών Συγκοινωνιών έχει καθορισθεί δια νόμου και δεν μπορεί να μεταβληθεί χωρίς αντίστοιχη νομοθετική ρύθμιση.
+					<p>Η σημερινή Περιοχή Εξυπηρέτησης των Αστικών Συγκοινωνιών έχει <strong>καθορισθεί δια νόμου και δεν μπορεί να μεταβληθεί χωρίς αντίστοιχη νομοθετική ρύθμιση</strong>.
 </p>
 								  	
 					<p>Η περιοχή που εξυπηρετείται σήμερα από αστική συγκοινωνία εκτείνεται Δυτικά μέχρι την Ελευσίνα, Μάνδρα και Μαγούλα (Θριάσιο Πεδίο). Ανατολικά μέχρι την Πεντέλη, την Παλλήνη, τα Σπάτα, τη Λούτσα και το Κορωπί (περιοχή Μεσογείων). Βόρεια μέχρι τη Φυλή, τη Πάρνηθα, το Κρυονέρι, το φράγμα της Λίμνης του Μαραθώνα, το Διόνυσο, τη Σταμάτα και τη Νέα και την Παλαιά Πεντέλη. Νότια μέχρι τη θάλασσα και νοτιοανατολικά μέχρι και την Σαρωνίδα. Η περιοχή αυτή περιλαμβάνει ένα σύνολο 84 δήμων και κοινοτήτων/οικισμών, που δίδονται στον παρακάτω πίνακα. Σημ.*:Με την εφαρμογή του N.3852/10, ΦΕΚ 87/τ .Α'/2010 «Καλλικράτης» οι 84 υφιστάμενες Τοπικές Αυτοδιοικήσεις συνενώνονται σε 52 Δήμους. (Ημερομηνία Εφαρμογής: 1/1/2011)
@@ -148,38 +170,37 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr> <th scope="row">01</th> <td>ΑΓΙΑ ΒΑΡΒΑΡΑ</td> <td>29</td> <td>ΚΟΡΩΠΙ</td> <td>57</td> <td>ΔΡΟΣΙΑ12</td> </tr>
-							<tr> <th scope="row">02</th> <td>ΑΓ. ΙΩΑΝ.ΡΕΝΤΗΣ11</td> <td>30</td> <td>ΜΑΝΔΡΑ</td> <td>58</td> <td>ΕΚΑΛΗ4</td> </tr>
-							<tr> <th scope="row">03</th> <td>ΑΓΙΑ ΠΑΡΑΣΚΕΥΗ</td> <td>31</td> <td>ΜΕΤΑΜΟΡΦΩΣΗ</td> <td>59</td> <td>ΕΛΛΗΝΙΚΟ8</td> </tr>
-							<tr> <th scope="row">04</th> <td>ΑΓ. ΔΗΜΗΤΡΙΟΣ</td> <td>32</td> <td>ΜΟΣΧΑΤΟ6</td> <td>60</td> <td>ΖΕΦΥΡΙ19</td> </tr>
-							<tr> <th scope="row">05</th> <td>ΑΓΙΟΙ ΑΝΑΡΓΥΡΟΙ9</td> <td>33</td> <td>ΝΕΑ ΙΩΝΙΑ</td> <td>61</td> <td>ΚΡΥΟΝΕΡΙ12</td> </tr>
-							<tr> <th scope="row">06</th> <td>ΑΘΗΝΑ</td> <td>34</td> <td>ΝΕΑ ΣΜΥΡΝΗ</td> <td>62</td> <td>ΛΥΚΟΒΡΥΣΗ7</td> </tr>
-							<tr> <th scope="row">07</th> <td>ΑΙΓΑΛΕΩ</td> <td>35</td> <td>ΝΕΑ ΦΙΛΑΔΕΛΦΕΙΑ1</td> <td>63</td> <td>ΜΑΓΟΥΛΑ18</td> </tr>
-							<tr> <th scope="row">08</th> <td>ΑΛΙΜΟΣ</td> <td>36</td> <td>ΙΛΙΟΝ (ΝΕΑ ΛΙΟΣΙΑ)</td> <td>64</td> <td>ΜΕΛΙΣΣΙΑ5</td> </tr>
-							<tr> <th scope="row">09</th> <td>ΑΜΑΡΟΥΣΙΟ</td> <td>37</td> <td>ΝΙΚΑΙΑ11</td> <td>65</td> <td>ΡΟΔΟΠΟΛΗ (ΜΠΑΛΑ)12</td> </tr>
-							<tr> <th scope="row">10</th> <td>ΑΝΩ ΛΙΟΣΙΑ19</td> <td>38</td> <td>ΠΑΛΑΙΟ ΦΑΛΗΡΟ</td> <td>66</td> <td>ΝΕΑ ΕΡΥΘΡΑΙΑ4</td> </tr>
-							<tr> <th scope="row">11</th> <td>ΑΡΓΥΡΟΥΠΟΛΗ8</td> <td>39</td> <td>ΠΑΙΑΝΙΑ14</td> <td>67</td> <td>ΝΕΑ ΠΕΝΤΕΛΗ5</td> </tr>
-							<tr> <th scope="row">12</th> <td>ΑΣΠΡΟΠΥΡΓΟΣ</td> <td>40</td> <td>ΠΕΙΡΑΙΑΣ</td> <td>68</td> <td>ΝΕΑ ΧΑΛΚΗΔΟΝΑ1</td> </tr>
-							<tr> <th scope="row">13</th> <td>ΑΧΑΡΝΑΙ (ΜΕΝΙΔΙ)13</td> <td>41</td> <td>ΠΕΡΑΜΑ</td> <td>69</td> <td>ΝΕΟ ΨΥΧΙΚΟ17</td> </tr>
-							<tr> <th scope="row">14</th> <td>ΒΥΡΩΝΑΣ</td> <td>42</td> <td>ΠΕΡΙΣΤΕΡΙ</td> <td>70</td> <td>ΠΑΛΛΗΝΗ20</td> </tr>
-							<tr> <th scope="row">15</th> <td>ΓΑΛΑΤΣΙ</td> <td>43</td> <td>ΠΕΤΡΟΥΠΟΛΗ</td> <td>71</td> <td>ΠΑΠΑΓΟΥ2</td> </tr>
-							<tr> <th scope="row">16</th> <td>ΓΛΥΦΑΔΑ</td> <td>44</td> <td>ΣΠΑΤΑ15</td> <td>72</td> <td>ΠΕΝΤΕΛΗ (ΠΑΛΑΙΑ)5</td> </tr>
-							<tr> <th scope="row">17</th> <td>ΔΑΦΝΗ3</td> <td>45</td> <td>ΤΑΥΡΟΣ6</td> <td>73</td> <td>ΠΕΥΚΗ7</td> </tr>
-							<tr> <th scope="row">18</th> <td>ΔΡΑΠΕΤΣΩΝΑ10</td> <td>46</td> <td>ΥΜΗΤΤΟΣ3</td> <td>74</td> <td>ΣΤΑΜΑΤΑ12</td> </tr>
-							<tr> <th scope="row">19</th> <td>ΕΛΕΥΣΙΝΑ18</td> <td>47</td> <td>ΧΑΪΔΑΡΙ</td> <td>75</td> <td>ΦΙΛΟΘΕΗ17</td> </tr>
-							<tr> <th scope="row">20</th> <td>ΖΩΓΡΑΦΟΥ</td> <td>48</td> <td>ΧΑΛΑΝΔΡΙ</td> <td>76</td> <td>ΦΥΛΗ19</td> </tr>
-							<tr> <th scope="row">21</th> <td>ΗΛΙΟΥΠΟΛΗ</td> <td>49</td> <td>ΧΟΛΑΡΓΟΣ2</td> <td>77</td> <td>ΨΥΧΙΚΟ17</td> </tr>
-							<tr> <th scope="row">22</th> <td>ΗΡΑΚΛΕΙΟ</td> <td>50</td> <td>ΑΓΙΟΣ ΣΤΕΦΑΝΟΣ12</td> <td>78</td> <td>ΑΝΘΟΥΣΑ20</td> </tr>
-							<tr> <th scope="row">23</th> <td>ΚΑΙΣΑΡΙΑΝΗ</td> <td>51</td> <td>ΑΝΟΙΞΗ12</td> <td>79</td> <td>ΑΡΤΕΜΙΣ (ΛΟΥΤΣΑ)15</td> </tr>
-							<tr> <th scope="row">24</th> <td>ΚΑΛΛΙΘΕΑ</td> <td>52</td> <td>ΒΑΡΗ16</td> <td>80</td> <td>ΓΕΡΑΚΑΣ20</td> </tr>
-							<tr> <th scope="row">25</th> <td>ΚΑΜΑΤΕΡΟ9</td> <td>53</td> <td>ΒΟΥΛΑ16</td> <td>81</td> <td>ΘΡΑΚΟΜΑΚΕΔΟΝΕΣ13</td> </tr>
-							<tr> <th scope="row">26</th> <td>ΚΕΡΑΤΣΙΝΙ10</td> <td>54</td> <td>ΒΟΥΛΙΑΓΜΕΝΗ16</td> <td>82</td> <td>ΒΑΡΥΜΠΟΜΠΗ13</td> </tr>
-							<tr> <th scope="row">27</th> <td>ΚΗΦΙΣΙΑ4</td> <td>55</td> <td>ΒΡΙΛΗΣΣΙΑ</td> <td>83</td> <td>ΔΙΟΝΥΣΟΣ12</td> </tr>
-							<tr> <th scope="row">28</th> <td>ΚΟΡΥΔΑΛΛΟΣ</td> <td>56</td> <td>ΓΛΥΚΑ ΝΕΡΑ14</td> <td>84</td> <td>ΣΑΡΩΝΙΔΑ</td> </tr>
+							<tr> <th scope="row">01</th> <td>ΑΓΙΑ ΒΑΡΒΑΡΑ</td> <td>29</td> <td>ΚΟΡΩΠΙ</td> <td>57</td> <td>ΔΡΟΣΙΑ</td> </tr>
+							<tr> <th scope="row">02</th> <td>ΑΓ. ΙΩΑΝ.ΡΕΝΤΗΣ</td> <td>30</td> <td>ΜΑΝΔΡΑ</td> <td>58</td> <td>ΕΚΑΛΗ</td> </tr>
+							<tr> <th scope="row">03</th> <td>ΑΓΙΑ ΠΑΡΑΣΚΕΥΗ</td> <td>31</td> <td>ΜΕΤΑΜΟΡΦΩΣΗ</td> <td>59</td> <td>ΕΛΛΗΝΙΚΟ</td> </tr>
+							<tr> <th scope="row">04</th> <td>ΑΓ. ΔΗΜΗΤΡΙΟΣ</td> <td>32</td> <td>ΜΟΣΧΑΤΟ</td> <td>60</td> <td>ΖΕΦΥΡΙ</td> </tr>
+							<tr> <th scope="row">05</th> <td>ΑΓΙΟΙ ΑΝΑΡΓΥΡΟΙ</td> <td>33</td> <td>ΝΕΑ ΙΩΝΙΑ</td> <td>61</td> <td>ΚΡΥΟΝΕΡΙ</td> </tr>
+							<tr> <th scope="row">06</th> <td>ΑΘΗΝΑ</td> <td>34</td> <td>ΝΕΑ ΣΜΥΡΝΗ</td> <td>62</td> <td>ΛΥΚΟΒΡΥΣΗ</td> </tr>
+							<tr> <th scope="row">07</th> <td>ΑΙΓΑΛΕΩ</td> <td>35</td> <td>ΝΕΑ ΦΙΛΑΔΕΛΦΕΙΑ</td> <td>63</td> <td>ΜΑΓΟΥΛΑ</td> </tr>
+							<tr> <th scope="row">08</th> <td>ΑΛΙΜΟΣ</td> <td>36</td> <td>ΙΛΙΟΝ (ΝΕΑ ΛΙΟΣΙΑ)</td> <td>64</td> <td>ΜΕΛΙΣΣΙΑ</td> </tr>
+							<tr> <th scope="row">09</th> <td>ΑΜΑΡΟΥΣΙΟ</td> <td>37</td> <td>ΝΙΚΑΙΑ</td> <td>65</td> <td>ΡΟΔΟΠΟΛΗ (ΜΠΑΛΑ)</td> </tr>
+							<tr> <th scope="row">10</th> <td>ΑΝΩ ΛΙΟΣΙΑ</td> <td>38</td> <td>ΠΑΛΑΙΟ ΦΑΛΗΡΟ</td> <td>66</td> <td>ΝΕΑ ΕΡΥΘΡΑΙΑ</td> </tr>
+							<tr> <th scope="row">11</th> <td>ΑΡΓΥΡΟΥΠΟΛΗ</td> <td>39</td> <td>ΠΑΙΑΝΙΑ</td> <td>67</td> <td>ΝΕΑ ΠΕΝΤΕΛΗ</td> </tr>
+							<tr> <th scope="row">12</th> <td>ΑΣΠΡΟΠΥΡΓΟΣ</td> <td>40</td> <td>ΠΕΙΡΑΙΑΣ</td> <td>68</td> <td>ΝΕΑ ΧΑΛΚΗΔΟΝΑ</td> </tr>
+							<tr> <th scope="row">13</th> <td>ΑΧΑΡΝΑΙ (ΜΕΝΙΔΙ)</td> <td>41</td> <td>ΠΕΡΑΜΑ</td> <td>69</td> <td>ΝΕΟ ΨΥΧΙΚΟ</td> </tr>
+							<tr> <th scope="row">14</th> <td>ΒΥΡΩΝΑΣ</td> <td>42</td> <td>ΠΕΡΙΣΤΕΡΙ</td> <td>70</td> <td>ΠΑΛΛΗΝΗ</td> </tr>
+							<tr> <th scope="row">15</th> <td>ΓΑΛΑΤΣΙ</td> <td>43</td> <td>ΠΕΤΡΟΥΠΟΛΗ</td> <td>71</td> <td>ΠΑΠΑΓΟΥ</td> </tr>
+							<tr> <th scope="row">16</th> <td>ΓΛΥΦΑΔΑ</td> <td>44</td> <td>ΣΠΑΤΑ</td> <td>72</td> <td>ΠΕΝΤΕΛΗ (ΠΑΛΑΙΑ)</td> </tr>
+							<tr> <th scope="row">17</th> <td>ΔΑΦΝΗ</td> <td>45</td> <td>ΤΑΥΡΟΣ</td> <td>73</td> <td>ΠΕΥΚΗ</td> </tr>
+							<tr> <th scope="row">18</th> <td>ΔΡΑΠΕΤΣΩΝΑ</td> <td>46</td> <td>ΥΜΗΤΤΟΣ</td> <td>74</td> <td>ΣΤΑΜΑΤΑ</td> </tr>
+							<tr> <th scope="row">19</th> <td>ΕΛΕΥΣΙΝΑ</td> <td>47</td> <td>ΧΑΪΔΑΡΙ</td> <td>75</td> <td>ΦΙΛΟΘΕΗ</td> </tr>
+							<tr> <th scope="row">20</th> <td>ΖΩΓΡΑΦΟΥ</td> <td>48</td> <td>ΧΑΛΑΝΔΡΙ</td> <td>76</td> <td>ΦΥΛΗ</td> </tr>
+							<tr> <th scope="row">21</th> <td>ΗΛΙΟΥΠΟΛΗ</td> <td>49</td> <td>ΧΟΛΑΡΓΟΣ</td> <td>77</td> <td>ΨΥΧΙΚΟ</td> </tr>
+							<tr> <th scope="row">22</th> <td>ΗΡΑΚΛΕΙΟ</td> <td>50</td> <td>ΑΓΙΟΣ ΣΤΕΦΑΝΟΣ</td> <td>78</td> <td>ΑΝΘΟΥΣΑ</td> </tr>
+							<tr> <th scope="row">23</th> <td>ΚΑΙΣΑΡΙΑΝΗ</td> <td>51</td> <td>ΑΝΟΙΞΗ</td> <td>79</td> <td>ΑΡΤΕΜΙΣ (ΛΟΥΤΣΑ)</td> </tr>
+							<tr> <th scope="row">24</th> <td>ΚΑΛΛΙΘΕΑ</td> <td>52</td> <td>ΒΑΡΗ</td> <td>80</td> <td>ΓΕΡΑΚΑΣ</td> </tr>
+							<tr> <th scope="row">25</th> <td>ΚΑΜΑΤΕΡ</td> <td>53</td> <td>ΒΟΥΛΑ</td> <td>81</td> <td>ΘΡΑΚΟΜΑΚΕΔΟΝΕΣ</td> </tr>
+							<tr> <th scope="row">26</th> <td>ΚΕΡΑΤΣΙΝΙ</td> <td>54</td> <td>ΒΟΥΛΙΑΓΜΕΝΗ</td> <td>82</td> <td>ΒΑΡΥΜΠΟΜΠΗ</td> </tr>
+							<tr> <th scope="row">27</th> <td>ΚΗΦΙΣΙ</td> <td>55</td> <td>ΒΡΙΛΗΣΣΙΑ</td> <td>83</td> <td>ΔΙΟΝΥΣΟΣ</td> </tr>
+							<tr> <th scope="row">28</th> <td>ΚΟΡΥΔΑΛΛΟΣ</td> <td>56</td> <td>ΓΛΥΚΑ ΝΕΡΑ</td> <td>84</td> <td>ΣΑΡΩΝΙΔΑ</td> </tr>
 						</tbody>
 					</table>   
-					<br>
-					<p>*1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20: Δήμοι & Κοινότητες υπό συνένωση.</p>  	
+					<br>	
 					<p>**Ο Δήμος Μάνδρας στην Δυτική Αττική συνενώνεται στον νεοσύστατο Δήμο Μάνδρας-Ειδυλίας με τους υφιστάμενους (εκτός περιοχής ευθύνης ΟΑΣΑ) Δήμους Βιλίων, Ερυθρών και την υφιστάμενη (εκτός περιοχής ευθύνης ΟΑΣΑ) Κοινότητα Οινόης</p>
 				  	<p>***Η Κοινότητα Σαρωνίδας στην Ανατολική Αττική συνενώνεται στον νεοσύστατο Δήμο Σαρωνικού με τον υφιστάμενο (εκτός περιοχής ευθύνης ΟΑΣΑ) Δήμο Καλυβίων Θορικού και τις υφιστάμενες (εκτός περιοχής ευθύνης ΟΑΣΑ) Κοινότητες Αναβύσσου, Κουβαρά και Παλαιάς Φώκαιας.</p>
 				  	<p>Υπάρχει άμεση σχέση συνεργασίας του ΟΑΣΑ με την Τοπική Αυτοδιοίκηση των παραπάνω 84 περιοχών και με τις αντίστοιχες Νομαρχίες τους. Ο ΟΑΣΑ φροντίζει να σχεδιάζει και να προσαρμόζει, όσο το επιτρέπουν οι υφιστάμενες συνθήκες, το Δίκτυο των Αστικών Συγκοινωνιών στις ανάγκες κάθε δήμου ή περιοχής, οι δε Οργανισμοί Τοπικής και Νομαρχιακής Αυτοδιοίκησης παίζουν διαμεσολαβητικό ρόλο ανάμεσα στον ΟΑΣΑ και τους πολίτες των περιοχών τους. Βεβαίως, ο ΟΑΣΑ πάντοτε εξετάζει με την ίδια προσοχή τις παρατηρήσεις και αιτήματα των μεμονωμένων πολιτών, που επικοινωνούν μαζί του. Οι Δήμοι και Κοινότητες/Οικισμοί της Περιοχής Εξυπηρέτησης των Αστικών Συγκοινωνιών ομαδοποιούνται στους παρακάτω 10 Τομείς Αστικών Συγκοινωνιών, οι οποίοι χρησιμοποιούνται και για την αρίθμηση των κεντρικών, διαδημοτικών και τοπικών λεωφορειακών γραμμών (οι γραμμές-κορμοί έχουν δική τους αρίθμηση):</p>
