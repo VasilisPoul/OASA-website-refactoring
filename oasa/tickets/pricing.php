@@ -30,6 +30,7 @@
   </head>
   <body>
 
+    <?php include 'ticket_categories.php';?>
     
 	  <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
       <div class="container">
@@ -109,222 +110,49 @@
    <div class="container crumbs-top">
     </div>
 
-    <section class="bg-light front-page-text page-header">
-      <div class="container">
-        <div class="row no-gutters align-items-end justify-content-center text-center">
-          <div class="col-md-9 ftco-animate pb-5">
-            
-            <h1>Τιμοκατάλογος</h1>
+
+     <section class="ftco-section ftco-no-pt bg-light front-page-text">
+      <div class="container"><br><br>
+        <h1>Εισιτήρια ATH.ENA card και ATH.ENA ticket</h1>
+        <div class="row">
+          <div class="col-md-8">
+            <p>
+              Γυρίστε την Αθήνα με όλα τα μέσα του ΟΑΣΑ με το ηλεκτρονικό εισιτήριο ATH.ENA ticket.
+              Φορτώστε πολλές διαδρομές στην προσωποποιημένη ή ανώνυμη κάρτα σας ATH.ENA card ή το πολλαπλό εισιτήριο και προστατέψτε το περιβάλλον.
+            </p>
           </div>
+          <div class="col-md-2">
+            <img src="../images/athena_card.png" alt="athena card">
+          </div>
+          <div class="col-md-2">
+            <img src="../images/athena_ticket.png" alt="athena ticket">
+          </div>
+            
+            
         </div>
       </div>
     </section>
 
+   
     <section class="ftco-section ftco-no-pt bg-light front-page-text">
-      
-			<div class="container">
-				<div class="row d-flex mb-5 contact-info">
-					<p> Ενιαία Εισητήρια 90 Λεπτών:</p>
-					<table class="table">
-						<thead>
-							<tr>
-								<th scope="col">Ποσότητα</th>
-								<th scope="col">Κανονικό</th>
-								<th scope="col">Μειωμένο</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<th scope="row">1</th>
-								<td>1,40€</td>
-								<td>0.60€</td>
-							</tr>
-							<tr>
-								<th scope="row">2</th>
-								<td>2,70€</td>
-								<td>1,20€</td>
-							</tr>
-							<tr>
-								<th scope="row">5</th>
-								<td>6,50€</td>
-								<td>3€</td>
-							</tr>
-							<tr>
-								<th scope="row">10+1</th>
-								<td>13,50€</td>
-								<td>6€</td>
-							</tr>
-						</tbody>
-					</table>   
-					<br>
-				<p>Ημερήσια Εισητήρια (Δεν συμπεριλαμβάνονται διαδρομές απο και πρός το αεροδρόμιο και η γραμμή Χ80):</p>
-					<table class="table">
-						<thead>
-							<tr>
-								<th scope="col">Αριθμός Ημερών</th>
-								<th scope="col">Κανονικό</th>
-								<th scope="col">Μειωμένο</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<th scope="row">1</th>
-								<td>4,50€</td>
-								<td>4,50€</td>
-							</tr>
-							<tr>
-								<th scope="row">5</th>
-								<td>9€</td>
-								<td>9€</td>
-							</tr>
-							<tr>
-								<th scope="row">30</th>
-								<td>30€</td>
-								<td>15€</td>
-							</tr>
-							<tr>
-								<th scope="row">90</th>
-								<td>85€</td>
-								<td>43€</td>
-							</tr>
-							<tr>
-								<th scope="row">180</th>
-								<td>170€</td>
-								<td>85€</td>
-							</tr>
-							<tr>
-								<th scope="row">365</th>
-								<td>330€</td>
-								<td>165€</td>
-							</tr>
-						</tbody>
-					</table>           
-				<br>
-				<p>Ημερήσια Εισητήρια (Δεν συμπεριλαμβάνεται η γραμμή Χ80):</p>
-				<table class="table">
-					<thead>
-						<tr>
-							<th scope="col">Αριθμός Ημερών</th>
-							<th scope="col">Κανονικό</th>
-							<th scope="col">Μειωμένο</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<th scope="row">30</th>
-							<td>49€</td>
-							<td>25€</td>
-						</tr>
-						<tr>
-							<th scope="row">90</th>
-							<td>142€</td>
-							<td>71€</td>
-						</tr>
-						<tr>
-							<th scope="row">180</th>
-							<td>250€</td>
-							<td>125€</td>
-						</tr>
-						<tr>
-							<th scope="row">365</th>
-							<td>490€</td>
-							<td>245€</td>
-						</tr>
-					</tbody>
-				</table> 
-				<p>Εισιτήρια λεωφορείων EXPRESS:</p>
-				<table class="table">
-					<thead>
-						<tr>
-							<th scope="col">Αριθμός Διαδρομών</th>
-							<th scope="col">Κανονικό</th>
-							<th scope="col">Μειωμένο</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<th scope="row">1</th>
-							<td>6€</td>
-							<td>3€</td>
-						</tr>
-					</tbody>
-				</table> 
-				<p>Εισιτήρια Μετρό για αεροδρόμιο:</p>
-				<table class="table">
-					<thead>
-						<tr>
-							<th scope="col">Αριθμός Διαδρομών</th>
-							<th scope="col">Κανονικό</th>
-							<th scope="col">Μειωμένο</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<th scope="row">1</th>
-							<td>10€</td>
-							<td>5€</td>
-						</tr>
-						<tr>
-							<th scope="row">1 Με Επιστροφή</th>
-							<td>18€</td>
-							<td>6€</td>
-						</tr>
-					</tbody>
-				</table> 
-				<p>Εισιτήρια Μετρό για αεροδρόμιο:</p>
-				<table class="table">
-					<thead>
-						<tr>
-							<th scope="col">Αριθμός Διαδρομών</th>
-							<th scope="col">Κανονικό</th>
-							<th scope="col">Μειωμένο</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<th scope="row">1</th>
-							<td>10€</td>
-							<td>5€</td>
-						</tr>
-						<tr>
-							<th scope="row">1 Με Επιστροφή</th>
-							<td>18€</td>
-							<td>6€</td>
-						</tr>
-					</tbody>
-				</table> 
-				<p>Εισιτήρια για τη γραμμή Χ80:</p>
-				<table class="table">
-					<thead>
-						<tr>
-							<th scope="col">Είδος εισιτηρίου</th>
-							<th scope="col">Κανονικό</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<th scope="row">Ημερήσιο, όλα τα μεσα, εκτός Αεροδρόμιο</th>
-							<td>4,50€</td>
-						</tr>
-					</tbody>
-				</table> 
-				<p>Τουριστικό Εισιτήριο(Ισχύει και για τη γραμμή Χ80 και περιλαμβάνει μία διαδρομή από και προς το αεροδρόμιο):</p>
-				<table class="table">
-					<thead>
-						<tr>
-							<th scope="col">Αριθμός Ημερών</th>
-							<th scope="col">Κανονικό</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<th scope="row">3</th>
-							<td>22€</td>
-						</tr>
-					</tbody>
-				</table> 
-			</div>
-		</div>
+      <div class="container">
+        <div class="row d-flex mb-5 contact-info">
+          <div class="row mb-5">
+            <div class="col-md-12">
+              <div class="border w-100 p-4 rounded mb-2 d-flex">
+                <h3>Κατηγορίες & τιμές εισιτηρίων </h3>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="border w-100 p-4 rounded mb-2 d-flex">
+                <div class="overflow-auto">
+                  <?php echo $tickets; ?>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 	
 
