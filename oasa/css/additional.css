@@ -102,13 +102,15 @@
 .progressbar {
 	counter-reset: step;
 	list-style: none;
+	display: table;
+	table-layout: fixed;
+	width: 100%;
 }
 
 .progressbar li {
-	float: left;
-	width: 25%;
 	position: relative;
 	text-align: center;
+	display: table-cell;
 }
 
 .progressbar li:before {
