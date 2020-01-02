@@ -119,7 +119,6 @@
       <div class="container">
         <div class="row no-gutters align-items-end justify-content-center text-center">
           <div class="col-md-9 ftco-animate pb-5">
-            
             <h1>Επαναφόρτιση Κάρτας</h1>
           </div>
         </div>
@@ -129,6 +128,17 @@
     <section class="ftco-section ftco-no-pt bg-light">
       <div class="container">
         <label>Επαναφόρτιση Κάρτας</label>
+        <div class="container">
+          <ul class="progressbar">
+            <li class="active">Επιλογή Εισιτηρίου</li>
+            <li class="active">Επιλογή Ποσότητας</li>
+            <li>Εισαγωγή Πληροφοριών</li>
+            <li>Επιλογές Παραλαβής</li>
+          </ul>
+        </div>
+        <br />
+        <br />
+        <br />
       </div>
     </section>
 
