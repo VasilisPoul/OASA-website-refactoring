@@ -47,9 +47,9 @@
               <div class="dropdown">
                 <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Το Δίκτυο</a>
           <div class="dropdown-menu">
-                  <a class="dropdown-item" href="../network/info.html">Πληροφορίες και Χάρτης</a>
-                  <a class="dropdown-item" href="../network/journey_planner.html">Σχεδιασμός Διαδρομής</a>
-                  <a class="dropdown-item" href="../network/status.html">Κατάσταση Δικτύου</a>
+                  <a class="dropdown-item" href="../network/info.php">Πληροφορίες και Χάρτης</a>
+                  <a class="dropdown-item" href="../network/journey_planner.php">Σχεδιασμός Διαδρομής</a>
+                  <a class="dropdown-item" href="../network/status.php">Κατάσταση Δικτύου</a>
                 </div>
               </div>
             </li>
@@ -57,8 +57,8 @@
               <div class="dropdown">
                 <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Εισιτήρια</a>
           <div class="dropdown-menu">
-                  <a class="dropdown-item" href="../tickets/info.html">Πληροφορίες Εισιτηρίων</a>
-                  <a class="dropdown-item" href="../tickets/buy_online.html">Ηλεκτρονική Αγορά Εισιτηρίων</a>
+                  <a class="dropdown-item" href="../tickets/info.php">Πληροφορίες Εισιτηρίων</a>
+                  <a class="dropdown-item" href="../tickets/buy_online.php">Ηλεκτρονική Αγορά Εισιτηρίων</a>
                 </div>
               </div>
           </li>
@@ -66,10 +66,10 @@
               <div class="dropdown">
                 <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Επιβάτες</a>
           <div class="dropdown-menu">
-                  <a class="dropdown-item" href="../passengers/lost_and_found.html">Απολεσθέντα</a>
-                  <a class="dropdown-item" href="../passengers/amea.html">ΆμεΑ</a> <!--TODO: correct translation :p -->
-                  <a class="dropdown-item" href="../passengers/complaints.html">Υποβολή Παραπόνων</a>
-                  <a class="dropdown-item" href="../passengers/help.html">Βοήθεια</a>
+                  <a class="dropdown-item" href="../passengers/lost_and_found.php">Απολεσθέντα</a>
+                  <a class="dropdown-item" href="../passengers/amea.php">ΆμεΑ</a> <!--TODO: correct translation :p -->
+                  <a class="dropdown-item" href="../passengers/complaints.php">Υποβολή Παραπόνων</a>
+                  <a class="dropdown-item" href="../passengers/help.php">Βοήθεια</a>
                 </div>
               </div>
           </li>
@@ -77,10 +77,10 @@
               <div class="dropdown">
                 <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Εταιρία</a>
           <div class="dropdown-menu">
-                  <a class="dropdown-item" href="../company/info.html">Πληροφορίες Ομίλου</a>
-                  <a class="dropdown-item" href="../company/contact_details.html">Στοιχεία Επικοινωνίας</a>
-                  <a class="dropdown-item" href="../company/competitions.html">Διαγωνισμοί</a> <!--TODO: correct translation :p -->
-                  <a class="dropdown-item" href="../company/news.html">Νέα</a>
+                  <a class="dropdown-item" href="../company/info.php">Πληροφορίες Ομίλου</a>
+                  <a class="dropdown-item" href="../company/contact_details.php">Στοιχεία Επικοινωνίας</a>
+                  <a class="dropdown-item" href="../company/competitions.php">Διαγωνισμοί</a> <!--TODO: correct translation :p -->
+                  <a class="dropdown-item" href="../company/news.php">Νέα</a>
                 </div>
               </div>
           </li>
@@ -170,8 +170,8 @@
               <p>
                 Εταιρίες Ομίλου
                 <ul class="list-unstyled">
-                  <li><a href="www.osy.gr">ΟΣΥ - Οδικές Συγκοινωνίες Α.Ε.</a></li>
-                  <li><a href="www.stasy.gr">ΣΤΑΣΥ - Σταθερές Συγκοινωνίες Α.Ε.</a></li>
+                  <li><a href="http://www.osy.gr" target="_blank">ΟΣΥ - Οδικές Συγκοινωνίες Α.Ε.</a></li>
+                  <li><a href="http://www.stasy.gr" target="_blank">ΣΤΑΣΥ - Σταθερές Συγκοινωνίες Α.Ε.</a></li>
                 </ul>
               </p>
             </div>
@@ -180,9 +180,9 @@
             <div class="ftco-footer-widget mb-4 ml-md-5">
               <h2 class="ftco-heading-2">Δίκτυο</h2>
               <ul class="list-unstyled">
-                <li><a href="../network/info.html" class="py-2 d-block">Πληροφορίες και Χάρτης</a></li>
-                <li><a href="../network/journey_planner.html" class="py-2 d-block">Σχεδιασμός Διαδρομής</a></li>
-                <li><a href="../network/status.html" class="py-2 d-block">Κατάσταση Δικτύου</a></li>
+                <li><a href="../network/info.php" class="py-2 d-block">Πληροφορίες και Χάρτης</a></li>
+                <li><a href="../network/journey_planner.php" class="py-2 d-block">Σχεδιασμός Διαδρομής</a></li>
+                <li><a href="../network/status.php" class="py-2 d-block">Κατάσταση Δικτύου</a></li>
               </ul>
             </div>
           </div>
@@ -190,8 +190,8 @@
              <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">Εισιτήρια</h2>
               <ul class="list-unstyled">
-                <li><a href="../tickets/info.html" class="py-2 d-block">Πληροφορίες Εισιτηρίων</a></li>
-                <li><a href="../tickets/buy_online.html" class="py-2 d-block">Ηλεκτρονική Αγορά Εισιτηρίων</a></li>
+                <li><a href="../tickets/info.php" class="py-2 d-block">Πληροφορίες Εισιτηρίων</a></li>
+                <li><a href="../tickets/buy_online.php" class="py-2 d-block">Ηλεκτρονική Αγορά Εισιτηρίων</a></li>
               </ul>
             </div>
           </div>
@@ -199,10 +199,10 @@
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">Επιβάτες</h2>
               <ul class="list-unstyled">
-                <li><a href="../passengers/lost_and_found.html" class="py-2 d-block">Απολεσθέντα</a></li>
+                <li><a href="../passengers/lost_and_found.php" class="py-2 d-block">Απολεσθέντα</a></li>
                 <li><a href="../passengers/amea.php" class="py-2 d-block">ΆμεΑ</a></li>
-                <li><a href="../passengers/complaints.html" class="py-2 d-block">Υποβολη Παραπόνων</a></li>
-                <li><a href="../passengers/help.html" class="py-2 d-block">Βοήθεια</a></li>
+                <li><a href="../passengers/complaints.php" class="py-2 d-block">Υποβολη Παραπόνων</a></li>
+                <li><a href="../passengers/help.php" class="py-2 d-block">Βοήθεια</a></li>
               </ul>
             </div>
           </div>
