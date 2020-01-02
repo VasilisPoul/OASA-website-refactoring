@@ -29,7 +29,6 @@
     <link rel="stylesheet" href="../css/additional.css">
   </head>
   <body>
-
     
 	 <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light navbar-color" id="ftco-navbar">
       <div class="container">
@@ -127,18 +126,90 @@
 
     <section class="ftco-section ftco-no-pt bg-light">
       <div class="container">
-        <label>Αγορά Εισιτηρίου</label>
-        <div class="container">
-          <ul class="progressbar">
-            <li class="active">Επιλογή Εισιτηρίου</li>
-            <li class="active">Επιλογή Ποσότητας</li>
-            <li>Εισαγωγή Πληροφοριών</li>
-            <li>Επιλογές Παραλαβής</li>
-          </ul>
-        </div>
-        <br />
-        <br />
-        <br />
+        <form id="buy_form" action="">
+
+          <!-- One "step-screen" for each step in the form: -->
+          <div class="step-screen">
+            <label>Αγορά Εισιτηρίου</label>
+            <div class="container">
+              <ul class="progressbar">
+                <li class="active">Επιλογή Εισιτηρίου</li>
+                <li>Επιλογή Ποσότητας</li>
+                <li>Εισαγωγή Πληροφοριών</li>
+                <li>Επιλογές Παραλαβής</li>
+              </ul>
+            </div>
+            <br />
+            <br />
+            <br />
+            Name:
+            <p><input placeholder="First name..." oninput="this.className = ''"></p>
+            <p><input placeholder="Last name..." oninput="this.className = ''"></p>
+          </div>
+
+          <div class="step-screen">
+            <label>Αγορά Εισιτηρίου</label>
+            <div class="container">
+              <ul class="progressbar">
+                <li class="active">Επιλογή Εισιτηρίου</li>
+                <li class="active">Επιλογή Ποσότητας</li>
+                <li>Εισαγωγή Πληροφοριών</li>
+                <li>Επιλογές Παραλαβής</li>
+              </ul>
+            </div>
+            <br />
+            <br />
+            <br />
+            Contact Info:
+            <p><input placeholder="E-mail..." oninput="this.className = ''"></p>
+            <p><input placeholder="Phone..." oninput="this.className = ''"></p>
+          </div>
+
+          <div class="step-screen">
+            <label>Αγορά Εισιτηρίου</label>
+            <div class="container">
+              <ul class="progressbar">
+                <li class="active">Επιλογή Εισιτηρίου</li>
+                <li class="active">Επιλογή Ποσότητας</li>
+                <li class="active">Εισαγωγή Πληροφοριών</li>
+                <li>Επιλογές Παραλαβής</li>
+              </ul>
+            </div>
+            <br />
+            <br />
+            <br />
+            Birthday:
+            <p><input placeholder="dd" oninput="this.className = ''"></p>
+            <p><input placeholder="mm" oninput="this.className = ''"></p>
+            <p><input placeholder="yyyy" oninput="this.className = ''"></p>
+          </div>
+
+          <div class="step-screen">
+            <label>Αγορά Εισιτηρίου</label>
+            <div class="container">
+              <ul class="progressbar">
+                <li class="active">Επιλογή Εισιτηρίου</li>
+                <li class="active">Επιλογή Ποσότητας</li>
+                <li class="active">Εισαγωγή Πληροφοριών</li>
+                <li class="active">Επιλογές Παραλαβής</li>
+              </ul>
+            </div>
+            <br />
+            <br />
+            <br />
+            Login Info:
+            <p><input placeholder="Username..." oninput="this.className = ''"></p>
+            <p><input placeholder="Password..." oninput="this.className = ''"></p>
+          </div>
+
+          <div style="overflow:auto;">
+            <div style="float:right;">
+              <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+              <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            </div>
+          </div>
+
+        </form> 
       </div>
     </section>
 
@@ -222,6 +293,8 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="../js/google-map.js"></script>
   <script src="../js/main.js"></script>
+
+  <script src="../js/buy-steps.js"></script>
     
   </body>
 </html>

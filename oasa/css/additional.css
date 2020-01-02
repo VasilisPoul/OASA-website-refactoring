@@ -155,3 +155,7 @@
 	background: #ffac1c;
 	color: white
 }
+
+.step-screen {
+  display: none;
+}
