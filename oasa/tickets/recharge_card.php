@@ -35,7 +35,7 @@
       <div class="container">
         <a href="../index.php"><img src="../images/oasa_logo_transparent.png" alt="logo" width="25%"></a>
         <button class="navbar-toggler text-dark" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="oi oi-menu"></span> Menu
+          <span class="fa fa-bars"></span> Menu
         </button>
 
         <div class="collapse navbar-collapse" id="ftco-nav">
@@ -108,10 +108,10 @@
     
     <div class="container crumbs-top">
       <p class="breadcrumbs">
-        <span class="mr-2"><a href="../index.php">Αρχική <i class="ion-ios-arrow-forward"></i></a></span> 
+        <span class="mr-2"><a href="../index.php">Αρχική <i class="fa fa-angle-right"></i></a></span> 
         <span class="mr-2">Εισιτήρια <i class="ion-ios-arrow-forward"></i></span> 
-        <span class="mr-2"><a href="buy_online.php">Ηλεκτρονική Αγορά Εισιτηρίων <i class="ion-ios-arrow-forward"></i></a></span> 
-        <span class="mr-2">Επαναφόρτιση Κάρτας <i class="ion-ios-arrow-forward"></i></span>
+        <span class="mr-2"><a href="buy_online.php">Ηλεκτρονική Αγορά Εισιτηρίων <i class="fa fa-angle-right"></i></a></span> 
+        <span class="mr-2">Επαναφόρτιση Κάρτας <i class="fa fa-angle-right"></i></span>
       </p>
     </div>
 
