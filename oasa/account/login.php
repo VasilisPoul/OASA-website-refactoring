@@ -37,7 +37,7 @@
       <div class="container">
         <a href="../index.php"><img src="../images/oasa_logo_transparent.png" alt="logo" width="25%"></a>
         <button class="navbar-toggler text-dark" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="oi oi-menu"></span> Menu
+          <span class="fa fa-bars"></span> Menu
         </button>
 
         <div class="collapse navbar-collapse" id="ftco-nav">
