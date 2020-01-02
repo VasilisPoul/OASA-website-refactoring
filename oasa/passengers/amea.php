@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="../css/additional.css">
   </head>
   <body>
-	  <?php include 'handicap_stations.php';?> </span>
+	  <?php include 'handicap_stations.php';?> 
     
 	  <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light navbar-color" id="ftco-navbar">
       <div class="container">
