@@ -110,7 +110,8 @@
     <!-- END nav -->
     <div class="container crumbs-top">
       <p class="breadcrumbs">
-        <span class="mr-2"><a href="../index.php">Αρχική <i class="fa fa-angle-right"></i></a></span> 
+        <span class="mr-2"><a href="../index.php">Αρχική <i class="fa fa-angle-right"></i></a></span>
+        <span class="mr-2">Επιβάτες <i class="fa fa-angle-right"></i></span>
         <span class="mr-2">ΆμεΑ <i class="fa fa-angle-right"></i></span>
       </p>
     </div>

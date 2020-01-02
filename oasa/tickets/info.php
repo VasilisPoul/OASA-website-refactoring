@@ -7,6 +7,9 @@
     <link rel="icon" href="../images/favicon.ico" type="image/ico">
     
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="../css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="../css/animate.css">
@@ -52,7 +55,7 @@
                 </div>
               </div>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
               <div class="dropdown">
                 <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Εισιτήρια</a>
           <div class="dropdown-menu">
@@ -108,6 +111,11 @@
     <!-- END nav -->
     
    <div class="container crumbs-top">
+      <p class="breadcrumbs">
+        <span class="mr-2"><a href="../index.php">Αρχική <i class="fa fa-angle-right"></i></a></span> 
+        <span class="mr-2">Εισιτήρια <i class="fa fa-angle-right"></i></span>
+        <span class="mr-2">Πληροφορίες Εισιτηρίων <i class="fa fa-angle-right"></i></span>
+      </p>
     </div>
 
 
@@ -161,49 +169,44 @@
         <div class="row mb-5">
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2"><a href="#" class="logo">Car<span>book</span></a></h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
+              <h2>ΟΑΣΑ - Οργανισμός Αστικών Συγκοινωνιών Αθηνών Α.Ε.</h2>
+              <p>
+                Εταιρίες Ομίλου
+                <ul class="list-unstyled">
+                  <li><a href="http://www.osy.gr" target="_blank">ΟΣΥ - Οδικές Συγκοινωνίες Α.Ε.</a></li>
+                  <li><a href="http://www.stasy.gr" target="_blank">ΣΤΑΣΥ - Σταθερές Συγκοινωνίες Α.Ε.</a></li>
+                </ul>
+              </p>
             </div>
           </div>
           <div class="col-md">
             <div class="ftco-footer-widget mb-4 ml-md-5">
-              <h2 class="ftco-heading-2">Information</h2>
+              <h2 class="ftco-heading-2">Δίκτυο</h2>
               <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">About</a></li>
-                <li><a href="#" class="py-2 d-block">Services</a></li>
-                <li><a href="#" class="py-2 d-block">Term and Conditions</a></li>
-                <li><a href="#" class="py-2 d-block">Best Price Guarantee</a></li>
-                <li><a href="#" class="py-2 d-block">Privacy &amp; Cookies Policy</a></li>
+                <li><a href="../network/info.php" class="py-2 d-block">Πληροφορίες και Χάρτης</a></li>
+                <li><a href="../network/journey_planner.php" class="py-2 d-block">Σχεδιασμός Διαδρομής</a></li>
+                <li><a href="../network/status.php" class="py-2 d-block">Κατάσταση Δικτύου</a></li>
               </ul>
             </div>
           </div>
           <div class="col-md">
              <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Customer Support</h2>
+              <h2 class="ftco-heading-2">Εισιτήρια</h2>
               <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">FAQ</a></li>
-                <li><a href="#" class="py-2 d-block">Payment Option</a></li>
-                <li><a href="#" class="py-2 d-block">Booking Tips</a></li>
-                <li><a href="#" class="py-2 d-block">How it works</a></li>
-                <li><a href="#" class="py-2 d-block">Contact Us</a></li>
+                <li><a href="../tickets/info.php" class="py-2 d-block">Πληροφορίες Εισιτηρίων</a></li>
+                <li><a href="../tickets/buy_online.php" class="py-2 d-block">Ηλεκτρονική Αγορά Εισιτηρίων</a></li>
               </ul>
             </div>
           </div>
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Have a Questions?</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
-	              </ul>
-	            </div>
+              <h2 class="ftco-heading-2">Επιβάτες</h2>
+              <ul class="list-unstyled">
+                <li><a href="../passengers/lost_and_found.php" class="py-2 d-block">Απολεσθέντα</a></li>
+                <li><a href="../passengers/amea.php" class="py-2 d-block">ΆμεΑ</a></li>
+                <li><a href="../passengers/complaints.php" class="py-2 d-block">Υποβολη Παραπόνων</a></li>
+                <li><a href="../passengers/help.php" class="py-2 d-block">Βοήθεια</a></li>
+              </ul>
             </div>
           </div>
         </div>
