@@ -31,7 +31,7 @@
   <body>
 
     
-	  <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light navbar-color" id="ftco-navbar">
+	 <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light navbar-color" id="ftco-navbar">
       <div class="container">
         <a href="../index.php"><img src="../images/oasa_logo_transparent.png" alt="logo" width="25%"></a>
         <button class="navbar-toggler text-dark" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -114,141 +114,24 @@
         <div class="row no-gutters align-items-end justify-content-center text-center">
           <div class="col-md-9 ftco-animate pb-5">
             
-            <h1>Aγορά Κομήστρου</h1>
+            <h1>Aγορά Κομίστρου</h1>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="ftco-section ftco-no-pt bg-light front-page-text">
-      
+    <section class="ftco-section ftco-no-pt bg-light">
+      <div class="container">
+        <ul class="nav nav-tabs tabs-list">
+          <li><a href="buy_ticket.php">Αγορά Εισιτηρίων</a></li>
+          <li class="active"><a href="recharge_ticket.php">Επαναφόρτιση</a></li>
+          <li><a href="buy_card.php">Έκδοση Κάρτας</a></li>
+        </ul>
         <div class="container">
-          <div class="row d-flex mb-5 contact-info">
-            
-            <div class="row container">
-              <div class="col-sm-6">
-                <div class="groove">
-                    <div class="container">
-                        <div class="row d-flex mb-5 contact-info">
-                            
-                            <div class="col-sm-9 block-1 mb-md-3 container">
-                                <form method="POST" action="<?=$_SERVER['PHP_SELF']?>">
-                                    
-                                    <div class="form-group-error input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"> <i class="icon-user"></i> </span>
-                                        </div>
-                                        <input name="first_name" class="form-control" placeholder="Όνομα" type="text" >
-                                        
-                                    </div> <!-- form-group-error// -->
-                                    
-                                    <div class="form-group-error input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"> <i class="icon-user"></i> </span>
-                                        </div>
-                                        <input name="last_name" class="form-control" placeholder="Επίθετο" type="text" >
-                                        
-                                    </div> <!-- form-group-error// -->
-                                                            
-                                    <div class="form-group-error input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"> <i class="icon-envelope-o"></i> </span>
-                                        </div>
-                                        <input name="email" class="form-control" placeholder="Email" type="email" >
-                                        
-                                    </div> <!-- form-group-error// -->
-                                    
-                                    <div class="form-group-error input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"> <i class="icon-phone"></i> </span>
-                                        </div>
-                                        
-                                        <input name="phone" class="form-control" placeholder="Αριθμός Τηλεφώνου" type="text" >
-                                        
-                                        
-                                    </div> <!-- form-group-error// -->               
-                                    <br />
-                                    <div class = "groove">
-                                        <p>Ανήκω στην κατηγορία:</p>
-                                        
-                                        <input type="radio" name="user_category" value="1" checked> Δικαιούχος κανονικού εισιτηρίου<br>
-                                        <input type="radio" name="user_category" value="2"> Φοιτητής/Μαθητής<br>
-                                        <input type="radio" name="user_category" value="3"> Άνεργος/Αμεα<br> 
-
-                                    </div>
-                                                             
-                                </form>
-                           
-                        </div>
-                    </div> 
-                </div>
-            </div>
+          <p>Bla Bla Bla...</p>
         </div>
-
-        <div class="col-sm-6">
-            <div class="groove">
-            
-                <p>Οι δικαιούχοι μειωμένου κομίστρου θα πρέπει να ανεβάσουν πιστοποιητικό σε φωτογραφία (π.χ. φοιτητικό πάσο) σε μορφή pdf.</p>
-                <br>
-                <form>
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="customFile">
-                        <label class="custom-file-label" for="customFile">Επιλογή Αρχείου</label>
-                    </div>
-                </form>
-
-                <script>
-                    // Add the following code if you want the name of the file appear on select
-                    $(".custom-file-input").on("change", function() {
-                    var fileName = $(this).val().split("\\").pop();
-                    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-                    });
-                </script>
-                <br>
-              
-                <p>Μπορείτε να παραλάβετε την κάρτα σας σε κάποιο σταθμό της επιλογής σας ή να επιλέξετε να σας σταλεό στην κατοικία σας.</p>
-                <br>
-                <div class="container">
-                    <div class="dropdown">
-                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Επιθυμιτός Σταθμός Παραλαβής
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Σταθμός 1</a>
-                            <a class="dropdown-item" href="#">Σταθμός 2</a>
-                            <a class="dropdown-item" href="#">...</a>
-                        </div>
-                    </div>
-                    <br>
-                    ή
-
-                    <form method="POST" action="<?=$_SERVER['PHP_SELF']?>">
-                                    
-                        <div class="form-group-error input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"> <i class="icon-map"></i> </span>
-                            </div>
-                            <input name="address" class="form-control" placeholder="Διεύθυνση Κατοικίας" type="text" >
-                            
-                        </div> <!-- form-group-error// -->
-
-                </div>
-            </div>
-           
-            <br>
-            <div align="center">
-                <div class="form-group">
-                    <input type="submit" value="Αγορά" class="btn btn-primary py-3 px-5">
-                </div>
-            </div>
-        </div>
-    
-            </div>
-          </div>
-        </div> 
-    
+      </div>
     </section>
-	
 
     <footer class="ftco-footer ftco-bg-dark ftco-section">
       <div class="container">
