@@ -11,6 +11,21 @@ function getProducts() {
 	return products;
 }
 
+function getProductsAsString() {
+  var selects = document.getElementsByClassName("buy-select");
+  var quantities = document.getElementsByClassName("buy-quantity");
+  var products = "{";
+  for(var i=0; i<selects.length; i++) {
+    var option = selects[i].options[selects[i].selectedIndex];
+    products += option.value + ":" + quantities[i].value;
+    if(i != selects.length-1){
+      products += ",";
+    }
+  }
+
+  return products;
+}
+
 function clearTable() {
 	var rows = document.getElementsByClassName("inserted-table-row").length;
 	var table = document.getElementById("products-table");
