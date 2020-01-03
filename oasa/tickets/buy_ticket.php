@@ -150,7 +150,7 @@
               <div class="row ticket-row">
                 <div class="col-md-6">
                   <br />
-                  <select style="width: 100%; text-overflow: ellipsis;">
+                  <select class="buy-input" style="width: 100%; text-overflow: ellipsis;">
                     <?php foreach($ticket_names as $ticket) {
                       echo  "<option value='$ticket[0]' title='$ticket[1]'>$ticket[1]</option>";
                     } ?>
@@ -159,12 +159,12 @@
                 <div class="col-md-3">
                   <div class="row">
                     <div class="col-md-6">
-                      <label>Ποσότητα</label>
+                      <label class="mb-0">Ποσότητα</label>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-6">
-                      <input type="number" min="1" max="100" value="1">
+                      <input type="number" class="buy-input" min="1" max="100" value="1">
                     </div>
                   </div>
                 </div>
@@ -173,7 +173,7 @@
                   <button type="button" class="remove-row" onclick="removeTicket(this)" style="display:none"><i class="fa fa-times"></i></button>
                 </div>
               </div>
-              <input type="button" class="add-product" id="add-ticket" value="+ Προσθήκη Προϊόντων" onclick="addTicket()">
+              <input type="button" class="btn btn-grey btn-round add-product" id="add-ticket" value="+ Προσθήκη Προϊόντων" onclick="addTicket()">
             </div>
           </div>
 
@@ -195,7 +195,7 @@
                 $email = $_SESSION['email'];
               }
              ?>
-            <input type="text" placeholder="E-mail" value="<?php echo $email; ?>" required>
+            <input type="text" class="buy-input" placeholder="E-mail" value="<?php echo $email; ?>" required>
           </div>
 
           <div class="step-screen">
@@ -261,8 +261,8 @@
 
           <div style="overflow:auto;">
             <div style="float:right;">
-              <button type="button" id="prevBtn" onclick="nextPrev(-1)">Προηγούμενο</button>
-              <button type="button" id="nextBtn" onclick="nextPrev(1)">Επόμενο</button>
+              <button type="button" class="btn btn-grey" id="prevBtn" onclick="nextPrev(-1)">Προηγούμενο</button>
+              <button type="button" class="btn btn-primary" id="nextBtn" onclick="nextPrev(1)">Επόμενο</button>
             </div>
           </div>
 

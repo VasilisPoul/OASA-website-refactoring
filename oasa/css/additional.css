@@ -97,6 +97,10 @@
 	margin: 20px;
 }
 
+.btn.btn-round {
+	border-radius: 25px;
+}
+
 /* Progress Bar */
 
 .progressbar {
@@ -156,6 +160,8 @@
 	color: white
 }
 
+/************/
+
 .step-screen {
   display: none;
 }
@@ -168,4 +174,15 @@
 	all: unset;
 	color: red;
 	font-size: 20px;
+}
+
+.buy-input {
+	border-radius: 5px;
+	box-shadow: none;
+	border-style: solid;
+	padding: 2px;
+}
+
+.buy-input:focus {
+	border-color: #bebebe;
 }
