@@ -31,13 +31,25 @@ function nextPrev(n) {
   if(currentTab == 1 && n == 1) {
     getProductsTable();
   }
-  currentTab = currentTab + n;
+
+  //Going to submit screen
+  if(currentTab == x.length-2 && n==1) {
+    document.getElementById("string-to-send").value = getProductsAsString();
+    document.getElementById("email-to-send").value = document.getElementById("buy-email-input").value;
+  }
+
   // if you have reached the end of the form... :
-  if (currentTab >= x.length) {
+  if(currentTab == x.length-1) {
     //...the form gets submitted:
-    document.getElementById("buy_form").submit();
+    document.getElementById("buy-form").submit();
+    //alert("Done!");
+    window.location.replace("buy_online.php");
     return false;
   }
+
+    currentTab = currentTab + n;
+
+
   // Otherwise, display the correct step-screen:
   showTab(currentTab);
 }

@@ -23,6 +23,8 @@ function getProductsAsString() {
     }
   }
 
+  products += "}";
+
   return products;
 }
 

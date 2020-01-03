@@ -186,3 +186,7 @@
 .buy-input:focus {
 	border-color: #bebebe;
 }
+
+#buy-form, #buy-form > input {
+	display: none;
+}

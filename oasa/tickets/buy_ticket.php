@@ -132,8 +132,7 @@
 
     <section class="ftco-section ftco-no-pt bg-light">
       <div class="container">
-        <form id="buy-form" action="">
-
+        <div action="">
           <!-- One "step-screen" for each step in the form: -->
           <div class="step-screen">
             <div class="container">
@@ -197,7 +196,7 @@
                 $email = $_SESSION['email'];
               }
              ?>
-            <input type="text" class="buy-input" placeholder="E-mail" value="<?php echo $email; ?>" required>
+            <input type="text" id="buy-email-input" class="buy-input" placeholder="E-mail" value="<?php echo $email; ?>" required>
           </div>
 
           <div class="step-screen">
@@ -244,6 +243,11 @@
             <br />
             <br />
             <p>Θα σας αποσταλεί email με το αποδεικτικό πληρωμής και τα εισιτήριά σας</p>
+            <form id="buy-form" method="POST" action="<?=$_SERVER['PHP_SELF']?>">
+              <input id="string-to-send" name="buy_cart" class="form-control" type="text">
+              <input id="email-to-send" name="email" class="form-control" type="text">
+            </form>
+
 
           </div>
           <br />
@@ -255,7 +259,7 @@
             </div>
           </div>
 
-        </form> 
+        </div> 
       </div>
     </section>
 
