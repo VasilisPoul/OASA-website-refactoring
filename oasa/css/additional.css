@@ -187,6 +187,10 @@
 	border-color: #bebebe;
 }
 
+.buy-input.err {
+	border-color: red;
+}
+
 #buy-form, #buy-form > input {
 	display: none;
 }

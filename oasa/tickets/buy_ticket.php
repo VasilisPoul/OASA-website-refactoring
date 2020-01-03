@@ -197,6 +197,7 @@
               }
              ?>
             <input type="text" id="buy-email-input" class="buy-input" placeholder="E-mail" value="<?php echo $email; ?>" required>
+            <div id="email-error-div" style="color: red; display: none;">Incorrect email format</div>
           </div>
 
           <div class="step-screen">

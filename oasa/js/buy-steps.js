@@ -26,7 +26,13 @@ function nextPrev(n) {
   // Exit the function if any field in the current step-screen is invalid:
   //if (n == 1 && !validateForm()) return false;
   // Hide the current step-screen:
+
+  if(currentTab == 1 && n == 1 && !validateEmail()) {
+    return false;
+  }
+
   x[currentTab].style.display = "none";
+
   // Increase or decrease the current step-screen by 1:
   if(currentTab == 1 && n == 1) {
     getProductsTable();
@@ -54,21 +60,18 @@ function nextPrev(n) {
   showTab(currentTab);
 }
 
-function validateForm() {
+function validateEmail() {
   // This function deals with validation of the form fields
-  var x, y, i, valid = true;
-  x = document.getElementsByClassName("step-screen");
-  y = x[currentTab].getElementsByTagName("input");
-  // A loop that checks every input field in the current step-screen:
-  for (i = 0; i < y.length; i++) {
-    // If a field is empty...
-    if (y[i].value == "") {
-      // add an "invalid" class to the field:
-      y[i].className += " invalid";
-      // and set the current valid status to false:
-      valid = false;
-    }
+  var field = document.getElementById("buy-email-input");
+  var err = document.getElementById("email-error-div");
+  if((/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(field.value))) {
+    field.classList.remove("err");
+    err.style.display = "none";
+    return true;
   }
-
-  return valid; // return the valid status
+  else {
+    field.classList.add("err");
+    err.style.display = "inline";
+    return false;
+  }
 }
