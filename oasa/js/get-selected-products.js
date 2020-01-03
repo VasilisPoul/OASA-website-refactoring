@@ -22,6 +22,7 @@ function getProductsAsString() {
       products += ",";
     }
   }
+  products += "}";
 
   return products;
 }
