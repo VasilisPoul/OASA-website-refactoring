@@ -159,3 +159,13 @@
 .step-screen {
   display: none;
 }
+
+.ticket-row {
+	padding: 2%;
+}
+
+.remove-row {
+	all: unset;
+	color: red;
+	font-size: 20px;
+}

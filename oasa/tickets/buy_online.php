@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ΟΑΣΑ - Αγορά Εισιτηρίου</title>
+    <title>ΟΑΣΑ - Αγορά Εισιτηρίων</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="../images/favicon.ico" type="image/ico">
@@ -130,7 +130,7 @@
 
     <section class="ftco-section ftco-no-pt bg-light">
       <div class="container justify-content-center text-center">
-        <a href="buy_ticket.php" class="btn btn-grey btn-big">Αγορά Εισιτηρίου</a>
+        <a href="buy_ticket.php" class="btn btn-grey btn-big">Αγορά Εισιτηρίων</a>
         <a href="buy_card.php" class="btn btn-grey btn-big">Έκδοση Κάρτας</a>
         <a href="recharge_ticket.php" class="btn btn-grey btn-big">Επαναφόρτιση Εισιτηρίου</a>
         <a href="recharge_card.php" class="btn btn-grey btn-big">Επαναφόρτιση Κάρτας</a>

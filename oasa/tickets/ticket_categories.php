@@ -23,9 +23,11 @@ if($conn->connect_error){
 $sql = "SELECT tc.idticket_category, tc.name AS name1, tc.price, uc.name AS name2 FROM ticket_category tc, user_category uc WHERE tc.iduser_category = uc.iduser_category ORDER BY tc.idticket_category";
 $result = $conn->query($sql);
 
+$ticket_names = array();
 if(!empty($result) && $result->num_rows > 0){
   while($row = $result->fetch_assoc()){
     $tickets .= "<tr><td>" . $row["idticket_category"] . "</td><td>" . $row["name1"] . "</td><td>" . $row["price"] . "€</td><td>" . $row["name2"] . "</td></tr>";
+    $ticket_names[] = array($row["idticket_category"], $row["name1"]);
   }
 }
 

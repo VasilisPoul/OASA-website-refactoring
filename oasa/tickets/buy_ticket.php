@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ΟΑΣΑ - Αγορά Εισιτηρίου</title>
+    <title>ΟΑΣΑ - Αγορά Εισιτηρίων</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="../images/favicon.ico" type="image/ico">
@@ -32,6 +32,9 @@
     <link rel="stylesheet" href="../css/additional.css">
   </head>
   <body>
+
+    <?php include 'ticket_categories.php' ?>
+    <?php include 'get_stations.php' ?>
     
 	 <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light navbar-color" id="ftco-navbar">
       <div class="container">
@@ -107,13 +110,13 @@
       </div>
     </nav>
     <!-- END nav -->
-    
+
     <div class="container crumbs-top">
       <p class="breadcrumbs">
         <span class="mr-2"><a href="../index.php">Αρχική <i class="fa fa-angle-right"></i></a></span> 
         <span class="mr-2">Εισιτήρια <i class="ion-ios-arrow-forward"></i></span> 
         <span class="mr-2"><a href="buy_online.php">Ηλεκτρονική Αγορά Εισιτηρίων <i class="fa fa-angle-right"></i></a></span> 
-        <span class="mr-2">Αγορά Εισιτηρίου <i class="fa fa-angle-right"></i></span>
+        <span class="mr-2">Αγορά Εισιτηρίων <i class="fa fa-angle-right"></i></span>
       </p>
     </div>
 
@@ -121,7 +124,7 @@
       <div class="container">
         <div class="row no-gutters align-items-end justify-content-center text-center">
           <div class="col-md-9 ftco-animate pb-5">
-            <h1>Aγορά Εισιτηρίου</h1>
+            <h1>Αγορά Εισιτηρίων</h1>
           </div>
         </div>
       </div>
@@ -129,15 +132,13 @@
 
     <section class="ftco-section ftco-no-pt bg-light">
       <div class="container">
-        <form id="buy_form" action="">
+        <form id="buy-form" action="">
 
           <!-- One "step-screen" for each step in the form: -->
           <div class="step-screen">
-            <label>Αγορά Εισιτηρίου</label>
             <div class="container">
               <ul class="progressbar">
-                <li class="active">Επιλογή Εισιτηρίου</li>
-                <li>Επιλογή Ποσότητας</li>
+                <li class="active">Επιλογή Εισιτηρίων</li>
                 <li>Εισαγωγή Πληροφοριών</li>
                 <li>Επιλογές Παραλαβής</li>
               </ul>
@@ -145,35 +146,41 @@
             <br />
             <br />
             <br />
-            Name:
-            <p><input placeholder="First name..." oninput="this.className = ''"></p>
-            <p><input placeholder="Last name..." oninput="this.className = ''"></p>
-          </div>
-
-          <div class="step-screen">
-            <label>Αγορά Εισιτηρίου</label>
-            <div class="container">
-              <ul class="progressbar">
-                <li class="active">Επιλογή Εισιτηρίου</li>
-                <li class="active">Επιλογή Ποσότητας</li>
-                <li>Εισαγωγή Πληροφοριών</li>
-                <li>Επιλογές Παραλαβής</li>
-              </ul>
+            <div class="container" id="tickets-container">
+              <div class="row ticket-row">
+                <div class="col-md-6">
+                  <br />
+                  <select style="width: 100%; text-overflow: ellipsis;">
+                    <?php foreach($ticket_names as $ticket) {
+                      echo  "<option value='$ticket[0]' title='$ticket[1]'>$ticket[1]</option>";
+                    } ?>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Ποσότητα</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <input type="number" min="1" max="100" value="1">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <br />
+                  <button type="button" class="remove-row" onclick="removeTicket(this)" style="display:none"><i class="fa fa-times"></i></button>
+                </div>
+              </div>
+              <input type="button" class="add-product" id="add-ticket" value="+ Προσθήκη Προϊόντων" onclick="addTicket()">
             </div>
-            <br />
-            <br />
-            <br />
-            Contact Info:
-            <p><input placeholder="E-mail..." oninput="this.className = ''"></p>
-            <p><input placeholder="Phone..." oninput="this.className = ''"></p>
           </div>
 
           <div class="step-screen">
-            <label>Αγορά Εισιτηρίου</label>
             <div class="container">
               <ul class="progressbar">
-                <li class="active">Επιλογή Εισιτηρίου</li>
-                <li class="active">Επιλογή Ποσότητας</li>
+                <li class="active">Επιλογή Εισιτηρίων</li>
                 <li class="active">Εισαγωγή Πληροφοριών</li>
                 <li>Επιλογές Παραλαβής</li>
               </ul>
@@ -181,18 +188,15 @@
             <br />
             <br />
             <br />
-            Birthday:
-            <p><input placeholder="dd" oninput="this.className = ''"></p>
-            <p><input placeholder="mm" oninput="this.className = ''"></p>
-            <p><input placeholder="yyyy" oninput="this.className = ''"></p>
+            <p>Παρακαλούμε εισάγετε τον λογαριασμό e-mail σας για να σας σταλεί απόδειξη αγοράς και οδηγίες παραλαβής των προϊόντων σας</p>
+            <input type="text" placeholder="E-mail" required>
           </div>
 
           <div class="step-screen">
-            <label>Αγορά Εισιτηρίου</label>
+            <label>Αγορά Εισιτηρίων</label>
             <div class="container">
               <ul class="progressbar">
-                <li class="active">Επιλογή Εισιτηρίου</li>
-                <li class="active">Επιλογή Ποσότητας</li>
+                <li class="active">Επιλογή Εισιτηρίων</li>
                 <li class="active">Εισαγωγή Πληροφοριών</li>
                 <li class="active">Επιλογές Παραλαβής</li>
               </ul>
@@ -200,15 +204,60 @@
             <br />
             <br />
             <br />
-            Login Info:
-            <p><input placeholder="Username..." oninput="this.className = ''"></p>
-            <p><input placeholder="Password..." oninput="this.className = ''"></p>
+            <div class="container">
+              <p>Οι δικαιούχοι μειωμένου κομίστρου θα πρέπει να ανεβάσουν πιστοποιητικό σε φωτογραφία (π.χ. φοιτητικό πάσο) σε μορφή pdf.</p>
+              <br>
+              <form>
+                  <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="customFile">
+                      <label class="custom-file-label" for="customFile">Επιλογή Αρχείου</label>
+                  </div>
+              </form>
+
+              <script>
+                  // Add the following code if you want the name of the file appear on select
+                  $(".custom-file-input").on("change", function() {
+                  var fileName = $(this).val().split("\\").pop();
+                  $(this).siblings(".custom-file-label").addClass("selected").php(fileName);
+                  });
+              </script>
+              <br>
+              
+              <p>Μπορείτε να παραλάβετε την κάρτα σας σε κάποιο σταθμό της επιλογής σας ή να επιλέξετε να σας σταλεό στην κατοικία σας.</p>
+              <br>
+              <div class="container">
+                  <div class="dropdown">
+                      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Επιθυμιτός Σταθμός Παραλαβής
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">    <!-- TODO: This should be a selector -->
+                          <?php foreach($stations as $st) {
+                            echo "<a class='dropdown-item' href='#'>$st[1] ($st[2])</a>";
+                          } ?>
+                      </div>
+                  </div>
+                  <br>
+                  ή
+
+                  <form method="POST" action="<?=$_SERVER['PHP_SELF']?>">
+                                  
+                      <div class="form-group-error input-group">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text"> <i class="icon-map"></i> </span>
+                          </div>
+                          <input name="address" class="form-control" placeholder="Διεύθυνση Κατοικίας" type="text" >
+                          
+                      </div> <!-- form-group-error// -->
+                  </form>
+              </div>
+            </div>
           </div>
+          <br />
 
           <div style="overflow:auto;">
             <div style="float:right;">
-              <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-              <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+              <button type="button" id="prevBtn" onclick="nextPrev(-1)">Προηγούμενο</button>
+              <button type="button" id="nextBtn" onclick="nextPrev(1)">Επόμενο</button>
             </div>
           </div>
 
@@ -298,6 +347,7 @@
   <script src="../js/main.js"></script>
 
   <script src="../js/buy-steps.js"></script>
+  <script src="../js/add-products.js"></script>
     
   </body>
 </html>
