@@ -140,7 +140,8 @@
               <ul class="progressbar">
                 <li class="active">Επιλογή Εισιτηρίων</li>
                 <li>Εισαγωγή Πληροφοριών</li>
-                <li>Επιλογές Παραλαβής</li>
+                <li>Πληρωμή</li>
+                <li>Ολοκλήρωση</li>
               </ul>
             </div>
             <br />
@@ -150,9 +151,9 @@
               <div class="row ticket-row">
                 <div class="col-md-6">
                   <br />
-                  <select class="buy-input" style="width: 100%; text-overflow: ellipsis;">
+                  <select class="buy-input buy-select" style="width: 100%; text-overflow: ellipsis;">
                     <?php foreach($ticket_names as $ticket) {
-                      echo  "<option value='$ticket[0]' title='$ticket[1]'>$ticket[1]</option>";
+                      echo  "<option value='$ticket[0]' title='$ticket[1]' data-price='$ticket[2]'>$ticket[1]</option>";
                     } ?>
                   </select>
                 </div>
@@ -164,7 +165,7 @@
                   </div>
                   <div class="row">
                     <div class="col-md-6">
-                      <input type="number" class="buy-input" min="1" max="100" value="1">
+                      <input type="number" class="buy-input buy-quantity" min="1" max="100" value="1">
                     </div>
                   </div>
                 </div>
@@ -182,13 +183,14 @@
               <ul class="progressbar">
                 <li class="active">Επιλογή Εισιτηρίων</li>
                 <li class="active">Εισαγωγή Πληροφοριών</li>
-                <li>Επιλογές Παραλαβής</li>
+                <li>Πληρωμή</li>
+                <li>Ολοκλήρωση</li>
               </ul>
             </div>
             <br />
             <br />
             <br />
-            <p>Παρακαλούμε εισάγετε τον λογαριασμό e-mail σας για να σας σταλεί απόδειξη αγοράς και οδηγίες παραλαβής των προϊόντων σας</p>
+            <p>Παρακαλούμε εισάγετε τον λογαριασμό e-mail σας για να σας σταλεί απόδειξη αγοράς και τα προϊόντα σας</p>
             <?php
               $email = "";
               if(isset($_SESSION['loggedin'])) {
@@ -203,59 +205,46 @@
               <ul class="progressbar">
                 <li class="active">Επιλογή Εισιτηρίων</li>
                 <li class="active">Εισαγωγή Πληροφοριών</li>
-                <li class="active">Επιλογές Παραλαβής</li>
+                <li class="active">Πληρωμή</li>
+                <li>Ολοκλήρωση</li>
               </ul>
             </div>
             <br />
             <br />
             <br />
-            <div class="container">
-              <p>Οι δικαιούχοι μειωμένου κομίστρου θα πρέπει να ανεβάσουν πιστοποιητικό σε φωτογραφία (π.χ. φοιτητικό πάσο) σε μορφή pdf.</p>
-              <br>
-              <form>
-                  <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="customFile">
-                      <label class="custom-file-label" for="customFile">Επιλογή Αρχείου</label>
-                  </div>
-              </form>
-
-              <script>
-                  // Add the following code if you want the name of the file appear on select
-                  $(".custom-file-input").on("change", function() {
-                  var fileName = $(this).val().split("\\").pop();
-                  $(this).siblings(".custom-file-label").addClass("selected").php(fileName);
-                  });
-              </script>
-              <br>
-              
-              <p>Μπορείτε να παραλάβετε την κάρτα σας σε κάποιο σταθμό της επιλογής σας ή να επιλέξετε να σας σταλεό στην κατοικία σας.</p>
-              <br>
-              <div class="container">
-                  <div class="dropdown">
-                      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Επιθυμιτός Σταθμός Παραλαβής
-                      </button>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">    <!-- TODO: This should be a selector -->
-                          <?php foreach($stations as $st) {
-                            echo "<a class='dropdown-item' href='#'>$st[1] ($st[2])</a>";
-                          } ?>
-                      </div>
-                  </div>
-                  <br>
-                  ή
-
-                  <form method="POST" action="<?=$_SERVER['PHP_SELF']?>">
-                                  
-                      <div class="form-group-error input-group">
-                          <div class="input-group-prepend">
-                              <span class="input-group-text"> <i class="icon-map"></i> </span>
-                          </div>
-                          <input name="address" class="form-control" placeholder="Διεύθυνση Κατοικίας" type="text" >
-                          
-                      </div> <!-- form-group-error// -->
-                  </form>
+            <div class="row">
+              <div class="col-md-9">
+                <h3>Ποϊόντα προς αγορά:</h3>
+                <table id="products-table" style="width:100%">
+                  <tr>
+                    <th>Προϊόν</th>
+                    <th>Ποσότητα</th>
+                    <th>Τιμή</th>
+                  </tr>
+                </table>
+                <script src="../js/get-selected-products.js"></script>
+              </div>
+              <div class="col-md-3">
+                <p>Τελικό ποσό προς πληρωμή: 1,40</p>
+                <input type="button" class="btn btn-grey" value="Συνδεθείτε με την τράπεζά σας">
               </div>
             </div>
+          </div>
+
+          <div class="step-screen">
+            <div class="container">
+              <ul class="progressbar">
+                <li class="active">Επιλογή Εισιτηρίων</li>
+                <li class="active">Εισαγωγή Πληροφοριών</li>
+                <li class="active">Πληρωμή</li>
+                <li class="active">Ολοκλήρωση</li>
+              </ul>
+            </div>
+            <br />
+            <br />
+            <br />
+            <p>Θα σας αποσταλεί email με το αποδεικτικό πληρωμής και τα εισιτήριά σας</p>
+
           </div>
           <br />
 

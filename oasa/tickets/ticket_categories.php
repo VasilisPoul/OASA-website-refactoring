@@ -27,7 +27,7 @@ $ticket_names = array();
 if(!empty($result) && $result->num_rows > 0){
   while($row = $result->fetch_assoc()){
     $tickets .= "<tr><td>" . $row["idticket_category"] . "</td><td>" . $row["name1"] . "</td><td>" . $row["price"] . "€</td><td>" . $row["name2"] . "</td></tr>";
-    $ticket_names[] = array($row["idticket_category"], $row["name1"]);
+    $ticket_names[] = array($row["idticket_category"], $row["name1"], $row["price"]);
   }
 }
 

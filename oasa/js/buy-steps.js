@@ -24,10 +24,13 @@ function nextPrev(n) {
   // This function will figure out which step-screen to display
   var x = document.getElementsByClassName("step-screen");
   // Exit the function if any field in the current step-screen is invalid:
-  if (n == 1 && !validateForm()) return false;
+  //if (n == 1 && !validateForm()) return false;
   // Hide the current step-screen:
   x[currentTab].style.display = "none";
   // Increase or decrease the current step-screen by 1:
+  if(currentTab == 1 && n == 1) {
+    getProductsTable();
+  }
   currentTab = currentTab + n;
   // if you have reached the end of the form... :
   if (currentTab >= x.length) {
