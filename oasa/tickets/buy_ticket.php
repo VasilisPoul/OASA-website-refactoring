@@ -225,7 +225,7 @@
                 <script src="../js/get-selected-products.js"></script>
               </div>
               <div class="col-md-3">
-                <p>Τελικό ποσό προς πληρωμή: 1,40</p>
+                <p>Τελικό ποσό προς πληρωμή: <span id="total-price">€</span></p>
                 <input type="button" class="btn btn-grey" value="Συνδεθείτε με την τράπεζά σας">
               </div>
             </div>

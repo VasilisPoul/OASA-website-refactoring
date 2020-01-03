@@ -8,7 +8,6 @@ function getProducts() {
 		products[i] = [option.value, option.title, quantities[i].value, option.getAttribute("data-price") * quantities[i].value];
 	}
 
-	console.log(products);
 	return products;
 }
 
@@ -34,4 +33,13 @@ function getProductsTable() {
 		cell2.innerHTML = products[i][2];
 		cell3.innerHTML = products[i][3];
 	}
+	getTotal(products);
+}
+
+function getTotal(products) {
+	var total = 0;
+	for(var i=0; i<products.length; i++) {
+		total += products[i][3];
+	}
+	document.getElementById("total-price").innerHTML = total + "€";
 }
