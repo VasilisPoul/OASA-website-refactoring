@@ -189,11 +189,16 @@
             <br />
             <br />
             <p>Παρακαλούμε εισάγετε τον λογαριασμό e-mail σας για να σας σταλεί απόδειξη αγοράς και οδηγίες παραλαβής των προϊόντων σας</p>
-            <input type="text" placeholder="E-mail" required>
+            <?php
+              $email = "";
+              if(isset($_SESSION['loggedin'])) {
+                $email = $_SESSION['email'];
+              }
+             ?>
+            <input type="text" placeholder="E-mail" value="<?php echo $email; ?>" required>
           </div>
 
           <div class="step-screen">
-            <label>Αγορά Εισιτηρίων</label>
             <div class="container">
               <ul class="progressbar">
                 <li class="active">Επιλογή Εισιτηρίων</li>

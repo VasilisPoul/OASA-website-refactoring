@@ -33,6 +33,7 @@
   </head>
   <body>
 
+    <?php session_start(); ?>
     
 	 <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light navbar-color" id="ftco-navbar">
       <div class="container">
