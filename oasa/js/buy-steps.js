@@ -48,7 +48,11 @@ function nextPrev(n) {
   if(currentTab == x.length-1) {
     //...the form gets submitted:
     document.getElementById("buy-form").submit();
-    return false;
+    document.getElementById("buy-loader").style.display = "block";
+    document.getElementById("nextBtn").disabled = "true";
+    document.getElementById("prevBtn").disabled = "true";
+    showTab(currentTab);
+    return true;
   }
 
     currentTab = currentTab + n;
