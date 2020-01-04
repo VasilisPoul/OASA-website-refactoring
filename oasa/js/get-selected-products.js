@@ -17,7 +17,7 @@ function getProductsAsString() {
   var products = "{";
   for(var i=0; i<selects.length; i++) {
     var option = selects[i].options[selects[i].selectedIndex];
-    products += option.value + ":" + quantities[i].value;
+    products += "^" + option.value + "^:^" + quantities[i].value + "^";
     if(i != selects.length-1){
       products += ",";
     }
