@@ -48,8 +48,6 @@ function nextPrev(n) {
   if(currentTab == x.length-1) {
     //...the form gets submitted:
     document.getElementById("buy-form").submit();
-    //alert("Done!");
-    window.location.replace("buy_online.php");
     return false;
   }
 
