@@ -248,6 +248,7 @@
               <input id="string-to-send" name="buy_cart" class="form-control" type="text">
               <input id="email-to-send" name="email" class="form-control" type="email">
             </form>
+            <div id="buy-loader" class="loader"></div> 
 
 
           </div>

@@ -53,6 +53,8 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
     $buy_cart = json_decode($buy_cart, true);
   }
 
+  $err = false;
+
   if(empty($email_err) && empty($buy_cart_err)){
 
     foreach ($buy_cart as $idticket_category => $quantity){
@@ -101,9 +103,13 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
 
     $content .= "</ul>Συνολικό ποσό πληρωμής: <strong>$total_amount €</strong>\n Με εκτίμηση,\n Οργανισμός Αστικών Συγκοινωνιών Αθηνών (ΟΑΣΑ)\n www.oasa.gr";
 
-    mail($email, "OASA tickets", $content, $mailheader) or die("Error sending email");
-
-    $buy_cart_err = "<div class=\"alert alert-success\"><strong>Επιτυχία!</strong> Η συναλλαγή ολοκληρώθηκε! Σας έχει αποσταλεί σχετικό email</div>";
+    if(mail($email, "OASA tickets", $content, $mailheader)) {
+      $buy_cart_err = "<div class=\"alert alert-success\"><strong>Επιτυχία!</strong> Η συναλλαγή ολοκληρώθηκε! Σας έχει αποσταλεί σχετικό email</div>";
+    }
+    else {
+      $buy_cart_err = "<div class=\"alert alert-danger\"><strong>Αποτυχία!</strong> Η αποστολή email απέτυχε και θα επαναληφθεί το συντομότερο δυνατό <br /> SMTP Server Error </div>";
+    }
+    
   }
   else{
     $buy_cart_err = "<div class=\"alert alert-danger\"><strong>Αποτυχία!</strong> Τα στοιχεία που δώθηκαν δεν είναι σωστά. Προσπαθήστε ξανά</div>";

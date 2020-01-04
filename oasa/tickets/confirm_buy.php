@@ -114,7 +114,8 @@
       <p class="breadcrumbs">
         <span class="mr-2"><a href="../index.php">Αρχική <i class="fa fa-angle-right"></i></a></span> 
         <span class="mr-2">Εισιτήρια <i class="fa fa-angle-right"></i></span> 
-        <span class="mr-2">Ηλεκτρονική Αγορά Εισιτηρίων <i class="fa fa-angle-right"></i></span>
+        <span class="mr-2"><a href="buy_online.php">Ηλεκτρονική Αγορά Εισιτηρίων <i class="fa fa-angle-right"></i></a></span>
+        <span class="mr-2">Αγορά Εισιτηρίων <i class="fa fa-angle-right"></i></span>
       </p>
     </div>
 
@@ -132,6 +133,12 @@
     <section class="ftco-section ftco-no-pt bg-light">
       <?php echo $buy_cart_err; ?>
       <?php echo $email_err; ?>
+
+      <div style="overflow:auto;">
+        <div style="float:right;">
+          <a href="../index.php" class="btn btn-primary mr-4">Επιστροφή στην Αρχική Σελίδα</a>
+        </div>
+      </div>
     </section>
 
     <footer class="ftco-footer ftco-bg-dark ftco-section">
