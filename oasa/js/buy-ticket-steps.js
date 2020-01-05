@@ -75,7 +75,7 @@ function validateEmail() {
   }
   else {
     field.classList.add("err");
-    err.style.display = "inline";
+    err.style.display = "block";
     return false;
   }
 }

@@ -155,9 +155,27 @@ HTML/CSS by: Maria Karamina (sdi1600059)
             <br />
             <p>Παρακαλούμε εισάγετε τον κωδικό του εισιτηρίου που επιθυμείτε να επαναφορτίσετε. Μπορείτε να τον βρείτε στο μπροστινό μέρος του εισιτηρίου.</p>
             <form id="ticket-id-form" method="POST" action="<?=$_SERVER['PHP_SELF']?>">
-              <input type="text" id="buy-ticket-id-input" class="buy-input" name="idticket" placeholder="Κωδικός Εισιτηρίου" required>
-              <div id="ticket-id-error-div" style="color: red; display: none;">Εσφαλμένος κωδικός εισιτηρίου</div>
-              <span class="error-message"> <?php echo $error;?></span> 
+              <input type="text" id="buy-ticket-id-input" class="buy-input <?php if($error) echo ' err' ?>" name="idticket" placeholder="Κωδικός Εισιτηρίου" required>
+              <?php
+                if($tick_category_name) {
+                  echo "<div class='success-message'>Έγκυρος κωδικός εισιτηρίου, μπορείτε να συνεχίσετε</div>";
+                }
+                else {
+                  echo "<div class='error-message'>$error</div>";
+                }
+              ?>
+              <input type="submit" class="btn btn-primary mt-3" value="Έλεγχος Εισιτηρίου">
+              <br />
+              <br />
+              <div class="container" <?php if(!$tick_category_name) echo "style='display:none;'";?>>
+                <h3>Πληροφορίες Εισιτηρίου</h3>
+                <label>Κωδικός Εισιτηρίου:</label><span><?php echo " " . $idticket; ?></span><br />
+                <label>Ημερομηνία Έκδοσης:</label><span><?php echo " " . $date; ?></span><br />
+                <h5>Προηγούμενο Κόμιστρο (έχει λήξει):</h5>
+                <span><?php echo $tick_category_name; ?></span><br />
+                <label>Τιμή:</label><span><?php echo " " . $price . "€"; ?></span><br />
+                <label>Κατηγορία:</label><span><?php echo " " . $user_cat_name; ?></span>
+              </div>
             </form>
           </div>
 
@@ -278,19 +296,18 @@ HTML/CSS by: Maria Karamina (sdi1600059)
               <input id="email-to-send" name="email" class="form-control" type="email">
             </form>
             <div id="buy-loader" class="loader"></div> 
-
-
           </div>
+
           <br />
 
           <div style="overflow:auto;">
             <div style="float:right;">
               <button type="button" class="btn btn-grey" id="prevBtn" onclick="nextPrev(-1)">Προηγούμενο</button>
-              <button type="button" class="btn btn-primary" id="nextBtn" onclick="nextPrev(1)">Επόμενο</button>
+              <button type="button" class="btn btn-primary" id="nextBtn" onclick="nextPrev(1)" <?php if($error) echo "disabled" ?>>Επόμενο</button>
             </div>
           </div>
+        </div>
 
-        </div> 
       </div>
     </section>
 

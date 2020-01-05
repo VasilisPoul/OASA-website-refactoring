@@ -39,6 +39,10 @@
 	color: red;
 }
 
+.success-message {
+	color: green;
+}
+
 .form-group-error {
 	margin-top: 1rem;
 }
