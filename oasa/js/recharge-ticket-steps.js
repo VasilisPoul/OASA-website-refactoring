@@ -38,7 +38,7 @@ function nextPrev(n) {
   // Increase or decrease the current step-screen by 1:
   if(currentTab === 2 && n === 1) {
     getProductsTable();
-    document.getElementById("ticket-id-preview").textContent = document.getElementById("buy-ticket-id-input").value;
+    document.getElementById("ticket-id-preview").textContent = localStorage.getItem("ticket_id");
   }
 
   //Going to submit screen
@@ -50,7 +50,7 @@ function nextPrev(n) {
   }
 
   // if you have reached the end of the form... :
-  if(currentTab === x.length-1) {
+  if(currentTab === x.length-1 && n===1) {
     //...the form gets submitted:
     document.getElementById("recharge-form").submit();
     document.getElementById("buy-loader").style.display = "block";

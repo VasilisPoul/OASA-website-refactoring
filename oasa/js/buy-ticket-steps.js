@@ -46,7 +46,7 @@ function nextPrev(n) {
   }
 
   // if you have reached the end of the form... :
-  if(currentTab === x.length-1) {
+  if(currentTab === x.length-1 && n===1) {
     //...the form gets submitted:
     document.getElementById("buy-form").submit();
     document.getElementById("buy-loader").style.display = "block";
