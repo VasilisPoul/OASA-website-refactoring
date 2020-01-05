@@ -38,7 +38,7 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
   if(empty($_POST["email"])){
     $email_err = "<div class=\"alert alert-danger\"><strong>Αποτυχία!</strong> Απαιτείται email</div>";
   } 
-  else{;
+  else{
     $email = $_POST["email"];
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       $email_err = "<div class=\"alert alert-danger\"><strong>Αποτυχία!</strong> Λανθασμένη μορφή email</div>";
@@ -52,8 +52,6 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
     $buy_cart = str_replace("^","\"",$_POST["buy_cart"]);
     $buy_cart = json_decode($buy_cart, true);
   }
-
-  $err = false;
 
   if(empty($email_err) && empty($buy_cart_err)){
 
