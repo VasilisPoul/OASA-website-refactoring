@@ -139,6 +139,7 @@ HTML/CSS by: Giorgos Koursiounis (sdi1600077)
     <section class="ftco-section ftco-no-pt bg-light">
       <?php echo $buy_cart_err; ?>
       <?php echo $email_err; ?>
+      <?php echo $message; ?>
 
       <div style="overflow:auto;">
         <div style="float:right;">

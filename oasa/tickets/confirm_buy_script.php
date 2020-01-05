@@ -13,7 +13,7 @@ $dbname = "oasa";
 
 $date = date("Y-m-d");
 
-$email = $buy_cart = "";
+$email = $buy_cart = $message = "";
 $email_err = $buy_cart_err = "";
 
 $total_amount = 0.0;
@@ -63,51 +63,55 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
       $result = $conn->query($sql);
 
       if(!empty($result) && $result->num_rows > 0){
+
+        for($x = 0; $x < $quantity; $x++){
         
-        if(isset($_SESSION['loggedin'])){
+          if(isset($_SESSION['loggedin'])){
 
-          $iduser = $_SESSION['loggedin'];
+            $iduser = $_SESSION['loggedin'];
 
-          $sql = "INSERT INTO ticket (quantity, date, iduser, idticket_category)
-          VALUES (\"$quantity\", \"$date\", \"$iduser\", \"$idticket_category\")";
-        }
-        else{
-          $sql = "INSERT INTO ticket (quantity, date, idticket_category)
-          VALUES (\"$quantity\", \"$date\", \"$idticket_category\")";
-        }
+            $sql = "INSERT INTO ticket (date, iduser, idticket_category)
+            VALUES (\"$date\", \"$iduser\", \"$idticket_category\")";
+          }
+          else{
+            $sql = "INSERT INTO ticket (date, idticket_category)
+            VALUES (\"$date\", \"$idticket_category\")";
+          }
 
-        if($conn->query($sql) === TRUE){
+          if($conn->query($sql) === TRUE){
 
-          $sql = "SELECT t.idticket, tc.name, tc.price FROM ticket t, ticket_category tc WHERE t.idticket = \"$conn->insert_id\" AND tc.idticket_category = t.idticket_category";
-          $result = $conn->query($sql);
+            $sql = "SELECT t.idticket, tc.name, tc.price FROM ticket t, ticket_category tc WHERE t.idticket = \"$conn->insert_id\" AND tc.idticket_category = t.idticket_category";
+            $result = $conn->query($sql);
 
-          if(!empty($result) && $result->num_rows > 0){
-            while($row = $result->fetch_assoc()){
-              $content .= "<li>Κωδικός εισιτηρίου: " . $row["idticket"] . "\n Τύπος: " . $row["name"] . "\n Τιμή: " . $row["price"] . " €</li>\n";
-              $total_amount += $row["price"];
+            if(!empty($result) && $result->num_rows > 0){
+              while($row = $result->fetch_assoc()){
+                $content .= "<li>Κωδικός εισιτηρίου: " . $row["idticket"] . "\n Τύπος: " . $row["name"] . "\n Τιμή: " . $row["price"] . " €</li>\n";
+                $total_amount += $row["price"];
+              }
             }
+            else{
+              die("Error: " . $sql . "<br>" . $conn->error);
+            }
+
           }
           else{
             die("Error: " . $sql . "<br>" . $conn->error);
-          }
-
+          } 
         }
-        else{
-          die("Error: " . $sql . "<br>" . $conn->error);
-        } 
       }
       else{
         $buy_cart_err = "<div class=\"alert alert-danger\"><strong>Αποτυχία!</strong> Η κατηγορία εισιτηρίου δεν υπάρχει</div>";
+        break;
       }
     }
 
     $content .= "</ul>Συνολικό ποσό πληρωμής: <strong>$total_amount €</strong>\n Με εκτίμηση,\n Οργανισμός Αστικών Συγκοινωνιών Αθηνών (ΟΑΣΑ)\n www.oasa.gr";
 
-    if(mail($email, "OASA tickets", $content, $mailheader)) {
-      $buy_cart_err = "<div class=\"alert alert-success\"><strong>Επιτυχία!</strong> Η συναλλαγή ολοκληρώθηκε! Σας έχει αποσταλεί σχετικό email</div>";
+    if(empty($buy_cart_err) && mail($email, "OASA tickets", $content, $mailheader)) {
+      $message = "<div class=\"alert alert-success\"><strong>Επιτυχία!</strong> Η συναλλαγή ολοκληρώθηκε! Σας έχει αποσταλεί σχετικό email</div>";
     }
     else {
-      $buy_cart_err = "<div class=\"alert alert-danger\"><strong>Αποτυχία!</strong> Η αποστολή email απέτυχε και θα επαναληφθεί το συντομότερο δυνατό <br /> SMTP Server Error </div>";
+      $message = "<div class=\"alert alert-danger\"><strong>Αποτυχία!</strong> Η αποστολή email απέτυχε και θα επαναληφθεί το συντομότερο δυνατό <br /> SMTP Server Error </div>";
     }
     
   }
