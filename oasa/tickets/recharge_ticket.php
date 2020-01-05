@@ -41,6 +41,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
 
     <?php include 'ticket_categories.php' ?>
     <?php include 'get_stations.php' ?>
+    <?php include 'find_ticket.php' ?>
     
    <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light navbar-color" id="ftco-navbar">
       <div class="container">
@@ -154,8 +155,10 @@ HTML/CSS by: Maria Karamina (sdi1600059)
             <br />
             <br />
             <p>Παρακαλούμε εισάγετε τον κωδικό του εισιτηρίου που επιθυμείτε να επαναφορτίσετε. Μπορείτε να τον βρείτε στο μπροστινό μέρος του εισιτηρίου.</p>
-            <input type="text" id="buy-ticket-id-input" class="buy-input" placeholder="Κωδικός Εισιτηρίου" required>
-            <div id="ticket-id-error-div" style="color: red; display: none;">Εσφαλμένος κωδικός εισιτηρίου</div>
+            <form id="ticket-id-form" method="POST" action="<?=$_SERVER['PHP_SELF']?>">
+              <input type="text" id="buy-ticket-id-input" class="buy-input" name="idticket" placeholder="Κωδικός Εισιτηρίου" required>
+              <div id="ticket-id-error-div" style="color: red; display: none;">Εσφαλμένος κωδικός εισιτηρίου</div>
+            </form>
           </div>
 
           <div class="step-screen">

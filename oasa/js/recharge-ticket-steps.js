@@ -30,8 +30,12 @@ function nextPrev(n) {
   // This function will figure out which step-screen to display
   var x = document.getElementsByClassName("step-screen");
 
-  if(currentTab === 0 && n === 1 && !validateId()) {
-    return false;
+  if(currentTab === 0 && n === 1) {
+    document.getElementById("ticket-id-form").submit();
+    document.getElementById("buy-loader").style.display = "block";
+    document.getElementById("nextBtn").disabled = "true";
+    document.getElementById("prevBtn").disabled = "true";
+    return true;
   }
 
   if(currentTab === 2 && n === 1 && !validateEmail()) {
