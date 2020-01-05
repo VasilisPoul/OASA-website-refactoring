@@ -1,3 +1,9 @@
+/* 
+
+JAVASCRIPT by: Maria Karamina (sdi1600059)
+
+*/
+
 var currentTab = 0; // Current step-screen is set to be the first step-screen (0)
 showTab(currentTab); // Display the current step-screen
 
@@ -23,29 +29,24 @@ function showTab(n) {
 function nextPrev(n) {
   // This function will figure out which step-screen to display
   var x = document.getElementsByClassName("step-screen");
-  // Exit the function if any field in the current step-screen is invalid:
-  //if (n == 1 && !validateForm()) return false;
-  // Hide the current step-screen:
 
-  if(currentTab == 1 && n == 1 && !validateEmail()) {
+  if(currentTab === 1 && n === 1 && !validateEmail()) {
     return false;
   }
 
-  x[currentTab].style.display = "none";
-
   // Increase or decrease the current step-screen by 1:
-  if(currentTab == 1 && n == 1) {
+  if(currentTab === 1 && n === 1) {
     getProductsTable();
   }
 
   //Going to submit screen
-  if(currentTab == x.length-2 && n==1) {
+  if(currentTab === x.length-2 && n===1) {
     document.getElementById("string-to-send").value = getProductsAsString();
     document.getElementById("email-to-send").value = document.getElementById("buy-email-input").value;
   }
 
   // if you have reached the end of the form... :
-  if(currentTab == x.length-1) {
+  if(currentTab === x.length-1) {
     //...the form gets submitted:
     document.getElementById("buy-form").submit();
     document.getElementById("buy-loader").style.display = "block";
@@ -55,10 +56,11 @@ function nextPrev(n) {
     return true;
   }
 
-    currentTab = currentTab + n;
+  // Otherwise, hide the current step-screen
+  x[currentTab].style.display = "none";
 
-
-  // Otherwise, display the correct step-screen:
+  //Display the correct step-screen
+  currentTab = currentTab + n;
   showTab(currentTab);
 }
 

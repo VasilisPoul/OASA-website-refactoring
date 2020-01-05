@@ -138,7 +138,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
 
     <section class="ftco-section ftco-no-pt bg-light">
       <div class="container">
-        <div action="">
+        <div>
           <!-- One "step-screen" for each step in the form: -->
           <div class="step-screen">
             <div class="container">
@@ -203,7 +203,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
               }
              ?>
             <input type="text" id="buy-email-input" class="buy-input" placeholder="E-mail" value="<?php echo $email; ?>" required>
-            <div id="email-error-div" style="color: red; display: none;">Incorrect email format</div>
+            <div id="email-error-div" style="color: red; display: none;">Εσφαλμένη μορφή email</div>
           </div>
 
           <div class="step-screen">
@@ -220,7 +220,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
             <br />
             <div class="row">
               <div class="col-md-9">
-                <h3>Ποϊόντα προς αγορά:</h3>
+                <h3>Προϊόντα προς αγορά:</h3>
                 <table id="products-table" style="width:100%">
                   <tr>
                     <th>Προϊόν</th>
@@ -250,7 +250,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
             <br />
             <br />
             <p>Θα σας αποσταλεί email με το αποδεικτικό πληρωμής και τα εισιτήριά σας</p>
-            <form id="buy-form" method="POST" action="confirm_buy.php">
+            <form id="buy-form" class="hidden-form" method="POST" action="confirm_buy.php">
               <input id="string-to-send" name="buy_cart" class="form-control" type="text">
               <input id="email-to-send" name="email" class="form-control" type="email">
             </form>
@@ -352,7 +352,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
   <script src="../js/google-map.js"></script>
   <script src="../js/main.js"></script>
 
-  <script src="../js/buy-steps.js"></script>
+  <script src="../js/buy-ticket-steps.js"></script>
   <script src="../js/add-products.js"></script>
     
   </body>

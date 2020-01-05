@@ -191,7 +191,7 @@
 	border-color: red;
 }
 
-#buy-form, #buy-form > input {
+.hidden-from, .hidden-form > input {
 	display: none;
 }
 
