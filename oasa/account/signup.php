@@ -1,3 +1,9 @@
+<!-- 
+
+HTML/CSS by: Vasilis Poulopoulos (sdi1600141)
+
+-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>

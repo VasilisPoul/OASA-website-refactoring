@@ -1,3 +1,9 @@
+<!-- 
+
+HTML/CSS by: Giorgos Koursiounis (sdi1600077)
+
+-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>

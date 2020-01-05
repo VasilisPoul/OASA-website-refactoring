@@ -1,3 +1,9 @@
+<!-- 
+
+HTML/CSS by: Maria Karamina (sdi1600059)
+
+-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
