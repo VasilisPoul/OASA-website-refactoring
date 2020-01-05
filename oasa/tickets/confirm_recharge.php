@@ -1,13 +1,13 @@
 <!-- 
 
-HTML/CSS by: Maria Karamina (sdi1600059)
+HTML/CSS by: Giorgos Koursiounis (sdi1600077)
 
 -->
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ΟΑΣΑ - Επαναφόρτιση Εισιτηρίου</title>
+    <title>ΟΑΣΑ - Επαναφόρτιση Εισιτηρίων</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="../images/favicon.ico" type="image/ico">
@@ -39,8 +39,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
   </head>
   <body>
 
-    <?php include 'find_ticket.php' ?>
-    <?php include 'ticket_categories.php' ?>
+    <?php include 'confirm_recharge_script.php' ?>
     
    <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light navbar-color" id="ftco-navbar">
       <div class="container">
@@ -116,13 +115,13 @@ HTML/CSS by: Maria Karamina (sdi1600059)
       </div>
     </nav>
     <!-- END nav -->
-
+    
     <div class="container crumbs-top">
       <p class="breadcrumbs">
         <span class="mr-2"><a href="../index.php">Αρχική <i class="fa fa-angle-right"></i></a></span> 
         <span class="mr-2">Εισιτήρια <i class="fa fa-angle-right"></i></span> 
-        <span class="mr-2"><a href="buy_online.php">Ηλεκτρονική Αγορά Εισιτηρίων <i class="fa fa-angle-right"></i></a></span> 
-        <span class="mr-2">Επαναφόρτιση Εισιτηρίου <i class="fa fa-angle-right"></i></span>
+        <span class="mr-2"><a href="buy_online.php">Ηλεκτρονική Αγορά Εισιτηρίων <i class="fa fa-angle-right"></i></a></span>
+        <span class="mr-2"> Επαναφόρτιση Εισιτηρίου <i class="fa fa-angle-right"></i></span>
       </p>
     </div>
 
@@ -130,6 +129,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
       <div class="container">
         <div class="row no-gutters align-items-end justify-content-center text-center">
           <div class="col-md-9 ftco-animate pb-5">
+            
             <h1>Επαναφόρτιση Εισιτηρίου</h1>
           </div>
         </div>
@@ -137,177 +137,15 @@ HTML/CSS by: Maria Karamina (sdi1600059)
     </section>
 
     <section class="ftco-section ftco-no-pt bg-light">
-      <div class="container">
-        <div>
-          <!-- One "step-screen" for each step in the form: -->
-          <div class="step-screen">
-            <div class="container">
-              <ul class="progressbar">
-                <li class="active">Κωδικός Εισιτηρίου</li>
-                <li>Επιλογή Κομίστρου</li>
-                <li>Εισαγωγή Πληροφοριών</li>
-                <li>Πληρωμή</li>
-                <li>Ολοκλήρωση</li>
-              </ul>
-            </div>
-            <br />
-            <br />
-            <br />
-            <p>Παρακαλούμε εισάγετε τον κωδικό του εισιτηρίου που επιθυμείτε να επαναφορτίσετε. Μπορείτε να τον βρείτε στο μπροστινό μέρος του εισιτηρίου.</p>
-            <form id="ticket-id-form" method="POST" action="<?=$_SERVER['PHP_SELF']?>">
-              <input type="text" id="buy-ticket-id-input" class="buy-input <?php if($error) echo ' err' ?>" name="idticket" placeholder="Κωδικός Εισιτηρίου" required>
-              <?php
-                if($tick_category_name) {
-                  echo "<div class='success-message'>Έγκυρος κωδικός εισιτηρίου, μπορείτε να συνεχίσετε</div>";
-                }
-                else {
-                  echo "<div class='error-message'>$error</div>";
-                }
-              ?>
-              <input type="submit" class="btn btn-primary mt-3" value="Έλεγχος Εισιτηρίου">
-              <br />
-              <br />
-              <div class="container" <?php if(!$tick_category_name) echo "style='display:none;'";?>>
-                <h3>Πληροφορίες Εισιτηρίου</h3>
-                <label>Κωδικός Εισιτηρίου:</label><span><?php echo " " . $idticket; ?></span><br />
-                <label>Ημερομηνία Έκδοσης:</label><span><?php echo " " . $date; ?></span><br />
-                <h5>Προηγούμενο Κόμιστρο (έχει λήξει):</h5>
-                <span><?php echo $tick_category_name; ?></span><br />
-                <label>Τιμή:</label><span><?php echo " " . $price . "€"; ?></span><br />
-                <label>Κατηγορία:</label><span><?php echo " " . $user_cat_name; ?></span>
-              </div>
-            </form>
-          </div>
+      <?php echo $email_err; ?>
+      <?php echo $idticket_err; ?>
+      <?php echo $idticket_category_err; ?>
+      <?php echo $message; ?>
 
-          <div class="step-screen">
-            <div class="container">
-              <ul class="progressbar">
-                <li class="active">Κωδικός Εισιτηρίου</li>
-                <li class="active">Επιλογή Κομίστρου</li>
-                <li>Εισαγωγή Πληροφοριών</li>
-                <li>Πληρωμή</li>
-                <li>Ολοκλήρωση</li>
-              </ul>
-            </div>
-            <br />
-            <br />
-            <br />
-            <div class="container" id="tickets-container">
-              <div class="row ticket-row">
-                <div class="col-md-6">
-                  <br />
-                  <select class="buy-input buy-select" style="width: 100%; text-overflow: ellipsis;">
-                    <?php foreach($ticket_names as $ticket) {
-                      echo  "<option value='$ticket[0]' title='$ticket[1]' data-price='$ticket[2]'>$ticket[1]</option>";
-                    } ?>
-                  </select>
-                </div>
-                <div class="col-md-3">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <label class="mb-0">Ποσότητα</label>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <input type="number" class="buy-input buy-quantity" title="Μπορείτε να επαναφορτίσετε το εισιτήριό σας με μόνο ένα κόμιστρο τη φορά" value="1" disabled>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="step-screen">
-            <div class="container">
-              <ul class="progressbar">
-                <li class="active">Κωδικός Εισιτηρίου</li>
-                <li class="active">Επιλογή Κομίστρου</li>
-                <li class="active">Εισαγωγή Πληροφοριών</li>
-                <li>Πληρωμή</li>
-                <li>Ολοκλήρωση</li>
-              </ul>
-            </div>
-            <br />
-            <br />
-            <br />
-            <p>Παρακαλούμε εισάγετε τον λογαριασμό e-mail σας για να σας σταλεί απόδειξη αγοράς και τα προϊόντα σας</p>
-            <?php
-              $email = "";
-              if(isset($_SESSION['loggedin'])) {
-                $email = $_SESSION['email'];
-              }
-             ?>
-            <input type="text" id="buy-email-input" class="buy-input" placeholder="E-mail" value="<?php echo $email; ?>" required>
-            <div id="email-error-div" style="color: red; display: none;">Εσφαλμένη μορφή email</div>
-          </div>
-
-          <div class="step-screen">
-            <div class="container">
-              <ul class="progressbar">
-                <li class="active">Κωδικός Εισιτηρίου</li>
-                <li class="active">Επιλογή Κομίστρου</li>
-                <li class="active">Εισαγωγή Πληροφοριών</li>
-                <li class="active">Πληρωμή</li>
-                <li>Ολοκλήρωση</li>
-              </ul>
-            </div>
-            <br />
-            <br />
-            <br />
-            <div class="row">
-              <div class="col-md-9">
-                <h3>Προϊόν προς αγορά:</h3>
-                <table id="products-table" style="width:100%">
-                  <tr>
-                    <th>Προϊόν</th>
-                    <th>Ποσότητα</th>
-                    <th>Τιμή</th>
-                  </tr>
-                </table>
-                <script src="../js/get-selected-products.js"></script>
-                <br />
-                Κωδικός Εισιτηρίου προς επαναφόρτιση: <span id="ticket-id-preview"></span>
-              </div>
-              <div class="col-md-3">
-                <p>Τελικό ποσό προς πληρωμή: <span id="total-price">€</span></p>
-                <input type="button" class="btn btn-grey" value="Συνδεθείτε με την τράπεζά σας">
-              </div>
-            </div>
-          </div>
-
-          <div class="step-screen">
-            <div class="container">
-              <ul class="progressbar">
-                <li class="active">Κωδικός Εισιτηρίου</li>
-                <li class="active">Επιλογή Κομίστρου</li>
-                <li class="active">Εισαγωγή Πληροφοριών</li>
-                <li class="active">Πληρωμή</li>
-                <li class="active">Ολοκλήρωση</li>
-              </ul>
-            </div>
-            <br />
-            <br />
-            <br />
-            <p>Θα σας αποσταλεί email με το αποδεικτικό πληρωμής και τα εισιτήριά σας</p>
-            <form id="recharge-form" class="hidden-form" method="POST" action="confirm_recharge.php">
-              <input id="ticket-id-to-send" name="idticket" class="form-control" type="text">
-              <input id="product-to-send" name="idticket_category" class="form-control" type="text">
-              <input id="email-to-send" name="email" class="form-control" type="email">
-            </form>
-            <div id="buy-loader" class="loader"></div> 
-          </div>
-
-          <br />
-
-          <div style="overflow:auto;">
-            <div style="float:right;">
-              <button type="button" class="btn btn-grey" id="prevBtn" onclick="nextPrev(-1)">Προηγούμενο</button>
-              <button type="button" class="btn btn-primary" id="nextBtn" onclick="nextPrev(1)" <?php if(!$tick_category_name) echo "disabled" ?>>Επόμενο</button>
-            </div>
-          </div>
+      <div style="overflow:auto;">
+        <div style="float:right;">
+          <a href="../index.php" class="btn btn-primary mr-4">Επιστροφή στην Αρχική Σελίδα</a>
         </div>
-
       </div>
     </section>
 
@@ -341,7 +179,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
               <h2 class="ftco-heading-2">Εισιτήρια</h2>
               <ul class="list-unstyled">
                 <li><a href="../tickets/info.php" class="py-2 d-block">Πληροφορίες Εισιτηρίων</a></li>
-                <li><a href="../tickets/buy_online.php" class="py-2 d-block">Ηλεκτρονική Επαναφόρτιση Εισιτηρίου</a></li>
+                <li><a href="../tickets/buy_online.php" class="py-2 d-block">Ηλεκτρονική Αγορά Εισιτηρίων</a></li>
               </ul>
             </div>
           </div>
@@ -391,8 +229,6 @@ HTML/CSS by: Maria Karamina (sdi1600059)
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="../js/google-map.js"></script>
   <script src="../js/main.js"></script>
-
-  <script src="../js/recharge-ticket-steps.js"></script>
     
   </body>
 </html>
