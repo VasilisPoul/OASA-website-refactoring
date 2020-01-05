@@ -39,7 +39,11 @@ HTML/CSS by: Maria Karamina (sdi1600059)
   </head>
   <body>
 
-    <?php session_start(); ?>
+    <?php 
+      if(session_status() == PHP_SESSION_NONE) {
+        session_start();
+      }
+    ?>
     
 	 <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light navbar-color" id="ftco-navbar">
       <div class="container">

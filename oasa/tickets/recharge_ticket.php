@@ -67,7 +67,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
                 <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Εισιτήρια</a>
           <div class="dropdown-menu">
                   <a class="dropdown-item" href="../tickets/info.php">Πληροφορίες Εισιτηρίων</a>
-                  <a class="dropdown-item" href="../tickets/buy_online.php">Ηλεκτρονική Επαναφόρτιση Εισιτηρίου</a>
+                  <a class="dropdown-item" href="../tickets/buy_online.php">Ηλεκτρονική Αγορά Εισιτηρίων</a>
                 </div>
               </div>
           </li>
@@ -121,7 +121,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
       <p class="breadcrumbs">
         <span class="mr-2"><a href="../index.php">Αρχική <i class="fa fa-angle-right"></i></a></span> 
         <span class="mr-2">Εισιτήρια <i class="fa fa-angle-right"></i></span> 
-        <span class="mr-2"><a href="buy_online.php">Ηλεκτρονική Επαναφόρτιση Εισιτηρίου <i class="fa fa-angle-right"></i></a></span> 
+        <span class="mr-2"><a href="buy_online.php">Ηλεκτρονική Αγορά Εισιτηρίων <i class="fa fa-angle-right"></i></a></span> 
         <span class="mr-2">Επαναφόρτιση Εισιτηρίου <i class="fa fa-angle-right"></i></span>
       </p>
     </div>

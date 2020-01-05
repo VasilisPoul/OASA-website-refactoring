@@ -15,7 +15,9 @@ PHP script by: Giorgos Koursiounis (sdi1600077)
 
 <?php
 
-session_start();
+if(session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 if(isset($_SESSION['loggedin'])){
   echo $_SESSION['first_name'] . " " . $_SESSION['last_name'];

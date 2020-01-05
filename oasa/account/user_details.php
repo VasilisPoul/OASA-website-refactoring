@@ -4,7 +4,9 @@
 // PHP script by: Giorgos Koursiounis (sdi1600077)
 //
 
-session_start();
+if(session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
  
 if(!isset($_SESSION['loggedin'])){
   header("Location: ../index.php");

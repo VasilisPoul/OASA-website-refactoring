@@ -35,11 +35,11 @@
 
     <?php include 'ticket_categories.php';?>
     
-	  <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	  <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light navbar-color" id="ftco-navbar">
       <div class="container">
         <a href="../index.php"><img src="../images/oasa_logo_transparent.png" alt="logo" width="25%"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="oi oi-menu"></span> Menu
+        <button class="navbar-toggler text-dark" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="fa fa-bars"></span> Menu
         </button>
 
         <div class="collapse navbar-collapse" id="ftco-nav">
@@ -49,9 +49,9 @@
               <div class="dropdown">
                 <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Το Δίκτυο</a>
           <div class="dropdown-menu">
-                  <a class="dropdown-item" href="../network/info.html">Πληροφορίες και Χάρτης</a>
-                  <a class="dropdown-item" href="../network/journey_planner.html">Σχεδιασμός Διαδρομής</a>
-                  <a class="dropdown-item" href="../network/status.html">Κατάσταση Δικτύου</a>
+                  <a class="dropdown-item" href="../network/info.php">Πληροφορίες και Χάρτης</a>
+                  <a class="dropdown-item" href="../network/journey_planner.php">Σχεδιασμός Διαδρομής</a>
+                  <a class="dropdown-item" href="../network/status.php">Κατάσταση Δικτύου</a>
                 </div>
               </div>
             </li>
@@ -59,8 +59,8 @@
               <div class="dropdown">
                 <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Εισιτήρια</a>
           <div class="dropdown-menu">
-                  <a class="dropdown-item" href="../tickets/info.html">Πληροφορίες Εισιτηρίων</a>
-                  <a class="dropdown-item" href="../tickets/buy_online.html">Ηλεκτρονική Αγορά Εισιτηρίων</a>
+                  <a class="dropdown-item" href="../tickets/info.php">Πληροφορίες Εισιτηρίων</a>
+                  <a class="dropdown-item" href="../tickets/buy_online.php">Ηλεκτρονική Αγορά Εισιτηρίων</a>
                 </div>
               </div>
           </li>
@@ -68,10 +68,10 @@
               <div class="dropdown">
                 <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Επιβάτες</a>
           <div class="dropdown-menu">
-                  <a class="dropdown-item" href="../passengers/lost_and_found.html">Απολεσθέντα</a>
+                  <a class="dropdown-item" href="../passengers/lost_and_found.php">Απολεσθέντα</a>
                   <a class="dropdown-item" href="../passengers/amea.php">ΆμεΑ</a> <!--TODO: correct translation :p -->
-                  <a class="dropdown-item" href="../passengers/complaints.html">Υποβολή Παραπόνων</a>
-                  <a class="dropdown-item" href="../passengers/help.html">Βοήθεια</a>
+                  <a class="dropdown-item" href="../passengers/complaints.php">Υποβολή Παραπόνων</a>
+                  <a class="dropdown-item" href="../passengers/help.php">Βοήθεια</a>
                 </div>
               </div>
           </li>
@@ -79,30 +79,30 @@
               <div class="dropdown">
                 <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Εταιρία</a>
           <div class="dropdown-menu">
-                  <a class="dropdown-item" href="../company/info.html">Πληροφορίες Ομίλου</a>
-                  <a class="dropdown-item" href="../company/contact_details.html">Στοιχεία Επικοινωνίας</a>
-                  <a class="dropdown-item" href="../company/competitions.html">Διαγωνισμοί</a> <!--TODO: correct translation :p -->
-                  <a class="dropdown-item" href="../company/news.html">Νέα</a>
+                  <a class="dropdown-item" href="../company/info.php">Πληροφορίες Ομίλου</a>
+                  <a class="dropdown-item" href="../company/contact_details.php">Στοιχεία Επικοινωνίας</a>
+                  <a class="dropdown-item" href="../company/competitions.php">Διαγωνισμοί</a> <!--TODO: correct translation :p -->
+                  <a class="dropdown-item" href="../company/news.php">Νέα</a>
                 </div>
               </div>
           </li>
           <li class="nav-item">
             <?php
-              if(isset($_SESSION['loggedin'])){ ?>
+              if(isset($_SESSION['loggedin']) && ($_SESSION['loggedin'])){ ?>
                 <div class="dropdown">
                   <a class="dropdown-toggle nav-link user-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['username'];?></a>
                   <div class="dropdown-menu">
                     <a class="dropdown-item disabled" href="#" disabled><?php echo $_SESSION['first_name'] . " " . $_SESSION['last_name'];?></a>
                     <a class="dropdown-item" href="../account/profile.php">Προβολή Προφίλ</a>
-                    <a class="dropdown-item" href="../logout_script.php">Αποσύνδεση</a>
+                    <a class="dropdown-item" href="../account/logout_script.php">Αποσύνδεση</a>
                   </div>
                 </div>
-                <?php
-                  }
-                  else {
-                    echo '<a href="../account/login.php" class="nav-link user-button">Σύνδεση</a>';
-                  }
-                ?>
+            <?php
+              }
+              else {
+                echo '<a href="../account/login.php" class="nav-link user-button">Σύνδεση</a>';
+              }
+            ?>
           </li>
           </ul>
         </div>

@@ -4,7 +4,11 @@
 // PHP script by: Giorgos Koursiounis (sdi1600077)
 //
 
-session_start();
+if(session_status() == PHP_SESSION_NONE) {
+    if(session_status() == PHP_SESSION_NONE) {
+    	session_start();
+	}
+}
 
 $servername = "localhost";
 $server_username = "user";
