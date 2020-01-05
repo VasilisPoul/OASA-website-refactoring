@@ -22,12 +22,12 @@ if($conn->connect_error){
 }
 
 //find stations accessible by persons with disability
-$sql = "SELECT * FROM station s WHERE  disability_access = 1";
+$sql = "SELECT s.idstation, s.name, a.area, a.city, a.postal_code FROM station s, area a WHERE  s.disability_access = 1 AND s.idarea = a.idarea";
 $result = $conn->query($sql);
 
 if(!empty($result) && $result->num_rows > 0){
   while($row = $result->fetch_assoc()){
-    $stations .= "<tr><td>" . $row["idstation"] . "</td><td>" . $row["name"] . "</td><td>" . $row["area"] . "</td></tr>";
+    $stations .= "<tr><td>" . $row["idstation"] . "</td><td>" . $row["name"] . "</td><td>" . $row["area"] . ", " . $row["city"] . ", " . $row["postal_code"] . "</td></tr>";
   }
 }
 
