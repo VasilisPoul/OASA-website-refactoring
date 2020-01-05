@@ -14,6 +14,7 @@ $server_password = "password";
 $dbname = "oasa";
 
 $date = date("Y-m-d");
+$total_amount = 0.0;
 
 $email = $idticket = $idticket_category = $message = "";
 $email_err = $idticket_err = $idticket_category_err = "";
@@ -62,7 +63,7 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
   }
 
 
-  if(empty($email_err) && empty($idticket_err) && empty($idticket_category)){
+  if(empty($email_err) && empty($idticket_err) && empty($idticket_category_err)){
 
     $sql = "UPDATE ticket SET date = \"$date\", idticket_category = \"$idticket_category\", expired = 0 WHERE idticket = \"$idticket\"";
 
@@ -74,13 +75,14 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
       if(!empty($result) && $result->num_rows > 0){
         while($row = $result->fetch_assoc()){
           $content .= "<li>Κωδικός εισιτηρίου: " . $row["idticket"] . "\n Τύπος: " . $row["name"] . "\n Τιμή: " . $row["price"] . " €</li>\n";
+          $total_amount += $row["price"];
         }
       }
       else{
         die("Error: " . $sql . "<br>" . $conn->error);
       }
 
-      $content .= "</ul>Συνολικό ποσό πληρωμής: <strong>" . $row["price"] . " €</strong>\n Με εκτίμηση,\n Οργανισμός Αστικών Συγκοινωνιών Αθηνών (ΟΑΣΑ)\n www.oasa.gr";
+      $content .= "</ul>Συνολικό ποσό πληρωμής: <strong>" . $total_amount . " €</strong>\n Με εκτίμηση,\n Οργανισμός Αστικών Συγκοινωνιών Αθηνών (ΟΑΣΑ)\n www.oasa.gr";
 
       if(mail($email, "OASA tickets", $content, $mailheader)){
         $message = "<div class=\"alert alert-success\"><strong>Επιτυχία!</strong> Η συναλλαγή ολοκληρώθηκε! Σας έχει αποσταλεί σχετικό email</div>";
