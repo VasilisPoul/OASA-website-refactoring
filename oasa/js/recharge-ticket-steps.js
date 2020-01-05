@@ -43,7 +43,8 @@ function nextPrev(n) {
 
   //Going to submit screen
   if(currentTab === x.length-2 && n===1) {
-    document.getElementById("ticket-id-to-send").value = document.getElementById("buy-ticket-id-input").value;
+    document.getElementById("ticket-id-to-send").value = localStorage.getItem("ticket_id");
+    localStorage.removeItem("ticket_id");
     document.getElementById("product-to-send").value = document.getElementsByClassName("buy-select")[0].value;
     document.getElementById("email-to-send").value = document.getElementById("buy-email-input").value;
   }
@@ -83,18 +84,7 @@ function validateEmail() {
   }
 }
 
-function validateId() {
-  // This function deals with validation of the form fields
-  var field = document.getElementById("buy-ticket-id-input");
-  var err = document.getElementById("ticket-id-error-div");
-  if(field.value === "") {
-    field.classList.add("err");
-    err.style.display = "inline";
-    return false;
-  }
-  else {
-    field.classList.remove("err");
-    err.style.display = "none";
-    return true;
-  }
+function saveTicketId() {
+  var id = document.getElementById("buy-ticket-id-input").value;
+  localStorage.setItem("ticket_id", id);
 }

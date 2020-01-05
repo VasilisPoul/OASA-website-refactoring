@@ -154,7 +154,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
             <br />
             <br />
             <p>Παρακαλούμε εισάγετε τον κωδικό του εισιτηρίου που επιθυμείτε να επαναφορτίσετε. Μπορείτε να τον βρείτε στο μπροστινό μέρος του εισιτηρίου.</p>
-            <form id="ticket-id-form" method="POST" action="<?=$_SERVER['PHP_SELF']?>">
+            <form id="ticket-id-form" method="POST" action="<?=$_SERVER['PHP_SELF']?>" onsubmit="saveTicketId();">
               <input type="text" id="buy-ticket-id-input" class="buy-input <?php if($error) echo ' err' ?>" name="idticket" placeholder="Κωδικός Εισιτηρίου" required>
               <?php
                 if($tick_category_name) {
