@@ -303,7 +303,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
           <div style="overflow:auto;">
             <div style="float:right;">
               <button type="button" class="btn btn-grey" id="prevBtn" onclick="nextPrev(-1)">Προηγούμενο</button>
-              <button type="button" class="btn btn-primary" id="nextBtn" onclick="nextPrev(1)" <?php if($error) echo "disabled" ?>>Επόμενο</button>
+              <button type="button" class="btn btn-primary" id="nextBtn" onclick="nextPrev(1)" <?php if(!$tick_category_name) echo "disabled" ?>>Επόμενο</button>
             </div>
           </div>
         </div>
