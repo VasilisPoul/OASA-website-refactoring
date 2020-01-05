@@ -39,9 +39,8 @@ HTML/CSS by: Maria Karamina (sdi1600059)
   </head>
   <body>
 
-    <?php include 'ticket_categories.php' ?>
-    <?php include 'get_stations.php' ?>
     <?php include 'find_ticket.php' ?>
+    <?php include 'ticket_categories.php' ?>
     
    <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light navbar-color" id="ftco-navbar">
       <div class="container">
@@ -158,6 +157,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
             <form id="ticket-id-form" method="POST" action="<?=$_SERVER['PHP_SELF']?>">
               <input type="text" id="buy-ticket-id-input" class="buy-input" name="idticket" placeholder="Κωδικός Εισιτηρίου" required>
               <div id="ticket-id-error-div" style="color: red; display: none;">Εσφαλμένος κωδικός εισιτηρίου</div>
+              <span class="error-message"> <?php echo $error;?></span> 
             </form>
           </div>
 
