@@ -53,8 +53,6 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
     $buy_cart = json_decode($buy_cart, true);
   }
 
-  $err = false;
-
   if(empty($email_err) && empty($buy_cart_err)){
 
     foreach ($buy_cart as $idticket_category => $quantity){
