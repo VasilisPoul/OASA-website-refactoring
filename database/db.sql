@@ -23,8 +23,6 @@ INSERT INTO line_status (status) VALUES ("Ομαλή λειτουργία");
 INSERT INTO line_status (status) VALUES ("Απεργίες");
 INSERT INTO line_status (status) VALUES ("Εκτός λειτουργίας");
 
-
-
 INSERT INTO line (name, idtransport, idline_status, idcolour) VALUES ("ΓΡΑΜΜΗ 1", 1, 1, 1);
 INSERT INTO line (name, idtransport, idline_status, idcolour) VALUES ("ΓΡΑΜΜΗ 2", 2, 3, 2);
 INSERT INTO line (name, idtransport, idline_status, idcolour) VALUES ("ΓΡΑΜΜΗ 3", 2, 3, 3);
@@ -40,15 +38,21 @@ INSERT INTO line (name, idtransport, idline_status, idcolour) VALUES ("221", 4, 
 INSERT INTO line (name, idtransport, idline_status, idcolour) VALUES ("6", 5, 3, 6);
 INSERT INTO line (name, idtransport, idline_status, idcolour) VALUES ("9", 5, 3, 6);
 
+INSERT INTO area (area, city, postal_code) VALUES ("Κεντρικός τομέας Αθηνών", "Δήμος Αθηναίων", "10557");
+INSERT INTO area (area, city, postal_code) VALUES ("Κολωνάκι", "Αθήνα", "10676");
+INSERT INTO area (area, city, postal_code) VALUES ("Αττική Οδός, Δήμος Σπάτων - Αρτέμιδος", "Σπάτα", "19004");
+INSERT INTO area (area, city, postal_code) VALUES ("Ομόνοια", "Δήμος Αθηνάιων", "10431");
+INSERT INTO area (area, city, postal_code) VALUES ("Πειραιάς", "Δήμος Πειραιά", "18545");
+INSERT INTO area (area, city, postal_code) VALUES ("Μαρούσι", "Αττική", "15122");
 
-INSERT INTO station (name, latitude, longitude, area, disability_access) VALUES ("ΣΥΝΤΑΓΜΑ", '37.975443', '23.735484', "Κεντρικός τομέας Αθηνών 105 57", 1);
-INSERT INTO station (name, latitude, longitude, area, disability_access) VALUES ("ΕΥΑΓΓΕΛΙΣΜΟΣ", '37.975937', '23.746923', "Κολωνάκι, Αθήνα 106 76", 1);
-INSERT INTO station (name, latitude, longitude, area, disability_access) VALUES ("ΑΕΡΟΔΡΟΜΙΟ", '37.936067', '23.947252', "Αττική Οδός, Δήμος Σπάτων - Αρτέμιδος 190 04", 1);
-INSERT INTO station (name, latitude, longitude, area, disability_access) VALUES ("ΟΜΟΝΟΙΑ", '37.984037', '23.728041', "Κεντρικός τομέας Αθηνών 104 31", 1);
-INSERT INTO station (name, latitude, longitude, area, disability_access) VALUES ("ΠΕΙΡΑΙΑΣ", '37.948168', '23.643326', "Πειραιάς 185 45", 1);
-INSERT INTO station (name, latitude, longitude, area, disability_access) VALUES ("ΜΑΡΟΥΣΙ", '38.056155', '23.804947', "Μαρούσι Αττικής 151 22", 1);
-INSERT INTO station (name, latitude, longitude, area, disability_access) VALUES ("ΜΟΝΑΣΤΗΡΑΚΙ", '37.976431', '23.725905', "Κεντρικός τομέας Αθηνών 105 57", 1);
-INSERT INTO station (name, latitude, longitude, area, disability_access) VALUES ("ΝΟΣΟΚΟΜΕΙΟ ΕΥΑΓΓΕΛΙΣΜΟΣ", '37.976445', '23.748182', "Κολωνάκι, Αθήνα 106 76", 1);
+INSERT INTO station (name, latitude, longitude, idarea, disability_access) VALUES ("ΣΥΝΤΑΓΜΑ", '37.975443', '23.735484', 1, 1);
+INSERT INTO station (name, latitude, longitude, idarea, disability_access) VALUES ("ΕΥΑΓΓΕΛΙΣΜΟΣ", '37.975937', '23.746923', 2, 1);
+INSERT INTO station (name, latitude, longitude, idarea, disability_access) VALUES ("ΑΕΡΟΔΡΟΜΙΟ", '37.936067', '23.947252', 3, 1);
+INSERT INTO station (name, latitude, longitude, idarea, disability_access) VALUES ("ΟΜΟΝΟΙΑ", '37.984037', '23.728041', 4, 1);
+INSERT INTO station (name, latitude, longitude, idarea, disability_access) VALUES ("ΠΕΙΡΑΙΑΣ", '37.948168', '23.643326', 5, 1);
+INSERT INTO station (name, latitude, longitude, idarea, disability_access) VALUES ("ΜΑΡΟΥΣΙ", '38.056155', '23.804947', 6, 1);
+INSERT INTO station (name, latitude, longitude, idarea, disability_access) VALUES ("ΜΟΝΑΣΤΗΡΑΚΙ", '37.976431', '23.725905', 1, 1);
+INSERT INTO station (name, latitude, longitude, idarea, disability_access) VALUES ("ΝΟΣΟΚΟΜΕΙΟ ΕΥΑΓΓΕΛΙΣΜΟΣ", '37.976445', '23.748182', 2, 1);
 
 INSERT INTO line_has_station (idline, idstation) VALUES (1, 4);
 INSERT INTO line_has_station (idline, idstation) VALUES (1, 5);
