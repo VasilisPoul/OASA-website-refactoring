@@ -251,6 +251,7 @@ CREATE TABLE IF NOT EXISTS `oasa`.`card` (
   `idticket_category` INT NOT NULL,
   `iduser` INT NOT NULL,
   `date` DATE NOT NULL,
+  `pin` VARCHAR(45) NOT NULL,
   `expired` INT NOT NULL DEFAULT 0,
   PRIMARY KEY (`idcard`),
   INDEX `fk_card_ticket_category1_idx` (`idticket_category` ASC) ,
