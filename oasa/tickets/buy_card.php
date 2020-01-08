@@ -7,7 +7,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ΟΑΣΑ - Αγορά Εισιτηρίου</title>
+    <title>ΟΑΣΑ - Αγορά Εισιτηρίων</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="../images/favicon.ico" type="image/ico">
@@ -39,8 +39,9 @@ HTML/CSS by: Maria Karamina (sdi1600059)
   </head>
   <body>
 
+    <?php include 'ticket_categories.php' ?>
     
-	 <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light navbar-color" id="ftco-navbar">
+   <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light navbar-color" id="ftco-navbar">
       <div class="container">
         <a href="../index.php"><img src="../images/oasa_logo_transparent.png" alt="logo" width="25%"></a>
         <button class="navbar-toggler text-dark" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -114,11 +115,11 @@ HTML/CSS by: Maria Karamina (sdi1600059)
       </div>
     </nav>
     <!-- END nav -->
-    
+
     <div class="container crumbs-top">
       <p class="breadcrumbs">
         <span class="mr-2"><a href="../index.php">Αρχική <i class="fa fa-angle-right"></i></a></span> 
-        <span class="mr-2">Εισιτήρια <i class="ion-ios-arrow-forward"></i></span> 
+        <span class="mr-2">Εισιτήρια <i class="fa fa-angle-right"></i></span> 
         <span class="mr-2"><a href="buy_online.php">Ηλεκτρονική Αγορά Εισιτηρίων <i class="fa fa-angle-right"></i></a></span> 
         <span class="mr-2">Έκδοση Κάρτας <i class="fa fa-angle-right"></i></span>
       </p>
@@ -128,7 +129,6 @@ HTML/CSS by: Maria Karamina (sdi1600059)
       <div class="container">
         <div class="row no-gutters align-items-end justify-content-center text-center">
           <div class="col-md-9 ftco-animate pb-5">
-            
             <h1>Έκδοση Κάρτας</h1>
           </div>
         </div>
@@ -137,90 +137,201 @@ HTML/CSS by: Maria Karamina (sdi1600059)
 
     <section class="ftco-section ftco-no-pt bg-light">
       <div class="container">
-        <form id="buy_form" action="">
-
+        <div>
           <!-- One "step-screen" for each step in the form: -->
-          <div class="step-screen">
-            <label>Έκδοση Κάρτας</label>
-            <div class="container">
-              <ul class="progressbar">
-                <li class="active">Επιλογή Εισιτηρίου</li>
-                <li>Επιλογή Ποσότητας</li>
-                <li>Εισαγωγή Πληροφοριών</li>
-                <li>Επιλογές Παραλαβής</li>
-              </ul>
-            </div>
-            <br />
-            <br />
-            <br />
-            Name:
-            <p><input placeholder="First name..." oninput="this.className = ''"></p>
-            <p><input placeholder="Last name..." oninput="this.className = ''"></p>
-          </div>
 
           <div class="step-screen">
-            <label>Αγορά Εισιτηρίου</label>
             <div class="container">
               <ul class="progressbar">
-                <li class="active">Επιλογή Εισιτηρίου</li>
-                <li class="active">Επιλογή Ποσότητας</li>
-                <li>Εισαγωγή Πληροφοριών</li>
-                <li>Επιλογές Παραλαβής</li>
-              </ul>
-            </div>
-            <br />
-            <br />
-            <br />
-            Contact Info:
-            <p><input placeholder="E-mail..." oninput="this.className = ''"></p>
-            <p><input placeholder="Phone..." oninput="this.className = ''"></p>
-          </div>
-
-          <div class="step-screen">
-            <label>Αγορά Εισιτηρίου</label>
-            <div class="container">
-              <ul class="progressbar">
-                <li class="active">Επιλογή Εισιτηρίου</li>
-                <li class="active">Επιλογή Ποσότητας</li>
                 <li class="active">Εισαγωγή Πληροφοριών</li>
-                <li>Επιλογές Παραλαβής</li>
+                <li>Επιλογή Κομίστρου</li>
+                <li>Πληρωμή</li>
+                <li>Ολοκλήρωση</li>
               </ul>
             </div>
             <br />
             <br />
             <br />
-            Birthday:
-            <p><input placeholder="dd" oninput="this.className = ''"></p>
-            <p><input placeholder="mm" oninput="this.className = ''"></p>
-            <p><input placeholder="yyyy" oninput="this.className = ''"></p>
+            <p>Παρακαλούμε εισάγετε τα στοιχεία σας</p>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group-error input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="icon-user"></i> </span>
+                  </div>
+                  <input id="buy-first_name" name="first_name" class="form-control" placeholder="Όνομα" type="text">
+                </div> <!-- form-group-error// -->
+                <span id="buy-first_name-err" class="error-message"></span>
+                
+                <div class="form-group-error input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="icon-user"></i> </span>
+                  </div>
+                  <input id="buy-last_name" name="last_name" class="form-control" placeholder="Επίθετο" type="text"> 
+                </div> <!-- form-group-error// -->
+                <span id="buy-last_name-err" class="error-message"></span>
+                    
+                <div class="form-group-error input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="icon-envelope-o"></i> </span>
+                  </div>
+                  <input id="buy-email" name="email" class="form-control" placeholder="Email" type="email">
+                </div> <!-- form-group-error// -->
+                <span id="buy-email-err" class="error-message"></span>
+                    
+                <div class="form-group-error input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="icon-calendar"></i> </span>
+                  </div>
+                  <input id="buy-dob" name="dob" class="form-control" placeholder="Ημερομηνία Γέννησης" type="date">  
+                </div> <!-- form-group-error// -->
+                <span id="buy-dob-err" class="error-message"></span>
+                
+                <div class="form-group-error input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="icon-phone"></i> </span>
+                  </div>
+                <input id="buy-phone" name="phone" class="form-control" placeholder="Αριθμός Τηλεφώνου" type="text">
+                </div> <!-- form-group-error// -->
+                <span id="buy-phone-err" class="error-message"></span>
+              </div>
+
+              <div class="col-md-6">
+                <br />
+                <div class = "groove">
+                  <p>Ανήκω στην κατηγορία:</p>
+                  
+                  <input type="radio" name="user_category" value="1" checked> Δικαιούχος κανονικού εισιτηρίου<br>
+                  <input type="radio" name="user_category" value="2"> Φοιτητής/Μαθητής<br>
+                  <input type="radio" name="user_category" value="3"> Άνεργος/Αμεα<br> 
+                  <span id="buy-category-err" class="error-message"></span>
+                </div>
+
+                <br />
+                <label>Αν ανήκετε σε κατηγορία με έκπτωση, εισάγετε τον κωδικό/αναγνωριστικό του δικαιολογητικού σας</label>
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="icon-tag"></i> </span>
+                  </div>
+                <input id="buy-discount_id" name="discount_id" class="form-control" placeholder="Κωδικός Πάσου/Κάρτας ανεργίας/Κάρτας ΆμεΑ" type="text">
+                </div> <!-- form-group-error// -->
+                <span id="buy-discount_id-err" class="error-message"></span>
+
+              </div>
+            </div>
+
           </div>
 
           <div class="step-screen">
-            <label>Αγορά Εισιτηρίου</label>
             <div class="container">
               <ul class="progressbar">
-                <li class="active">Επιλογή Εισιτηρίου</li>
-                <li class="active">Επιλογή Ποσότητας</li>
                 <li class="active">Εισαγωγή Πληροφοριών</li>
-                <li class="active">Επιλογές Παραλαβής</li>
+                <li class="active">Επιλογή Κομίστρου</li>
+                <li>Πληρωμή</li>
+                <li>Ολοκλήρωση</li>
               </ul>
             </div>
             <br />
             <br />
             <br />
-            Login Info:
-            <p><input placeholder="Username..." oninput="this.className = ''"></p>
-            <p><input placeholder="Password..." oninput="this.className = ''"></p>
+            <p>Επιλέξτε ένα κόμιστρο να βάλετε στη νέα σας κάρτα</p>
+            <div class="container" id="tickets-container">
+              <div class="row ticket-row">
+                <div class="col-md-6">
+                  <br />
+                  <select class="buy-input buy-select" style="width: 100%; text-overflow: ellipsis;">
+                    <?php foreach($ticket_names as $ticket) {
+                      echo  "<option value='$ticket[0]' title='$ticket[1]' data-price='$ticket[2]'>$ticket[1]</option>";
+                    } ?>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label class="mb-0">Ποσότητα</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <input type="number" class="buy-input buy-quantity" min="1" max="100" value="1">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <br />
+                  <button type="button" class="remove-row" onclick="removeTicket(this)" style="display:none"><i class="fa fa-times"></i></button>
+                </div>
+              </div>
+            </div>
           </div>
+
+          <div class="step-screen">
+            <div class="container">
+              <ul class="progressbar">
+                <li class="active">Εισαγωγή Πληροφοριών</li>
+                <li class="active">Επιλογή Κομίστρου</li>
+                <li class="active">Πληρωμή</li>
+                <li>Ολοκλήρωση</li>
+              </ul>
+            </div>
+            <br />
+            <br />
+            <br />
+            <div class="row">
+              <div class="col-md-9">
+                <h3>Προϊόν προς αγορά:</h3>
+                <table id="products-table" style="width:100%">
+                  <tr>
+                    <th>Προϊόν</th>
+                    <th>Ποσότητα</th>
+                    <th>Τιμή</th>
+                  </tr>
+                </table>
+                <script src="../js/get-selected-products.js"></script>
+              </div>
+              <div class="col-md-3">
+                <p>Τελικό ποσό προς πληρωμή: <span id="total-price">€</span></p>
+                <input type="button" class="btn btn-grey" value="Συνδεθείτε με την τράπεζά σας">
+              </div>
+            </div>
+          </div>
+
+          <div class="step-screen">
+            <div class="container">
+              <ul class="progressbar">
+                <li class="active">Εισαγωγή Πληροφοριών</li>
+                <li class="active">Επιλογή Κομίστρου</li>
+                <li class="active">Πληρωμή</li>
+                <li class="active">Ολοκλήρωση</li>
+              </ul>
+            </div>
+            <br />
+            <br />
+            <br />
+            <p>Θα σας αποσταλεί email με το αποδεικτικό πληρωμής και οδηγίες παραλαβής της κάρτας σας</p>
+            <form id="buy-form" class="hidden-form" method="POST" action="confirm_buy.php">
+              <input id="string-to-send" name="buy_cart" class="form-control" type="text">
+              <input id="first_name-to-send" name="first_name" class="form-control" type="text">
+              <input id="last_name-to-send" name="last_name" class="form-control" type="text">
+              <input id="email-to-send" name="email" class="form-control" type="text">
+              <input id="dob-to-send" name="dob" class="form-control" type="text">
+              <input id="phone-to-send" name="phone" class="form-control" type="text">
+              <input id="discount_id-to-send" name="discountid" class="form-control" type="text">
+            </form>
+            <div id="buy-loader" class="loader"></div> 
+
+
+          </div>
+          <br />
 
           <div style="overflow:auto;">
             <div style="float:right;">
-              <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-              <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+              <button type="button" class="btn btn-grey" id="prevBtn" onclick="nextPrev(-1)">Προηγούμενο</button>
+              <button type="button" class="btn btn-primary" id="nextBtn" onclick="nextPrev(1)">Επόμενο</button>
             </div>
           </div>
 
-        </form> 
+        </div> 
       </div>
     </section>
 
@@ -305,7 +416,8 @@ HTML/CSS by: Maria Karamina (sdi1600059)
   <script src="../js/google-map.js"></script>
   <script src="../js/main.js"></script>
 
-  <script src="../js/buy-steps.js"></script>
+  <script src="../js/buy-card-steps.js"></script>
+  <script src="../js/add-products.js"></script>
     
   </body>
 </html>

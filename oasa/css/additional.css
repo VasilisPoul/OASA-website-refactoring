@@ -191,7 +191,7 @@
 	border-color: #bebebe;
 }
 
-.buy-input.err {
+.err {
 	border-color: red;
 }
 
