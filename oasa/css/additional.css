@@ -214,3 +214,8 @@
 	0% { transform: rotate(0deg); }
 	100% { transform: rotate(360deg); }
 }
+
+.input-group > .form-control:disabled {
+	color: #999999 !important;
+	border-color: #ced4da;
+}

@@ -152,6 +152,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
             <br />
             <br />
             <br />
+
             <p>Παρακαλούμε εισάγετε τα στοιχεία σας</p>
             <div class="row">
               <div class="col-md-6">
@@ -159,7 +160,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
                   <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="icon-user"></i> </span>
                   </div>
-                  <input id="buy-first_name" name="first_name" class="form-control" placeholder="Όνομα" type="text">
+                  <input id="buy-first_name" name="first_name" class="form-control" placeholder="Όνομα" type="text" value="<?php echo $first_name; ?>" <?php if($first_name) echo "disabled"; ?>>
                 </div> <!-- form-group-error// -->
                 <span id="buy-first_name-err" class="error-message"></span>
                 
@@ -167,7 +168,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
                   <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="icon-user"></i> </span>
                   </div>
-                  <input id="buy-last_name" name="last_name" class="form-control" placeholder="Επίθετο" type="text"> 
+                  <input id="buy-last_name" name="last_name" class="form-control" placeholder="Επίθετο" type="text" value="<?php echo $last_name; ?>" <?php if($last_name) echo "disabled"; ?>> 
                 </div> <!-- form-group-error// -->
                 <span id="buy-last_name-err" class="error-message"></span>
                     
@@ -175,7 +176,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
                   <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="icon-envelope-o"></i> </span>
                   </div>
-                  <input id="buy-email" name="email" class="form-control" placeholder="Email" type="email">
+                  <input id="buy-email" name="email" class="form-control" placeholder="Email" type="email" value="<?php echo $email; ?>" <?php if($email) echo "disabled"; ?>>
                 </div> <!-- form-group-error// -->
                 <span id="buy-email-err" class="error-message"></span>
                     
@@ -183,7 +184,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
                   <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="icon-calendar"></i> </span>
                   </div>
-                  <input id="buy-dob" name="dob" class="form-control" placeholder="Ημερομηνία Γέννησης" type="date">  
+                  <input id="buy-dob" name="dob" class="form-control" placeholder="Ημερομηνία Γέννησης" type="date" value="<?php echo $dob; ?>" <?php if($dob) echo "disabled"; ?>>  
                 </div> <!-- form-group-error// -->
                 <span id="buy-dob-err" class="error-message"></span>
                 
@@ -191,7 +192,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
                   <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="icon-phone"></i> </span>
                   </div>
-                <input id="buy-phone" name="phone" class="form-control" placeholder="Αριθμός Τηλεφώνου" type="text">
+                <input id="buy-phone" name="phone" class="form-control" placeholder="Αριθμός Τηλεφώνου" type="text" value="<?php echo $phone; ?>" <?php if($phone) echo "disabled"; ?>>
                 </div> <!-- form-group-error// -->
                 <span id="buy-phone-err" class="error-message"></span>
               </div>

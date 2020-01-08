@@ -40,7 +40,6 @@ HTML/CSS by: Maria Karamina (sdi1600059)
   <body>
 
     <?php include 'ticket_categories.php' ?>
-    <?php include 'get_stations.php' ?>
     
 	 <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light navbar-color" id="ftco-navbar">
       <div class="container">

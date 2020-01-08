@@ -156,9 +156,9 @@ HTML/CSS by: Maria Karamina (sdi1600059)
             <p>Παρακαλούμε εισάγετε τον κωδικό της κάρτας που επιθυμείτε να επαναφορτίσετε. Μπορείτε να τον βρείτε στο μπροστινό μέρος του εισιτηρίου. Επίσης εισάγετε τον αριθμό PIN της κάρτας που ορίσατε κατά την έκδοσή της.</p>
             <form id="card-id-form" method="POST" action="<?=$_SERVER['PHP_SELF']?>" onsubmit="saveCardId();">
               <input type="text" id="buy-card-id-input" class="buy-input mr-3 <?php if($error) echo ' err' ?>" name="idcard" placeholder="Κωδικός Κάρτας" required>
-              <input type="text" id="buy-card-pin-input" class="buy-input ml-3 <?php if($error) echo ' err' ?>" name="pincard" placeholder="PIN Κάρτας" required>
+              <input type="password" id="buy-card-pin-input" class="buy-input ml-3 <?php if($error) echo ' err' ?>" name="pin" placeholder="PIN Κάρτας" required>
               <?php
-                if($tick_category_name) {
+                if($date) {
                   echo "<div class='success-message'>Έγκυρος κωδικός και PIN κάρτας, μπορείτε να συνεχίσετε</div>";
                 }
                 else {
@@ -168,7 +168,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
               <input type="submit" class="btn btn-primary mt-3" value="Έλεγχος Κάρτας">
               <br />
               <br />
-              <div class="container" <?php if(!$tick_category_name) echo "style='display:none;'";?>>
+              <div class="container" <?php if(!$date) echo "style='display:none;'";?>>
                 <h3>Πληροφορίες Κάρτας</h3>
                 <label>Κωδικός Κάρτας:</label><span><?php echo " " . $idcard; ?></span><br />
                 <label>Ημερομηνία Έκδοσης:</label><span><?php echo " " . $date; ?></span><br />
@@ -293,7 +293,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
             <p>Θα σας αποσταλεί email με το αποδεικτικό πληρωμής και τα εισιτήριά σας</p>
             <form id="recharge-form" class="hidden-form" method="POST" action="confirm_recharge.php">
               <input id="card-id-to-send" name="idcard" class="form-control" type="text">
-              <input id="card-pin-to-send" name="pincard" class="form-control" type="password">
+              <input id="card-pin-to-send" name="pin" class="form-control" type="password">
               <input id="product-to-send" name="idticket_category" class="form-control" type="text">
               <input id="email-to-send" name="email" class="form-control" type="email">
             </form>
