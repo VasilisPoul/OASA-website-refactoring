@@ -43,13 +43,13 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
   if(empty($error)){
 
     //find ticket on database based on its id
-    $sql = "SELECT c.date, c.pin, c.expired, tc.name AS tick_category_name, tc.price, uc.name AS user_cat_name FROM card c, ticket_category tc, user_category uc WHERE c.idcard = $idcard AND c.idcard_category = tc.idcard_category AND tc.iduser_category = uc.iduser_category";
+    $sql = "SELECT c.date, c.pin, c.expired, tc.name AS tick_category_name, tc.price, uc.name AS user_cat_name FROM card c, ticket_category tc, user_category uc WHERE c.idcard = $idcard AND c.idticket_category = tc.idticket_category AND tc.iduser_category = uc.iduser_category";
     $result = $conn->query($sql);
 
     if(!empty($result) && $result->num_rows > 0){
       while($row = $result->fetch_assoc()){
 
-        if($row["pin"] != $pin){
+        if($row["pin"] == $pin){
           if($row["expired"] == 1){
 
             $date = $row["date"];
