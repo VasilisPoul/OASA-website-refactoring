@@ -14,7 +14,6 @@ $server_password = "password";
 $dbname = "oasa";
 
 $date = date("Y-m-d");
-$total_amount = 0.0;
 
 $email = $idcard = $pin = $idticket_category = $message = "";
 $email_err = $idcard_err = $idticket_category_err = $pin_err = "";
