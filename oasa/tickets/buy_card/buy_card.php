@@ -214,7 +214,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
                   <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="icon-tag"></i> </span>
                   </div>
-                <input id="buy-discount_id" name="discount_id" class="form-control" placeholder="Κωδικός Πάσου/Κάρτας ανεργίας/Κάρτας ΆμεΑ" type="text">
+                <input id="buy-discount_id" name="discount_id" class="form-control" placeholder="Κωδικός Πάσο/Κάρτας ανεργίας/Κάρτας ΆμεΑ" type="text">
                 </div> <!-- form-group-error// -->
                 <span id="buy-discount_id-err" class="error-message"></span>
 
