@@ -249,7 +249,7 @@ DROP TABLE IF EXISTS `oasa`.`card` ;
 CREATE TABLE IF NOT EXISTS `oasa`.`card` (
   `idcard` INT NOT NULL AUTO_INCREMENT,
   `idticket_category` INT NOT NULL,
-  `iduser` INT NOT NULL,
+  `iduser` INT NULL DEFAULT NULL,
   `date` DATE NOT NULL,
   `pin` VARCHAR(45) NOT NULL,
   `expired` INT NOT NULL DEFAULT 0,
