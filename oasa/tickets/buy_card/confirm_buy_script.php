@@ -158,7 +158,7 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
       if($conn->query($sql) === TRUE){
       
         //retrieve id ticket category data
-        $sql = "SELECT c.idcard, tc.name, tc.price FROM card c, ticket_category tc WHERE t.idticket = \"$conn->insert_id\" AND tc.idticket_category = c.idticket_category";
+        $sql = "SELECT c.idcard, tc.name, tc.price FROM card c, ticket_category tc WHERE t.idcard = \"$conn->insert_id\" AND tc.idticket_category = c.idticket_category";
         $result = $conn->query($sql);
 
         if(!empty($result) && $result->num_rows > 0){
