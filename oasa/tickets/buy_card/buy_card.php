@@ -2,6 +2,8 @@
 
 HTML/CSS by: Maria Karamina (sdi1600059)
 
+PHP script (line 158) by: Giorgos Koursiounis (sdi1600077)
+
 -->
 
 <!DOCTYPE html>
@@ -153,73 +155,118 @@ HTML/CSS by: Maria Karamina (sdi1600059)
             <br />
             <br />
 
-            <p>Παρακαλούμε εισάγετε τα στοιχεία σας</p>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group-error input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"> <i class="icon-user"></i> </span>
-                  </div>
-                  <input id="buy-first_name" name="first_name" class="form-control" placeholder="Όνομα" type="text" value="<?php echo $first_name; ?>" <?php if($first_name) echo "disabled"; ?>>
-                </div> <!-- form-group-error// -->
-                <span id="buy-first_name-err" class="error-message"></span>
-                
-                <div class="form-group-error input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"> <i class="icon-user"></i> </span>
-                  </div>
-                  <input id="buy-last_name" name="last_name" class="form-control" placeholder="Επίθετο" type="text" value="<?php echo $last_name; ?>" <?php if($last_name) echo "disabled"; ?>> 
-                </div> <!-- form-group-error// -->
-                <span id="buy-last_name-err" class="error-message"></span>
-                    
-                <div class="form-group-error input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"> <i class="icon-envelope-o"></i> </span>
-                  </div>
-                  <input id="buy-email" name="email" class="form-control" placeholder="Email" type="email" value="<?php echo $email; ?>" <?php if($email) echo "disabled"; ?>>
-                </div> <!-- form-group-error// -->
-                <span id="buy-email-err" class="error-message"></span>
-                    
-                <div class="form-group-error input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"> <i class="icon-calendar"></i> </span>
-                  </div>
-                  <input id="buy-dob" name="dob" class="form-control" placeholder="Ημερομηνία Γέννησης" type="date" value="<?php echo $dob; ?>" <?php if($dob) echo "disabled"; ?>>  
-                </div> <!-- form-group-error// -->
-                <span id="buy-dob-err" class="error-message"></span>
-                
-                <div class="form-group-error input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"> <i class="icon-phone"></i> </span>
-                  </div>
-                <input id="buy-phone" name="phone" class="form-control" placeholder="Αριθμός Τηλεφώνου" type="text" value="<?php echo $phone; ?>" <?php if($phone) echo "disabled"; ?>>
-                </div> <!-- form-group-error// -->
-                <span id="buy-phone-err" class="error-message"></span>
-              </div>
+            <?php
+              if(isset($_SESSION['loggedin']) && ($_SESSION['loggedin'])){ 
 
-              <div class="col-md-6">
-                <br />
-                <div class = "groove">
-                  <p>Ανήκω στην κατηγορία:</p>
-                  
-                  <input type="radio" name="user_category" value="1" checked> Δικαιούχος κανονικού εισιτηρίου<br>
-                  <input type="radio" name="user_category" value="2"> Φοιτητής/Μαθητής<br>
-                  <input type="radio" name="user_category" value="3"> Άνεργος/Αμεα<br> 
-                  <span id="buy-category-err" class="error-message"></span>
-                </div>
+                $servername = "localhost";
+                $server_username = "user";
+                $server_password = "password";
+                $dbname = "oasa";
 
-                <br />
-                <label>Αν ανήκετε σε κατηγορία με έκπτωση, εισάγετε τον κωδικό/αναγνωριστικό του δικαιολογητικού σας</label>
-                <div class="form-group input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"> <i class="icon-tag"></i> </span>
+                $message = "";
+
+                //create connection
+                $conn = new mysqli($servername, $server_username, $server_password, $dbname);
+                if($conn->connect_error){
+                  die("Connection failed: " . $conn->connect_error);
+                }
+
+                $sql = "SELECT c.idcard, c.expired, tc.name, tc.price FROM card c, ticket_category tc WHERE c.iduser = \"" . $_SESSION['loggedin'] . "\" AND tc.idticket_category = c.idticket_category";
+                $result = $conn->query($sql);
+
+                if(!empty($result) && $result->num_rows >0){
+                  $message = "<div class=\"alert alert-warning\"><strong>Προσοχή!</strong> Έχετε ήδη εκδώσει κάρτα. Δεν μπορείτε να εκδόσετε παραπάνω από μια κάρτα ανά χρήστη</div><br><h4>Τρέχουσες πληροφορίες κάρτας</h4><table class=\"table\"><thead><tr><th scope=\"col\">Κωδικός κάρτας</th><th scope=\"col\">Κατηγορία κομίστρου</th><th scope=\"col\">Τιμή</th><th scope=\"col\">Έχει λήξει</th></tr></thead><tbody>";
+
+                  while($row = $result->fetch_assoc()){
+                    $message .= "<tr><td>" . $row["idcard"] . "</td><td>" . $row["name"] . "</td><td>" . $row["price"] . "</td>";
+
+                    if($row["expired"] == 1){
+                      $message .= "<td>ΝΑΙ</td></tr>";
+                    }
+                    else{
+                      $message .= "<td>ΟΧΙ</td></tr>";
+                    }
+                  }
+
+                  $message .= "</tbody></table>";
+
+                  echo $message;
+                }
+                else { ?>
+
+
+                  <p>Παρακαλούμε εισάγετε τα στοιχεία σας</p>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group-error input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"> <i class="icon-user"></i> </span>
+                        </div>
+                        <input id="buy-first_name" name="first_name" class="form-control" placeholder="Όνομα" type="text" value="<?php echo $first_name; ?>" <?php if($first_name) echo "disabled"; ?>>
+                      </div> <!-- form-group-error// -->
+                      <span id="buy-first_name-err" class="error-message"></span>
+                      
+                      <div class="form-group-error input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"> <i class="icon-user"></i> </span>
+                        </div>
+                        <input id="buy-last_name" name="last_name" class="form-control" placeholder="Επίθετο" type="text" value="<?php echo $last_name; ?>" <?php if($last_name) echo "disabled"; ?>> 
+                      </div> <!-- form-group-error// -->
+                      <span id="buy-last_name-err" class="error-message"></span>
+                          
+                      <div class="form-group-error input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"> <i class="icon-envelope-o"></i> </span>
+                        </div>
+                        <input id="buy-email" name="email" class="form-control" placeholder="Email" type="email" value="<?php echo $email; ?>" <?php if($email) echo "disabled"; ?>>
+                      </div> <!-- form-group-error// -->
+                      <span id="buy-email-err" class="error-message"></span>
+                          
+                      <div class="form-group-error input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"> <i class="icon-calendar"></i> </span>
+                        </div>
+                        <input id="buy-dob" name="dob" class="form-control" placeholder="Ημερομηνία Γέννησης" type="date" value="<?php echo $dob; ?>" <?php if($dob) echo "disabled"; ?>>  
+                      </div> <!-- form-group-error// -->
+                      <span id="buy-dob-err" class="error-message"></span>
+                      
+                      <div class="form-group-error input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"> <i class="icon-phone"></i> </span>
+                        </div>
+                      <input id="buy-phone" name="phone" class="form-control" placeholder="Αριθμός Τηλεφώνου" type="text" value="<?php echo $phone; ?>" <?php if($phone) echo "disabled"; ?>>
+                      </div> <!-- form-group-error// -->
+                      <span id="buy-phone-err" class="error-message"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                      <br />
+                      <div class = "groove">
+                        <p>Ανήκω στην κατηγορία:</p>
+                        
+                        <input type="radio" name="user_category" value="1" checked> Δικαιούχος κανονικού εισιτηρίου<br>
+                        <input type="radio" name="user_category" value="2"> Φοιτητής/Μαθητής<br>
+                        <input type="radio" name="user_category" value="3"> Άνεργος/Αμεα<br> 
+                        <span id="buy-category-err" class="error-message"></span>
+                      </div>
+
+                      <br />
+                      <label>Αν ανήκετε σε κατηγορία με έκπτωση, εισάγετε τον κωδικό/αναγνωριστικό του δικαιολογητικού σας</label>
+                      <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"> <i class="icon-tag"></i> </span>
+                        </div>
+                      <input id="buy-discount_id" name="discount_id" class="form-control" placeholder="Κωδικός Πάσου/Κάρτας ανεργίας/Κάρτας ΆμεΑ" type="text">
+                      </div> <!-- form-group-error// -->
+                      <span id="buy-discount_id-err" class="error-message"></span>
+
+                    </div>
                   </div>
-                <input id="buy-discount_id" name="discount_id" class="form-control" placeholder="Κωδικός Πάσο/Κάρτας ανεργίας/Κάρτας ΆμεΑ" type="text">
-                </div> <!-- form-group-error// -->
-                <span id="buy-discount_id-err" class="error-message"></span>
 
-              </div>
-            </div>
+                <?php 
+                }
+              }
+            ?>
 
           </div>
 
