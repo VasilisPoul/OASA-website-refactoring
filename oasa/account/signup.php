@@ -178,7 +178,7 @@ HTML/CSS by: Vasilis Poulopoulos (sdi1600141)
                       <div class="input-group-prepend">
                           <span class="input-group-text"> <i class="icon-calendar"></i> </span>
                       </div>
-                      <input name="dob" class="form-control" placeholder="Ημερομηνία Γέννησης" type="date" value="<?php echo $dob;?>">
+                      <input name="dob" class="form-control" placeholder="Ημερομηνία Γέννησης" onfocus="(this.type='date')" onblur="(this.type='text')" type="date" value="<?php echo $dob;?>">
                      
                       
                   </div> <!-- form-group-error// -->
