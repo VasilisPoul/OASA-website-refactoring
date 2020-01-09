@@ -137,8 +137,13 @@ HTML/CSS by: Giorgos Koursiounis (sdi1600077)
     </section>
 
     <section class="ftco-section ftco-no-pt bg-light">
-      <?php echo $buy_cart_err; ?>
+      <?php echo $first_name_err; ?>
+      <?php echo $last_name_err; ?>
+      <?php echo $pin_err; ?>
       <?php echo $email_err; ?>
+      <?php echo $dob_err; ?>
+      <?php echo $phone_err; ?>
+      <?php echo $user_category_err; ?>
       <?php echo $message; ?>
 
       <div style="overflow:auto;">
