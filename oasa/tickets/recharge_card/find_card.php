@@ -13,7 +13,7 @@ $server_username = "user";
 $server_password = "password";
 $dbname = "oasa";
 
-$date = $tick_category_name = $error = $pin = "";
+$date = $tick_category_name = $error = "";
 $price = $user_cat_name = $expired = $idcard = "";
 
 if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
@@ -35,9 +35,6 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
   //check if card PIN is given
   if(empty($_POST["pin"])){
     $error = "Εισάγετε κωδικό κάρτας";
-  } 
-  else{
-    $pin = $_POST["pin"];
   }
 
   if(empty($error)){
@@ -49,7 +46,7 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
     if(!empty($result) && $result->num_rows > 0){
       while($row = $result->fetch_assoc()){
 
-        if($row["pin"] == $pin){
+        if(password_verify($_POST["pin"], $row["pin"]){
           if($row["expired"] == 1){
 
             $date = $row["date"];

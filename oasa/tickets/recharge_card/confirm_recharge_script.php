@@ -14,8 +14,9 @@ $server_password = "password";
 $dbname = "oasa";
 
 $date = date("Y-m-d");
+$total_amount = 0.0;
 
-$email = $idcard = $pin = $idticket_category = $message = "";
+$email = $idcard = $idticket_category = $message = "";
 $email_err = $idcard_err = $idticket_category_err = $pin_err = "";
 
 
@@ -63,11 +64,7 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
 
   if(empty($_POST["pin"])){
     $pin_err = "<div class=\"alert alert-danger\"><strong>Αποτυχία!</strong> Απαιτείται κωδικός PIN</div>";
-  } 
-  else{
-    $pin = $_POST["pin"];
   }
-
 
   if(empty($email_err) && empty($idticket_category_err) && empty($idcard_err) && empty($pin_err)){
 
@@ -77,7 +74,7 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
     if(!empty($result) && $result->num_rows > 0){
       while($row = $result->fetch_assoc()){
 
-        if($row["pin"] == $pin){
+        if(password_verify($_POST["pin"], $row["pin"])){
           
           $sql1 = "UPDATE card SET date = \"$date\", idticket_category = \"$idticket_category\", expired = 0 WHERE idcard = \"$idcard\"";
 
