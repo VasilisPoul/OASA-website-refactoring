@@ -156,7 +156,6 @@ PHP script (line 158) by: Giorgos Koursiounis (sdi1600077)
             <br />
 
             <?php
-              if(isset($_SESSION['loggedin']) && ($_SESSION['loggedin'])){ 
 
                 $servername = "localhost";
                 $server_username = "user";
@@ -171,8 +170,11 @@ PHP script (line 158) by: Giorgos Koursiounis (sdi1600077)
                   die("Connection failed: " . $conn->connect_error);
                 }
 
-                $sql = "SELECT c.idcard, c.expired, tc.name, tc.price FROM card c, ticket_category tc WHERE c.iduser = \"" . $_SESSION['loggedin'] . "\" AND tc.idticket_category = c.idticket_category";
-                $result = $conn->query($sql);
+                $result = "";
+                if(isset($_SESSION['loggedin']) && ($_SESSION['loggedin'])){ 
+                  $sql = "SELECT c.idcard, c.expired, tc.name, tc.price FROM card c, ticket_category tc WHERE c.iduser = \"" . $_SESSION['loggedin'] . "\" AND tc.idticket_category = c.idticket_category";
+                  $result = $conn->query($sql);
+                }
 
                 if(!empty($result) && $result->num_rows >0){
                   $message = "<div class=\"alert alert-warning\"><strong>Προσοχή!</strong> Έχετε ήδη εκδώσει κάρτα. Δεν μπορείτε να εκδόσετε παραπάνω από μια κάρτα ανά χρήστη</div><br><h4>Τρέχουσες πληροφορίες κάρτας</h4><table class=\"table\"><thead><tr><th scope=\"col\">Κωδικός κάρτας</th><th scope=\"col\">Κατηγορία κομίστρου</th><th scope=\"col\">Τιμή</th><th scope=\"col\">Έχει λήξει</th></tr></thead><tbody>";
@@ -265,7 +267,6 @@ PHP script (line 158) by: Giorgos Koursiounis (sdi1600077)
 
                 <?php 
                 }
-              }
             ?>
 
           </div>
@@ -375,7 +376,7 @@ PHP script (line 158) by: Giorgos Koursiounis (sdi1600077)
           <div style="overflow:auto;">
             <div style="float:right;">
               <button type="button" class="btn btn-grey" id="prevBtn" onclick="nextPrev(-1)">Προηγούμενο</button>
-              <button type="button" class="btn btn-primary" id="nextBtn" onclick="nextPrev(1)">Επόμενο</button>
+              <button type="button" class="btn btn-primary" id="nextBtn" onclick="nextPrev(1)" <?php if($message) echo "disabled" ?>>Επόμενο</button>
             </div>
           </div>
 
