@@ -146,6 +146,7 @@ PHP script (line 158) by: Giorgos Koursiounis (sdi1600077)
             <div class="container">
               <ul class="progressbar">
                 <li class="active">Εισαγωγή Πληροφοριών</li>
+                <li>Δημιουργία PIN</li>
                 <li>Επιλογή Κομίστρου</li>
                 <li>Πληρωμή</li>
                 <li>Ολοκλήρωση</li>
@@ -258,7 +259,7 @@ PHP script (line 158) by: Giorgos Koursiounis (sdi1600077)
                         <div class="input-group-prepend">
                           <span class="input-group-text"> <i class="icon-tag"></i> </span>
                         </div>
-                      <input id="buy-discount_id" name="discount_id" class="form-control" placeholder="Κωδικός Πάσου/Κάρτας ανεργίας/Κάρτας ΆμεΑ" type="text">
+                      <input id="buy-discount_id" name="discount_id" class="form-control" placeholder="Κωδικός Πάσο/Κάρτας ανεργίας/Κάρτας ΆμεΑ" type="text" value="<?php echo $phone; ?>" <?php if($discountid) echo "disabled"; ?>>
                       </div> <!-- form-group-error// -->
                       <span id="buy-discount_id-err" class="error-message"></span>
 
@@ -275,6 +276,27 @@ PHP script (line 158) by: Giorgos Koursiounis (sdi1600077)
             <div class="container">
               <ul class="progressbar">
                 <li class="active">Εισαγωγή Πληροφοριών</li>
+                <li class="active">Δημιουργία PIN</li>
+                <li>Επιλογή Κομίστρου</li>
+                <li>Πληρωμή</li>
+                <li>Ολοκλήρωση</li>
+              </ul>
+            </div>
+            <br />
+            <br />
+            <br />
+            <p>Επιλέξτε έναν κωδικό PIN για τη νέα σας κάρτα</p>
+            <input type="password" id="buy-card-pin-input" class="buy-input mr-3" placeholder="PIN" required>
+            <input type="password" id="buy-card-pin-check" class="buy-input ml-3" placeholder="Επιβεβαίωση PIN" required>
+            <div id="buy-pin-error" class="error-message"></div>
+            
+          </div>
+
+          <div class="step-screen">
+            <div class="container">
+              <ul class="progressbar">
+                <li class="active">Εισαγωγή Πληροφοριών</li>
+                <li class="active">Δημιουργία PIN</li>
                 <li class="active">Επιλογή Κομίστρου</li>
                 <li>Πληρωμή</li>
                 <li>Ολοκλήρωση</li>
@@ -302,7 +324,7 @@ PHP script (line 158) by: Giorgos Koursiounis (sdi1600077)
                   </div>
                   <div class="row">
                     <div class="col-md-6">
-                      <input type="number" class="buy-input buy-quantity" min="1" max="100" value="1">
+                      <input type="number" class="buy-input buy-quantity" min="1" max="100" value="1" disabled>
                     </div>
                   </div>
                 </div>
@@ -318,6 +340,7 @@ PHP script (line 158) by: Giorgos Koursiounis (sdi1600077)
             <div class="container">
               <ul class="progressbar">
                 <li class="active">Εισαγωγή Πληροφοριών</li>
+                <li class="active">Δημιουργία PIN</li>
                 <li class="active">Επιλογή Κομίστρου</li>
                 <li class="active">Πληρωμή</li>
                 <li>Ολοκλήρωση</li>
@@ -349,6 +372,7 @@ PHP script (line 158) by: Giorgos Koursiounis (sdi1600077)
             <div class="container">
               <ul class="progressbar">
                 <li class="active">Εισαγωγή Πληροφοριών</li>
+                <li class="active">Δημιουργία PIN</li>
                 <li class="active">Επιλογή Κομίστρου</li>
                 <li class="active">Πληρωμή</li>
                 <li class="active">Ολοκλήρωση</li>
@@ -365,7 +389,9 @@ PHP script (line 158) by: Giorgos Koursiounis (sdi1600077)
               <input id="email-to-send" name="email" class="form-control" type="text">
               <input id="dob-to-send" name="dob" class="form-control" type="text">
               <input id="phone-to-send" name="phone" class="form-control" type="text">
-              <input id="discount_id-to-send" name="discountid" class="form-control" type="text">
+              <input id="discount_id-to-send" name="discount_id" class="form-control" type="text">
+              <input id="discount_cat-to-send" name="user_category" class="form-control" type="text">
+              <input id="pin-to-send" name="pin" class="form-control" type="password">
             </form>
             <div id="buy-loader" class="loader"></div> 
 

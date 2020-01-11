@@ -46,7 +46,7 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
     if(!empty($result) && $result->num_rows > 0){
       while($row = $result->fetch_assoc()){
 
-        if(password_verify($_POST["pin"], $row["pin"]){
+        if(password_verify($_POST["pin"], $row["pin"])){
           if($row["expired"] == 1){
 
             $date = $row["date"];
