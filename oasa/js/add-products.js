@@ -1,3 +1,9 @@
+/* 
+
+JAVASCRIPT by: Maria Karamina (sdi1600059)
+
+*/
+
 function addTicket() {
 	var row = document.getElementsByClassName("ticket-row"),
 	    clone = row[0].cloneNode(true); // true means clone all childNodes and all event handlers

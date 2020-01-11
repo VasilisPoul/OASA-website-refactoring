@@ -1,3 +1,9 @@
+/* 
+
+JAVASCRIPT by: Maria Karamina (sdi1600059)
+
+*/
+
 
 function getProducts() {
 	var selects = document.getElementsByClassName("buy-select");

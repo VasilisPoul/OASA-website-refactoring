@@ -1,3 +1,9 @@
+/* 
+
+JAVASCRIPT by: Maria Karamina (sdi1600059)
+
+*/
+
 function inputToUrl(param, value) {
 	var url = new URL(window.location);
 	url.searchParams.set(param, value);

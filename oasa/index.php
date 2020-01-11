@@ -56,6 +56,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
 	          		<a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Το Δίκτυο</a>
 					<div class="dropdown-menu">
 		          		<a class="dropdown-item" href="network/info.php">Πληροφορίες και Χάρτης</a>
+		          		<a class="dropdown-item" href="network/line_info/lines.php">Πληροφορίες Γραμμών</a>
 		          		<a class="dropdown-item" href="network/journey_planner.php">Σχεδιασμός Διαδρομής</a>
 		          		<a class="dropdown-item" href="network/status.php">Κατάσταση Δικτύου</a>
 	          		</div>
