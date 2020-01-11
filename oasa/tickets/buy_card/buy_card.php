@@ -361,6 +361,11 @@ PHP script (line 158) by: Giorgos Koursiounis (sdi1600077)
                   </tr>
                 </table>
                 <script src="../../js/get-selected-products.js"></script>
+                <br />
+                <br />
+                <p>Η κάρτα θα σταλεί ταχυδρομικά στην οικία σας</p>
+                <input id="buy-address" type="text" class="buy-input" placeholder="Διεύθυνση Αποστολής">
+                <div id="buy-address-error" class="error-message"></div>
               </div>
               <div class="col-md-3">
                 <p>Τελικό ποσό προς πληρωμή: <span id="total-price">€</span></p>
@@ -393,6 +398,7 @@ PHP script (line 158) by: Giorgos Koursiounis (sdi1600077)
               <input id="discount_id-to-send" name="discount_id" class="form-control" type="text">
               <input id="discount_cat-to-send" name="user_category" class="form-control" type="text">
               <input id="pin-to-send" name="pin" class="form-control" type="password">
+              <input id="address-to-send" name="address" class="form-control" type="text">
             </form>
             <div id="buy-loader" class="loader"></div> 
 

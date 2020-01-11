@@ -30,11 +30,12 @@ function nextPrev(n) {
   // This function will figure out which step-screen to display
   var x = document.getElementsByClassName("step-screen");
 
-  //From info screen to ticket selection screen
+  //From info screen to PIN screen
   if(currentTab == 0 && n == 1 && !validateInfo()) {
     return false;
   }
 
+  //From PIN screen to ticket selection screen
   if(currentTab === 1 && n === 1) {
     if(!verifyPin()) return false;
   }
@@ -42,6 +43,7 @@ function nextPrev(n) {
   //From ticket selection screen to payment screen
   if(currentTab === 2 && n === 1) {
     getProductsTable();
+    if(!validateAddress()) return false;
   }
   
 
@@ -52,18 +54,20 @@ function nextPrev(n) {
     document.getElementById("last_name-to-send").value = document.getElementById("buy-last_name").value;
     document.getElementById("email-to-send").value = document.getElementById("buy-email").value;
     document.getElementById("dob-to-send").value = document.getElementById("buy-dob").value;
+    document.getElementById("phone-to-send").value = document.getElementById("buy-phone").value;
     document.getElementById("discount_id-to-send").value = document.getElementById("buy-discount_id").value;
+    document.getElementById("pin-to-send").value = document.getElementById("buy-card-pin-input").value;
+    document.getElementById("address-to-send").value = document.getElementById("buy-address").value;
 
     var discount_cat;
     var radios = document.getElementsByClassName("radio");
-    for(radio in radios) {
+    for(radio of radios) {
       if(radio.checked) {
         discount_cat = radio.value;
       }
     }
 
     document.getElementById("discount_cat-to-send").value = discount_cat;
-    document.getElementById("pin-to-send").value = document.getElementById("buy-card-pin-input").value;
   }
 
   // if you have reached the end of the form... :
@@ -190,6 +194,21 @@ function validatePhone() {
   return true;
 }
 
+function validateAddress() {
+  var address = document.getElementById("buy-address");
+  var err = document.getElementById("buy-address-error");
+  if(!address) {
+    address.classList.add("err");
+    err.innerHTML = "Συμπληρώστε διεύθυνση αποστολής";
+    return false;
+  }
+
+  address.classList.remove("err");
+  err.innerHTML = "";
+  return true;
+}
+
+//Verify that the two pins given match
 function verifyPin() {
   var pin = document.getElementById("buy-card-pin-input");
   var verify = document.getElementById("buy-card-pin-check");
