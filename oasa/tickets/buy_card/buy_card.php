@@ -42,6 +42,7 @@ PHP script (line 158) by: Giorgos Koursiounis (sdi1600077)
   <body>
 
     <?php include '../ticket_categories.php' ?>
+    <?php include '../../account/get_user.php' ?>
     
    <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light navbar-color" id="ftco-navbar">
       <div class="container">
@@ -247,9 +248,9 @@ PHP script (line 158) by: Giorgos Koursiounis (sdi1600077)
                       <div class = "groove">
                         <p>Ανήκω στην κατηγορία:</p>
                         
-                        <input type="radio" name="user_category" value="1" checked> Δικαιούχος κανονικού εισιτηρίου<br>
-                        <input type="radio" name="user_category" value="2"> Φοιτητής/Μαθητής<br>
-                        <input type="radio" name="user_category" value="3"> Άνεργος/Αμεα<br> 
+                        <input type="radio" class="radio" name="user_category" value="1" <?php if(!$user_category||$user_category=="1") echo "checked"; else echo "disabled";?>> Δικαιούχος κανονικού εισιτηρίου<br>
+                        <input type="radio" class="radio" name="user_category" value="2" <?php if($user_category=="2") echo "checked"; else if($user_category) echo "disabled";?>> Φοιτητής/Μαθητής<br>
+                        <input type="radio" class="radio" name="user_category" value="3" <?php if($user_category=="3") echo "checked"; else if($user_category) echo "disabled";?>> Άνεργος/Αμεα<br> 
                         <span id="buy-category-err" class="error-message"></span>
                       </div>
 
@@ -259,7 +260,7 @@ PHP script (line 158) by: Giorgos Koursiounis (sdi1600077)
                         <div class="input-group-prepend">
                           <span class="input-group-text"> <i class="icon-tag"></i> </span>
                         </div>
-                      <input id="buy-discount_id" name="discount_id" class="form-control" placeholder="Κωδικός Πάσο/Κάρτας ανεργίας/Κάρτας ΆμεΑ" type="text" value="<?php echo $phone; ?>" <?php if($discountid) echo "disabled"; ?>>
+                      <input id="buy-discount_id" name="discount_id" class="form-control" placeholder="Κωδικός Πάσο/Κάρτας ανεργίας/Κάρτας ΆμεΑ" type="text" value="<?php echo $discountid; ?>" <?php if($discountid) echo "disabled"; ?>>
                       </div> <!-- form-group-error// -->
                       <span id="buy-discount_id-err" class="error-message"></span>
 
