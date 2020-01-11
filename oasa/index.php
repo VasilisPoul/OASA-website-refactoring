@@ -39,7 +39,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
   </head>
   <body>
       
-	  <?php include 'service_status.php';?>
+	  <?php include 'network/service_status.php';?>
 
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
@@ -193,7 +193,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
     				</div>
     			</div>
     		</div>
-      </div>
+      	</div>
     </section>
 
     <section class="ftco-section ftco-no-pt bg-light front-page-text">

@@ -113,7 +113,7 @@
    <div class="container crumbs-top">
       <p class="breadcrumbs">
         <span class="mr-2"><a href="../index.php">Αρχική <i class="fa fa-angle-right"></i></a></span>
-        <span class="mr-2">Δίκτυο <i class="fa fa-angle-right"></i></span>
+        <span class="mr-2">Το Δίκτυο <i class="fa fa-angle-right"></i></span>
         <span class="mr-2">Πληροφορίες και Χάρτης <i class="fa fa-angle-right"></i></span>
       </p>
    </div>
