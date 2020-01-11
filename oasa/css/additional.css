@@ -219,3 +219,28 @@
 	color: #999999 !important;
 	border-color: #ced4da;
 }
+
+.navbar-container {
+	border-bottom: 2px solid #ccc;
+}
+
+.navbar-pills > li {
+	padding: 10px 20px;
+	background: #f8f9fa;
+}
+
+.navbar-pills > li > a {
+	color: #666;
+}
+
+.navbar-pills > li:hover {
+	background: #e8e9eb;
+}
+
+.navbar-pills > li.active {
+	border-top: 3px solid #1089ff;
+}
+
+.navbar-pills > li.active > a {
+	color: #1089ff;
+}
