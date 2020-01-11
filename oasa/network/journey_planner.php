@@ -168,19 +168,28 @@
                 {lat:37.978549, lng:23.711469},
                 {lat:37.976017, lng:23.725652}
               ]
-
+              var markerList = [];
               function addPolylineToMap(map, pointList) {
                 var lineString = new H.geo.LineString();
                 for (i = 0; i<pointList.length; i++){
                   lineString.pushPoint(pointList[i]);
-                  
+                  markerList[i] = new H.map.Marker(pointList[i]);
+                  map.addObject(markerList[i]);
                 }
+                
                 map.addObject(new H.map.Polyline(
                   lineString, { style: { lineWidth: 4 }}
                 ));
               }
-            
-              // Initialize the platform object:
+              function addBounds(){
+                group = new H.map.Group();
+                group.addObjects(markerList);
+                map.addObject(group);
+                map.getViewModel().setLookAtData({
+                  bounds: group.getBoundingBox()
+                });
+              }
+              //Initialize the platform object:
               var platform = new H.service.Platform({
                 'apikey': 'Ab83Q-acy3anmVC2oYeAt219WVZ7BLlOgrnhQ75ooq0'
               });
@@ -207,7 +216,7 @@
 
               // Now use the map as required...
               addPolylineToMap(map, pointList);        
-           
+              addBounds(map);
 
              
             </script>       
