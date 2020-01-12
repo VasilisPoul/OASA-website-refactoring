@@ -37,6 +37,7 @@
   </head>
   <body>
 
+	  <?php include 'journey_planner_script.php';?> 
     
 	  <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
       <div class="container">
@@ -133,7 +134,7 @@
       <div class="container">
         <div class="row d-flex mb-5 contact-info">
         	<div class="col-md-4">
-						<form action="#" class="request-form ftco-animate">
+						<form action="<?=$_SERVER['PHP_SELF']?>" class="request-form ftco-animate">
 							<div class="form-group">
 								<label for="" class="label">Απο</label>
 								<input type="text" class="form-control" placeholder="πχ. Εθνικής Αντιστάσεως 33">
@@ -155,6 +156,7 @@
 							<div class="form-group">
 									<input type="submit" value="Αναζήτηση Διαδρομής" class="btn btn-primary py-3 px-4">
 							</div>
+							<span class="error-message"> <?php echo $message;?></span>
 						</form>
 						
           </div>
