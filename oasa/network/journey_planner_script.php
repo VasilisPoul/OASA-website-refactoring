@@ -63,6 +63,8 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "GET"){
     $coordinates_str .= "{{lat: " . $coordinates["ΣΥΝΤΑΓΜΑ"][0] . " , lng: " . $coordinates["ΣΥΝΤΑΓΜΑ"][1] . "},{colour: " . $coordinates["ΣΥΝΤΑΓΜΑ"][2] . "}}";
     $coordinates_str .= "{{lat: " . $coordinates["ΕΥΑΓΓΕΛΙΣΜΟΣ"][0] . " , lng: " . $coordinates["ΕΥΑΓΓΕΛΙΣΜΟΣ"][1] . "},{colour:"  . $coordinates["ΕΥΑΓΓΕΛΙΣΜΟΣ"][2] . "}}]";
 
+    $coordinates_str .= ",";
+    
     //second alternative root
     $coordinates_str .= "[{{lat: " . $coordinates["ΟΜΟΝΟΙΑ"][0] . " , lng: " . $coordinates["ΟΜΟΝΟΙΑ"][1] . "},{colour: " . $coordinates["ΟΜΟΝΟΙΑ"][2] . "}}";
     $coordinates_str .= "{{lat: " . $coordinates["ΠΑΝΕΠΙΣΤΗΜΙΟ"][0] . " , lng: " . $coordinates["ΠΑΝΕΠΙΣΤΗΜΙΟ"][1] . "},{colour: " . $coordinates["ΠΑΝΕΠΙΣΤΗΜΙΟ"][2] . "}}";
@@ -77,6 +79,8 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "GET"){
     $coordinates_str .= "{{lat: " . $coordinates["ΣΥΝΤΑΓΜΑ"][0] . " , lng: " . $coordinates["ΣΥΝΤΑΓΜΑ"][1] . "},{colour: " . $coordinates["ΣΥΝΤΑΓΜΑ"][2] . "}}";
     $coordinates_str .= "{{lat: " . $coordinates["ΠΑΝΕΠΙΣΤΗΜΙΟ"][0] . " , lng: " . $coordinates["ΠΑΝΕΠΙΣΤΗΜΙΟ"][1] . "},{colour:"  . $coordinates["ΠΑΝΕΠΙΣΤΗΜΙΟ"][2] . "}}]";
 
+    $coordinates_str .= ",";
+    
     //second alternative root
     $coordinates_str .= "[{{lat: " . $coordinates["ΚΕΡΑΜΕΙΚΟΣ"][0] . " , lng: " . $coordinates["ΚΕΡΑΜΕΙΚΟΣ"][1] . "},{colour: " . $coordinates["ΚΕΡΑΜΕΙΚΟΣ"][2] . "}}";
     $coordinates_str .= "{{lat: " . $coordinates["ΜΟΝΑΣΤΗΡΑΚΙ"][0] . " , lng: " . $coordinates["ΜΟΝΑΣΤΗΡΑΚΙ"][1] . "},{colour: " . $coordinates["ΜΟΝΑΣΤΗΡΑΚΙ"][2] . "}}";
