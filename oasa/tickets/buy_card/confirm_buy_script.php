@@ -8,10 +8,10 @@ if(session_status() == PHP_SESSION_NONE) {
   session_start();
 }
 
-$username = $first_name = $last_name = $pin = "";
+$username = $first_name = $last_name = $pin = $idticket_category = "";
 $email = $dob = $phone = $user_category = $message = "";
 
-$first_name_err = $last_name_err = $pin_err = "";
+$first_name_err = $last_name_err = $pin_err = $idticket_category_err = "";
 $email_err = $dob_err = $phone_err = $user_category_err = "";
 
 $date = date("Y-m-d");

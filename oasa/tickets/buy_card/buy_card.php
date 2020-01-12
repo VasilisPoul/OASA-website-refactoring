@@ -390,7 +390,7 @@ PHP script (line 158) by: Giorgos Koursiounis (sdi1600077)
             <br />
             <p>Θα σας αποσταλεί email με το αποδεικτικό πληρωμής και οδηγίες παραλαβής της κάρτας σας</p>
             <form id="buy-form" class="hidden-form" method="POST" action="confirm_buy.php">
-              <input id="string-to-send" name="buy_cart" class="form-control" type="text">
+              <input id="string-to-send" name="idticket_category" class="form-control" type="text">
               <input id="first_name-to-send" name="first_name" class="form-control" type="text">
               <input id="last_name-to-send" name="last_name" class="form-control" type="text">
               <input id="email-to-send" name="email" class="form-control" type="text">
