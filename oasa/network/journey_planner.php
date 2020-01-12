@@ -164,25 +164,46 @@
           </div>
           <div class="col-md-8 block-9 mb-md-5">
             <div style="width: 640px; height: 480px" id="map"></div>
-            <script>
-              
+           <script>
+              var jsonList =[
+                              [{coords: {lat: 37.984037 , lng: 23.728041}, colour: "green"},
+                                {coords: {lat: 37.976431 , lng: 23.725905}, colour: "blue"},
+                                {coords: {lat: 37.975443 , lng: 23.735484}, colour: "blue"},
+                                {coords: {lat: 37.975937 , lng: 23.746923}, colour: "blue"}
+                              ],
+                              [{coords: {lat: 37.984037 , lng: 23.728041},colour: "green"},
+                                // {{lat: , lng: },{colour: }},
+                                {coords: {lat: 37.975443 , lng: 23.735484},colour: "blue"},
+                                {coords: {lat: 37.975937 , lng: 23.746923},colour: "blue"}
+                              ]
+                            ] 
+                     
               var pointList = [             
                 {lat:37.992302, lng:23.681798},
                 {lat:37.987821, lng:23.694244},
                 {lat:37.978549, lng:23.711469},
                 {lat:37.976017, lng:23.725652}
               ]
+
+              let style = {
+                linewidth: 4,
+                strokeColor: "blue"
+              };
+
               var markerList = [];
-              function addPolylineToMap(map, pointList) {
+              function addPolylineToMap(map, jsonList) {
                 var lineString = new H.geo.LineString();
-                for (i = 0; i<pointList.length; i++){
-                  lineString.pushPoint(pointList[i]);
-                  markerList[i] = new H.map.Marker(pointList[i]);
+                for (i = 0; i<jsonList[0].length; i++){
+                  lineString.pushPoint(jsonList[0][i].coords);
+                  markerList[i] = new H.map.Marker(jsonList[0][i].coords);
                   map.addObject(markerList[i]);
+
+                  style.strokeColor = jsonList[0][i].colour;
+
                 }
                 
                 map.addObject(new H.map.Polyline(
-                  lineString, { style: { lineWidth: 4 }}
+                  lineString, { style: style}
                 ));
               }
               function addBounds(){
@@ -219,11 +240,11 @@
 
 
               // Now use the map as required...
-              addPolylineToMap(map, pointList);        
+              addPolylineToMap(map, jsonList);        
               addBounds(map);
 
              
-            </script>       
+            </script>          
           </div>
         </div>
         
