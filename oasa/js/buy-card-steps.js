@@ -49,7 +49,7 @@ function nextPrev(n) {
 
   //Going to submit screen
   if(currentTab === x.length-2 && n===1) {
-    document.getElementById("string-to-send").value = getProductsAsString();
+    document.getElementById("product-to-send").value = document.getElementsByClassName("buy-select")[0].value;
     document.getElementById("first_name-to-send").value = document.getElementById("buy-first_name").value;
     document.getElementById("last_name-to-send").value = document.getElementById("buy-last_name").value;
     document.getElementById("email-to-send").value = document.getElementById("buy-email").value;

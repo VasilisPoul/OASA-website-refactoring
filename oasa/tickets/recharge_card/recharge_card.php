@@ -212,7 +212,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
                   </div>
                   <div class="row">
                     <div class="col-md-6">
-                      <input type="number" class="buy-input buy-quantity" title="Μπορείτε να επαναφορτίσετε το εισιτήριό σας με μόνο ένα κόμιστρο τη φορά" value="1" disabled>
+                      <input type="number" class="buy-input buy-quantity" title="Μπορείτε να επαναφορτίσετε την κάρτα σας με μόνο ένα κόμιστρο τη φορά" value="1" disabled>
                     </div>
                   </div>
                 </div>
