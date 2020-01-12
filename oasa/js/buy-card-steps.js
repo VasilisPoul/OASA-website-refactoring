@@ -43,6 +43,10 @@ function nextPrev(n) {
   //From ticket selection screen to payment screen
   if(currentTab === 2 && n === 1) {
     getProductsTable();
+  }
+
+  //From payment screen to submit screen
+  if(currentTab === 3 && n === 1) {
     if(!validateAddress()) return false;
   }
   
@@ -197,7 +201,7 @@ function validatePhone() {
 function validateAddress() {
   var address = document.getElementById("buy-address");
   var err = document.getElementById("buy-address-error");
-  if(!address) {
+  if(!address.value) {
     address.classList.add("err");
     err.innerHTML = "Συμπληρώστε διεύθυνση αποστολής";
     return false;
