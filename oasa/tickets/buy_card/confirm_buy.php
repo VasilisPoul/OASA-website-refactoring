@@ -145,7 +145,7 @@ HTML/CSS by: Giorgos Koursiounis (sdi1600077)
       <?php echo $dob_err; ?>
       <?php echo $phone_err; ?>
       <?php echo $user_category_err; ?>
-      <?php echo $id_ticket_category_err; ?>
+      <?php echo $idticket_category_err; ?>
       <?php echo $message; ?>
 
       <div style="overflow:auto;">
