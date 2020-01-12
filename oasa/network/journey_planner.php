@@ -165,18 +165,7 @@
           <div class="col-md-8 block-9 mb-md-5">
             <div style="width: 640px; height: 480px" id="map"></div>
            <script>
-              var jsonList =[
-                              [{coords: {lat: 37.984037 , lng: 23.728041}, colour: "green"},
-                                {coords: {lat: 37.976431 , lng: 23.725905}, colour: "blue"},
-                                {coords: {lat: 37.975443 , lng: 23.735484}, colour: "blue"},
-                                {coords: {lat: 37.975937 , lng: 23.746923}, colour: "blue"}
-                              ],
-                              [{coords: {lat: 37.984037 , lng: 23.728041},colour: "green"},
-                                // {{lat: , lng: },{colour: }},
-                                {coords: {lat: 37.975443 , lng: 23.735484},colour: "blue"},
-                                {coords: {lat: 37.975937 , lng: 23.746923},colour: "blue"}
-                              ]
-                            ] 
+              var jsonList = <?php echo $coordinates_str; ?>
                      
               var pointList = [             
                 {lat:37.992302, lng:23.681798},
