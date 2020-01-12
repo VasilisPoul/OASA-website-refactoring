@@ -58,41 +58,41 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "GET"){
   if(strtolower($departure) == "ομονοια" && strtolower($arrival) == "ευαγγελισμος")
   {
     //first alternative root
-    $coordinates_str .= "[{{lat: " . $coordinates["ΟΜΟΝΟΙΑ"][0] . " , lng: " . $coordinates["ΟΜΟΝΟΙΑ"][1] . "},{colour: " . $coordinates["ΟΜΟΝΟΙΑ"][2] . "}}";
-    $coordinates_str .= "{{lat: " . $coordinates["ΜΟΝΑΣΤΗΡΑΚΙ"][0] . " , lng: " . $coordinates["ΜΟΝΑΣΤΗΡΑΚΙ"][1] . "},{colour: " . $coordinates["ΜΟΝΑΣΤΗΡΑΚΙ"][2] . "}}";
-    $coordinates_str .= "{{lat: " . $coordinates["ΣΥΝΤΑΓΜΑ"][0] . " , lng: " . $coordinates["ΣΥΝΤΑΓΜΑ"][1] . "},{colour: " . $coordinates["ΣΥΝΤΑΓΜΑ"][2] . "}}";
-    $coordinates_str .= "{{lat: " . $coordinates["ΕΥΑΓΓΕΛΙΣΜΟΣ"][0] . " , lng: " . $coordinates["ΕΥΑΓΓΕΛΙΣΜΟΣ"][1] . "},{colour:"  . $coordinates["ΕΥΑΓΓΕΛΙΣΜΟΣ"][2] . "}}]";
+    $coordinates_str .= "[{coords: {lat: " . $coordinates["ΟΜΟΝΟΙΑ"][0] . " , lng: " . $coordinates["ΟΜΟΝΟΙΑ"][1] . "}, colour: \"" . $coordinates["ΟΜΟΝΟΙΑ"][2] . "\"},";
+    $coordinates_str .= "{coords: {lat: " . $coordinates["ΜΟΝΑΣΤΗΡΑΚΙ"][0] . " , lng: " . $coordinates["ΜΟΝΑΣΤΗΡΑΚΙ"][1] . "}, colour: \"" . $coordinates["ΜΟΝΑΣΤΗΡΑΚΙ"][2] . "\"},";
+    $coordinates_str .= "{coords: {lat: " . $coordinates["ΣΥΝΤΑΓΜΑ"][0] . " , lng: " . $coordinates["ΣΥΝΤΑΓΜΑ"][1] . "}, colour: \"" . $coordinates["ΣΥΝΤΑΓΜΑ"][2] . "\"},";
+    $coordinates_str .= "{coords: {lat: " . $coordinates["ΕΥΑΓΓΕΛΙΣΜΟΣ"][0] . " , lng: " . $coordinates["ΕΥΑΓΓΕΛΙΣΜΟΣ"][1] . "}, colour:\""  . $coordinates["ΕΥΑΓΓΕΛΙΣΜΟΣ"][2] . "\"}]";
 
     $coordinates_str .= ",";
     
     //second alternative root
-    $coordinates_str .= "[{{lat: " . $coordinates["ΟΜΟΝΟΙΑ"][0] . " , lng: " . $coordinates["ΟΜΟΝΟΙΑ"][1] . "},{colour: " . $coordinates["ΟΜΟΝΟΙΑ"][2] . "}}";
-    $coordinates_str .= "{{lat: " . $coordinates["ΠΑΝΕΠΙΣΤΗΜΙΟ"][0] . " , lng: " . $coordinates["ΠΑΝΕΠΙΣΤΗΜΙΟ"][1] . "},{colour: " . $coordinates["ΠΑΝΕΠΙΣΤΗΜΙΟ"][2] . "}}";
-    $coordinates_str .= "{{lat: " . $coordinates["ΣΥΝΤΑΓΜΑ"][0] . " , lng: " . $coordinates["ΣΥΝΤΑΓΜΑ"][1] . "},{colour: " . $coordinates["ΣΥΝΤΑΓΜΑ"][2] . "}}";
-    $coordinates_str .= "{{lat: " . $coordinates["ΕΥΑΓΓΕΛΙΣΜΟΣ"][0] . " , lng: " . $coordinates["ΕΥΑΓΓΕΛΙΣΜΟΣ"][1] . "},{colour:"  . $coordinates["ΕΥΑΓΓΕΛΙΣΜΟΣ"][2] . "}}]";
+    $coordinates_str .= "[{coords: {lat: " . $coordinates["ΟΜΟΝΟΙΑ"][0] . " , lng: " . $coordinates["ΟΜΟΝΟΙΑ"][1] . "}, colour: \"" . $coordinates["ΟΜΟΝΟΙΑ"][2] . "\"},";
+    $coordinates_str .= "{coords: {lat: " . $coordinates["ΠΑΝΕΠΙΣΤΗΜΙΟ"][0] . " , lng: " . $coordinates["ΠΑΝΕΠΙΣΤΗΜΙΟ"][1] . "}, colour: \"" . $coordinates["ΠΑΝΕΠΙΣΤΗΜΙΟ"][2] . "\"},";
+    $coordinates_str .= "{coords: {lat: " . $coordinates["ΣΥΝΤΑΓΜΑ"][0] . " , lng: " . $coordinates["ΣΥΝΤΑΓΜΑ"][1] . "}, colour: \"" . $coordinates["ΣΥΝΤΑΓΜΑ"][2] . "\"},";
+    $coordinates_str .= "{coords: {lat: " . $coordinates["ΕΥΑΓΓΕΛΙΣΜΟΣ"][0] . " , lng: " . $coordinates["ΕΥΑΓΓΕΛΙΣΜΟΣ"][1] . "}, colour:\""  . $coordinates["ΕΥΑΓΓΕΛΙΣΜΟΣ"][2] . "\"}]";
   }
   else if(strtolower($departure) == "κεραμεικος" && strtolower($arrival) == "πανεπιστημιο")
   {
     //first alternative root
-    $coordinates_str .= "[{{lat: " . $coordinates["ΚΕΡΑΜΕΙΚΟΣ"][0] . " , lng: " . $coordinates["ΚΕΡΑΜΕΙΚΟΣ"][1] . "},{colour: " . $coordinates["ΚΕΡΑΜΕΙΚΟΣ"][2] . "}}";
-    $coordinates_str .= "{{lat: " . $coordinates["ΜΟΝΑΣΤΗΡΑΚΙ"][0] . " , lng: " . $coordinates["ΜΟΝΑΣΤΗΡΑΚΙ"][1] . "},{colour: " . $coordinates["ΜΟΝΑΣΤΗΡΑΚΙ"][2] . "}}";
-    $coordinates_str .= "{{lat: " . $coordinates["ΣΥΝΤΑΓΜΑ"][0] . " , lng: " . $coordinates["ΣΥΝΤΑΓΜΑ"][1] . "},{colour: " . $coordinates["ΣΥΝΤΑΓΜΑ"][2] . "}}";
-    $coordinates_str .= "{{lat: " . $coordinates["ΠΑΝΕΠΙΣΤΗΜΙΟ"][0] . " , lng: " . $coordinates["ΠΑΝΕΠΙΣΤΗΜΙΟ"][1] . "},{colour:"  . $coordinates["ΠΑΝΕΠΙΣΤΗΜΙΟ"][2] . "}}]";
+    $coordinates_str .= "[{coords: {lat: " . $coordinates["ΚΕΡΑΜΕΙΚΟΣ"][0] . " , lng: " . $coordinates["ΚΕΡΑΜΕΙΚΟΣ"][1] . "}, colour: \"" . $coordinates["ΚΕΡΑΜΕΙΚΟΣ"][2] . "\"},";
+    $coordinates_str .= "{coords: {lat: " . $coordinates["ΜΟΝΑΣΤΗΡΑΚΙ"][0] . " , lng: " . $coordinates["ΜΟΝΑΣΤΗΡΑΚΙ"][1] . "}, colour: \"" . $coordinates["ΜΟΝΑΣΤΗΡΑΚΙ"][2] . "\"},";
+    $coordinates_str .= "{coords: {lat: " . $coordinates["ΣΥΝΤΑΓΜΑ"][0] . " , lng: " . $coordinates["ΣΥΝΤΑΓΜΑ"][1] . "}, colour: \"" . $coordinates["ΣΥΝΤΑΓΜΑ"][2] . "\"},";
+    $coordinates_str .= "{coords: {lat: " . $coordinates["ΠΑΝΕΠΙΣΤΗΜΙΟ"][0] . " , lng: " . $coordinates["ΠΑΝΕΠΙΣΤΗΜΙΟ"][1] . "}, colour:\""  . $coordinates["ΠΑΝΕΠΙΣΤΗΜΙΟ"][2] . "\"}]";
 
     $coordinates_str .= ",";
     
     //second alternative root
-    $coordinates_str .= "[{{lat: " . $coordinates["ΚΕΡΑΜΕΙΚΟΣ"][0] . " , lng: " . $coordinates["ΚΕΡΑΜΕΙΚΟΣ"][1] . "},{colour: " . $coordinates["ΚΕΡΑΜΕΙΚΟΣ"][2] . "}}";
-    $coordinates_str .= "{{lat: " . $coordinates["ΜΟΝΑΣΤΗΡΑΚΙ"][0] . " , lng: " . $coordinates["ΜΟΝΑΣΤΗΡΑΚΙ"][1] . "},{colour: " . $coordinates["ΜΟΝΑΣΤΗΡΑΚΙ"][2] . "}}";
-    $coordinates_str .= "{{lat: " . $coordinates["ΟΜΟΝΟΙΑ"][0] . " , lng: " . $coordinates["ΟΜΟΝΟΙΑ"][1] . "},{colour: " . $coordinates["ΟΜΟΝΟΙΑ"][2] . "}}";
-    $coordinates_str .= "{{lat: " . $coordinates["ΠΑΝΕΠΙΣΤΗΜΙΟ"][0] . " , lng: " . $coordinates["ΠΑΝΕΠΙΣΤΗΜΙΟ"][1] . "},{colour:"  . $coordinates["ΠΑΝΕΠΙΣΤΗΜΙΟ"][2] . "}}]";
+    $coordinates_str .= "[{coords: {lat: " . $coordinates["ΚΕΡΑΜΕΙΚΟΣ"][0] . " , lng: " . $coordinates["ΚΕΡΑΜΕΙΚΟΣ"][1] . "}, colour: \"" . $coordinates["ΚΕΡΑΜΕΙΚΟΣ"][2] . "\"},";
+    $coordinates_str .= "{coords: {lat: " . $coordinates["ΜΟΝΑΣΤΗΡΑΚΙ"][0] . " , lng: " . $coordinates["ΜΟΝΑΣΤΗΡΑΚΙ"][1] . "}, colour: \"" . $coordinates["ΜΟΝΑΣΤΗΡΑΚΙ"][2] . "\"},";
+    $coordinates_str .= "{coords: {lat: " . $coordinates["ΟΜΟΝΟΙΑ"][0] . " , lng: " . $coordinates["ΟΜΟΝΟΙΑ"][1] . "}, colour: \"" . $coordinates["ΟΜΟΝΟΙΑ"][2] . "\"},";
+    $coordinates_str .= "{coords: {lat: " . $coordinates["ΠΑΝΕΠΙΣΤΗΜΙΟ"][0] . " , lng: " . $coordinates["ΠΑΝΕΠΙΣΤΗΜΙΟ"][1] . "}, colour:\""  . $coordinates["ΠΑΝΕΠΙΣΤΗΜΙΟ"][2] . "\"}]";
   }
   else if(strtolower($departure) == "βικτωρια" && strtolower($arrival) == "θησειο")
   {
-    $coordinates_str .= "[{{lat: " . $coordinates["ΒΙΚΤΩΡΙΑ"][0] . " , lng: " . $coordinates["ΒΙΚΤΩΡΙΑ"][1] . "},{colour: " . $coordinates["ΒΙΚΤΩΡΙΑ"][2] . "}}";
-    $coordinates_str .= "{{lat: " . $coordinates["ΟΜΟΝΟΙΑ"][0] . " , lng: " . $coordinates["ΟΜΟΝΟΙΑ"][1] . "},{colour: " . $coordinates["ΟΜΟΝΟΙΑ"][2] . "}}";
-    $coordinates_str .= "{{lat: " . $coordinates["ΜΟΝΑΣΤΗΡΑΚΙ"][0] . " , lng: " . $coordinates["ΜΟΝΑΣΤΗΡΑΚΙ"][1] . "},{colour: " . $coordinates["ΜΟΝΑΣΤΗΡΑΚΙ"][2] . "}}";
-    $coordinates_str .= "{{lat: " . $coordinates["ΘΗΣΕΙΟ"][0] . " , lng: " . $coordinates["ΘΗΣΕΙΟ"][1] . "},{colour:"  . $coordinates["ΘΗΣΕΙΟ"][2] . "}}]";
+    $coordinates_str .= "[{coords: {lat: " . $coordinates["ΒΙΚΤΩΡΙΑ"][0] . " , lng: " . $coordinates["ΒΙΚΤΩΡΙΑ"][1] . "}, colour: \"" . $coordinates["ΒΙΚΤΩΡΙΑ"][2] . "\"},";
+    $coordinates_str .= "{coords: {lat: " . $coordinates["ΟΜΟΝΟΙΑ"][0] . " , lng: " . $coordinates["ΟΜΟΝΟΙΑ"][1] . "}, colour: \"" . $coordinates["ΟΜΟΝΟΙΑ"][2] . "\"},";
+    $coordinates_str .= "{coords: {lat: " . $coordinates["ΜΟΝΑΣΤΗΡΑΚΙ"][0] . " , lng: " . $coordinates["ΜΟΝΑΣΤΗΡΑΚΙ"][1] . "}, colour: \"" . $coordinates["ΜΟΝΑΣΤΗΡΑΚΙ"][2] . "\"},";
+    $coordinates_str .= "{coords: {lat: " . $coordinates["ΘΗΣΕΙΟ"][0] . " , lng: " . $coordinates["ΘΗΣΕΙΟ"][1] . "}, colour:\""  . $coordinates["ΘΗΣΕΙΟ"][2] . "\"}]";
   }
   else
   {
