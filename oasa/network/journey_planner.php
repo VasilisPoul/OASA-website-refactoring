@@ -137,11 +137,11 @@
 						<form action="<?=$_SERVER['PHP_SELF']?>" class="request-form ftco-animate">
 							<div class="form-group">
 								<label for="" class="label">Απο</label>
-								<input type="text" class="form-control" placeholder="πχ. Εθνικής Αντιστάσεως 33">
+								<input type="text" name="departure" class="form-control" placeholder="πχ. Ομόνοια">
 							</div>
 							<div class="form-group">
 								<label for="" class="label">Προς</label>
-								<input type="text" class="form-control" placeholder="Πχ. Λιμάνι Πειραιώς">
+								<input type="text" name="arrival" class="form-control" placeholder="Πχ. Ευαγγελισμός">
 							</div>
 							<label class="checkbox"><input type="checkbox" value=""> Προσβάσιμη σε ΆμεΑ</label>
 							<div class="form-group">
