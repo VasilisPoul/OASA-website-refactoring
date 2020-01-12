@@ -166,6 +166,7 @@
             <div style="width: 640px; height: 480px" id="map"></div>
            <script>
               var jsonList = <?php echo $coordinates_str; ?>
+
               let style = {
                 linewidth: 4,
                 strokeColor: "red"
