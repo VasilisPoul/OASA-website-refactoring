@@ -165,7 +165,7 @@
           <div class="col-md-8 block-9 mb-md-5">
             <div style="width: 640px; height: 480px" id="map"></div>
            <script>
-              var jsonList = <?php echo $coordinates_str; ?>
+              var jsonList = <?php echo $coordinates_str; ?>;
 
               let style = {
                 linewidth: 4,
