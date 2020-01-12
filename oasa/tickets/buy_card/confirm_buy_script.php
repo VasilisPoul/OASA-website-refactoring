@@ -127,18 +127,14 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
      empty($dob_err) && empty($phone_err) && empty($pin_err) && empty($user_category_err) && empty($message))
   {
 
-    //create new user in the database
-    if(isset($_SESSION['loggedin'])){
-      $sql = "INSERT INTO user (first_name, last_name, email, dob, phone, iduser_category, iduser)
-      VALUES (\"$first_name\", \"$last_name\", \"$email\", \"$dob\", \"$phone\", \"$user_category\", " . $_SESSION['loggedin'] . ")";
-    }
-    else{
+    //create new user in the database if the user is not logged in
+    if(!isset($_SESSION['loggedin'])){
       $sql = "INSERT INTO user (first_name, last_name, email, dob, phone, iduser_category)
       VALUES (\"$first_name\", \"$last_name\", \"$email\", \"$dob\", \"$phone\", \"$user_category\")";
     }
 
     //if user created..
-    if($conn->query($sql) === TRUE){
+    if(isset($_SESSION['loggedin']) || $conn->query($sql) === TRUE){
       
       //create new card in the database
       if(isset($_SESSION['loggedin'])){
