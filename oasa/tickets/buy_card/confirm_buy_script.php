@@ -122,6 +122,14 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
     }
   }
 
+  //check if address is given
+  if(empty($_POST["address"])){
+    $message = "<div class=\"alert alert-danger\"><strong>Αποτυχία!</strong> Απαιτείται διεύθυνση αποστολής κάρτας</div>";
+  } 
+  else{
+    $address = $_POST["address"];
+  }
+
   //check if there is an error..
   if(empty($first_name_err) && empty($last_name_err) && empty($email_err) && empty($idticket_category_err) &&
      empty($dob_err) && empty($phone_err) && empty($pin_err) && empty($user_category_err) && empty($message))
@@ -138,17 +146,15 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
       
       //create new card in the database
       if(isset($_SESSION['loggedin'])){
-        $content = "Αγαπητέ/ή ". $_SESSION['first_name']. " " . $_SESSION['last_name'] . ",\n   Πραγματοποιήθηκε την $date online αγορά κάρτας με τις παρακάτω λεπτομέρειες:\n<ul>";
-
         $sql = "INSERT INTO card (idticket_category, date, pin, iduser)
         VALUES (\"$idticket_category\", \"$date\", \"$pin\", " . $_SESSION['loggedin'] . ")";
       }
       else{
-        $content = "Αγαπητέ/ή χρήστη,\n   Πραγματοποιήθηκε την $date online αγορά κάρτας με τις παρακάτω λεπτομέρειες:\n<ul>";
-
         $sql = "INSERT INTO card (idticket_category, date, pin)
         VALUES (\"$idticket_category\", \"$date\", \"$pin\")";
       }
+
+      $content = "Αγαπητέ/ή $first_name $last_name,\n   Πραγματοποιήθηκε την $date online αγορά κάρτας με τις παρακάτω λεπτομέρειες:\n<ul>";
 
       //if card created..
       if($conn->query($sql) === TRUE){
@@ -159,8 +165,10 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
 
         if(!empty($result) && $result->num_rows > 0){
           while($row = $result->fetch_assoc()){
-            $content .= "<li>Κωδικός κάρτας: " . $row["idcard"] . "\n Τύπος: " . $row["name"] . "\n Τιμή: " . $row["price"] . " €</li>\n</ul>Συνολικό ποσό πληρωμής: <strong>" . $row["price"] . " €</strong>\n Με εκτίμηση,\n Οργανισμός Αστικών Συγκοινωνιών Αθηνών (ΟΑΣΑ)\n www.oasa.gr";
+            $content .= "<li>Κωδικός κάρτας: " . $row["idcard"] . "\n Τύπος: " . $row["name"] . "\n Τιμή: " . $row["price"] . " €</li>\n</ul>Συνολικό ποσό πληρωμής: <strong>" . $row["price"] . " €</strong>\n";
           }
+
+          $content .= "Η νέα κάρτα θα σας αποσταλεί στην διεύθυνση: $address\n  Με εκτίμηση,\n Οργανισμός Αστικών Συγκοινωνιών Αθηνών (ΟΑΣΑ)\n www.oasa.gr";
 
           $mailheader = "From: e-tickets@oasa.gr \r\nContent-Type: text/plain; charset=UTF-8 \r\n"; 
 
