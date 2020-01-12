@@ -55,7 +55,7 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "GET"){
     }
   }
 
-  if(strtolower($departure) == "ομονοια" && strtolower($arrival) == "ευαγγελισμος")
+ if(strcasecmp($departure, "ομονοια") == 0 && strcasecmp($arrival, "ευαγγελισμος") == 0 )
   {
     //first alternative root
     $coordinates_str .= "[{coords: {lat: " . $coordinates["ΟΜΟΝΟΙΑ"][0] . " , lng: " . $coordinates["ΟΜΟΝΟΙΑ"][1] . "}, colour: \"" . $coordinates["ΟΜΟΝΟΙΑ"][2] . "\"},";
@@ -71,7 +71,7 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "GET"){
     $coordinates_str .= "{coords: {lat: " . $coordinates["ΣΥΝΤΑΓΜΑ"][0] . " , lng: " . $coordinates["ΣΥΝΤΑΓΜΑ"][1] . "}, colour: \"" . $coordinates["ΣΥΝΤΑΓΜΑ"][2] . "\"},";
     $coordinates_str .= "{coords: {lat: " . $coordinates["ΕΥΑΓΓΕΛΙΣΜΟΣ"][0] . " , lng: " . $coordinates["ΕΥΑΓΓΕΛΙΣΜΟΣ"][1] . "}, colour:\""  . $coordinates["ΕΥΑΓΓΕΛΙΣΜΟΣ"][2] . "\"}]";
   }
-  else if(strtolower($departure) == "κεραμεικος" && strtolower($arrival) == "πανεπιστημιο")
+  else if(strcasecmp($departure, "κεραμεικος") == 0 && strcasecmp($arrival, "πανεπιστημιο") == 0)
   {
     //first alternative root
     $coordinates_str .= "[{coords: {lat: " . $coordinates["ΚΕΡΑΜΕΙΚΟΣ"][0] . " , lng: " . $coordinates["ΚΕΡΑΜΕΙΚΟΣ"][1] . "}, colour: \"" . $coordinates["ΚΕΡΑΜΕΙΚΟΣ"][2] . "\"},";
@@ -87,7 +87,7 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "GET"){
     $coordinates_str .= "{coords: {lat: " . $coordinates["ΟΜΟΝΟΙΑ"][0] . " , lng: " . $coordinates["ΟΜΟΝΟΙΑ"][1] . "}, colour: \"" . $coordinates["ΟΜΟΝΟΙΑ"][2] . "\"},";
     $coordinates_str .= "{coords: {lat: " . $coordinates["ΠΑΝΕΠΙΣΤΗΜΙΟ"][0] . " , lng: " . $coordinates["ΠΑΝΕΠΙΣΤΗΜΙΟ"][1] . "}, colour:\""  . $coordinates["ΠΑΝΕΠΙΣΤΗΜΙΟ"][2] . "\"}]";
   }
-  else if(strtolower($departure) == "βικτωρια" && strtolower($arrival) == "θησειο")
+  else if(strcasecmp($departure, "βικτωρια") == 0 && strcasecmp($arrival, "θησειο") == 0)
   {
     $coordinates_str .= "[{coords: {lat: " . $coordinates["ΒΙΚΤΩΡΙΑ"][0] . " , lng: " . $coordinates["ΒΙΚΤΩΡΙΑ"][1] . "}, colour: \"" . $coordinates["ΒΙΚΤΩΡΙΑ"][2] . "\"},";
     $coordinates_str .= "{coords: {lat: " . $coordinates["ΟΜΟΝΟΙΑ"][0] . " , lng: " . $coordinates["ΟΜΟΝΟΙΑ"][1] . "}, colour: \"" . $coordinates["ΟΜΟΝΟΙΑ"][2] . "\"},";
