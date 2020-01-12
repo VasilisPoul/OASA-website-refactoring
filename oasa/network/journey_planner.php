@@ -166,34 +166,32 @@
             <div style="width: 640px; height: 480px" id="map"></div>
            <script>
               var jsonList = <?php echo $coordinates_str; ?>
-                     
-              var pointList = [             
-                {lat:37.992302, lng:23.681798},
-                {lat:37.987821, lng:23.694244},
-                {lat:37.978549, lng:23.711469},
-                {lat:37.976017, lng:23.725652}
-              ]
-
               let style = {
                 linewidth: 4,
-                strokeColor: "blue"
+                strokeColor: "red"
               };
 
               var markerList = [];
               function addPolylineToMap(map, jsonList) {
                 var lineString = new H.geo.LineString();
-                for (i = 0; i<jsonList[0].length; i++){
+                for (i = 0; i<jsonList[0].length - 1; i++){
                   lineString.pushPoint(jsonList[0][i].coords);
+                  lineString.pushPoint(jsonList[0][i+1].coords);
                   markerList[i] = new H.map.Marker(jsonList[0][i].coords);
                   map.addObject(markerList[i]);
 
                   style.strokeColor = jsonList[0][i].colour;
-
+                  polyline = new H.map.Polyline(
+                    lineString, { style: style}
+                    
+                  );
+                  map.addObject(polyline);
+                  lineString = new H.geo.LineString();
                 }
+                markerList[i] = new H.map.Marker(jsonList[0][i].coords);
+                map.addObject(markerList[i]);
+
                 
-                map.addObject(new H.map.Polyline(
-                  lineString, { style: style}
-                ));
               }
               function addBounds(){
                 group = new H.map.Group();
@@ -210,7 +208,7 @@
               
               var defaultLayers = platform.createDefaultLayers();
 
-              //Step 2: initialize a map - this map is centered over Europe
+              //Step 2: initialize a map - this map is centered over Athens
               var map = new H.Map(document.getElementById('map'),
                 defaultLayers.vector.normal.map,{
                 center: { lng: 23.71622, lat: 37.97945},
@@ -225,7 +223,7 @@
               var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
 
               // Create the default UI components
-              var ui = H.ui.UI.createDefault(map, defaultLayers);
+              //var ui = H.ui.UI.createDefault(map, defaultLayers);
 
 
               // Now use the map as required...
