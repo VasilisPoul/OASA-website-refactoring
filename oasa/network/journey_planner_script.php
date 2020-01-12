@@ -22,19 +22,19 @@ $message = "";
 if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "GET"){
 
   //check if departure point is given
-  if(empty($_POST["departure"])){
+  if(empty($_GET["departure"])){
     $departure_err = "Απαιτείται σημείο αναχώρησης";
   } 
   else{
-    $departure = $_POST["departure"];
+    $departure = $_GET["departure"];
   }
 
   //check if arrival point is given
-  if(empty($_POST["arrival"])){
+  if(empty($_GET["arrival"])){
     $arrival_err = "Απαιτείται σημείο άφιξης";
   } 
   else{
-    $arrival = $_POST["arrival"];
+    $arrival = $_GET["arrival"];
   }
    
   //create connection

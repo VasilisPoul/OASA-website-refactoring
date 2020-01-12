@@ -134,14 +134,16 @@
       <div class="container">
         <div class="row d-flex mb-5 contact-info">
         	<div class="col-md-4">
-						<form action="<?=$_SERVER['PHP_SELF']?>" class="request-form ftco-animate">
+						<form action="<?=$_SERVER['PHP_SELF']?>" class="request-form ftco-animate" method="GET">
 							<div class="form-group">
 								<label for="" class="label">Απο</label>
-								<input type="text" name="departure" class="form-control" placeholder="πχ. Ομόνοια">
+								<input type="text" name="departure" class="form-control" placeholder="πχ. Ομόνοια" value="<?php echo $departure;?>">
+                <span class="error-message"> <?php echo $departure_err;?></span>
 							</div>
 							<div class="form-group">
 								<label for="" class="label">Προς</label>
-								<input type="text" name="arrival" class="form-control" placeholder="Πχ. Ευαγγελισμός">
+								<input type="text" name="arrival" class="form-control" placeholder="Πχ. Ευαγγελισμός" value="<?php echo $arrival;?>">
+                <span class="error-message"> <?php echo $arrival_err;?></span>
 							</div>
 							<label class="checkbox"><input type="checkbox" value=""> Προσβάσιμη σε ΆμεΑ</label>
 							<div class="form-group">
