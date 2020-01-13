@@ -176,7 +176,7 @@ HTML/CSS/JS by: Vasilis Poulopoulos (sdi1600141)
             </form>
             <br>
 						<div class="ftco-animate"> 
-              <p>Εναλλακτικές Διαδρομές:</p>
+              <p>Διαθέσιμες Διαδρομές:</p>
               <div id = "routes"></div>
               <script>
                 let j = 0;
@@ -233,7 +233,7 @@ HTML/CSS/JS by: Vasilis Poulopoulos (sdi1600141)
                   addBounds(map);
 
                   var perrow = 1; // 1 item per row
-                  html = "<table class=\"table table-bordered\"><tr><thead><tr><th scope=\"col\">ΣΤΑΘΜΟΙ</th></tr></thead><tbody>";
+                  html = "<div class=\"table-responsive\"><table class=\"table \" border = \"1\"><thead><tr><th scope=\"col\">ΣΤΑΘΜΟΙ</th></tr></thead><tbody> ";
                    
                   html += "<tr>";
                   let namesArray = [];
@@ -245,7 +245,7 @@ HTML/CSS/JS by: Vasilis Poulopoulos (sdi1600141)
                         html += "</tr><tr>";
                     }
                   }
-                  html += "</tr></tbody></table>";
+                  html += "</tr></tbody></table></div>";
                   document.getElementById("stations").innerHTML = html;
 
                 }
@@ -317,11 +317,12 @@ HTML/CSS/JS by: Vasilis Poulopoulos (sdi1600141)
                   addPolylineToMap(map, jsonList);        
                   addBounds(map);
 
-                </script>               
+                </script>        
+                <br>       
                 <div id = "stations"></div>
                 <script>
                   var perrow = 1; // 1 item per row
-                  html = "<table class=\"table\"><tr><thead><tr><th scope=\"col\">ΣΤΑΘΜΟΙ</th></tr></thead><tbody>";
+                  html = "<div class=\"table-responsive\"><table class=\"table \" border = \"1\"><thead><tr><th scope=\"col\">ΣΤΑΘΜΟΙ</th></tr></thead><tbody> ";
                    
                   html += "<tr>";
                   let namesArray = [];
@@ -333,7 +334,7 @@ HTML/CSS/JS by: Vasilis Poulopoulos (sdi1600141)
                         html += "</tr><tr>";
                     }
                   }
-                  html += "</tr></tbody></table>";
+                  html += "</tr></tbody></table></div>";
                   document.getElementById("stations").innerHTML = html;
                 </script>    
           </div>
@@ -423,5 +424,8 @@ HTML/CSS/JS by: Vasilis Poulopoulos (sdi1600141)
     
   </body>
 </html>
+
+
+
 
 
