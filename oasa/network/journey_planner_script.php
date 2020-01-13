@@ -1,32 +1,39 @@
 <?php
+
 //
 // PHP script by: Giorgos Koursiounis (sdi1600077)
 //
+
 if(session_status() == PHP_SESSION_NONE) {
     session_start();
 }
+
 $servername = "localhost";
 $server_username = "user";
 $server_password = "password";
 $dbname = "oasa";
+
 $departure = $arrival = "";
 $departure_err = $arrival_err = "";
 $coordinates_str = "[";
 $message = "";
-if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "GET"){
+
+if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
+
   //check if departure point is given
-  if(empty($_GET["departure"])){
+  if(empty($_POST["departure"])){
     $departure_err = "Απαιτείται σημείο αναχώρησης";
   } 
   else{
-    $departure = $_GET["departure"];
+    $departure = $_POST["departure"];
   }
+
   //check if arrival point is given
-  if(empty($_GET["arrival"])){
+  if(empty($_POST["arrival"])){
     $arrival_err = "Απαιτείται σημείο άφιξης";
   } 
   else{
-    $arrival = $_GET["arrival"];
+    $arrival = $_POST["arrival"];
   }
    
   //create connection
@@ -34,16 +41,20 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "GET"){
   if($conn->connect_error){
     die("Connection failed: " . $conn->connect_error);
   }
+
   //find all coordinates of all stations
   $sql = "SELECT s.name, s.latitude, s.longitude, cl.colour FROM station s, line_has_station ls, line l, colour cl WHERE s.idstation = ls.idstation AND ls.idline = l.idline AND l.idcolour = cl.idcolour";
   $result = $conn->query($sql);
+
   $coordinates = array();
+
   if(!empty($result) && $result->num_rows > 0){
     while($row = $result->fetch_assoc()){
       $coordinates[$row["name"]] = [$row["latitude"], $row["longitude"], $row["colour"], $row["name"]];
     }
   }
- if(strcasecmp($departure, "ομονοια") == 0 && strcasecmp($arrival, "ευαγγελισμος") == 0 )
+
+  if(strcasecmp($departure, "ομονοια") == 0 && strcasecmp($arrival, "ευαγγελισμος") == 0)
   {
     //first alternative root
     $coordinates_str .= "[{coords: {lat: " . $coordinates["ΟΜΟΝΟΙΑ"][0] . " , lng: " . $coordinates["ΟΜΟΝΟΙΑ"][1] . "}, colour: \"" . $coordinates["ΟΜΟΝΟΙΑ"][2] . "\", name: \"" . $coordinates["ΟΜΟΝΟΙΑ"][3] . "\"},";
@@ -84,7 +95,10 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "GET"){
   {
     $message = "Λυπούμαστε η διαδρομή δεν βρέθηκε!";
   }
+
   $conn->close();
 }
+
 $coordinates_str .= "]";
+
 ?>
