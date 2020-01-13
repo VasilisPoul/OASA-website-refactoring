@@ -43,7 +43,7 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "GET"){
   }
 
   //find stations of a line
-  $sql = "SELECT s.idstation, s.name, a.area, a.city, a.postal_code FROM station s, area a, line_has_station ls WHERE ls.idline = $idline AND s.idstation = ls.idstation AND s.idarea = a.idarea";
+  $sql = "SELECT s.idstation, s.name, s.latitude, s.longitude, a.area, a.city, a.postal_code FROM station s, area a, line_has_station ls WHERE ls.idline = $idline AND s.idstation = ls.idstation AND s.idarea = a.idarea";
   $result = $conn->query($sql);
 
   $counter = 1;
@@ -51,7 +51,7 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "GET"){
     while($row = $result->fetch_assoc()){
       $stations_str .= "[" . $row["idstation"] . ",\"" . $row["name"] . "\"," . $row["latitude"] . "," . $row["longitude"] . ",\"" . $row["area"] . "\"]";
 
-      if(mysql_num_rows($result) != $counter)
+      if(mysqli_num_rows($result) != $counter)
       {
         $stations_str .= ",";
       }

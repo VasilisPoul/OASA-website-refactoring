@@ -38,6 +38,8 @@ HTML/CSS by: Maria Karamina (sdi1600059)
     <link rel="stylesheet" href="../../css/additional.css">
   </head>
   <body onload="urlToOutput();">
+    <?php include 'get_lines.php'; ?>
+    <?php include 'find_stations_of_line.php'; ?>
     
 	  <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light navbar-color" id="ftco-navbar">
       <div class="container">
@@ -142,10 +144,26 @@ HTML/CSS by: Maria Karamina (sdi1600059)
 
     <section class="ftco-section ftco-no-pt bg-light front-page-text">
       <div class="container">
-        <div class="row">
+      <!--  <div class="row">
           <div class="col-md-6">
             <input type="text" id="input-field" class="form-control" placeholder="Γραμμή">
             <input type="button" class="btn btn-primary" value="Submit" onclick="inputToUrl('line', document.getElementById('input-field').value);">
+          </div>
+        </div>
+        <br />-->
+        <div class="row" style="margin: 0 2px;">
+          <div class="col-md-3">
+            <form id="submit-form" action="<?=$_SERVER['PHP_SELF']?>" method="GET">
+              <div class="form-group">
+                <select id="info-input" class="buy-input buy-select" name="idline" style="width: 100%; text-overflow: ellipsis;">
+                  <option default>Επιλέξτε Γραμμή...</option>
+                  <?php foreach($lines as $line) {
+                    echo  "<option value='$line[0]' title='$line[1]'>$line[1]</option>";
+                  } ?>
+                </select>
+                <input type="button" class="btn btn-primary mt-2" value="Επιλογή" onclick="inputToUrl('idline', document.getElementById('info-input').value);">
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -153,7 +171,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
 
     <section class="ftco-section ftco-no-pt bg-light front-page-text">
       <div class="container">
-        <p id="output"></p>  
+        <p id="output"><?php echo $line_str; ?></p>
       </div>
     </section>
 	
