@@ -156,7 +156,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
             <form id="submit-form" action="<?=$_SERVER['PHP_SELF']?>" method="GET">
               <div class="form-group">
                 <select id="info-input" class="buy-input buy-select" name="idline" style="width: 100%; text-overflow: ellipsis;">
-                  <option default>Επιλέξτε Γραμμή...</option>
+                  <option value="" default>Επιλέξτε Γραμμή...</option>
                   <?php foreach($lines as $line) {
                     echo  "<option value='$line[0]' title='$line[1]'>$line[1]</option>";
                   } ?>
@@ -171,7 +171,51 @@ HTML/CSS by: Maria Karamina (sdi1600059)
 
     <section class="ftco-section ftco-no-pt bg-light front-page-text">
       <div class="container">
-        <p id="output"><?php echo $line_str; ?></p>
+        <div class="row">
+          <div class="col-md-6">
+            <div id="output" style="margin: 0 2px;">
+              <script type="text/javascript">
+                var lineInfo = <?php echo $line_str; ?>;
+                var stations = <?php echo $stations_str; ?>;
+                if(lineInfo.length > 0) {
+                  var button = document.createElement("button");
+                  button.type = "button";
+                  button.classList.add("btn");
+                  button.classList.add("disabled");
+                  button.style.cssText ="color:White;background-color:" + lineInfo[2] + ";cursor:auto;";
+                  button.innerHTML = lineInfo[0];
+                  document.getElementById("output").appendChild(button);
+                }
+
+                if(stations) {
+                  var table = document.createElement("table");
+                  table.style.cssText = "width: 100%; margin: 4% 0;";
+                  var header = table.createTHead();
+                  header.style.cssText = "border-bottom: 2px solid #ccc;";
+                  var body = table.createTBody();
+                  var row = header.insertRow(0);
+                  var cell = row.insertCell(0);
+                  cell.innerHTML = "ΣΤΑΣΗ";
+                  cell = row.insertCell(1);
+                  cell.innerHTML = "ΠΕΡΙΟΧΗ";
+                  for(var i=0; i<stations.length; i++) {
+                    row = body.insertRow(-1);
+                    cell = row.insertCell(0);
+                    cell.innerHTML = "<a href='stations.php?idstation=" + stations[i][0] + "&submit=true'>" + stations[i][1] + "</a>";
+                    cell = row.insertCell(1);
+                    cell.innerHTML = "<a href='areas.php?idarea=" + stations[i][4] + "&submit=true'>" + stations[i][5] + "</a>";
+                  }
+
+                  document.getElementById("output").appendChild(table);
+                }
+
+              </script>
+            </div>
+          </div>
+          <div class="cold-md-6">
+            MAP
+          </div>
+        </div>
       </div>
     </section>
 	
