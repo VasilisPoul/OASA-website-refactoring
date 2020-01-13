@@ -53,7 +53,7 @@ function getProductsTable() {
 		var cell3 = row.insertCell(2);
 		cell1.innerHTML = products[i][1];
 		cell2.innerHTML = products[i][2];
-		cell3.innerHTML = products[i][3];
+		cell3.innerHTML = Math.round(products[i][3] * 100) / 100;
 	}
 	getTotal(products);
 }
@@ -63,5 +63,5 @@ function getTotal(products) {
 	for(var i=0; i<products.length; i++) {
 		total += products[i][3];
 	}
-	document.getElementById("total-price").innerHTML = total + "€";
+	document.getElementById("total-price").innerHTML = Math.round(total * 100) / 100 + "€";
 }
