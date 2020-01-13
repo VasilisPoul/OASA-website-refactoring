@@ -19,14 +19,14 @@ if($conn->connect_error){
   die("Connection failed: " . $conn->connect_error);
 }
 
-//get lines sorted by line name
-$sql = "SELECT ln.idline, ln.name FROM line ln ORDER BY ln.name";
+//get areas sorted by area name
+$sql = "SELECT a.idarea, a.area, a.city FROM area a ORDER BY a.area";
 $result = $conn->query($sql);
 
-$lines = array();
+$areas = array();
 if(!empty($result) && $result->num_rows > 0){
   while($row = $result->fetch_assoc()){
-    $lines[] = array($row["idline"], $row["name"]);
+    $areas[] = array($row["idarea"], $row["area"], $row["city"]);
   }
 }
 

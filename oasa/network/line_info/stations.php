@@ -38,6 +38,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
     <link rel="stylesheet" href="../../css/additional.css">
   </head>
   <body onload="urlToOutput();">
+    <?php include 'get_stations.php'; ?>
     
 	  <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light navbar-color" id="ftco-navbar">
       <div class="container">
@@ -142,21 +143,74 @@ HTML/CSS by: Maria Karamina (sdi1600059)
 
     <section class="ftco-section ftco-no-pt bg-light front-page-text">
       <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <input type="text" id="input-field" class="form-control" placeholder="Στάση">
-            <input type="button" class="btn btn-primary" value="Submit" onclick="inputToUrl('station', document.getElementById('input-field').value);">
+        <div class="row" style="margin: 0 2px;">
+          <div class="col-md-3">
+            <form id="submit-form" action="<?=$_SERVER['PHP_SELF']?>" method="GET">
+              <div class="form-group">
+                <select id="info-input" class="buy-input buy-select" name="idstation" style="width: 100%; text-overflow: ellipsis;">
+                  <option value="" default>Επιλέξτε Στάση...</option>
+                  <?php foreach($stations as $station) {
+                    echo  "<option value='$station[0]' title='$station[1]'>$station[1] ($station[2])</option>";
+                  } ?>
+                </select>
+                <input type="button" class="btn btn-primary mt-2" value="Επιλογή" onclick="inputToUrl('idstation', document.getElementById('info-input').value);">
+              </div>
+            </form>
           </div>
         </div>
       </div>
     </section>
-
+<!--
     <section class="ftco-section ftco-no-pt bg-light front-page-text">
       <div class="container">
-        <p id="output"></p>  
+        <div class="row">
+          <div class="col-md-6">
+            <div id="output" style="margin: 0 2px;">
+              <script type="text/javascript">
+                var lineInfo = <?php echo $line_str; ?>;
+                var stations = <?php echo $stations_str; ?>;
+                if(lineInfo.length > 0) {
+                  var button = document.createElement("button");
+                  button.type = "button";
+                  button.classList.add("btn");
+                  button.classList.add("disabled");
+                  button.style.cssText ="color:White;background-color:" + lineInfo[2] + ";cursor:auto;";
+                  button.innerHTML = lineInfo[0];
+                  document.getElementById("output").appendChild(button);
+                }
+
+                if(stations) {
+                  var table = document.createElement("table");
+                  table.style.cssText = "width: 100%; margin: 4% 0;";
+                  var header = table.createTHead();
+                  header.style.cssText = "border-bottom: 2px solid #ccc;";
+                  var body = table.createTBody();
+                  var row = header.insertRow(0);
+                  var cell = row.insertCell(0);
+                  cell.innerHTML = "ΣΤΑΣΗ";
+                  cell = row.insertCell(1);
+                  cell.innerHTML = "ΠΕΡΙΟΧΗ";
+                  for(var i=0; i<stations.length; i++) {
+                    row = body.insertRow(-1);
+                    cell = row.insertCell(0);
+                    cell.innerHTML = "<a href='stations.php?idstation=" + stations[i][0] + "&submit=true'>" + stations[i][1] + "</a>";
+                    cell = row.insertCell(1);
+                    cell.innerHTML = "<a href='areas.php?idarea=" + stations[i][4] + "&submit=true'>" + stations[i][5] + "</a>";
+                  }
+
+                  document.getElementById("output").appendChild(table);
+                }
+
+              </script>
+            </div>
+          </div>
+          <div class="cold-md-6">
+            MAP
+          </div>
+        </div>
       </div>
     </section>
-	
+-->
 
     <footer class="ftco-footer ftco-bg-dark ftco-section">
       <div class="container">

@@ -144,13 +144,6 @@ HTML/CSS by: Maria Karamina (sdi1600059)
 
     <section class="ftco-section ftco-no-pt bg-light front-page-text">
       <div class="container">
-      <!--  <div class="row">
-          <div class="col-md-6">
-            <input type="text" id="input-field" class="form-control" placeholder="Γραμμή">
-            <input type="button" class="btn btn-primary" value="Submit" onclick="inputToUrl('line', document.getElementById('input-field').value);">
-          </div>
-        </div>
-        <br />-->
         <div class="row" style="margin: 0 2px;">
           <div class="col-md-3">
             <form id="submit-form" action="<?=$_SERVER['PHP_SELF']?>" method="GET">
