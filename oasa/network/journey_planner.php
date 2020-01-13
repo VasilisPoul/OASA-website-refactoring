@@ -176,23 +176,23 @@ HTML/CSS/JS by: Vasilis Poulopoulos (sdi1600141)
             </form>
             <br>
 						<div class="ftco-animate"> 
-              <p>Διαθέσιμες Διαδρομές:</p>
+              
               <div id = "routes"></div>
               <script>
+                
                 let j = 0;
                 var jsonList = <?php echo $coordinates_str; ?>;
                 routeHtml = "";
                 for (let i = 0; i < jsonList.length; i++){
-                  routeHtml += "<button onclick=\"changej(" + parseInt(i) + ")\" type=\"button\" class=\"btn btn-primary btn-lg btn-block\"> Διαδρομή " + parseInt(i+1) + "</button>";
+                  routeHtml += "<p id=\"available\"></p> <br><button onclick=\"changej(" + parseInt(i) + ")\" type=\"button\" class=\"btn btn-primary btn-lg btn-block\"> Διαδρομή " + parseInt(i+1) + "</button> ";
                   
                 }
                 document.getElementById("routes").innerHTML = routeHtml;
+                document.getElementById("available").innerHTML = "Διαθέσιμες Διαδρομές:";
                 function changej(i){
                   
                   map.removeObjects(map.getObjects ());
-
                   j = i;
-
                   let style = {
                     linewidth: 4,
                     strokeColor: "red"
@@ -231,9 +231,8 @@ HTML/CSS/JS by: Vasilis Poulopoulos (sdi1600141)
                   // Now use the map as required...
                   addPolylineToMap(map, jsonList);        
                   addBounds(map);
-
                   var perrow = 1; // 1 item per row
-                  html = "<div class=\"table-responsive\"><table class=\"table \" border = \"1\"><thead><tr><th scope=\"col\">ΣΤΑΘΜΟΙ</th></tr></thead><tbody> ";
+                  html = "<div class=\"table-responsive\" style=\"width:100%\"><table class=\"table \" border = \"1\"><thead><tr><th scope=\"col\">ΣΤΑΘΜΟΙ</th></tr></thead><tbody> ";
                    
                   html += "<tr>";
                   let namesArray = [];
@@ -247,7 +246,6 @@ HTML/CSS/JS by: Vasilis Poulopoulos (sdi1600141)
                   }
                   html += "</tr></tbody></table></div>";
                   document.getElementById("stations").innerHTML = html;
-
                 }
               </script>      
             </div>
@@ -316,13 +314,12 @@ HTML/CSS/JS by: Vasilis Poulopoulos (sdi1600141)
                   // Now use the map as required...
                   addPolylineToMap(map, jsonList);        
                   addBounds(map);
-
                 </script>        
                 <br>       
                 <div id = "stations"></div>
                 <script>
                   var perrow = 1; // 1 item per row
-                  html = "<div class=\"table-responsive\"><table class=\"table \" border = \"1\"><thead><tr><th scope=\"col\">ΣΤΑΘΜΟΙ</th></tr></thead><tbody> ";
+                  html = "<div class=\"table-responsive\" style=\"width:100%\"><table class=\"table \" border = \"1\"><thead><tr><th scope=\"col\">ΣΤΑΘΜΟΙ</th></tr></thead><tbody> ";
                    
                   html += "<tr>";
                   let namesArray = [];
