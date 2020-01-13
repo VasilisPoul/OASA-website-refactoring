@@ -1,12 +1,10 @@
 <!-- 
-
-HTML/CSS by: Vasilis Poulopoulos (sdi1600141)
-
+HTML/CSS/JS by: Vasilis Poulopoulos (sdi1600141)
 -->
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <title>ΟΑΣΑ - Σχεδιασμός Διαδρομής</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -48,6 +46,7 @@ HTML/CSS by: Vasilis Poulopoulos (sdi1600141)
 
 	  <?php include 'journey_planner_script.php';?> 
     
+	  
 	  <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light navbar-color" id="ftco-navbar">
       <div class="container">
         <a href="../index.php"><img src="../images/oasa_logo_transparent.png" alt="logo" width="25%"></a>
@@ -131,7 +130,7 @@ HTML/CSS by: Vasilis Poulopoulos (sdi1600141)
         <span class="mr-2">Σχεδιασμός Διαδρομής <i class="fa fa-angle-right"></i></span>
       </p>
     </div>
-
+    
     <section class="bg-light front-page-text page-header">
       <div class="container">
         <div class="row no-gutters align-items-end justify-content-center text-center">
@@ -174,80 +173,169 @@ HTML/CSS by: Vasilis Poulopoulos (sdi1600141)
 									<input type="submit" value="Αναζήτηση Διαδρομής" class="btn btn-primary py-3 px-4">
 							</div>
 							<span class="error-message"> <?php echo $message;?></span>
-						</form>
-						
+            </form>
+            <br>
+						<div class="ftco-animate"> 
+              <p>Εναλλακτικές Διαδρομές:</p>
+              <div id = "routes"></div>
+              <script>
+                let j = 0;
+                var jsonList = <?php echo $coordinates_str; ?>;
+                routeHtml = "";
+                for (let i = 0; i < jsonList.length; i++){
+                  routeHtml += "<button onclick=\"changej(" + parseInt(i) + ")\" type=\"button\" class=\"btn btn-primary btn-lg btn-block\"> Διαδρομή " + parseInt(i+1) + "</button>";
+                  
+                }
+                document.getElementById("routes").innerHTML = routeHtml;
+                function changej(i){
+                  
+                  map.removeObjects(map.getObjects ());
+
+                  j = i;
+
+                  let style = {
+                    linewidth: 4,
+                    strokeColor: "red"
+                  };
+                  markerList = [];
+                  polyline = [];
+                  function addPolylineToMap(map, jsonList) {
+                    var lineString = new H.geo.LineString();
+                    for (i = 0; i<jsonList[j].length - 1; i++){
+                      lineString.pushPoint(jsonList[j][i].coords);
+                      lineString.pushPoint(jsonList[j][i+1].coords);
+                      markerList[i] = new H.map.Marker(jsonList[j][i].coords);
+                      map.addObject(markerList[i]);
+                      style.strokeColor = jsonList[j][i].colour;
+                      polyline[i] = new H.map.Polyline(
+                        lineString, { style: style}
+                        
+                      );
+                      map.addObject(polyline[i]);
+                      lineString = new H.geo.LineString();
+                    }
+                    markerList[i] = new H.map.Marker(jsonList[0][i].coords);
+                    map.addObject(markerList[i]);
+                    
+                  }
+                  function addBounds(){
+                    group = new H.map.Group();
+                    group.addObjects(markerList);
+                    map.addObject(group);
+                    map.getViewModel().setLookAtData({
+                      bounds: group.getBoundingBox()
+                    });
+                  }
+                  
+                  var ui = H.ui.UI.createDefault(map, defaultLayers);
+                  // Now use the map as required...
+                  addPolylineToMap(map, jsonList);        
+                  addBounds(map);
+
+                  var perrow = 1; // 1 item per row
+                  html = "<table class=\"table table-bordered\"><tr><thead><tr><th scope=\"col\">ΣΤΑΘΜΟΙ</th></tr></thead><tbody>";
+                   
+                  html += "<tr>";
+                  let namesArray = [];
+                  for (i = 0; i<jsonList[j].length ; i++){
+                    html += "<td>" + jsonList[j][i].name + "</td>";
+                    namesArray.push(jsonList[j][i].name);
+                    var next = i+1;
+                      if (next%perrow==0 && next!=jsonList[0][i].length) {
+                        html += "</tr><tr>";
+                    }
+                  }
+                  html += "</tr></tbody></table>";
+                  document.getElementById("stations").innerHTML = html;
+
+                }
+              </script>      
+            </div>
           </div>
           <div class="col-md-8 block-9 mb-md-5">
             <div style="width: 640px; height: 480px" id="map"></div>
-           <script>
-              var jsonList = <?php echo $coordinates_str; ?>;
-
-              let style = {
-                linewidth: 4,
-                strokeColor: "red"
-              };
-
-              var markerList = [];
-              function addPolylineToMap(map, jsonList) {
-                var lineString = new H.geo.LineString();
-                for (i = 0; i<jsonList[0].length - 1; i++){
-                  lineString.pushPoint(jsonList[0][i].coords);
-                  lineString.pushPoint(jsonList[0][i+1].coords);
-                  markerList[i] = new H.map.Marker(jsonList[0][i].coords);
-                  map.addObject(markerList[i]);
-
-                  style.strokeColor = jsonList[0][i].colour;
-                  polyline = new H.map.Polyline(
-                    lineString, { style: style}
+            <br>
+              <script>
+                 
+                  let style = {
+                    linewidth: 4,
+                    strokeColor: "red"
+                  };
+                  var markerList = [];
+                  var polyline = []
+                  function addPolylineToMap(map, jsonList) {
+                    var lineString = new H.geo.LineString();
+                    for (i = 0; i<jsonList[j].length - 1; i++){
+                      lineString.pushPoint(jsonList[j][i].coords);
+                      lineString.pushPoint(jsonList[j][i+1].coords);
+                      markerList[i] = new H.map.Marker(jsonList[j][i].coords);
+                      map.addObject(markerList[i]);
+                      style.strokeColor = jsonList[j][i].colour;
+                      polyline[i] = new H.map.Polyline(
+                        lineString, { style: style}
+                        
+                      );
+                      map.addObject(polyline[i]);
+                      lineString = new H.geo.LineString();
+                    }
+                    markerList[i] = new H.map.Marker(jsonList[0][i].coords);
+                    map.addObject(markerList[i]);
+                    console.log(markerList);
+                    map.removeObject(markerList[i]);
                     
-                  );
-                  map.addObject(polyline);
-                  lineString = new H.geo.LineString();
-                }
-                markerList[i] = new H.map.Marker(jsonList[0][i].coords);
-                map.addObject(markerList[i]);
+                  }
+                  function addBounds(){
+                    group = new H.map.Group();
+                    group.addObjects(markerList);
+                    map.addObject(group);
+                    map.getViewModel().setLookAtData({
+                      bounds: group.getBoundingBox()
+                    });
+                  }
+                  //Initialize the platform object:
+                  var platform = new H.service.Platform({
+                    'apikey': 'Ab83Q-acy3anmVC2oYeAt219WVZ7BLlOgrnhQ75ooq0'
+                  });
+                  
+                  var defaultLayers = platform.createDefaultLayers();
+                  //Step 2: initialize a map - this map is centered over Athens
+                  var map = new H.Map(document.getElementById('map'),
+                    defaultLayers.vector.normal.map,{
+                    center: { lng: 23.71622, lat: 37.97945},
+                    zoom: 14,
+                    pixelRatio: window.devicePixelRatio || 1
+                  });
+                  // add a resize listener to make sure that the map occupies the whole container
+                  window.addEventListener('resize', () => map.getViewPort().resize());
+                  //Step 3: make the map interactive
+                  // MapEvents enables the event system
+                  // Behavior implements default interactions for pan/zoom (also on mobile touch environments)
+                  var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+                  // Create the default UI components
+                  ui = H.ui.UI.createDefault(map, defaultLayers);
+                  // Now use the map as required...
+                  addPolylineToMap(map, jsonList);        
+                  addBounds(map);
 
-                
-              }
-              function addBounds(){
-                group = new H.map.Group();
-                group.addObjects(markerList);
-                map.addObject(group);
-                map.getViewModel().setLookAtData({
-                  bounds: group.getBoundingBox()
-                });
-              }
-              //Initialize the platform object:
-              var platform = new H.service.Platform({
-                'apikey': 'Ab83Q-acy3anmVC2oYeAt219WVZ7BLlOgrnhQ75ooq0'
-              });
-              
-              var defaultLayers = platform.createDefaultLayers();
-
-              //Step 2: initialize a map - this map is centered over Athens
-              var map = new H.Map(document.getElementById('map'),
-                defaultLayers.vector.normal.map,{
-                center: { lng: 23.71622, lat: 37.97945},
-                zoom: 14,
-                pixelRatio: window.devicePixelRatio || 1
-              });
-              // add a resize listener to make sure that the map occupies the whole container
-              window.addEventListener('resize', () => map.getViewPort().resize());
-              //Step 3: make the map interactive
-              // MapEvents enables the event system
-              // Behavior implements default interactions for pan/zoom (also on mobile touch environments)
-              var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
-
-              // Create the default UI components
-              //var ui = H.ui.UI.createDefault(map, defaultLayers);
-
-
-              // Now use the map as required...
-              addPolylineToMap(map, jsonList);        
-              addBounds(map);
-
-             
-            </script>          
+                </script>               
+                <div id = "stations"></div>
+                <script>
+                  var perrow = 1; // 1 item per row
+                  html = "<table class=\"table\"><tr><thead><tr><th scope=\"col\">ΣΤΑΘΜΟΙ</th></tr></thead><tbody>";
+                   
+                  html += "<tr>";
+                  let namesArray = [];
+                  for (i = 0; i<jsonList[j].length ; i++){
+                    html += "<td>" + jsonList[j][i].name + "</td>";
+                    namesArray.push(jsonList[j][i].name);
+                    var next = i+1;
+                      if (next%perrow==0 && next!=jsonList[0][i].length) {
+                        html += "</tr><tr>";
+                    }
+                  }
+                  html += "</tr></tbody></table>";
+                  document.getElementById("stations").innerHTML = html;
+                </script>    
           </div>
         </div>
         
@@ -316,8 +404,7 @@ HTML/CSS by: Vasilis Poulopoulos (sdi1600141)
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
-
+                
   <script src="../js/jquery.min.js"></script>
   <script src="../js/jquery-migrate-3.0.1.min.js"></script>
   <script src="../js/popper.min.js"></script>
