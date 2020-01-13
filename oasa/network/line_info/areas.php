@@ -39,6 +39,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
   </head>
   <body onload="urlToOutput();">
     <?php include 'get_areas.php'; ?>
+    <?php include 'find_stations_of_area.php'; ?>
     
 	  <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light navbar-color" id="ftco-navbar">
       <div class="container">
@@ -160,45 +161,36 @@ HTML/CSS by: Maria Karamina (sdi1600059)
         </div>
       </div>
     </section>
-<!--
+
     <section class="ftco-section ftco-no-pt bg-light front-page-text">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
             <div id="output" style="margin: 0 2px;">
               <script type="text/javascript">
-                var lineInfo = <?php echo $line_str; ?>;
-                var stations = <?php echo $stations_str; ?>;
-                if(lineInfo.length > 0) {
-                  var button = document.createElement("button");
-                  button.type = "button";
-                  button.classList.add("btn");
-                  button.classList.add("disabled");
-                  button.style.cssText ="color:White;background-color:" + lineInfo[2] + ";cursor:auto;";
-                  button.innerHTML = lineInfo[0];
-                  document.getElementById("output").appendChild(button);
+                var areaInfo = <?php if($area_str) echo $area_str; else echo "''" ?>;
+                var stations = <?php if($stations_str) echo $stations_str; else echo "''"; ?>;
+      
+                if(areaInfo.length > 0) {
+                  var title = document.createElement("h5");
+                  title.innerHTML = areaInfo[0] + " - " + areaInfo[1] + " (ΤΚ: " + areaInfo[2] + ")";
+                  document.getElementById("output").appendChild(title);
                 }
 
                 if(stations) {
-                  var table = document.createElement("table");
-                  table.style.cssText = "width: 100%; margin: 4% 0;";
-                  var header = table.createTHead();
-                  header.style.cssText = "border-bottom: 2px solid #ccc;";
-                  var body = table.createTBody();
-                  var row = header.insertRow(0);
-                  var cell = row.insertCell(0);
-                  cell.innerHTML = "ΣΤΑΣΗ";
-                  cell = row.insertCell(1);
-                  cell.innerHTML = "ΠΕΡΙΟΧΗ";
+                  var div = document.createElement("div");
+                  div.innerHTML = "Στάσεις τις περιοχής:";
+                  var ul = document.createElement("ul");
+                  ul.style.cssText = "list-style: none; padding: 0; margin-top: 2%;";
+                  div.appendChild(ul);
                   for(var i=0; i<stations.length; i++) {
-                    row = body.insertRow(-1);
-                    cell = row.insertCell(0);
-                    cell.innerHTML = "<a href='stations.php?idstation=" + stations[i][0] + "&submit=true'>" + stations[i][1] + "</a>";
-                    cell = row.insertCell(1);
-                    cell.innerHTML = "<a href='areas.php?idarea=" + stations[i][4] + "&submit=true'>" + stations[i][5] + "</a>";
+                    var li = document.createElement("li");
+                    li.style.padding = "2px";
+                    li.innerHTML = "<a href='stations.php?idstation=" + stations[i][0] + "&submit=true'>" + stations[i][1] + "</a>";
+                    ul.appendChild(li);
                   }
 
-                  document.getElementById("output").appendChild(table);
+                  document.getElementById("output").appendChild(div);
                 }
 
               </script>
@@ -210,7 +202,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
         </div>
       </div>
     </section>
--->
+
 
     <footer class="ftco-footer ftco-bg-dark ftco-section">
       <div class="container">

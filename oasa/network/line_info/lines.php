@@ -168,8 +168,8 @@ HTML/CSS by: Maria Karamina (sdi1600059)
           <div class="col-md-6">
             <div id="output" style="margin: 0 2px;">
               <script type="text/javascript">
-                var lineInfo = <?php echo $line_str; ?>;
-                var stations = <?php echo $stations_str; ?>;
+                var lineInfo = <?php if($line_str) echo $line_str; else echo "''"; ?>;
+                var stations = <?php if($stations_str) echo $stations_str; else echo "''"; ?>;
                 if(lineInfo.length > 0) {
                   var button = document.createElement("button");
                   button.type = "button";
@@ -181,6 +181,10 @@ HTML/CSS by: Maria Karamina (sdi1600059)
                 }
 
                 if(stations) {
+                  var div = document.createElement("div");
+                  div.style.cssText = "margin-top: 5%;";
+                  div.innerHTML = "Στάσεις της γραμμής:";
+
                   var table = document.createElement("table");
                   table.style.cssText = "width: 100%; margin: 4% 0;";
                   var header = table.createTHead();
@@ -199,7 +203,8 @@ HTML/CSS by: Maria Karamina (sdi1600059)
                     cell.innerHTML = "<a href='areas.php?idarea=" + stations[i][4] + "&submit=true'>" + stations[i][5] + "</a>";
                   }
 
-                  document.getElementById("output").appendChild(table);
+                  div.appendChild(table);
+                  document.getElementById("output").appendChild(div);
                 }
 
               </script>

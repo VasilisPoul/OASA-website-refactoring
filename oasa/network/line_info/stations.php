@@ -39,6 +39,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
   </head>
   <body onload="urlToOutput();">
     <?php include 'get_stations.php'; ?>
+    <?php include 'find_lines_of_station.php'; ?>
     
 	  <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light navbar-color" id="ftco-navbar">
       <div class="container">
@@ -160,45 +161,47 @@ HTML/CSS by: Maria Karamina (sdi1600059)
         </div>
       </div>
     </section>
-<!--
+
     <section class="ftco-section ftco-no-pt bg-light front-page-text">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
             <div id="output" style="margin: 0 2px;">
               <script type="text/javascript">
-                var lineInfo = <?php echo $line_str; ?>;
-                var stations = <?php echo $stations_str; ?>;
-                if(lineInfo.length > 0) {
-                  var button = document.createElement("button");
-                  button.type = "button";
-                  button.classList.add("btn");
-                  button.classList.add("disabled");
-                  button.style.cssText ="color:White;background-color:" + lineInfo[2] + ";cursor:auto;";
-                  button.innerHTML = lineInfo[0];
-                  document.getElementById("output").appendChild(button);
+                var stationInfo = <?php if($station_str) echo $station_str; else echo "''" ?>;
+                var lines = <?php if($lines_str) echo $lines_str; else echo "''"; ?>;
+      
+                if(stationInfo.length > 0) {
+                  var title = document.createElement("h5");
+                  title.innerHTML = stationInfo[0];
+                  document.getElementById("output").appendChild(title);
+                  if(stationInfo[3] == 1) {
+                    var p = document.createElement("p");
+                    p.innerHTML = "Αυτή η στάση είναι προσβάσιμη από ΆμεΑ";
+                    document.getElementById("output").appendChild(p);
+                  }
                 }
 
-                if(stations) {
-                  var table = document.createElement("table");
-                  table.style.cssText = "width: 100%; margin: 4% 0;";
-                  var header = table.createTHead();
-                  header.style.cssText = "border-bottom: 2px solid #ccc;";
-                  var body = table.createTBody();
-                  var row = header.insertRow(0);
-                  var cell = row.insertCell(0);
-                  cell.innerHTML = "ΣΤΑΣΗ";
-                  cell = row.insertCell(1);
-                  cell.innerHTML = "ΠΕΡΙΟΧΗ";
-                  for(var i=0; i<stations.length; i++) {
-                    row = body.insertRow(-1);
-                    cell = row.insertCell(0);
-                    cell.innerHTML = "<a href='stations.php?idstation=" + stations[i][0] + "&submit=true'>" + stations[i][1] + "</a>";
-                    cell = row.insertCell(1);
-                    cell.innerHTML = "<a href='areas.php?idarea=" + stations[i][4] + "&submit=true'>" + stations[i][5] + "</a>";
+                if(lines) {
+                  var div = document.createElement("div");
+                  div.innerHTML = "Γραμμές που διέρχονται από τη στάση:";
+                  var ul = document.createElement("ul");
+                  ul.style.cssText = "list-style: none; padding: 0; margin-top: 2%;";
+                  div.appendChild(ul);
+                  for(var i=0; i<lines.length; i++) {
+                    var button = document.createElement("button");
+                    button.type = "button";
+                    button.classList.add("btn");
+                    button.classList.add("disabled");
+                    button.style.cssText ="color:White;background-color:" + lines[i][2] + ";";
+                    button.innerHTML = "<a href='lines.php?idline=" + lines[i][0] + "&submit=true' style='color: white;'>" + lines[i][1] + "</a>";
+                    var li = document.createElement("li");
+                    li.style.padding = "2px";
+                    li.appendChild(button);
+                    ul.appendChild(li);
                   }
 
-                  document.getElementById("output").appendChild(table);
+                  document.getElementById("output").appendChild(div);
                 }
 
               </script>
@@ -210,7 +213,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
         </div>
       </div>
     </section>
--->
+
 
     <footer class="ftco-footer ftco-bg-dark ftco-section">
       <div class="container">
