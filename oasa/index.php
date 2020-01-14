@@ -124,27 +124,35 @@ HTML/CSS by: Maria Karamina (sdi1600059)
 	          	<div class="col-md-4 d-flex align-items-center">
 		  			<form action="#" class="request-form ftco-animate">
 		  				<div class="form-group">
-			                <label for="" class="label">Απο</label>
-			                <input type="text" class="form-control" placeholder="πχ. Εθνικής Αντιστάσεως 33">
-		              	</div>
-		              	<div class="form-group">
-		              		<label for="" class="label">Προς</label>
-				            <input type="text" class="form-control" placeholder="Πχ. Λιμάνι Πειραιώς">
-		              	</div>
-  						<label class="checkbox"><input type="checkbox" value=""> Προσβάσιμη σε ΆμεΑ</label>
-		              	<div class="form-group">
-		              		<label for="" class="label">Ποτε</label>
-		              		<br />
-							<label class="radio-inline"><input type="radio" name="optradio" checked> Αναχώρηση</label>
-							<label class="radio-inline"><input type="radio" name="optradio"> Άφιξη</label>
-							<input type="text" class="form-control" id="book_pick_date" placeholder="Ημερομηνία">
-							<input type="text" class="form-control" id="time_pick" placeholder="Ώρα">
-						</div>
-
-			            <div class="form-group">
-		              		<input type="submit" value="Αναζήτηση Διαδρομής" class="btn btn-primary py-3 px-4">
-			            </div>
-	    			</form>
+		  					<label for="" class="label">Απο</label>
+		  					<input type="text" name="departure" class="form-control" placeholder="πχ. Ομόνοια" value="<?php echo $departure;?>">
+		  					<span class="error-message"></span>
+		  				</div>
+		  				<div class="form-group">
+		  					<label for="" class="label">Προς</label>
+		  					<input type="text" name="arrival" class="form-control" placeholder="Πχ. Ευαγγελισμός" value="<?php echo $arrival;?>">
+		  					<span class="error-message"></span>
+		  				</div>
+		  				<label class="checkbox"><input type="checkbox" value=""> Προσβάσιμη σε ΆμεΑ</label>
+		  				<div class="form-group">
+		  					<label for="" class="label">Ποτε</label>
+		  					<br />
+		  					<label class="radio-inline"><input type="radio" name="optradio" checked> Αναχώρηση</label>
+		  					<label class="radio-inline"><input type="radio" name="optradio"> Άφιξη</label>
+		  					<input type="text" class="form-control" id="book_pick_date" placeholder="Ημερομηνία">
+		  					<input type="text" class="form-control" id="time_pick" placeholder="Ώρα">
+		  				</div>
+		  			
+		  				<div class="form-group">
+		  					<input type="button" value="Αναζήτηση Διαδρομής" class="btn btn-primary py-3 px-4" onclick="submitJourney();" >
+		  				</div>
+		  				<span class="error-message"></span>
+		  				<script type="javascript/text">
+		  					function submitJourney() {
+		  						window.location.href = "network/journey_planner.php?departure=" + document.getElementsByName("departure")[0].value + "&arrival=" + document.getElementsByName("arrival")[0].value;
+		  					}
+		  				</script>
+		  			</form>
 				</div>
 				<div class="col-md-8 d-flex align-items-center">
 					<div class="text w-100 text-left mb-md-5 pb-md-5 front-page-text">
