@@ -35,6 +35,62 @@ HTML/CSS/JS by: Vasilis Poulopoulos (sdi1600141)
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/additional.css">
     <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+
+    <style type="text/css">
+      ol {
+        counter-reset: li; /* Initiate a counter */
+        list-style: none; /* Remove default numbering */
+        *list-style: decimal; /* Keep using default numbering for IE6/7 */
+        font: 15px 'trebuchet MS', 'lucida sans';
+        padding: 0;
+        margin-bottom: 4em;
+        text-shadow: 0 1px 0 rgba(255,255,255,.5);
+      }
+
+      ol ol {
+        margin: 0 0 0 2em; /* Add some left margin for inner lists */
+      }
+
+      .rounded-list a{
+        position: relative;
+        display: block;
+        padding: .4em .4em .4em 2em;
+        *padding: .4em;
+        margin: .5em 0;
+        background: #ddd;
+        color: #444;
+        text-decoration: none;
+        border-radius: .3em;
+        transition: all .3s ease-out;
+      }
+
+      .rounded-list a:hover{
+        background: #eee;
+      }
+
+      .rounded-list a:hover:before{
+        transform: rotate(360deg);
+      }
+
+      .rounded-list a:before{
+        content: counter(li);
+        counter-increment: li;
+        position: absolute;
+        left: -1.3em;
+        top: 50%;
+        margin-top: -1.3em;
+        background: #87ceeb;
+        height: 2em;
+        width: 2em;
+        line-height: 2em;
+        border: .3em solid #fff;
+        text-align: center;
+        font-weight: bold;
+        border-radius: 2em;
+        transition: all .3s ease-out;
+      }
+    </style>
+
     <meta name="viewport" content="initial-scale=1.0,
       width=device-width" />
       <script type="text/javascript" src='../test-credentials.js'></script>
@@ -208,19 +264,19 @@ HTML/CSS/JS by: Vasilis Poulopoulos (sdi1600141)
                   addPolylineToMap(map, jsonList);        
                   addBounds(map);
                   var perrow = 1; // 1 item per row
-                  html = "<div class=\"table-responsive\" style=\"width:100%\"><table class=\"table \" border = \"1\"><thead><tr><th scope=\"col\">ΣΤΑΘΜΟΙ</th></tr></thead><tbody> ";
+                  html = "<ol class=\"rounded-list \" > ";
                    
-                  html += "<tr>";
+                  html += "<li>";
                   let namesArray = [];
                   for (i = 0; i<jsonList[j].length ; i++){
-                    html += "<td>" + jsonList[j][i].name + "</td>";
+                    html += "<a>" + jsonList[j][i].name + "</a>";
                     namesArray.push(jsonList[j][i].name);
                     var next = i+1;
-                      if (next%perrow==0 && next!=jsonList[0][i].length) {
-                        html += "</tr><tr>";
+                      if (next%perrow==0 && next!=jsonList[j][i].length) {
+                        html += "<//li><li>";
                     }
                   }
-                  html += "</tr></tbody></table></div>";
+                  html += "</li></ol>";
                   document.getElementById("stations").innerHTML = html;
                 }
               </script>      
@@ -325,19 +381,19 @@ HTML/CSS/JS by: Vasilis Poulopoulos (sdi1600141)
                 <div id = "stations"></div>
                 <script>
                   var perrow = 1; // 1 item per row
-                  html = "<div class=\"table-responsive\" style=\"width:100%\"><table class=\"table \" border = \"1\"><thead><tr><th scope=\"col\">ΣΤΑΘΜΟΙ</th></tr></thead><tbody> ";
+                  html = "<ol class=\"rounded-list \" > ";
                    
-                  html += "<tr>";
+                  html += "<li>";
                   let namesArray = [];
                   for (i = 0; i<jsonList[j].length ; i++){
-                    html += "<td>" + jsonList[j][i].name + "</td>";
+                    html += "<a>" + jsonList[j][i].name + "</a>";
                     namesArray.push(jsonList[j][i].name);
                     var next = i+1;
                       if (next%perrow==0 && next!=jsonList[j][i].length) {
-                        html += "</tr><tr>";
+                        html += "<//li><li>";
                     }
                   }
-                  html += "</tr></tbody></table></div>";
+                  html += "</li></ol>";
                   document.getElementById("stations").innerHTML = html;
                 </script>    
           </div>
@@ -427,5 +483,7 @@ HTML/CSS/JS by: Vasilis Poulopoulos (sdi1600141)
     
   </body>
 </html>
+
+
 
 
