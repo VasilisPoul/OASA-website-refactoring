@@ -149,7 +149,7 @@ HTML/CSS/JS by: Vasilis Poulopoulos (sdi1600141)
       <div class="container">
         <div class="row d-flex mb-5 contact-info">
         	<div class="col-md-4">
-						<form action="<?=$_SERVER['PHP_SELF']?>" class="request-form ftco-animate" method="GET">
+						<form action="<?=$_SERVER['PHP_SELF']?>" class="request-form ftco-animate" method="POST">
 							<div class="form-group">
 								<label for="" class="label">Απο</label>
 								<input type="text" name="departure" class="form-control" placeholder="πχ. Ομόνοια" value="<?php echo $departure;?>">
