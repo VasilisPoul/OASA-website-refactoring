@@ -36,7 +36,7 @@ HTML/CSS/JAVASCRIPT by: Maria Karamina (sdi1600059)
     <link rel="stylesheet" href="../../css/icomoon.css">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/additional.css">
-
+    <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
     <meta name="viewport" content="initial-scale=1.0,
       width=device-width" />
     <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
