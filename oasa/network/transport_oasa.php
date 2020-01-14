@@ -21,7 +21,7 @@ if($conn->connect_error){
   die("Connection failed: " . $conn->connect_error);
 }
 
-//find stations accessible by persons with disability
+//find all transports available
 $sql = "SELECT * FROM transport";
 $result = $conn->query($sql);
 
