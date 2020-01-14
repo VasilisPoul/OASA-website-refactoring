@@ -163,7 +163,7 @@ PHP script (line 158) by: Giorgos Koursiounis (sdi1600077)
                 $servername = "localhost";
                 $server_username = "user";
                 $server_password = "password";
-                $dbname = "oasa";
+                $dbname = "sdi1600077";
 
                 $message = "";
 
