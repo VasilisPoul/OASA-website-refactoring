@@ -1,6 +1,6 @@
 <!-- 
 
-HTML/CSS by: Maria Karamina (sdi1600059)
+HTML/CSS/JAVASCRIPT by: Maria Karamina (sdi1600059)
 
 -->
 
@@ -161,7 +161,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
                     echo  "<option value='$station[0]' title='$station[1]'>$station[1] ($station[2])</option>";
                   } ?>
                 </select>
-                <input type="submit" class="btn btn-primary mt-2" value="Επιλογή">
+                <input type="submit" class="btn btn-primary mt-2" value="Αναζήτηση">
               </div>
             </form>
 
@@ -176,6 +176,11 @@ HTML/CSS by: Maria Karamina (sdi1600059)
                   var title = document.createElement("h5");
                   title.innerHTML = stationInfo[0];
                   document.getElementById("output").appendChild(title);
+                  var a = document.createElement("a");
+                  a.href = "areas.php?idarea=" + stationInfo[4];
+                  a.innerHTML = stationInfo[5];
+                  document.getElementById("output").appendChild(a);
+
                   if(stationInfo[3] == 1) {
                     var p = document.createElement("p");
                     p.innerHTML = "Αυτή η στάση είναι προσβάσιμη από ΆμεΑ";

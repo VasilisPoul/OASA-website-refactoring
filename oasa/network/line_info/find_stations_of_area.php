@@ -1,7 +1,7 @@
 <?php
 
 //
-// PHP script by: Giorgos Koursiounis (sdi1600077)
+// PHP script by: Maria Karamina (sdi1600059) & Giorgos Koursiounis (sdi1600077)
 //
 
 if(session_status() == PHP_SESSION_NONE) {

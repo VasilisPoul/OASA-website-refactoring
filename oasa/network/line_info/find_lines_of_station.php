@@ -1,7 +1,7 @@
 <?php
 
 //
-// PHP script by: Giorgos Koursiounis (sdi1600077)
+// PHP script by: Maria Karamina (sdi1600059) & Giorgos Koursiounis (sdi1600077)
 //
 
 if(session_status() == PHP_SESSION_NONE) {
@@ -33,12 +33,12 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "GET"){
   }
 
   //find details of a station
-  $sql = "SELECT st.name, st.latitude, st.longitude, st.disability_access FROM station st WHERE st.idstation = $idstation";
+  $sql = "SELECT st.name, st.latitude, st.longitude, st.disability_access, a.idarea, a.area FROM station st, area a WHERE st.idstation = $idstation AND st.idarea = a.idarea";
   $result = $conn->query($sql);
 
   if(!empty($result) && $result->num_rows > 0){
     while($row = $result->fetch_assoc()){
-      $station_str = "[\"" . $row["name"] . "\"," . $row["latitude"] . "," . $row["longitude"] . "," . $row["disability_access"] . "]";
+      $station_str = "[\"" . $row["name"] . "\"," . $row["latitude"] . "," . $row["longitude"] . "," . $row["disability_access"] . "," . $row["idarea"] . ",\"" . $row["area"] . "\"]";
     }
   }
 
