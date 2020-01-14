@@ -29,7 +29,7 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
     $content = "Αγαπητέ/ή χρήστη,\n   Πραγματοποιήθηκε την $date online επαναφόρτιση κάρτας με τις παρακάτω λεπτομέρειες:\n<ul>";
   }
 
-  $mailheader = "From: e-tickets@sdi1600077.gr \r\nContent-Type: text/plain; charset=UTF-8 \r\n"; 
+  $mailheader = "From: e-tickets@oasa.gr \r\nContent-Type: text/plain; charset=UTF-8 \r\n"; 
 
 
   $conn = new mysqli($servername, $server_username, $server_password, $dbname);
@@ -79,7 +79,7 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
           $sql1 = "UPDATE card SET date = \"$date\", idticket_category = \"$idticket_category\", expired = 0 WHERE idcard = \"$idcard\"";
 
           if($conn->query($sql1) === TRUE){
-            $content .= "<li>Κωδικός κάρτας: " . $idcard . "\n Τύπος: " . $row["name"] . "\n Τιμή: " . $row["price"] . " €</li>\n</ul>Συνολικό ποσό πληρωμής: <strong>" . $row["price"] . " €</strong>\n Με εκτίμηση,\n Οργανισμός Αστικών Συγκοινωνιών Αθηνών (ΟΑΣΑ)\n www.sdi1600077.gr";
+            $content .= "<li>Κωδικός κάρτας: " . $idcard . "\n Τύπος: " . $row["name"] . "\n Τιμή: " . $row["price"] . " €</li>\n</ul>Συνολικό ποσό πληρωμής: <strong>" . $row["price"] . " €</strong>\n Με εκτίμηση,\n Οργανισμός Αστικών Συγκοινωνιών Αθηνών (ΟΑΣΑ)\n www.oasa.gr";
 
             if(mail($email, "OASA tickets", $content, $mailheader)){
               $message = "<div class=\"alert alert-success\"><strong>Επιτυχία!</strong> Η συναλλαγή ολοκληρώθηκε! Σας έχει αποσταλεί σχετικό email</div>";
