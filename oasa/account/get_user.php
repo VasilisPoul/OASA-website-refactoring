@@ -15,7 +15,7 @@ else {
 	$servername = "localhost";
 	$server_username = "user";
 	$server_password = "password";
-	$dbname = "oasa";
+	$dbname = "sdi1600077";
 
 	$username = $_SESSION['username'];
 	$first_name = $_SESSION['first_name'];

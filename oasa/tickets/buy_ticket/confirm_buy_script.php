@@ -11,7 +11,7 @@ if(session_status() == PHP_SESSION_NONE) {
 $servername = "localhost";
 $server_username = "user";
 $server_password = "password";
-$dbname = "oasa";
+$dbname = "sdi1600077";
 
 $date = date("Y-m-d");
 
@@ -30,7 +30,7 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
     $content = "Αγαπητέ/ή χρήστη,\n   Πραγματοποιήθηκε την $date online αγορά των παρακάτω εισιτηρίων:\n<ul>";
   }
 
-  $mailheader = "From: e-tickets@oasa.gr \r\nContent-Type: text/plain; charset=UTF-8 \r\n"; 
+  $mailheader = "From: e-tickets@sdi1600077.gr \r\nContent-Type: text/plain; charset=UTF-8 \r\n"; 
 
   $conn = new mysqli($servername, $server_username, $server_password, $dbname);
   if($conn->connect_error){
@@ -105,7 +105,7 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
       }
     }
 
-    $content .= "</ul>Συνολικό ποσό πληρωμής: <strong>$total_amount €</strong>\n Με εκτίμηση,\n Οργανισμός Αστικών Συγκοινωνιών Αθηνών (ΟΑΣΑ)\n www.oasa.gr";
+    $content .= "</ul>Συνολικό ποσό πληρωμής: <strong>$total_amount €</strong>\n Με εκτίμηση,\n Οργανισμός Αστικών Συγκοινωνιών Αθηνών (ΟΑΣΑ)\n www.sdi1600077.gr";
 
     if(empty($buy_cart_err) && mail($email, "OASA tickets", $content, $mailheader)) {
       $message = "<div class=\"alert alert-success\"><strong>Επιτυχία!</strong> Η συναλλαγή ολοκληρώθηκε! Σας έχει αποσταλεί σχετικό email</div>";

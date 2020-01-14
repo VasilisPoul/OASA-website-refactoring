@@ -58,8 +58,9 @@ HTML/CSS by: Maria Karamina (sdi1600059)
             <li class="nav-item">
               <div class="dropdown">
                 <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Το Δίκτυο</a>
-          <div class="dropdown-menu">
+                <div class="dropdown-menu">
                   <a class="dropdown-item" href="../network/info.php">Πληροφορίες και Χάρτης</a>
+                  <a class="dropdown-item" href="../network/line_info/lines.php">Πληροφορίες Γραμμών</a>
                   <a class="dropdown-item" href="../network/journey_planner.php">Σχεδιασμός Διαδρομής</a>
                   <a class="dropdown-item" href="../network/status.php">Κατάσταση Δικτύου</a>
                 </div>
@@ -68,7 +69,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
             <li class="nav-item active">
               <div class="dropdown">
                 <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Εισιτήρια</a>
-          <div class="dropdown-menu">
+                <div class="dropdown-menu">
                   <a class="dropdown-item" href="../tickets/info.php">Πληροφορίες Εισιτηρίων</a>
                   <a class="dropdown-item" href="../tickets/buy_online.php">Ηλεκτρονική Αγορά Εισιτηρίων</a>
                 </div>
@@ -77,7 +78,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
             <li class="nav-item">
               <div class="dropdown">
                 <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Επιβάτες</a>
-          <div class="dropdown-menu">
+                <div class="dropdown-menu">
                   <a class="dropdown-item" href="../passengers/lost_and_found.php">Απολεσθέντα</a>
                   <a class="dropdown-item" href="../passengers/amea.php">ΆμεΑ</a> <!--TODO: correct translation :p -->
                   <a class="dropdown-item" href="../passengers/complaints.php">Υποβολή Παραπόνων</a>
@@ -88,7 +89,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
             <li class="nav-item">
               <div class="dropdown">
                 <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Εταιρία</a>
-          <div class="dropdown-menu">
+                <div class="dropdown-menu">
                   <a class="dropdown-item" href="../company/info.php">Πληροφορίες Ομίλου</a>
                   <a class="dropdown-item" href="../company/contact_details.php">Στοιχεία Επικοινωνίας</a>
                   <a class="dropdown-item" href="../company/competitions.php">Διαγωνισμοί</a> <!--TODO: correct translation :p -->

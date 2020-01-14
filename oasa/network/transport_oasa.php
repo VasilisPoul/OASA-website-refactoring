@@ -11,7 +11,7 @@ if(session_status() == PHP_SESSION_NONE) {
 $servername = "localhost";
 $server_username = "user";
 $server_password = "password";
-$dbname = "oasa";
+$dbname = "sdi1600077";
 
 $transport = "<table class=\"table\"><thead><tr><th scope=\"col\">#</th><th scope=\"col\">Μέσο μεταφοράς</th></tr></thead><tbody>";
  

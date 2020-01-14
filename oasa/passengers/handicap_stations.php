@@ -11,7 +11,7 @@ if(session_status() == PHP_SESSION_NONE) {
 $servername = "localhost";
 $server_username = "user";
 $server_password = "password";
-$dbname = "oasa";
+$dbname = "sdi1600077";
 
 $stations = "<table class=\"table\"><thead><tr><th scope=\"col\">#</th><th scope=\"col\">Όνομα σταθμού/στάσης</th><th scope=\"col\">Περιοχή</th></tr></thead><tbody>";
  

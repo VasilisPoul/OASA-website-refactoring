@@ -11,7 +11,7 @@ if(session_status() == PHP_SESSION_NONE) {
 $servername = "localhost";
 $server_username = "user";
 $server_password = "password";
-$dbname = "oasa";
+$dbname = "sdi1600077";
  
 //create connection
 $conn = new mysqli($servername, $server_username, $server_password, $dbname);

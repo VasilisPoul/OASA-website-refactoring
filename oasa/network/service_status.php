@@ -9,7 +9,7 @@ session_start();
 $servername = "localhost";
 $username = "user";
 $password = "password";
-$dbname = "oasa";
+$dbname = "sdi1600077";
 
 $delays = "";
 $strikes = "";
