@@ -7,7 +7,7 @@
 2. Σύντομη αναφορά υλοποίησης 
 
   A. Περιγραφή αρχείων/φακέλων
-    1. sdi1600077/account
+    1. oasa/account
 
         signup.php: σελίδα εγγραφής νέου χρήστη 
         signup_script.php: script για τον έλεγχο και δημιουργία χρήστη στη βάση
@@ -22,14 +22,14 @@
         edit_profile.php: ο χρήστης μπορεί να τροποποιήσει τα στοιχεία του
         edit_profile_script.php: script για έλεγχο νέων στοιχείων χρήστη και αποθήκευση στη βάση
          
-    2. sdi1600077/passengers
+    2. oasa/passengers
     
         amea.php: σελίδα με πληροφορίες σχετικά με ΑΜΕΑ
         handicap_stations.php: script για την ανάκτηση των σταθμών προσβάσιμους σε ΑΜΕΑ      
 
-    3. sdi1600077/index.php : αρχική σελίδα
+    3. oasa/index.php : αρχική σελίδα
 
-    4. sdi1600077/network
+    4. oasa/network
 
         status.php: σελίδα με την κατάσταση του δικτύου
         service_status.php: script για την ανάκτηση της κατάστασης δικτύου από τη βάση
@@ -40,7 +40,7 @@
         journey_planner.php: σελίδα με τον σχεδιασμό διαδρομής
         journey_planner_script.php: script που περιέχει έτοιμα σενάρια για τον σχεδιασμό διαδρομής
 
-    5. sdi1600077/network/line_info
+    5. oasa/network/line_info
       
         areas.php:
         find_lines_of_station.php:
@@ -52,7 +52,7 @@
         lines.php:
         stations.php:
 
-    6. sdi1600077/tickets
+    6. oasa/tickets
 
           buy_online.php: αρχική σελίδα της Ηλεκτρονικής Αγοράς Εισιτηρίων με διαθέσιμες επιλογές για αγορά/επαναφόρτιση εισιτηρίου/κάρτας
 
