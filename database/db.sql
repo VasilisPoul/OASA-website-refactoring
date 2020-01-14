@@ -66,9 +66,9 @@ INSERT INTO line_has_station (idline, idstation) VALUES (3, 5);
 INSERT INTO line_has_station (idline, idstation) VALUES (3, 7);
 INSERT INTO line_has_station (idline, idstation) VALUES (3, 8);
 
-INSERT INTO user (username, first_name, last_name, email, dob, phone, password, iduser_category) VALUES ("katerina", "Κατερίνα", "Κουρσιούνη", "markmavr@gmail.com", "1994-03-22", "6923456787", "$2y$10$ObeQXpsckUYWLqu3avWc5.BVth75ij3lw7LYPIDRcIDZk9SDRx9du", 2);
-INSERT INTO user (username, first_name, last_name, email, dob, phone, password, iduser_category) VALUES ("zoubi1", "Ζουμπουλία", "Αμπατζίδου", "zoubi@gmail.com", "1950-07-21", "6922356587", "$2y$10$oN8kRqPaDi//iSmr7A4ziuZyGWSPQgJHKNLMB7lIIAh3k1R221H72", 1);
-INSERT INTO user (username, first_name, last_name, email, dob, phone, password, iduser_category) VALUES ("dimosthenis84", "Δημοσθένης", "Πολίτης", "politisd@gmail.com", "1984-04-02", "2102734567", "$2y$10$onkGfiXuTGheXB8WB7CYfentQ09nbszQZKz503xdtqFjrVW/FVg/G", 3);
+INSERT INTO user (username, first_name, last_name, email, dob, phone, password, iduser_category) VALUES ("giorgos", "Γιώργος", "Κουρσιούνης", "sdi1600077@di.uoa.gr", "1998-03-22", "6923456787", "$2y$10$RN8bHlZk.wClRP10.q6LbOngU9aYbXdh09ZqLrhdfkzjeHWbiYpHq", 2);
+INSERT INTO user (username, first_name, last_name, email, dob, phone, password, iduser_category) VALUES ("maria", "Μαρία", "Καραμηνά", "sdi1600059@di.uoa.gr", "1998-07-21", "6922356582", "$2y$10$imJxzYgyzUy6lKYzJEtjX.sAKZATGshdyp8TGia21.Cz4.6cUkize", 1);
+INSERT INTO user (username, first_name, last_name, email, dob, phone, password, iduser_category) VALUES ("vassilis", "Βασίλης", "Πουλόπουλος", "sdi1600141@di.uoa.gr", "1998-04-02", "2102734567", "$2y$10$QEdo.f7/pHVPqK9zmnVabOycoUgj6xUc8fN711Jd6udnljjiICrUK", 3);
 
 INSERT INTO ticket_category (name, price, iduser_category) VALUES ("Ενιαίο εισιτήριο για όλα τα μέσα 90 λεπτών (εκτός γραμμών Αεροδρομίου & γραμμής Χ80)", "1.40", 1);
 INSERT INTO ticket_category (name, price, iduser_category) VALUES ("Ημερήσιο εισιτήριο για όλα τα μέσα (εκτός γραμμων Αεροδρομίου)", "4.50", 1);
@@ -80,15 +80,9 @@ INSERT INTO ticket_category (name, price, iduser_category) VALUES ("Εισιτή
 INSERT INTO ticket_category (name, price, iduser_category) VALUES ("Εισιτήριο Αεροδρομίου μετ' επιστροφής ΜΕΤΡΟ", "18.00", 1);
 INSERT INTO ticket_category (name, price, iduser_category) VALUES ("Εισιτήριο Αεροδρομίου από & προς τους σταθμούς Παλλήνη - Κάντζα - Κορωπί ΜΕΤΡΟ", "6.00", 1);
 INSERT INTO ticket_category (name, price, iduser_category) VALUES ("Εισιτήριο Αεροδρομίου μετ' επιστροφής ΜΕΤΡΟ", "18.00", 1);
---
 INSERT INTO ticket_category (name, price, iduser_category) VALUES ("Μειωμένο ενιαίο εισιτήριο για όλα τα μέσα 90 λεπτών (εκτός γραμμών Αεροδρομίου & γραμμής Χ80)", "0.60", 2);
 INSERT INTO ticket_category (name, price, iduser_category) VALUES ("Μειωμένο εισιτήριο λεωφορείων EXPRESS", "3.00", 2);
 INSERT INTO ticket_category (name, price, iduser_category) VALUES ("Μειωμένο εισιτήριο ΜΕΤΡΟ γραμμών Αεροδρομίου", "5.00", 2);
 INSERT INTO ticket_category (name, price, iduser_category) VALUES ("Μειωμένο εισιτήριο Αεροδρομίου από & προς τους σταθμούς Παλλήνη - Κάντζα - Κορωπί ΜΕΤΡΟ", "3.00", 2);
-
 INSERT INTO ticket_category (name, price, iduser_category) VALUES ("Δωρεάν εισιτήριο για όλα τα μέσα 90 λεπτών (εκτός γραμμών Αεροδρομίου & γραμμής Χ80)", "0.0", 3);
 
-
--- markos1
--- zoubi
--- politis
