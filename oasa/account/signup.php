@@ -31,7 +31,21 @@ HTML/CSS by: Vasilis Poulopoulos (sdi1600141)
     <link rel="stylesheet" href="../css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="../css/jquery.timepicker.css">
 
-    
+    <style type="text/css">
+    .dateclass {
+      width: 100%;
+    }
+
+    .dateclass.placeholderclass::before {
+      width: 100%;
+      content: attr(placeholder);
+    }
+
+    .dateclass.placeholderclass:hover::before {
+      width: 0%;
+      content: "";
+    }
+    </style>
     <link rel="stylesheet" href="../css/flaticon.css">
     <link rel="stylesheet" href="../css/icomoon.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -179,7 +193,7 @@ HTML/CSS by: Vasilis Poulopoulos (sdi1600141)
                       <div class="input-group-prepend">
                           <span class="input-group-text"> <i class="icon-calendar"></i> </span>
                       </div>
-                      <input name="dob" class="form-control" placeholder="Ημερομηνία Γέννησης" onfocus="(this.type='date')" onblur="(this.type='text')" type="date" value="<?php echo $dob;?>">
+                      <input name="dob" class="form-control dateclass placeholderclass" placeholder="Ημερομηνία Γέννησης" type="date"  onClick="$(this).removeClass('placeholderclass')" value="<?php echo $dob;?>">
                      
                       
                   </div> <!-- form-group-error// -->
@@ -312,3 +326,4 @@ HTML/CSS by: Vasilis Poulopoulos (sdi1600141)
     
   </body>
 </html>
+
