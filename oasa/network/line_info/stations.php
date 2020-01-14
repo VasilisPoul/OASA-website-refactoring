@@ -37,7 +37,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/additional.css">
   </head>
-  <body onload="urlToOutput();">
+  <body>
     <?php include 'get_stations.php'; ?>
     <?php include 'find_lines_of_station.php'; ?>
     
@@ -154,7 +154,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
                     echo  "<option value='$station[0]' title='$station[1]'>$station[1] ($station[2])</option>";
                   } ?>
                 </select>
-                <input type="button" class="btn btn-primary mt-2" value="Επιλογή" onclick="inputToUrl('idstation', document.getElementById('info-input').value);">
+                <input type="submit" class="btn btn-primary mt-2" value="Επιλογή">
               </div>
             </form>
           </div>
@@ -194,7 +194,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
                     button.classList.add("btn");
                     button.classList.add("disabled");
                     button.style.cssText ="color:White;background-color:" + lines[i][2] + ";";
-                    button.innerHTML = "<a href='lines.php?idline=" + lines[i][0] + "&submit=true' style='color: white;'>" + lines[i][1] + "</a>";
+                    button.innerHTML = "<a href='lines.php?idline=" + lines[i][0] + "' style='color: white;'>" + lines[i][1] + "</a>";
                     var li = document.createElement("li");
                     li.style.padding = "2px";
                     li.appendChild(button);
@@ -295,8 +295,6 @@ HTML/CSS by: Maria Karamina (sdi1600059)
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="../../js/google-map.js"></script>
     <script src="../../js/main.js"></script>
-      
-    <script src="../../js/line_info-inputs.js"></script>
 
   </body>
 </html>

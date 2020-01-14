@@ -44,7 +44,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
     <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
     <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
   </head>
-  <body onload="urlToOutput();">
+  <body>
     <?php include 'get_lines.php'; ?>
     <?php include 'find_stations_of_line.php'; ?>
     
@@ -161,7 +161,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
                     echo  "<option value='$line[0]' title='$line[1]'>$line[1]</option>";
                   } ?>
                 </select>
-                <input type="button" class="btn btn-primary mt-2" value="Επιλογή" onclick="inputToUrl('idline', document.getElementById('info-input').value);">
+                <input type="submit" class="btn btn-primary mt-2" value="Επιλογή">
               </div>
             </form>
           </div>
@@ -201,9 +201,9 @@ HTML/CSS by: Maria Karamina (sdi1600059)
                   for(var i=0; i<stations.length; i++) {
                     row = body.insertRow(-1);
                     cell = row.insertCell(0);
-                    cell.innerHTML = "<a href='stations.php?idstation=" + stations[i][0] + "&submit=true'>" + stations[i][1] + "</a>";
+                    cell.innerHTML = "<a href='stations.php?idstation=" + stations[i][0] + "'>" + stations[i][1] + "</a>";
                     cell = row.insertCell(1);
-                    cell.innerHTML = "<a href='areas.php?idarea=" + stations[i][4] + "&submit=true'>" + stations[i][5] + "</a>";
+                    cell.innerHTML = "<a href='areas.php?idarea=" + stations[i][4] + "'>" + stations[i][5] + "</a>";
                   }
 
                   document.getElementById("output").appendChild(table);
@@ -397,8 +397,6 @@ HTML/CSS by: Maria Karamina (sdi1600059)
     <script src="../../js/jquery.timepicker.min.js"></script>
     <script src="../../js/scrollax.min.js"></script>
     <script src="../../js/main.js"></script>
-
-    <script src="../../js/line_info-inputs.js"></script>
     
   </body>
 </html>

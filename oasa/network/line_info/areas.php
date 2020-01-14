@@ -37,7 +37,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/additional.css">
   </head>
-  <body onload="urlToOutput();">
+  <body>
     <?php include 'get_areas.php'; ?>
     <?php include 'find_stations_of_area.php'; ?>
     
@@ -186,7 +186,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
                   for(var i=0; i<stations.length; i++) {
                     var li = document.createElement("li");
                     li.style.padding = "2px";
-                    li.innerHTML = "<a href='stations.php?idstation=" + stations[i][0] + "&submit=true'>" + stations[i][1] + "</a>";
+                    li.innerHTML = "<a href='stations.php?idstation=" + stations[i][0] + "'>" + stations[i][1] + "</a>";
                     ul.appendChild(li);
                   }
 
@@ -284,8 +284,6 @@ HTML/CSS by: Maria Karamina (sdi1600059)
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="../../js/google-map.js"></script>
     <script src="../../js/main.js"></script>
-
-    <script src="../../js/line_info-inputs.js"></script>
     
   </body>
 </html>
