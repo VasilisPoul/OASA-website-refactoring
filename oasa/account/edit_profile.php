@@ -253,6 +253,7 @@ HTML/CSS by: Vasilis Poulopoulos (sdi1600141)
               <h2 class="ftco-heading-2">Δίκτυο</h2>
               <ul class="list-unstyled">
                 <li><a href="../network/info.php" class="py-2 d-block">Πληροφορίες και Χάρτης</a></li>
+	        <li><a href="network/line_info/lines.php" class="py-2 d-block">Πληροφορίες Γραμμών</a></li>
                 <li><a href="../network/journey_planner.php" class="py-2 d-block">Σχεδιασμός Διαδρομής</a></li>
                 <li><a href="../network/status.php" class="py-2 d-block">Κατάσταση Δικτύου</a></li>
               </ul>
