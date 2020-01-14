@@ -226,6 +226,14 @@ HTML/CSS by: Vasilis Poulopoulos (sdi1600141)
                     <input type="radio" name="user_category" value="3"> Άνεργος/Αμεα<br> 
                     <span class="error-message"> <?php echo $user_category_err;?></span>
                   </div>
+               <br>
+                  <label>Αν ανήκετε σε κατηγορία με έκπτωση, εισάγετε τον κωδικό/αναγνωριστικό του δικαιολογητικού σας</label>
+                  <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"> <i class="icon-tag"></i> </span>
+                    </div>
+                    <input id="buy-discount_id" name="discount_id" class="form-control" placeholder="Κωδικός Πάσο/Κάρτας ανεργίας/Κάρτας ΆμεΑ" type="text">
+                  </div> <!-- form-group-error// -->
                 <br>
                 <div align="center">
                   <div class="form-group">
