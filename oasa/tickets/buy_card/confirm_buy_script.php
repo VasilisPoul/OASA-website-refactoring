@@ -168,9 +168,9 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
             $content .= "<li>Κωδικός κάρτας: " . $row["idcard"] . "\n Τύπος: " . $row["name"] . "\n Τιμή: " . $row["price"] . " €</li>\n</ul>Συνολικό ποσό πληρωμής: <strong>" . $row["price"] . " €</strong>\n";
           }
 
-          $content .= "Η νέα κάρτα θα σας αποσταλεί στην διεύθυνση: $address\n  Με εκτίμηση,\n Οργανισμός Αστικών Συγκοινωνιών Αθηνών (ΟΑΣΑ)\n www.sdi1600077.gr";
+          $content .= "Η νέα κάρτα θα σας αποσταλεί στην διεύθυνση: $address\n  Με εκτίμηση,\n Οργανισμός Αστικών Συγκοινωνιών Αθηνών (ΟΑΣΑ)\n www.oasa.gr";
 
-          $mailheader = "From: e-tickets@sdi1600077.gr \r\nContent-Type: text/plain; charset=UTF-8 \r\n"; 
+          $mailheader = "From: e-tickets@oasa.gr \r\nContent-Type: text/plain; charset=UTF-8 \r\n"; 
 
           //send email
           if(mail($email, "OASA tickets", $content, $mailheader)){
