@@ -36,6 +36,13 @@ HTML/CSS by: Maria Karamina (sdi1600059)
     <link rel="stylesheet" href="../../css/icomoon.css">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/additional.css">
+
+    <meta name="viewport" content="initial-scale=1.0,
+      width=device-width" />
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
   </head>
   <body>
     <?php include 'get_stations.php'; ?>
@@ -145,7 +152,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
     <section class="ftco-section ftco-no-pt bg-light front-page-text">
       <div class="container">
         <div class="row" style="margin: 0 2px;">
-          <div class="col-md-3">
+          <div class="col-md-4">
             <form id="submit-form" action="<?=$_SERVER['PHP_SELF']?>" method="GET">
               <div class="form-group">
                 <select id="info-input" class="buy-input buy-select" name="idstation" style="width: 100%; text-overflow: ellipsis;">
@@ -157,20 +164,14 @@ HTML/CSS by: Maria Karamina (sdi1600059)
                 <input type="submit" class="btn btn-primary mt-2" value="Επιλογή">
               </div>
             </form>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="ftco-section ftco-no-pt bg-light front-page-text">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
+            <br />
+            <br />
             <div id="output" style="margin: 0 2px;">
               <script type="text/javascript">
                 var stationInfo = <?php if($station_str) echo $station_str; else echo "''" ?>;
                 var lines = <?php if($lines_str) echo $lines_str; else echo "''"; ?>;
-      
+            
                 if(stationInfo.length > 0) {
                   var title = document.createElement("h5");
                   title.innerHTML = stationInfo[0];
@@ -207,9 +208,56 @@ HTML/CSS by: Maria Karamina (sdi1600059)
               </script>
             </div>
           </div>
-          <div class="cold-md-6">
-            MAP
-          </div>
+          <div class="col-md-8 block-9 mb-md-5">
+            <div style="margin: 0 2px;">
+              
+              <div style="width: 740px; height: 580px" id="map"></div>
+              <br>
+              <script>
+
+                function addMarkerToMap(map, stationInfo) {
+                  var coords = {lat:stationInfo[1], lng:stationInfo[2]};
+                  var stationMarker = new H.map.Marker(coords);
+                  stationMarker.setData(stationInfo[0]);
+                  
+                  stationMarker.addEventListener('tap', function (evt) {
+                      var bubble =  new H.ui.InfoBubble(evt.target.getGeometry(), {
+                        content: evt.target.getData()
+                      });
+                      ui.addBubble(bubble);
+                    }, false);
+
+                  map.addObject(stationMarker);
+                  map.setCenter(coords);
+                }
+
+                //Initialize the platform object:
+                var platform = new H.service.Platform({
+                  'apikey': 'Ab83Q-acy3anmVC2oYeAt219WVZ7BLlOgrnhQ75ooq0'
+                });
+                
+                var defaultLayers = platform.createDefaultLayers();
+                //Step 2: initialize a map - this map is centered over Athens
+                var map = new H.Map(document.getElementById('map'),
+                  defaultLayers.vector.normal.map,{
+                  center: { lng: 23.71622, lat: 37.97945},
+                  zoom: 14,
+                  pixelRatio: window.devicePixelRatio || 1
+                });
+                // add a resize listener to make sure that the map occupies the whole container
+                window.addEventListener('resize', () => map.getViewPort().resize());
+                //Step 3: make the map interactive
+                // MapEvents enables the event system
+                // Behavior implements default interactions for pan/zoom (also on mobile touch environments)
+                var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+                // Create the default UI components
+                ui = H.ui.UI.createDefault(map, defaultLayers);
+                // Now use the map as required...
+                addMarkerToMap(map, stationInfo);     
+                
+              </script>        
+            </div>  
+          </div> 
         </div>
       </div>
     </section>
@@ -293,8 +341,6 @@ HTML/CSS by: Maria Karamina (sdi1600059)
     <script src="../../js/bootstrap-datepicker.js"></script>
     <script src="../../js/jquery.timepicker.min.js"></script>
     <script src="../../js/scrollax.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-    <script src="../../js/google-map.js"></script>
     <script src="../../js/main.js"></script>
 
   </body>

@@ -37,6 +37,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/additional.css">
     <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+    
     <meta name="viewport" content="initial-scale=1.0,
       width=device-width" />
     <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
@@ -161,10 +162,12 @@ HTML/CSS by: Maria Karamina (sdi1600059)
                     echo  "<option value='$line[0]' title='$line[1]'>$line[1]</option>";
                   } ?>
                 </select>
-                <input type="submit" class="btn btn-primary mt-2" value="Επιλογή">
+                <input type="submit" class="btn btn-primary mt-2" value="Αναζήτηση">
               </div>
             </form>
 
+            <br />
+            <br />
             <div id="output" style="margin: 0 2px;">
               <script type="text/javascript">
                 var lineInfo = <?php echo $line_str; ?>;
@@ -187,14 +190,18 @@ HTML/CSS by: Maria Karamina (sdi1600059)
                   var body = table.createTBody();
                   var row = header.insertRow(0);
                   var cell = row.insertCell(0);
+                  cell.style.padding = "0 10% 0 0";
                   cell.innerHTML = "ΣΤΑΣΗ";
                   cell = row.insertCell(1);
+                  cell.style.padding = "0 0 0 10%";
                   cell.innerHTML = "ΠΕΡΙΟΧΗ";
                   for(var i=0; i<stations.length; i++) {
                     row = body.insertRow(-1);
                     cell = row.insertCell(0);
+                    cell.style.padding = "0 10% 0 0";
                     cell.innerHTML = "<a href='stations.php?idstation=" + stations[i][0] + "'>" + stations[i][1] + "</a>";
                     cell = row.insertCell(1);
+                    cell.style.padding = "0 0 0 10%";
                     cell.innerHTML = "<a href='areas.php?idarea=" + stations[i][4] + "'>" + stations[i][5] + "</a>";
                   }
 
@@ -203,11 +210,11 @@ HTML/CSS by: Maria Karamina (sdi1600059)
 
               </script>
             </div>
-            </div>
-            <div class="col-md-8 block-9 mb-md-5">
-            <div id="output" style="margin: 0 2px;">
+          </div>
+          <div class="col-md-8 block-9 mb-md-5">
+            <div style="margin: 0 2px;">
               
-            <div style="width: 740px; height: 580px" id="map"></div>
+              <div style="width: 740px; height: 580px" id="map"></div>
               <br>
               <script>
                  
