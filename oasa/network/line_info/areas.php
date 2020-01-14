@@ -224,14 +224,21 @@ HTML/CSS/JAVASCRIPT by: Maria Karamina (sdi1600059)
                   }
                 }
 
+                
                 function addBounds(){
+
                   group = new H.map.Group();
                   group.addObjects(markerList);
                   map.addObject(group);
                   map.getViewModel().setLookAtData({
                     bounds: group.getBoundingBox()
                   });
+                  if (stations.length === 1){
+                    map.setCenter(coords);
+                    map.setZoom(16);
+                  }
                 }
+
 
                 //Initialize the platform object:
                 var platform = new H.service.Platform({
