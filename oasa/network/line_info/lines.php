@@ -151,8 +151,8 @@ HTML/CSS by: Maria Karamina (sdi1600059)
 
     <section class="ftco-section ftco-no-pt bg-light front-page-text">
       <div class="container">
-        <div class="row" style="margin: 0 2px;">
-          <div class="col-md-3">
+        <div class="row d-flex mb-5 contact-info">
+        	<div class="col-md-4">
             <form id="submit-form" action="<?=$_SERVER['PHP_SELF']?>" method="GET">
               <div class="form-group">
                 <select id="info-input" class="buy-input buy-select" name="idline" style="width: 100%; text-overflow: ellipsis;">
@@ -164,15 +164,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
                 <input type="submit" class="btn btn-primary mt-2" value="Επιλογή">
               </div>
             </form>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="ftco-section ftco-no-pt bg-light front-page-text">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
             <div id="output" style="margin: 0 2px;">
               <script type="text/javascript">
                 var lineInfo = <?php echo $line_str; ?>;
@@ -211,8 +203,10 @@ HTML/CSS by: Maria Karamina (sdi1600059)
 
               </script>
             </div>
-          </div>
-          <div class="cold-md-6">
+            </div>
+            <div class="col-md-8 block-9 mb-md-5">
+            <div id="output" style="margin: 0 2px;">
+              
             <div style="width: 740px; height: 580px" id="map"></div>
               <br>
               <script>
@@ -400,5 +394,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
     
   </body>
 </html>
+
+
 
 
