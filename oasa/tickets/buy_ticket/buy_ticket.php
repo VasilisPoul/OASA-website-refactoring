@@ -213,7 +213,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
                 <span class="input-group-text"> <i class="icon-tag"></i> </span>
               </div>
             <input id="buy-discount_id" name="discount_id" class="buy-input" placeholder="Κωδικός Πάσο/Κάρτας ανεργίας/Κάρτας ΆμεΑ" type="text">
-            </div> <!-- form-group-error// -->
+            </div>
           </div>
 
           <div class="step-screen">
