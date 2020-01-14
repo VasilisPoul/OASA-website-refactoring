@@ -45,24 +45,24 @@ INSERT INTO area (area, city, postal_code) VALUES ("Ομόνοια", "Δήμος
 INSERT INTO area (area, city, postal_code) VALUES ("Πλατεία Ασωμάτων", "Δήμος Αθηναίων", "11851");
 INSERT INTO area (area, city, postal_code) VALUES ("Γκάζι", "Αθήνα", "11854");
 
-INSERT INTO station (name, latitude, longitude, idarea, disability_access) VALUES ("ΣΥΝΤΑΓΜΑ", '37.975443', '23.735484', 1, 1);
-INSERT INTO station (name, latitude, longitude, idarea, disability_access) VALUES ("ΕΥΑΓΓΕΛΙΣΜΟΣ", '37.975937', '23.746923', 2, 1);
+INSERT INTO station (name, latitude, longitude, idarea, disability_access) VALUES ("ΚΕΡΑΜΕΙΚΟΣ", '37.978779', '23.710873', 6, 1);
 INSERT INTO station (name, latitude, longitude, idarea, disability_access) VALUES ("ΒΙΚΤΩΡΙΑ", '37.993095', '23.729804', 3, 1);
 INSERT INTO station (name, latitude, longitude, idarea, disability_access) VALUES ("ΟΜΟΝΟΙΑ", '37.984037', '23.728041', 4, 1);
 INSERT INTO station (name, latitude, longitude, idarea, disability_access) VALUES ("ΠΑΝΕΠΙΣΤΗΜΙΟ", '37.980595', '23.73283', 1, 1);
-INSERT INTO station (name, latitude, longitude, idarea, disability_access) VALUES ("ΘΗΣΕΙΟ", '37.976928', '23.720529', 5, 1);
 INSERT INTO station (name, latitude, longitude, idarea, disability_access) VALUES ("ΜΟΝΑΣΤΗΡΑΚΙ", '37.976431', '23.725905', 1, 1);
-INSERT INTO station (name, latitude, longitude, idarea, disability_access) VALUES ("ΚΕΡΑΜΕΙΚΟΣ", '37.978779', '23.710873', 6, 1);
+INSERT INTO station (name, latitude, longitude, idarea, disability_access) VALUES ("ΘΗΣΕΙΟ", '37.976928', '23.720529', 5, 1);
+INSERT INTO station (name, latitude, longitude, idarea, disability_access) VALUES ("ΣΥΝΤΑΓΜΑ", '37.975443', '23.735484', 1, 1);
+INSERT INTO station (name, latitude, longitude, idarea, disability_access) VALUES ("ΕΥΑΓΓΕΛΙΣΜΟΣ", '37.975937', '23.746923', 2, 1);
 
-INSERT INTO line_has_station (idline, idstation) VALUES (2, 1);
-INSERT INTO line_has_station (idline, idstation) VALUES (3, 1);
-INSERT INTO line_has_station (idline, idstation) VALUES (3, 2);
+INSERT INTO line_has_station (idline, idstation) VALUES (1, 2);
 INSERT INTO line_has_station (idline, idstation) VALUES (1, 3);
-INSERT INTO line_has_station (idline, idstation) VALUES (1, 4);
-INSERT INTO line_has_station (idline, idstation) VALUES (2, 4);
-INSERT INTO line_has_station (idline, idstation) VALUES (2, 5);
+INSERT INTO line_has_station (idline, idstation) VALUES (1, 5);
 INSERT INTO line_has_station (idline, idstation) VALUES (1, 6);
-INSERT INTO line_has_station (idline, idstation) VALUES (1, 7);
+INSERT INTO line_has_station (idline, idstation) VALUES (2, 3);
+INSERT INTO line_has_station (idline, idstation) VALUES (2, 4);
+INSERT INTO line_has_station (idline, idstation) VALUES (2, 7);
+INSERT INTO line_has_station (idline, idstation) VALUES (3, 1);
+INSERT INTO line_has_station (idline, idstation) VALUES (3, 5);
 INSERT INTO line_has_station (idline, idstation) VALUES (3, 7);
 INSERT INTO line_has_station (idline, idstation) VALUES (3, 8);
 

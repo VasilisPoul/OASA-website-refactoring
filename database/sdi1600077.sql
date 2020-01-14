@@ -2,6 +2,11 @@
 -- Sun Jan  5 15:34:33 2020
 -- Model: New Model    Version: 1.0
 -- MySQL Workbench Forward Engineering
+--
+--
+-- Database design (sdi1600077.sql) & 
+-- Database population (db.sql) by: Giorgos Koursiounis (sdi1600077)
+--
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
