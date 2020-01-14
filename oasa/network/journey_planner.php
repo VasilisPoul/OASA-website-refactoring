@@ -34,6 +34,7 @@ HTML/CSS/JS by: Vasilis Poulopoulos (sdi1600141)
     <link rel="stylesheet" href="../css/icomoon.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/additional.css">
+    <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
     <meta name="viewport" content="initial-scale=1.0,
       width=device-width" />
       <script type="text/javascript" src='../test-credentials.js'></script>
@@ -148,7 +149,7 @@ HTML/CSS/JS by: Vasilis Poulopoulos (sdi1600141)
       <div class="container">
         <div class="row d-flex mb-5 contact-info">
         	<div class="col-md-4">
-						<form action="<?=$_SERVER['PHP_SELF']?>" class="request-form ftco-animate" method="POST">
+						<form action="<?=$_SERVER['PHP_SELF']?>" class="request-form ftco-animate" method="GET">
 							<div class="form-group">
 								<label for="" class="label">Απο</label>
 								<input type="text" name="departure" class="form-control" placeholder="πχ. Ομόνοια" value="<?php echo $departure;?>">
@@ -193,39 +194,14 @@ HTML/CSS/JS by: Vasilis Poulopoulos (sdi1600141)
                   
                   map.removeObjects(map.getObjects ());
                   j = i;
+                  window.scrollTo(0,270);
                   let style = {
                     linewidth: 4,
                     strokeColor: "red"
                   };
                   markerList = [];
                   polyline = [];
-                  function addPolylineToMap(map, jsonList) {
-                    var lineString = new H.geo.LineString();
-                    for (i = 0; i<jsonList[j].length - 1; i++){
-                      lineString.pushPoint(jsonList[j][i].coords);
-                      lineString.pushPoint(jsonList[j][i+1].coords);
-                      markerList[i] = new H.map.Marker(jsonList[j][i].coords);
-                      map.addObject(markerList[i]);
-                      style.strokeColor = jsonList[j][i].colour;
-                      polyline[i] = new H.map.Polyline(
-                        lineString, { style: style}
-                        
-                      );
-                      map.addObject(polyline[i]);
-                      lineString = new H.geo.LineString();
-                    }
-                    markerList[i] = new H.map.Marker(jsonList[0][i].coords);
-                    map.addObject(markerList[i]);
-                    
-                  }
-                  function addBounds(){
-                    group = new H.map.Group();
-                    group.addObjects(markerList);
-                    map.addObject(group);
-                    map.getViewModel().setLookAtData({
-                      bounds: group.getBoundingBox()
-                    });
-                  }
+            
                   
                   var ui = H.ui.UI.createDefault(map, defaultLayers);
                   // Now use the map as required...
@@ -251,7 +227,7 @@ HTML/CSS/JS by: Vasilis Poulopoulos (sdi1600141)
             </div>
           </div>
           <div class="col-md-8 block-9 mb-md-5">
-            <div style="width: 640px; height: 480px" id="map"></div>
+            <div style="width: 740px; height: 580px" id="map"></div>
             <br>
               <script>
                  
@@ -260,28 +236,58 @@ HTML/CSS/JS by: Vasilis Poulopoulos (sdi1600141)
                     strokeColor: "red"
                   };
                   var markerList = [];
-                  var polyline = []
+                  var polyline = [];
+                  var bubble = [];
+                  function createInfoBubble(map, coords, name) {
+                    
+                  }
                   function addPolylineToMap(map, jsonList) {
+                    var group = new H.map.Group();
+                    
+                    map.addObject(group);
+
+                    
                     var lineString = new H.geo.LineString();
                     for (i = 0; i<jsonList[j].length - 1; i++){
                       lineString.pushPoint(jsonList[j][i].coords);
                       lineString.pushPoint(jsonList[j][i+1].coords);
                       markerList[i] = new H.map.Marker(jsonList[j][i].coords);
+                      markerList[i].setData(jsonList[j][i].name);
+                      markerList[i].addEventListener("tap", event => {
+                         bubble[i] = new H.ui.InfoBubble(
+                           event.target.getGeometry(),
+                           {
+                             content: event.target.getData()
+                           }
+                          );
+                          ui.addBubble(bubble[i]);
+                      }, false);
                       map.addObject(markerList[i]);
+                      
                       style.strokeColor = jsonList[j][i].colour;
                       polyline[i] = new H.map.Polyline(
                         lineString, { style: style}
-                        
                       );
                       map.addObject(polyline[i]);
                       lineString = new H.geo.LineString();
                     }
-                    markerList[i] = new H.map.Marker(jsonList[0][i].coords);
+                    markerList[i] = new H.map.Marker(jsonList[j][i].coords);
+                    markerList[i].setData(jsonList[j][i].name);
+                    markerList[i].addEventListener("tap", event => {
+                        bubble[i] = new H.ui.InfoBubble(
+                          event.target.getGeometry(),
+                          {
+                            content: event.target.getData()
+                          }
+                        );
+                        ui.addBubble(bubble[i]);
+                    }, false);
+                      
                     map.addObject(markerList[i]);
-                    console.log(markerList);
                     map.removeObject(markerList[i]);
                     
                   }
+
                   function addBounds(){
                     group = new H.map.Group();
                     group.addObjects(markerList);
@@ -327,7 +333,7 @@ HTML/CSS/JS by: Vasilis Poulopoulos (sdi1600141)
                     html += "<td>" + jsonList[j][i].name + "</td>";
                     namesArray.push(jsonList[j][i].name);
                     var next = i+1;
-                      if (next%perrow==0 && next!=jsonList[0][i].length) {
+                      if (next%perrow==0 && next!=jsonList[j][i].length) {
                         html += "</tr><tr>";
                     }
                   }
@@ -421,8 +427,5 @@ HTML/CSS/JS by: Vasilis Poulopoulos (sdi1600141)
     
   </body>
 </html>
-
-
-
 
 
