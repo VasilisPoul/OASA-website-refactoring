@@ -133,13 +133,13 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
     VALUES (\"$username\", \"$first_name\", \"$last_name\", \"$email\", \"$dob\", \"$phone\", \"$password\", \"$user_category\")";
 
     if($conn->query($sql) === TRUE){
-      $message = "Η εγγραφή ολοκληρώθηκε με επιτυχία!";
-     
-      header("Location: login.php");
+      $message = "<div class=\"alert alert-success\"><strong>Επιτυχία!</strong> Η εγγραγή χρήστη ολοκληρώθηκε με επιτυχία</div>";
+      $username = $first_name = $last_name = $password = "";
+      $email = $dob = $phone = $user_category = "";
     } 
     else{
       //echo "Error: " . $sql . "<br>" . $conn->error;
-      $message = "Η εγγραφή χρήστη απέτυχε";
+      $message = "<div class=\"alert alert-danger\"><strong>Αποτυχία!</strong> Η εγγραφή χρήστη απέτυχε</div>";
     }
   }
 
