@@ -122,15 +122,15 @@ HTML/CSS by: Maria Karamina (sdi1600059)
   		<div class="container">
 	    	<div class="row no-gutters slider-text justify-content-start align-items-center justify-content-center">
 	          	<div class="col-md-4 d-flex align-items-center">
-		  			<form action="#" class="request-form ftco-animate">
+		  			<form class="request-form ftco-animate" action="network/journey_planner.php" method="POST">
 		  				<div class="form-group">
 		  					<label for="" class="label">Απο</label>
-		  					<input type="text" name="departure" class="form-control" placeholder="πχ. Ομόνοια" value="<?php echo $departure;?>">
+		  					<input type="text" name="departure" class="form-control" placeholder="πχ. Ομόνοια">
 		  					<span class="error-message"></span>
 		  				</div>
 		  				<div class="form-group">
 		  					<label for="" class="label">Προς</label>
-		  					<input type="text" name="arrival" class="form-control" placeholder="Πχ. Ευαγγελισμός" value="<?php echo $arrival;?>">
+		  					<input type="text" name="arrival" class="form-control" placeholder="Πχ. Ευαγγελισμός">
 		  					<span class="error-message"></span>
 		  				</div>
 		  				<label class="checkbox"><input type="checkbox" value=""> Προσβάσιμη σε ΆμεΑ</label>
@@ -144,14 +144,9 @@ HTML/CSS by: Maria Karamina (sdi1600059)
 		  				</div>
 		  			
 		  				<div class="form-group">
-		  					<input type="button" value="Αναζήτηση Διαδρομής" class="btn btn-primary py-3 px-4" onclick="submitJourney();" >
+		  					<input type="submit" value="Αναζήτηση Διαδρομής" class="btn btn-primary py-3 px-4">
 		  				</div>
 		  				<span class="error-message"></span>
-		  				<script type="javascript/text">
-		  					function submitJourney() {
-		  						window.location.href = "network/journey_planner.php?departure=" + document.getElementsByName("departure")[0].value + "&arrival=" + document.getElementsByName("arrival")[0].value;
-		  					}
-		  				</script>
 		  			</form>
 				</div>
 				<div class="col-md-8 d-flex align-items-center">
