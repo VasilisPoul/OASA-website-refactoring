@@ -43,6 +43,7 @@ function nextPrev(n) {
   if(currentTab === x.length-2 && n===1) {
     document.getElementById("string-to-send").value = getProductsAsString();
     document.getElementById("email-to-send").value = document.getElementById("buy-email-input").value;
+    document.getElementById("discount_id-to-send").value = document.getElementById("buy-discount_id").value;
   }
 
   // if you have reached the end of the form... :

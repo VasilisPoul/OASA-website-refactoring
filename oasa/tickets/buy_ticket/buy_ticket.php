@@ -204,6 +204,16 @@ HTML/CSS by: Maria Karamina (sdi1600059)
              ?>
             <input type="text" id="buy-email-input" class="buy-input" placeholder="E-mail" value="<?php echo $email; ?>" required>
             <div id="email-error-div" style="color: red; display: none;">Εσφαλμένη μορφή email</div>
+
+            <br />
+            <br />
+            <label>Για να αγοράσετε εισιτήριο με έκπτωση, εισάγετε τον κωδικό/αναγνωριστικό του δικαιολογητικού σας</label>
+            <div class="form-group input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="icon-tag"></i> </span>
+              </div>
+            <input id="buy-discount_id" name="discount_id" class="buy-input" placeholder="Κωδικός Πάσο/Κάρτας ανεργίας/Κάρτας ΆμεΑ" type="text">
+            </div> <!-- form-group-error// -->
           </div>
 
           <div class="step-screen">
@@ -253,6 +263,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
             <form id="buy-form" class="hidden-form" method="POST" action="confirm_buy.php">
               <input id="string-to-send" name="buy_cart" class="form-control" type="text">
               <input id="email-to-send" name="email" class="form-control" type="email">
+              <input id="discount_id-to-send" name="discount_id" class="form-control" type="text">
             </form>
             <div id="buy-loader" class="loader"></div> 
 
