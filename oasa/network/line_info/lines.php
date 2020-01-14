@@ -36,6 +36,13 @@ HTML/CSS by: Maria Karamina (sdi1600059)
     <link rel="stylesheet" href="../../css/icomoon.css">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/additional.css">
+    <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+    <meta name="viewport" content="initial-scale=1.0,
+      width=device-width" />
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
   </head>
   <body onload="urlToOutput();">
     <?php include 'get_lines.php'; ?>
@@ -168,8 +175,8 @@ HTML/CSS by: Maria Karamina (sdi1600059)
           <div class="col-md-6">
             <div id="output" style="margin: 0 2px;">
               <script type="text/javascript">
-                var lineInfo = <?php if($line_str) echo $line_str; else echo "''"; ?>;
-                var stations = <?php if($stations_str) echo $stations_str; else echo "''"; ?>;
+                var lineInfo = <?php echo $line_str; ?>;
+                var stations = <?php echo $stations_str; ?>;
                 if(lineInfo.length > 0) {
                   var button = document.createElement("button");
                   button.type = "button";
@@ -181,10 +188,6 @@ HTML/CSS by: Maria Karamina (sdi1600059)
                 }
 
                 if(stations) {
-                  var div = document.createElement("div");
-                  div.style.cssText = "margin-top: 5%;";
-                  div.innerHTML = "Στάσεις της γραμμής:";
-
                   var table = document.createElement("table");
                   table.style.cssText = "width: 100%; margin: 4% 0;";
                   var header = table.createTHead();
@@ -203,15 +206,113 @@ HTML/CSS by: Maria Karamina (sdi1600059)
                     cell.innerHTML = "<a href='areas.php?idarea=" + stations[i][4] + "&submit=true'>" + stations[i][5] + "</a>";
                   }
 
-                  div.appendChild(table);
-                  document.getElementById("output").appendChild(div);
+                  document.getElementById("output").appendChild(table);
                 }
 
               </script>
             </div>
           </div>
           <div class="cold-md-6">
-            MAP
+            <div style="width: 740px; height: 580px" id="map"></div>
+              <br>
+              <script>
+                 
+                  let style = {
+                    linewidth: 4,
+                    strokeColor: "red"
+                  };
+                  var markerList = [];
+                  var polyline = [];
+                  var bubble = [];
+                  function createInfoBubble(map, coords, name) {
+                    
+                  }
+                  function addPolylineToMap(map, lineInfo, stations) {
+                    var group = new H.map.Group();
+                    
+                    map.addObject(group);
+                    var coords, nextCoords;
+                    var colour = lineInfo[2];
+                    var lineString = new H.geo.LineString();
+                    for (i = 0; i<stations.length - 1; i++){
+                      
+                      coords = {lng: stations[i][3], lat: stations[i][2]};
+                      nextCoords = {lng: stations[i+1][3], lat: stations[i+1][2]};
+                      lineString.pushPoint(coords);
+                      lineString.pushPoint(nextCoords);
+                      markerList[i] = new H.map.Marker(coords);
+                      markerList[i].setData(stations[i][1]);
+                      markerList[i].addEventListener("tap", event => {
+                         bubble[i] = new H.ui.InfoBubble(
+                           event.target.getGeometry(),
+                           {
+                             content: event.target.getData()
+                           }
+                          );
+                          ui.addBubble(bubble[i]);
+                      }, false);
+                      map.addObject(markerList[i]);
+                      
+                      style.strokeColor = colour;
+                      polyline[i] = new H.map.Polyline(
+                        lineString, { style: style}
+                      );
+                      map.addObject(polyline[i]);
+                      lineString = new H.geo.LineString();
+                    }
+                    coords = {lng: stations[i][3], lat: stations[i][2]};
+                    markerList[i] = new H.map.Marker(coords);
+                    markerList[i].setData(stations[i][1]);
+                    markerList[i].addEventListener("tap", event => {
+                        bubble[i] = new H.ui.InfoBubble(
+                          event.target.getGeometry(),
+                          {
+                            content: event.target.getData()
+                          }
+                        );
+                        ui.addBubble(bubble[i]);
+                    }, false);
+                      
+                    map.addObject(markerList[i]);
+                    map.removeObject(markerList[i]);
+                    
+                  }
+
+                  function addBounds(){
+                    group = new H.map.Group();
+                    group.addObjects(markerList);
+                    map.addObject(group);
+                    map.getViewModel().setLookAtData({
+                      bounds: group.getBoundingBox()
+                    });
+                  }
+                  //Initialize the platform object:
+                  var platform = new H.service.Platform({
+                    'apikey': 'Ab83Q-acy3anmVC2oYeAt219WVZ7BLlOgrnhQ75ooq0'
+                  });
+                  
+                  var defaultLayers = platform.createDefaultLayers();
+                  //Step 2: initialize a map - this map is centered over Athens
+                  var map = new H.Map(document.getElementById('map'),
+                    defaultLayers.vector.normal.map,{
+                    center: { lng: 23.71622, lat: 37.97945},
+                    zoom: 14,
+                    pixelRatio: window.devicePixelRatio || 1
+                  });
+                  // add a resize listener to make sure that the map occupies the whole container
+                  window.addEventListener('resize', () => map.getViewPort().resize());
+                  //Step 3: make the map interactive
+                  // MapEvents enables the event system
+                  // Behavior implements default interactions for pan/zoom (also on mobile touch environments)
+                  var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+                  // Create the default UI components
+                  ui = H.ui.UI.createDefault(map, defaultLayers);
+                  // Now use the map as required...
+                  addPolylineToMap(map, lineInfo, stations);        
+                  addBounds(map);
+                </script>        
+              </div>  
+            </div> 
           </div>
         </div>
       </div>
@@ -295,12 +396,11 @@ HTML/CSS by: Maria Karamina (sdi1600059)
     <script src="../../js/bootstrap-datepicker.js"></script>
     <script src="../../js/jquery.timepicker.min.js"></script>
     <script src="../../js/scrollax.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-    <script src="../../js/google-map.js"></script>
     <script src="../../js/main.js"></script>
 
     <script src="../../js/line_info-inputs.js"></script>
     
   </body>
 </html>
+
 
