@@ -19,9 +19,9 @@
 
   Β. Δοκιμαστικοί κωδικοί σύνδεσης
 
-    username: giorgos   password: giorgos
-    username: maria     password: maria
-    username: vassilis  password: vassilis
+    username: giorgos   password: giorgos  (Έχει κάρτα με ληγμένο κόμιστρο. Δεν μπορεί να βγάλει νέα κάρτα αλλά μπορεί να την ανανεώσει)
+    username: maria     password: maria  (Έχει κάρτα με κόμιστρο που ισχύει. Δεν μπορεί να βγάλει νέα κάρτα και δεν μπορεί να την ανανεώσει αν δεν λήξει το κόμιστρο που έχει)
+    username: vassilis  password: vassilis  (Έχει εισιτήριο που έχει λήξει. Μπορεί να το επαναφορτίσει ή να βγάλει άλλο. Μπορεί να βγάλει κάρτα)
 
 
   Γ. Περιγραφή αρχείων/φακέλων
