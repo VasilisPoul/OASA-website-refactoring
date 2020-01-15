@@ -155,7 +155,7 @@ HTML/CSS by: Vasilis Poulopoulos (sdi1600141)
                       <input name="first_name" class="form-control" placeholder="Όνομα" type="text" value="<?php echo $first_name;?>">
                       
                   </div> <!-- form-group-error// -->
-                
+                 <span class="error-message"> <?php echo $first_name_err;?></span>
                   
                   <div class="form-group-error input-group">
                       <div class="input-group-prepend">
@@ -164,7 +164,7 @@ HTML/CSS by: Vasilis Poulopoulos (sdi1600141)
                       <input name="last_name" class="form-control" placeholder="Επίθετο" type="text" value="<?php echo $last_name;?>">
                       
                   </div> <!-- form-group-error// -->
-                
+                 <span class="error-message"> <?php echo $last_name_err;?></span>
                       
                   <div class="form-group-error input-group">
                       <div class="input-group-prepend">
@@ -200,7 +200,8 @@ HTML/CSS by: Vasilis Poulopoulos (sdi1600141)
                     </div>
                     <input name="password" class="form-control" placeholder="Ρassword" type="password" id ="password">
                 </div> <!-- form-group-error// -->
-
+		<span class="error-message"> <?php echo $password_err;?></span>
+	 
                 <div class="form-group-error input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="icon-lock"></i> </span>
@@ -222,6 +223,7 @@ HTML/CSS by: Vasilis Poulopoulos (sdi1600141)
                       confirm_password.onkeyup = validatePassword;
                     </script>
                 </div> <!-- form-group-error// -->
+		      
                   <br />
                   <div class = "groove">
                     <p>Ανήκω στην κατηγορία:</p>
@@ -229,7 +231,7 @@ HTML/CSS by: Vasilis Poulopoulos (sdi1600141)
                     <input type="radio" name="user_category" value="1" checked> Δικαιούχος κανονικού εισιτηρίου<br>
                     <input type="radio" name="user_category" value="2"> Φοιτητής/Μαθητής<br>
                     <input type="radio" name="user_category" value="3"> Άνεργος/Αμεα<br> 
-                    
+                    <span class="error-message"> <?php echo $user_category_err;?></span>
                   </div>
               
                 <div align="center">
