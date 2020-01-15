@@ -19,7 +19,7 @@ $server_username = "user";
 $server_password = "password";
 $dbname = "sdi1600077";
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
  
   //create connection
   $conn = new mysqli($servername, $server_username, $server_password, $dbname);

@@ -129,6 +129,7 @@ HTML/CSS by: Vasilis Poulopoulos (sdi1600141)
             <h1>Επεξεργασία Στοιχείων</h1>
           </div>
         </div>
+        <?php echo $message ?>
       </div>
     </section>
 
