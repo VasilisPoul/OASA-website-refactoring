@@ -206,6 +206,21 @@ HTML/CSS by: Vasilis Poulopoulos (sdi1600141)
                         <span class="input-group-text"> <i class="icon-lock"></i> </span>
                     </div>
                     <input name="password" class="form-control" placeholder="Επιβεβαίωση Ρassword" type="password" id="confirm_password">
+		    <script>
+                      var password = document.getElementById("password")
+                        , confirm_password = document.getElementById("confirm_password");
+
+                      function validatePassword(){
+                        if(password.value != confirm_password.value) {
+                          confirm_password.setCustomValidity("Passwords Don't Match");
+                        } else {
+                          confirm_password.setCustomValidity('');
+                        }
+                      }
+
+                      password.onchange = validatePassword;
+                      confirm_password.onkeyup = validatePassword;
+                    </script>
                 </div> <!-- form-group-error// -->
                   <br />
                   <div class = "groove">
