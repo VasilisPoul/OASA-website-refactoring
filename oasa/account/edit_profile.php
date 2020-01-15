@@ -138,8 +138,9 @@ HTML/CSS by: Vasilis Poulopoulos (sdi1600141)
         <div class="container">
           <div class="row d-flex mb-5 contact-info">
             
-            <div class="col-sm-4 block-1 mb-md-3 container">
+            <div class="col-md-12 container" align="center">
               <form method="POST" action="<?=$_SERVER['PHP_SELF']?>">
+                <div class="col-sm-4 block-1 mb-md-3">
                   <div class="input-group">
                       <div class="input-group-prepend">
                           <span class="input-group-text"> <i class="icon-user-circle"></i> </span>
@@ -234,13 +235,19 @@ HTML/CSS by: Vasilis Poulopoulos (sdi1600141)
                     <input type="radio" name="user_category" value="3"> Άνεργος/Αμεα<br> 
                     <span class="error-message"> <?php echo $user_category_err;?></span>
                   </div>
-              
+                </div>
                 <div align="center">
                   <br>
                   <div class="form-group">
+                      <input type="button" value="Ακύρωση" class="btn btn-grey py-3 px-5" onclick="goBack();">
                       <input type="submit" value="Αποθήκευση" class="btn btn-primary py-3 px-5">
+                      <script>
+                        function goBack() {
+                          window.history.back();
+                        }
+                      </script>
                     </div>   
-                                                                          
+                </div>                                                 
               </form>
              
             </div>
