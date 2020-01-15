@@ -54,7 +54,10 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
     }
   }
 
-  if(strcasecmp($departure, "ομονοια") == 0 && strcasecmp($arrival, "ευαγγελισμος") == 0)
+  //default scenarios for presentation purposes
+  if((strcasecmp($departure, "ομονοια") == 0 && strcasecmp($arrival, "ευαγγελισμος") == 0)||
+     (strcasecmp($departure, "Ομόνοια") == 0 && strcasecmp($arrival, "Ευαγγελισμός") == 0)||
+     (strcasecmp($departure, "ΟΜΟΝΟΙΑ") == 0 && strcasecmp($arrival, "ΕΥΑΓΓΕΛΙΣΜΟΣ") == 0))
   {
     //first alternative root
     $coordinates_str .= "[{coords: {lat: " . $coordinates["ΟΜΟΝΟΙΑ"][0] . " , lng: " . $coordinates["ΟΜΟΝΟΙΑ"][1] . "}, colour: \"" . $coordinates["ΟΜΟΝΟΙΑ"][2] . "\", name: \"" . $coordinates["ΟΜΟΝΟΙΑ"][3] . "\"},";
@@ -69,7 +72,9 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
     $coordinates_str .= "{coords: {lat: " . $coordinates["ΣΥΝΤΑΓΜΑ"][0] . " , lng: " . $coordinates["ΣΥΝΤΑΓΜΑ"][1] . "}, colour: \"" . $coordinates["ΣΥΝΤΑΓΜΑ"][2] . "\", name: \"" . $coordinates["ΣΥΝΤΑΓΜΑ"][3] . "\"},";
     $coordinates_str .= "{coords: {lat: " . $coordinates["ΕΥΑΓΓΕΛΙΣΜΟΣ"][0] . " , lng: " . $coordinates["ΕΥΑΓΓΕΛΙΣΜΟΣ"][1] . "}, colour:\""  . $coordinates["ΕΥΑΓΓΕΛΙΣΜΟΣ"][2] . "\", name: \"" . $coordinates["ΕΥΑΓΓΕΛΙΣΜΟΣ"][3] . "\"}]";
   }
-  else if(strcasecmp($departure, "κεραμεικος") == 0 && strcasecmp($arrival, "πανεπιστημιο") == 0)
+  else if((strcasecmp($departure, "κεραμεικος") == 0 && strcasecmp($arrival, "πανεπιστημιο") == 0)||
+     (strcasecmp($departure, "Κεραμεικός") == 0 && strcasecmp($arrival, "Πανεπιστήμιο") == 0)||
+     (strcasecmp($departure, "ΚΕΡΑΜΕΙΚΟΣ") == 0 && strcasecmp($arrival, "ΠΑΝΕΠΙΣΤΗΜΙΟ") == 0))
   {
     //first alternative root
     $coordinates_str .= "[{coords: {lat: " . $coordinates["ΚΕΡΑΜΕΙΚΟΣ"][0] . " , lng: " . $coordinates["ΚΕΡΑΜΕΙΚΟΣ"][1] . "}, colour: \"" . $coordinates["ΚΕΡΑΜΕΙΚΟΣ"][2] . "\", name: \"" . $coordinates["ΚΕΡΑΜΕΙΚΟΣ"][3] . "\"},";
@@ -84,7 +89,9 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
     $coordinates_str .= "{coords: {lat: " . $coordinates["ΟΜΟΝΟΙΑ"][0] . " , lng: " . $coordinates["ΟΜΟΝΟΙΑ"][1] . "}, colour: \"" . $coordinates["ΟΜΟΝΟΙΑ"][2] . "\", name: \"" . $coordinates["ΟΜΟΝΟΙΑ"][3] . "\"},";
     $coordinates_str .= "{coords: {lat: " . $coordinates["ΠΑΝΕΠΙΣΤΗΜΙΟ"][0] . " , lng: " . $coordinates["ΠΑΝΕΠΙΣΤΗΜΙΟ"][1] . "}, colour:\""  . $coordinates["ΠΑΝΕΠΙΣΤΗΜΙΟ"][2] . "\", name: \"" . $coordinates["ΠΑΝΕΠΙΣΤΗΜΙΟ"][3] . "\"}]";
   }
-  else if(strcasecmp($departure, "βικτωρια") == 0 && strcasecmp($arrival, "θησειο") == 0)
+  else if((strcasecmp($departure, "βικτωρια") == 0 && strcasecmp($arrival, "θησειο") == 0)||
+     (strcasecmp($departure, "Βικτώρια") == 0 && strcasecmp($arrival, "Θησείο") == 0)||
+     (strcasecmp($departure, "ΒΙΚΤΩΡΙΑ") == 0 && strcasecmp($arrival, "ΘΗΣΕΙΟ") == 0))
   {
     $coordinates_str .= "[{coords: {lat: " . $coordinates["ΒΙΚΤΩΡΙΑ"][0] . " , lng: " . $coordinates["ΒΙΚΤΩΡΙΑ"][1] . "}, colour: \"" . $coordinates["ΒΙΚΤΩΡΙΑ"][2] . "\", name: \"" . $coordinates["ΒΙΚΤΩΡΙΑ"][3] . "\"},";
     $coordinates_str .= "{coords: {lat: " . $coordinates["ΟΜΟΝΟΙΑ"][0] . " , lng: " . $coordinates["ΟΜΟΝΟΙΑ"][1] . "}, colour: \"" . $coordinates["ΟΜΟΝΟΙΑ"][2] . "\", name: \"" . $coordinates["ΟΜΟΝΟΙΑ"][3] . "\"},";
