@@ -60,7 +60,7 @@ if(!empty($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
      (strcasecmp($departure, "ΟΜΟΝΟΙΑ") == 0 && strcasecmp($arrival, "ΕΥΑΓΓΕΛΙΣΜΟΣ") == 0))
   {
     //first alternative root
-    $coordinates_str .= "[{coords: {lat: " . $coordinates["ΟΜΟΝΟΙΑ"][0] . " , lng: " . $coordinates["ΟΜΟΝΟΙΑ"][1] . "}, colour: \"" . $coordinates["ΟΜΟΝΟΙΑ"][2] . "\", name: \"" . $coordinates["ΟΜΟΝΟΙΑ"][3] . "\"},";
+    $coordinates_str .= "[{coords: {lat: " . $coordinates["ΟΜΟΝΟΙΑ"][0] . " , lng: " . $coordinates["ΟΜΟΝΟΙΑ"][1] . "}, colour: \"" . "green" . "\", name: \"" . $coordinates["ΟΜΟΝΟΙΑ"][3] . "\"},";
     $coordinates_str .= "{coords: {lat: " . $coordinates["ΜΟΝΑΣΤΗΡΑΚΙ"][0] . " , lng: " . $coordinates["ΜΟΝΑΣΤΗΡΑΚΙ"][1] . "}, colour: \"" . $coordinates["ΜΟΝΑΣΤΗΡΑΚΙ"][2] . "\", name: \"" . $coordinates["ΜΟΝΑΣΤΗΡΑΚΙ"][3] . "\"},";
     $coordinates_str .= "{coords: {lat: " . $coordinates["ΣΥΝΤΑΓΜΑ"][0] . " , lng: " . $coordinates["ΣΥΝΤΑΓΜΑ"][1] . "}, colour: \"" . $coordinates["ΣΥΝΤΑΓΜΑ"][2] . "\", name: \"" . $coordinates["ΣΥΝΤΑΓΜΑ"][3] . "\"},";
     $coordinates_str .= "{coords: {lat: " . $coordinates["ΕΥΑΓΓΕΛΙΣΜΟΣ"][0] . " , lng: " . $coordinates["ΕΥΑΓΓΕΛΙΣΜΟΣ"][1] . "}, colour:\""  . $coordinates["ΕΥΑΓΓΕΛΙΣΜΟΣ"][2] . "\", name: \"" . $coordinates["ΕΥΑΓΓΕΛΙΣΜΟΣ"][3] . "\"}]";
