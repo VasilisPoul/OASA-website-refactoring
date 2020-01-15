@@ -31,7 +31,7 @@ $result = $conn->query($sql);
 
 if($result->num_rows > 0){
   while($row = $result->fetch_assoc()){
-    $delays .= "<button type=\"button\" class=\"btn disabled\" style=\"margin: 2px;color:White;background-color:" . $row["colour"] . ";\">" . $row["name"] . "</button>";
+    $delays .= "<button type=\"button\" class=\"btn disabled\" style=\"margin:2px;cursor:auto;color:White;background-color:" . $row["colour"] . ";\">" . $row["name"] . "</button>";
   }
 }
 
@@ -42,7 +42,7 @@ $result = $conn->query($sql);
 if($result->num_rows > 0){
   while($row = $result->fetch_assoc()){
 
-    $strikes .= "<button type=\"button\" class=\"btn disabled\" style=\"margin: 2px;color:White;background-color:" . $row["colour"] . ";\">" . $row["name"] . "</button>";
+    $strikes .= "<button type=\"button\" class=\"btn disabled\" style=\"margin:2px;cursor:auto;color:White;background-color:" . $row["colour"] . ";\">" . $row["name"] . "</button>";
   }
 }
 
@@ -53,7 +53,7 @@ $result = $conn->query($sql);
 
 if($result->num_rows > 0){
   while($row = $result->fetch_assoc()){
-    $planned_work .= "<button type=\"button\" class=\"btn disabled\" style=\"margin: 2px;color:White;background-color:" . $row["colour"] . ";\">" . $row["name"] . "</button>";
+    $planned_work .= "<button type=\"button\" class=\"btn disabled\" style=\"margin:2px;cursor:auto;color:White;background-color:" . $row["colour"] . ";\">" . $row["name"] . "</button>";
   }
 }
 
@@ -64,7 +64,7 @@ $result = $conn->query($sql);
 
 if($result->num_rows > 0){
   while($row = $result->fetch_assoc()){
-    $good_service .= "<button type=\"button\" class=\"btn disabled\" style=\"margin: 2px;color:White;background-color:" . $row["colour"] . ";\">" . $row["name"] . "</button>";
+    $good_service .= "<button type=\"button\" class=\"btn disabled\" style=\"margin:2px;cursor:auto;color:White;background-color:" . $row["colour"] . ";\">" . $row["name"] . "</button>";
   }
 }
 
@@ -74,7 +74,7 @@ $result = $conn->query($sql);
 
 if($result->num_rows > 0){
   while($row = $result->fetch_assoc()){
-    $out_of_order .= "<button type=\"button\" class=\"btn disabled\" style=\"margin: 2px;color:White;background-color:" . $row["colour"] . ";\">" . $row["name"] . "</button>";
+    $out_of_order .= "<button type=\"button\" class=\"btn disabled\" style=\"margin:2px;cursor:auto;color:White;background-color:" . $row["colour"] . ";\">" . $row["name"] . "</button>";
   }
 }
 
