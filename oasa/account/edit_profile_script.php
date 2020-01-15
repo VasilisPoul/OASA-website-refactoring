@@ -98,7 +98,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
   //check if password is given
   if(empty($_POST["password"])){
-    $password = "Εισάγετε κωδικό πρόσβασης";
+    $password_err = "Εισάγετε κωδικό πρόσβασης";
   } 
   else{
     //CAUTION: passwords are hased and then stored in the database
