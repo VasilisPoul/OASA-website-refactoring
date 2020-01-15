@@ -165,7 +165,7 @@ function validateFilled() {
 function validateEmail() {
   var field = document.getElementById("buy-email");
   var err = document.getElementById("buy-email-err");
-  if((/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(field.value))) {
+  if((/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w+)+$/.test(field.value))) {
     field.classList.remove("err");
     err.innerHTML = "";
     return true;

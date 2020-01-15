@@ -73,7 +73,7 @@ function validateEmail() {
   // This function deals with validation of the form fields
   var field = document.getElementById("buy-email-input");
   var err = document.getElementById("email-error-div");
-  if((/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(field.value))) {
+  if((/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w+)+$/.test(field.value))) {
     field.classList.remove("err");
     err.style.display = "none";
     return true;
