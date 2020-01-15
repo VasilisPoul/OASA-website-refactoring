@@ -136,8 +136,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       $_SESSION['email'] = $email;
   
       header("Location: profile.php");
-
-      $message = "Η εγγραφή ολοκληρώθηκε με επιτυχία!";
     } 
     else{
       //echo "Error: " . $sql . "<br>" . $conn->error;
