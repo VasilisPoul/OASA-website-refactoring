@@ -79,7 +79,6 @@ INSERT INTO ticket_category (name, price, iduser_category) VALUES ("Κανονι
 INSERT INTO ticket_category (name, price, iduser_category) VALUES ("Εισιτήριο πέντε ημερών για όλα τα μέσα (εκτός γραμμών Αεροδρομίου & γραμμής Χ80)", "9.00", 1);
 INSERT INTO ticket_category (name, price, iduser_category) VALUES ("Εισιτήριο Αεροδρομίου μετ' επιστροφής ΜΕΤΡΟ", "18.00", 1);
 INSERT INTO ticket_category (name, price, iduser_category) VALUES ("Εισιτήριο Αεροδρομίου από & προς τους σταθμούς Παλλήνη - Κάντζα - Κορωπί ΜΕΤΡΟ", "6.00", 1);
-INSERT INTO ticket_category (name, price, iduser_category) VALUES ("Εισιτήριο Αεροδρομίου μετ' επιστροφής ΜΕΤΡΟ", "18.00", 1);
 INSERT INTO ticket_category (name, price, iduser_category) VALUES ("Μειωμένο ενιαίο εισιτήριο για όλα τα μέσα 90 λεπτών (εκτός γραμμών Αεροδρομίου & γραμμής Χ80)", "0.60", 2);
 INSERT INTO ticket_category (name, price, iduser_category) VALUES ("Μειωμένο εισιτήριο λεωφορείων EXPRESS", "3.00", 2);
 INSERT INTO ticket_category (name, price, iduser_category) VALUES ("Μειωμένο εισιτήριο ΜΕΤΡΟ γραμμών Αεροδρομίου", "5.00", 2);
@@ -87,7 +86,7 @@ INSERT INTO ticket_category (name, price, iduser_category) VALUES ("Μειωμέ
 INSERT INTO ticket_category (name, price, iduser_category) VALUES ("Δωρεάν εισιτήριο για όλα τα μέσα 90 λεπτών (εκτός γραμμών Αεροδρομίου & γραμμής Χ80)", "0.0", 3);
 
 -- "giorgos" has a card with an expired fee. He can not issue a new card but he can renew his current one
-INSERT INTO card (idticket_category, date, pin, iduser, expired) VALUES (11, "2020-01-15", "$2y$10$ypFCVHcaVpnc4FmifA81/uFKvEwdQXLGTcV9.BKGNmyqEndFdkkPG", 1, 1);
+INSERT INTO card (idticket_category, date, pin, iduser, expired) VALUES (10, "2020-01-15", "$2y$10$ypFCVHcaVpnc4FmifA81/uFKvEwdQXLGTcV9.BKGNmyqEndFdkkPG", 1, 1);
 -- "maria" has an valid card. She can not issue a new card and she can not renew her current one
 INSERT INTO card (idticket_category, date, pin, iduser, expired) VALUES (12, "2020-01-11", "$2y$10$ypFCVHcaVpnc4FmifA81/uFKvEwdQXLGTcV9.BKGNmyqEndFdkkPG", 2, 0);
 -- "vassilis" has a ticket with an expired fee. He can issue a new one or renew his current one
