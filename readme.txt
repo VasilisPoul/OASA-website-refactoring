@@ -6,7 +6,25 @@
 
 2. Σύντομη αναφορά υλοποίησης 
 
-  A. Περιγραφή αρχείων/φακέλων
+  Α. Βάση Δεδομένων
+  
+    Για τη βάση χρησιμοποιούμε MySQL με 
+      user: user
+      password: password
+      schema: sdi1600077
+
+    Για να τρέξετε τη βάση φορτώστε:
+      1. database/sdi1600077.sql (για τη δημιουργία της βάσης)
+      2. database/db.sql         (για data population)
+
+  Β. Δοκιμαστικοί κωδικοί σύνδεσης
+
+    username: giorgos   password: giorgos
+    username: maria     password: maria
+    username: vassilis  password: vassilis
+
+
+  Γ. Περιγραφή αρχείων/φακέλων
     1. oasa/account
 
         signup.php: σελίδα εγγραφής νέου χρήστη 
@@ -41,36 +59,51 @@
         journey_planner_script.php: script που περιέχει έτοιμα σενάρια για τον σχεδιασμό διαδρομής
 
     5. oasa/network/line_info
-      
-        areas.php:
-        find_lines_of_station.php:
-        find_stations_of_area.php:   
-        find_stations_of_line.php:
-        get_areas.php:
-        get_lines.php:
-        get_stations.php:
-        lines.php:
-        stations.php:
+
+        areas.php: σελίδα με αναζήτηση για σταθμούς και γραμμές με βάση μια ΠΕΡΙΟΧΗ
+        lines.php: σελίδα με αναζήτηση για σταθμούς και περιοχές με βάση μια ΓΡΑΜΜΗ
+        stations.php: σελίδα με αναζήτηση για γραμμές και περιοχές με βάση έναν ΣΤΑΘΜΟ
+
+        find_lines_of_station.php: script για την ανάκτηση από τη βάση όλων των ΓΡΑΜΜΩΝ που περνούν από ΣΤΑΘΜΟ επιλογής μας
+        find_stations_of_area.php: script για την ανάκτηση από τη βάση όλων των ΣΤΑΘΜΩΝ που βρίσκονται σε ΠΕΡΙΟΧΗ επιλογής μας 
+        find_stations_of_line.php: script για την ανάκτηση από τη βάση όλων των ΣΤΑΘΜΩΝ που ανήκουν σε μία ΓΡΑΜΜΗ επιλογής μας
+
+        get_areas.php: script για την ανάκτηση όλων των ΠΕΡΙΟΧΩΝ από τη βάση (αλφαβητική ταξινόμηση)
+        get_lines.php: script για την ανάκτηση όλων των ΓΡΑΜΜΩΝ από τη βάση (αλφαβητική ταξινόμηση)
+        get_stations.php: script για την ανάκτηση όλων των ΣΤΑΘΜΩΝ από τη βάση (αλφαβητική ταξινόμηση)
 
     6. oasa/tickets
 
-          buy_online.php: αρχική σελίδα της Ηλεκτρονικής Αγοράς Εισιτηρίων με διαθέσιμες επιλογές για αγορά/επαναφόρτιση εισιτηρίου/κάρτας
+        buy_online.php: αρχική σελίδα της Ηλεκτρονικής Αγοράς Εισιτηρίων με διαθέσιμες επιλογές για αγορά/επαναφόρτιση εισιτηρίου/κάρτας
 
-          info.php: σελίδα με τιμές και πληροφορίες εισιτηρίων
-          ticket_categories.php: script για την ανάκτηση των πληροφοριών εισιτήριων από τη βάση
+        info.php: σελίδα με τιμές και πληροφορίες εισιτηρίων
+        ticket_categories.php: script για την ανάκτηση των πληροφοριών εισιτήριων από τη βάση
 
-  B. Βάση Δεδομένων
-    Για τη βάση χρησιμοποιούμε MySQL με 
-      user: user
-      password: password
-      schema: sdi1600077
+    7. oasa/tickets/buy_card
 
-    Για να τρέξετε τη βάση φορτώστε:
-      1. database/sdi1600077.sql (για τη δημιουργία της βάσης)
-      2. database/db.sql         (για data population)
+        buy_card.php: σελίδα αγοράς ΚΑΡΤΑΣ από εγγεγραμμένο ή μη χρήστη. Μαζί με την αγορά κάρτας γίνεται και η φόρτιση 1 κομίστρου
+        confirm_buy: σελίδα ενημέρωσης χρήστη για το αποτέλεσμα της όταν πατήσει το κουμπί 'αγορά' στο buy_card.php
+        confirm_buy_script.php: script για τη δημιουργία κάρτας, αποθήκευση των στοιχείων κατόχου και κομίστρου στη βάση 
 
-  Γ. Δοκιμαστικοί κωδικοί σύνδεσης
-    username: giorgos   password: giorgos
-    username: maria     password: maria
-    username: vassilis  password: vassilis
+    8. oasa/tickets/buy_ticket
+
+        buy_ticket.php: σελίδα αγοράς ΕΙΣΙΤΗΡΙΟΥ από εγγεγραμμένο ή μη χρήστη
+        confirm_buy: σελίδα ενημέρωσης χρήστη για το αποτέλεσμα της συναλλαγή όταν πατήσει το κουμπί 'αγορά' στο buy_ticket.php
+        confirm_buy_script.php: script για τη αποθήκευση του εισιτηρίου στη βάση   
+
+    9. oasa/tickets/recharge_card
+
+        recharge_card.php: σελίδα για την επαναφόρτιση ΚΑΡΤΑΣ από εγγεγραμμένο ή μη χρήστη. Δεν γίνεται να φορτιστεί κάρτα με κόμιστρο που δεν έχει λήξει
+        confirm_buy: σελίδα ενημέρωσης χρήστη για το αποτέλεσμα της όταν πατήσει το κουμπί 'αγορά' στο recharge_card.php
+
+        find_card.php: script για την εύρεση των στοιχείων κάρτας με κωδικό κάρτας & PIN που έχει δώσει ο χρήστης
+        confirm_buy_script.php: script για τη ανανέωση των στοιχείων της κάρτας στη βάση 
+
+    9. oasa/tickets/recharge_ticket
+
+        recharge_ticket.php: σελίδα για την επαναφόρτιση ΕΙΣΙΤΗΡΙΟΥ από εγγεγραμμένο ή μη χρήστη. Δεν γίνεται να φορτιστεί εισιτήριο με κόμιστρο που δεν έχει λήξει
+        confirm_buy: σελίδα ενημέρωσης χρήστη για το αποτέλεσμα της όταν πατήσει το κουμπί 'αγορά' στο recharge_ticket.php
+
+        find_ticket.php: script για την εύρεση των στοιχείων εισιτηρίου με κωδικό εισιτηρίου που έχει δώσει ο χρήστης
+        confirm_buy_script.php: script για τη ανανέωση των στοιχείων του εισιτηρίου στη βάση 
 
