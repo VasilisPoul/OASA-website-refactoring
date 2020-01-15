@@ -230,9 +230,9 @@ HTML/CSS by: Vasilis Poulopoulos (sdi1600141)
                   <div class = "groove">
                     <p>Ανήκω στην κατηγορία:</p>
                     
-                    <input type="radio" name="user_category" value="1" checked> Δικαιούχος κανονικού εισιτηρίου<br>
-                    <input type="radio" name="user_category" value="2"> Φοιτητής/Μαθητής<br>
-                    <input type="radio" name="user_category" value="3"> Άνεργος/Αμεα<br> 
+                    <input type="radio" name="user_category" value="1" <?php if($user_category_id=="1") echo "checked";?>> Δικαιούχος κανονικού εισιτηρίου<br>
+                    <input type="radio" name="user_category" value="2" <?php if($user_category_id=="2") echo "checked";?>> Φοιτητής/Μαθητής<br>
+                    <input type="radio" name="user_category" value="3" <?php if($user_category_id=="3") echo "checked";?>> Άνεργος/Αμεα<br> 
                     <span class="error-message"> <?php echo $user_category_err;?></span>
                   </div>
                   <div class="form-group-error input-group">

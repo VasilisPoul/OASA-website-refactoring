@@ -22,7 +22,7 @@ $username = $_SESSION['username'];
 $first_name = $_SESSION['first_name'];
 $last_name = $_SESSION['last_name'];
 $email = $_SESSION['email'];
-$dob = $phone = $user_category = "";
+$dob = $phone = $user_category = $user_category_id = "";
 
 //create connection
 $conn = new mysqli($servername, $server_username, $server_password, $dbname);
@@ -32,7 +32,7 @@ if($conn->connect_error){
 
 
 //obtain user details
-$sql = "SELECT u.phone, u.dob, ic.name FROM user u, user_category ic WHERE u.iduser = " . $_SESSION['loggedin'] . " AND u.iduser_category = ic.iduser_category";
+$sql = "SELECT u.phone, u.dob, u.iduser_category, ic.name FROM user u, user_category ic WHERE u.iduser = " . $_SESSION['loggedin'] . " AND u.iduser_category = ic.iduser_category";
 $result = $conn->query($sql);
 
 if(!empty($result) && $result->num_rows > 0){
@@ -40,6 +40,7 @@ if(!empty($result) && $result->num_rows > 0){
     $dob = $row["dob"];
     $phone = $row["phone"];
     $user_category = $row["name"];
+    $user_category_id = $row["iduser_category"];
   }
 }
 
