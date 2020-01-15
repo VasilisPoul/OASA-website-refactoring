@@ -41,6 +41,7 @@ HTML/CSS by: Maria Karamina (sdi1600059)
 
     <?php include 'find_ticket.php' ?>
     <?php include '../ticket_categories.php' ?>
+    <?php include '../get_user_category.php' ?>
     
    <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light navbar-color" id="ftco-navbar">
       <div class="container">
@@ -244,8 +245,8 @@ HTML/CSS by: Maria Karamina (sdi1600059)
 
             <br />
             <br />
-            <label>Για να αγοράσετε εισιτήριο με έκπτωση, εισάγετε τον κωδικό/αναγνωριστικό του δικαιολογητικού σας</label>
-            <div class="form-group input-group">
+            <label <?php if($user_category == 2 || $user_category == 3) echo "style='display:none;'";?> >Για να αγοράσετε εισιτήριο με έκπτωση, εισάγετε τον κωδικό/αναγνωριστικό του δικαιολογητικού σας</label>
+            <div class="form-group input-group" <?php if($user_category == 2 || $user_category == 3) echo "style='display:none;'";?> >
               <div class="input-group-prepend">
                 <span class="input-group-text"> <i class="icon-tag"></i> </span>
               </div>

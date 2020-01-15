@@ -256,8 +256,8 @@ PHP script (line 158) by: Giorgos Koursiounis (sdi1600077)
                       </div>
 
                       <br />
-                      <label>Αν ανήκετε σε κατηγορία με έκπτωση, εισάγετε τον κωδικό/αναγνωριστικό του δικαιολογητικού σας</label>
-                      <div class="form-group input-group">
+                      <label <?php if($user_category == 2 || $user_category == 3) echo "style='display:none;'";?> >Αν ανήκετε σε κατηγορία με έκπτωση, εισάγετε τον κωδικό/αναγνωριστικό του δικαιολογητικού σας</label>
+                      <div class="form-group input-group" <?php if($user_category == 2 || $user_category == 3) echo "style='display:none;'";?> >
                         <div class="input-group-prepend">
                           <span class="input-group-text"> <i class="icon-tag"></i> </span>
                         </div>
