@@ -91,4 +91,4 @@ INSERT INTO card (idticket_category, date, pin, iduser, expired) VALUES (11, "20
 -- "maria" has an valid card. She can not issue a new card and she can not renew her current one
 INSERT INTO card (idticket_category, date, pin, iduser, expired) VALUES (12, "2020-01-11", "$2y$10$ypFCVHcaVpnc4FmifA81/uFKvEwdQXLGTcV9.BKGNmyqEndFdkkPG", 2, 0);
 -- "vassilis" has a ticket with an expired fee. He can issue a new one or renew his current one
-INSERT INTO ticket (date, iduser, idticket_category, expired) VALUES ("2020-01-05", 3, 11, 1);
+INSERT INTO ticket (date, iduser, idticket_category, expired) VALUES ("2020-01-05", 3, 11, 3);
