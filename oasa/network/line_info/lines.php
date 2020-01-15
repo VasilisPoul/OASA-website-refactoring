@@ -182,7 +182,7 @@ HTML/CSS/JAVASCRIPT by: Maria Karamina (sdi1600059) & Vassilis Poulopoulos (sdi1
                   document.getElementById("output").appendChild(button);
                 }
 
-                if(stations) {
+                if(stations.length > 0) {
                   var table = document.createElement("table");
                   table.style.cssText = "width: 100%; margin: 4% 0;";
                   var header = table.createTHead();

@@ -188,7 +188,7 @@ HTML/CSS/JAVASCRIPT by: Maria Karamina (sdi1600059)
                   }
                 }
 
-                if(lines) {
+                if(lines.length > 0) {
                   var div = document.createElement("div");
                   div.innerHTML = "Γραμμές που διέρχονται από τη στάση:";
                   var ul = document.createElement("ul");

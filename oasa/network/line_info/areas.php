@@ -178,9 +178,9 @@ HTML/CSS/JAVASCRIPT by: Maria Karamina (sdi1600059)
                   document.getElementById("output").appendChild(title);
                 }
 
-                if(stations) {
+                if(stations.length > 0) {
                   var div = document.createElement("div");
-                  div.innerHTML = "Στάσεις τις περιοχής:";
+                  div.innerHTML = "Στάσεις της περιοχής:";
                   var ul = document.createElement("ul");
                   ul.style.cssText = "list-style: none; padding: 0; margin-top: 2%;";
                   div.appendChild(ul);
