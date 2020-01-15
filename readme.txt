@@ -35,7 +35,8 @@
         logout_script.php: script για καταστροφή του session
 
         profile.php: σελίδα για την προβολή προφίλ του χρήστη
-        user_details.php: script για ανάκτηση στοιχείων χρήστη από τη βάση
+        user_details.php: script για ανάκτηση στοιχείων χρήστη από τη βάση (redirection αν δεν ειναι logged in)
+        get_user.php: script για ανάκτηση στοιχείων χρήστη από τη βάση (χωρίς redirection)
 
         edit_profile.php: ο χρήστης μπορεί να τροποποιήσει τα στοιχεία του
         edit_profile_script.php: script για έλεγχο νέων στοιχείων χρήστη και αποθήκευση στη βάση
