@@ -17,6 +17,7 @@ To log into the database use
 Users can now easily plan their route using the journey planner, and check the service status of each line, all from the front page
 
 ![Front-Page](screenshots/front-page-1.png)
+
 ![Front-Page](screenshots/front-page-2.png)
 
 #### Line Information
