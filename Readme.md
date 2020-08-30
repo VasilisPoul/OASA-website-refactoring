@@ -17,20 +17,22 @@ To log into the database use
 Users can now easily plan their route using the journey planner, and check the service status of each line, all from the front page
 
 ![Front-Page](screenshots/front-page-1.png)
-
+---
 ![Front-Page](screenshots/front-page-2.png)
 
 #### Line Information
 Friendlier interface that allows users to see the details of each line, station, and area of coverage along with a map of the surrounding area
 
 ![Line Info](screenshots/line-info-1.png)
+---
 ![Station Info](screenshots/line-info-2.png)
-![Area Info](screenshots/line-info-3.png)
+
 
 #### Ticket Purchase
 Users can issue personalized cards, buy tickets and recharge their cards and used tickets from the website, and have them sent to their address or email
 
 ![Ticket Purchase](screenshots/buy-tickets-1.png)
+---
 ![Ticket Purchase](screenshots/buy-tickets-2.png)
 
 
@@ -38,6 +40,7 @@ Users can issue personalized cards, buy tickets and recharge their cards and use
 Users can create an account for a more personalized experience
 
 ![Log In](screenshots/profile-1.png)
+---
 ![Show Profile](screenshots/profile-2.png)
 
 #### Interface
