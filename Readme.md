@@ -34,6 +34,13 @@ Users can issue personalized cards, buy tickets and recharge their cards and use
 ![Ticket Purchase](screenshots/buy-tickets-1.png)
 ---
 ![Ticket Purchase](screenshots/buy-tickets-2.png)
+---
+![Ticket Purchase](screenshots/buy-tickets-3.png)
+---
+![Ticket Purchase](screenshots/buy-tickets-4.png)
+---
+![Ticket Purchase](screenshots/buy-tickets-5.png)
+
 
 
 #### User Accounts
