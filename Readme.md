@@ -40,3 +40,8 @@ Users can create an account for a more personalized experience
 
 #### Interface
 General improvement of the interface for increased usability and better overall user experience
+
+## Team
+Maria Karamina - 1115201600059
+Georgios Koursiounis - 1115201600077
+Vasileios Poulopoulos - 1115201600141
