@@ -59,6 +59,6 @@ General improvement of the interface for increased usability and better overall 
 - Vasileios Poulopoulos
 
 ## Credits
-[Template from Colorlib](https://colorlib.com/wp/template/carbook/) <br/>
-[OASA Logo](https://el.wikipedia.org/wiki/%CE%A3%CF%85%CE%B3%CE%BA%CE%BF%CE%B9%CE%BD%CF%89%CE%BD%CE%AF%CE%B5%CF%82_%CF%83%CF%84%CE%B7%CE%BD_%CE%91%CE%B8%CE%AE%CE%BD%CE%B1#/media/%CE%91%CF%81%CF%87%CE%B5%CE%AF%CE%BF:TransportForAthens_logo.jpg) <br/>
-Maps and Ticket images from www.oasa.gr
+- [Template from Colorlib](https://colorlib.com/wp/template/carbook/) <br/>
+- [OASA Logo](https://el.wikipedia.org/wiki/%CE%A3%CF%85%CE%B3%CE%BA%CE%BF%CE%B9%CE%BD%CF%89%CE%BD%CE%AF%CE%B5%CF%82_%CF%83%CF%84%CE%B7%CE%BD_%CE%91%CE%B8%CE%AE%CE%BD%CE%B1#/media/%CE%91%CF%81%CF%87%CE%B5%CE%AF%CE%BF:TransportForAthens_logo.jpg) <br/>
+- Maps and Ticket images from www.oasa.gr
