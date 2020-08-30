@@ -21,9 +21,10 @@ Users can now easily plan their route using the journey planner, and check the s
 
 #### Line Information
 Friendlier interface that allows users to see the details of each line, station, and area of coverage along with a map of the surrounding area
-           1               |           2              |           3
-:-------------------------:|:------------------------:|:------------------------:
-![Line Info](screenshots/line-info-1.png) | ![Station Info](screenshots/line-info-2.png) | ![Area Info](screenshots/line-info-3.png)
+           1               |           2              
+:-------------------------:|:------------------------:
+![Line Info](screenshots/line-info-1.png) | ![Station Info](screenshots/line-info-2.png)
+![Area Info](screenshots/line-info-3.png)
 
 #### Ticket Purchase
 Users can issue personalized cards, buy tickets and recharge their cards and used tickets from the website, and have them sent to their address or email
@@ -42,6 +43,6 @@ Users can create an account for a more personalized experience
 General improvement of the interface for increased usability and better overall user experience
 
 ## Team
-- Maria Karamina - 1115201600059
-- Georgios Koursiounis - 1115201600077
-- Vasileios Poulopoulos - 1115201600141
+- Maria Karamina
+- Georgios Koursiounis
+- Vasileios Poulopoulos
